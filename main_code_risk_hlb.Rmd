@@ -1,0 +1,1184 @@
+---
+title: "HLB Bayesian Spatial Modeling in Minas Gerais Brazil"
+author: "Kaique Alves"
+date: "26/08/2020"
+output: 
+  html_document: 
+    df_print: kable
+    toc: true
+    toc_float:
+      collapsed: yes
+---
+
+
+# Packages
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+library(nasapower)
+library(cowplot)
+library(ggthemes)
+library(rgdal)
+library(raster)
+library(INLA)
+library(spdep)
+library(psych)
+library(ggsn)
+library(gstat)
+library(maptools)
+library(rnaturalearth)
+library(rnaturalearthhires)
+source("Bdiclcpomodel_stack.R")
+source("coord_transform.R")
+```
+
+# Load data
+```{r}
+hh_hlb =  read.table("data/hlb_form_map2.txt")  %>% 
+  mutate(positive = case_when(presenca=="Present" ~ 1,
+                              presenca=="Absent" ~ 0)) %>% 
+  unite("latlon",lat,lon,remove = F) %>% 
+  group_by(latlon) %>% 
+  dplyr::filter(positive == max(positive)) %>%
+  ungroup() %>% 
+  dplyr::select(-latlon)
+```
+
+transform coordinates to utm
+```{r eval=FALSE, include=FALSE}
+lon = hh_hlb$lon
+lat = hh_hlb$lat
+utm_coords = longlat_to_UTM(long = lon, lat = lat	, units = 'm')
+HLB_presence = hh_hlb %>%
+  mutate(lon =utm_coords$x, lat = utm_coords$y)
+HLB_presence
+```
+
+
+
+## Download MG shape files
+
+```{r}
+BRA <- ne_states(country = "Brazil", returnclass = "sf")
+# subset spatial objects of only the states of interest
+MG <- BRA[BRA$name_en == "Minas Gerais", ]
+```
+
+
+
+
+# 
+```{r}
+MG_shape = readOGR("./data/MG", "MG_Unidade_Federacao_2017_ago")
+MG_shape = spTransform(MG_shape, CRSobj = "+proj=longlat")
+# MG_shape = spTransform(MG_shape,  CRS("+proj=utm +zone=23 +south ellps=WGS84"))
+plot(MG_shape)
+```
+
+# Maping manipulation
+## Create a grid
+
+```{r}
+cs <- c(.4,.4)
+# cs <- c(25000,25000)
+grdpts =  makegrid(MG_shape, cellsize = cs)
+
+spgrd <- SpatialPoints(grdpts, proj4string = CRS(proj4string(MG_shape)))
+spgrdWithin <- SpatialPixels(spgrd[MG_shape,])
+grid_df = as.data.frame(as(spgrdWithin,"SpatialPixelsDataFrame" )@coords)
+
+plot(spgrdWithin)
+
+  
+```
+
+
+
+##  Counting orchards by grid
+
+### Positive cases
+
+```{r}
+#create dataframe with only positives
+hh_hlb_positive = hh_hlb %>% 
+  filter(positive == 1)
+
+lon = hh_hlb_positive$lon
+lat = hh_hlb_positive$lat
+xy <- data.frame( lon, lat)
+hlb_coords = SpatialPoints(xy,proj4string = CRS(proj4string(MG_shape)))
+r = raster(spgrdWithin)
+r[] <- 0
+
+mg_raster = raster(MG_shape)
+mg_raster[] <- 0
+rr_positive = mask(r,mask = MG_shape)
+
+
+tab <- table(cellFromXY(rr_positive, hlb_coords))
+rr_positive[as.numeric(names(tab))] <- tab
+
+plot(rr_positive)
+```
+
+### Counts by orchard size
+```{r}
+# Mini
+hh_hlb_mini = hh_hlb %>% 
+  filter(class=="Mini")
+lon = hh_hlb_mini$lon
+lat = hh_hlb_mini$lat
+xy <- data.frame( lon, lat)
+hlb_coords = SpatialPoints(xy,proj4string = CRS(proj4string(MG_shape)))
+r = raster(spgrdWithin)
+r[] <- 0
+mg_raster = raster(MG_shape)
+mg_raster[] <- 0
+rr_mini = mask(r, mask = MG_shape) #<<<<<
+tab <- table(cellFromXY(rr_mini, hlb_coords))#<<<<<
+rr_mini[as.numeric(names(tab))] <- tab#<<<<<
+
+# Small
+hh_hlb_small = hh_hlb %>% 
+  filter(class=="Small")
+lon = hh_hlb_small$lon#<<<<<
+lat = hh_hlb_small$lat#<<<<<
+xy <- data.frame( lon, lat)
+hlb_coords = SpatialPoints(xy,proj4string = CRS(proj4string(MG_shape)))
+r = raster(spgrdWithin)
+r[] <- 0
+mg_raster = raster(MG_shape)
+mg_raster[] <- 0
+rr_small = mask(r, mask = MG_shape) #<<<<<
+tab <- table(cellFromXY(rr_small, hlb_coords))#<<<<<
+rr_small[as.numeric(names(tab))] <- tab#<<<<<
+
+# medium
+hh_hlb_medium = hh_hlb %>% 
+  filter(class=="Medium")
+lon = hh_hlb_medium$lon#<<<<<
+lat = hh_hlb_medium$lat#<<<<<
+xy <- data.frame( lon, lat)
+hlb_coords = SpatialPoints(xy,proj4string = CRS(proj4string(MG_shape)))
+r = raster(spgrdWithin)
+r[] <- 0
+mg_raster = raster(MG_shape)
+mg_raster[] <- 0
+rr_medium = mask(r, mask = MG_shape) #<<<<<
+tab <- table(cellFromXY(rr_medium, hlb_coords))#<<<<<
+rr_medium[as.numeric(names(tab))] <- tab#<<<<<
+
+# Large
+hh_hlb_large = hh_hlb %>% 
+  filter(class=="Large")
+lon = hh_hlb_large$lon#<<<<<
+lat = hh_hlb_large$lat#<<<<<
+xy <- data.frame( lon, lat)
+hlb_coords = SpatialPoints(xy,proj4string = CRS(proj4string(MG_shape)))
+r = raster(spgrdWithin)
+r[] <- 0
+mg_raster = raster(MG_shape)
+mg_raster[] <- 0
+rr_large = mask(r, mask = MG_shape) #<<<<<
+tab <- table(cellFromXY(rr_large, hlb_coords))#<<<<<
+rr_large[as.numeric(names(tab))] <- tab#<<<<<
+plot(rr_large)
+```
+
+### Count by species
+```{r}
+# Orange
+hh_hlb_orange = hh_hlb %>% 
+  filter(especie=="Sweet orange")
+lon = hh_hlb_orange$lon
+lat = hh_hlb_orange$lat
+xy <- data.frame( lon, lat)
+hlb_coords = SpatialPoints(xy,proj4string = CRS(proj4string(MG_shape)))
+r = raster(spgrdWithin)
+r[] <- 0
+mg_raster = raster(MG_shape)
+mg_raster[] <- 0
+rr_orange = mask(r, mask = MG_shape) #<<<<<
+tab <- table(cellFromXY(rr_orange, hlb_coords))#<<<<<
+rr_orange[as.numeric(names(tab))] <- tab#<<<<<
+
+# Mandarin
+hh_hlb_mandarin = hh_hlb %>% 
+  filter(especie=="Mandarins")
+lon = hh_hlb_mandarin$lon#<<<<<
+lat = hh_hlb_mandarin$lat#<<<<<
+xy <- data.frame( lon, lat)
+hlb_coords = SpatialPoints(xy,proj4string = CRS(proj4string(MG_shape)))
+r = raster(spgrdWithin)
+r[] <- 0
+mg_raster = raster(MG_shape)
+mg_raster[] <- 0
+rr_mandarin = mask(r, mask = MG_shape) #<<<<<
+tab <- table(cellFromXY(rr_mandarin, hlb_coords))#<<<<<
+rr_mandarin[as.numeric(names(tab))] <- tab#<<<<<
+
+# Lemon
+hh_hlb_lemon = hh_hlb %>% 
+  filter(especie=="Lemon")
+lon = hh_hlb_lemon$lon#<<<<<
+lat = hh_hlb_lemon$lat#<<<<<
+xy <- data.frame( lon, lat)
+hlb_coords = SpatialPoints(xy,proj4string = CRS(proj4string(MG_shape)))
+r = raster(spgrdWithin)
+r[] <- 0
+mg_raster = raster(MG_shape)
+mg_raster[] <- 0
+rr_lemon = mask(r, mask = MG_shape) #<<<<<
+tab <- table(cellFromXY(rr_lemon, hlb_coords))#<<<<<
+rr_lemon[as.numeric(names(tab))] <- tab#<<<<<
+
+# acide lime
+hh_hlb_acidlime = hh_hlb %>% 
+  filter(especie=="Acid lime")
+lon = hh_hlb_acidlime$lon#<<<<<
+lat = hh_hlb_acidlime$lat#<<<<<
+xy <- data.frame( lon, lat)
+hlb_coords = SpatialPoints(xy,proj4string = CRS(proj4string(MG_shape)))
+r = raster(spgrdWithin)
+r[] <- 0
+mg_raster = raster(MG_shape)
+mg_raster[] <- 0
+rr_acidlime = mask(r, mask = MG_shape) #<<<<<
+tab <- table(cellFromXY(rr_acidlime, hlb_coords))#<<<<<
+rr_acidlime[as.numeric(names(tab))] <- tab#<<<<<
+plot(rr_mandarin)
+```
+
+### Mean area
+```{r}
+lon = hh_hlb$lon
+lat = hh_hlb$lat
+xy <- data.frame( lon, lat)
+hlb_coords = SpatialPoints(xy,proj4string = CRS(proj4string(MG_shape)))
+r = raster(spgrdWithin)
+df_area =  aggregate(hh_hlb[, 'area', drop=FALSE], hh_hlb[,3:2], mean)
+coordinates(df_area) <- ~ lon + lat
+# extent(r) <- extent(df_area)
+rr_area =  rasterize(df_area, r, df_area$area, fun = mean)
+plot(rr_area)
+# rr_area
+# rr
+```
+
+
+
+### Count All orchards (positives and negatives)
+```{r}
+lon = hh_hlb$lon
+lat = hh_hlb$lat
+xy <- data.frame( lon, lat)
+hlb_coords = SpatialPoints(xy,proj4string = CRS(proj4string(MG_shape)))
+r = raster(spgrdWithin)
+r[] <- 0
+
+mg_raster = raster(MG_shape)
+mg_raster[] <- 0
+rr = mask(r, mask = MG_shape)
+
+
+tab <- table(cellFromXY(rr, hlb_coords))
+rr[as.numeric(names(tab))] <- tab
+plot(rr)
+```
+
+
+```{r}
+rr2 = rr>0 & !is.na(rr)
+grid_df = as.data.frame(as(rr2, "SpatialPixels")@coords) %>% 
+  mutate(samp = rr2[]) %>% 
+  filter(samp ==TRUE)
+```
+
+## Map: Disease grid
+
+```{r}
+ggplot()+
+  geom_sf( data = BRA, fill = "white", color = "gray90")+
+  geom_sf(data = MG, fill = "gray99", color = "black") +
+  geom_tile(data =grid_df,aes(x,y),
+            fill ="gray90",
+            size = .2,
+            color = "gray75", alpha = 0.8)+
+  geom_point(data = hh_hlb %>% dplyr::select(-presenca),
+             aes(lon, lat),
+             size = 0.3, color = "gray80")+
+  geom_point(data = hh_hlb,
+             aes(lon, lat, color = presenca),
+             size = 0.3, alpha = 1)+
+  scale_color_manual(values  =c("#3e9b39", 'red'))+
+  coord_sf() +
+  guides(color = guide_legend(override.aes = list(size=2.5)))+
+  theme_minimal_grid()+
+  labs(x = "Longitude",
+       y = "Latitude",
+       color = "")+
+  north( location = "topleft", scale = 0.08, symbol = 10,
+      x.min=-51, x.max=-43.5, y.min=-23, y.max=-18)+
+  
+  scalebar(location = "bottomleft", dist = 50,
+           dist_unit = "km", transform = TRUE, 
+           x.min=-51, x.max=-44, y.min=-23, y.max=-18,
+           st.bottom = FALSE,
+           st.dist = 0.03, st.size = 2)+
+  ylim(-23, -18)+
+  xlim(-51, -43.5)+
+  facet_wrap(~presenca)+
+  theme(panel.border = element_rect(color = "gray"))
+
+# ylim(-22.5, -21.5)+
+#   xlim(-46, -44)
+
+ggsave("figs/map_disease.png", dpi = 600, height = 4, width = 11)
+  
+```
+
+### Tyding
+```{r}
+grid_incidence = data.frame(coordinates(rr),
+                            samples=rr[],
+                            positives = rr_positive[],
+                            area = rr_area[],
+                            large = rr_large[],
+                            medium = rr_medium[],
+                            small = rr_small[],
+                            mini=rr_mini[],
+                            orange=rr_orange[],
+                            mandarin = rr_mandarin[],
+                            lemon=rr_lemon[],
+                            acid_lime=rr_acidlime[]) %>% 
+  mutate(samples = replace_na(samples , 0),
+         positives = replace_na(positives , 0),
+         area = replace_na(area , 0),
+         large = replace_na(large , 0),
+         medium = replace_na(medium , 0),
+         small = replace_na(small , 0),
+         mini=replace_na(mini , 0),
+         orange=replace_na(orange , 0),
+         mandarin = replace_na(mandarin , 0),
+         lemon=replace_na(lemon , 0),
+         acid_lime=replace_na(acid_lime , 0)) %>% 
+  filter(samples>0)
+
+min(grid_incidence$area)
+```
+
+
+
+## Create the neighborhood structure with a distance criterion of 30km
+
+### Transform coordinates to UTM
+
+```{r}
+long = grid_incidence$x
+lat = grid_incidence$y
+xy <- data.frame(ID = 1:(length(lat)), long, lat)
+coordinates(xy) <- c("long", "lat")
+proj4string(xy) <- CRS("+init=epsg:4326")
+res <- spTransform(xy, CRS("+proj=utm +zone=23 +south ellps=WGS84"))
+coords_grid = as.data.frame(res)
+coords2 = as.matrix(coords_grid[,2:3])
+colnames(coords2) <- c("x1","x2")
+# max(coords_grid$long)-min(coords_grid$long)	
+
+```
+
+```{r eval=FALSE, include=FALSE}
+# coords<- coordinates(spgrdWithin)
+# coords_grid = longlat_to_UTM(long = grid_incidence$x, lat =grid_incidence$y	, units = 'm')
+# coords2 = as.matrix(coords_grid[,2:3])
+# colnames(coords2) <- c("x1","x2")
+
+```
+
+```{r eval=FALSE, include=FALSE}
+# longlat_to_UTM(lat = c(19.1, 19.2),long = c(20.1, 20.2))
+```
+
+### Neighborhood structure
+```{r}
+ID <- 1:dim(coords2)[1] 
+col.nb.0.all <- dnearneigh(coords2, 0, 70000, row.names=ID)
+nb2INLA("./models/grid25.graph", col.nb.0.all)
+grid_grafo25 <- inla.read.graph("./models/grid25.graph")
+
+plot(grid_grafo25)
+
+```
+
+### Moran's test
+Moran's I test for spatial autocorrelation
+
+```{r}
+prop <- grid_incidence$positives/grid_incidence$samples
+listw<- nb2listw(col.nb.0.all, zero.policy = T)
+moran.test(prop, listw,zero.policy=T)
+
+```
+
+# Download climatologic data
+## Nasa Power
+
+```{r eval=FALSE, include=FALSE}
+box=data.frame()
+for(i in 1:length(grid_incidence[,1])){
+power  = get_power(lonlat =c( grid_incidence[i,1], grid_incidence[i,2]),
+          pars = c("T2M","PRECTOT","WS10M"),
+          community = "AG",
+          temporal_average = "CLIMATOLOGY")
+box = box %>% 
+  bind_rows(power)
+}
+write.table(box,"data/power_data.txt")
+```
+
+Correcting coordinates values
+```{r}
+power_load= read.table("data/power_data.txt") %>% 
+  mutate(LON = LON-0.00001,
+         LAT = LAT-0.00001)
+head(power_load)
+```
+
+## Full dataset
+```{r}
+dry_months = c("MAY","JUN","JUL","AUG")
+power_tidy  = power_load %>% 
+  unite("latlong",LON,LAT) %>% 
+  gather(3:14, key = "month", value = "measurement") %>% 
+  mutate(season = case_when(month %in% dry_months ~"dry",
+                            !month %in% dry_months ~"rainy")) %>%
+  group_by(latlong, PARAMETER, ANN, season) %>% 
+  summarise(mean = mean(measurement)) %>% 
+  spread(season, mean) %>% 
+  ungroup()
+
+data = bind_cols(
+power_tidy %>% 
+  filter(PARAMETER == "PRECTOT") %>% 
+  mutate(prec_ann= ANN, prec_dry= dry, prec_rainy= rainy) %>% 
+  dplyr::select(-ANN, -dry, -rainy,-PARAMETER),
+
+power_tidy%>% 
+  filter(PARAMETER == "T2M") %>% 
+  mutate(temp_ann= ANN, temp_dry= dry, temp_rainy= rainy) %>% 
+  dplyr::select(-ANN, -dry, -rainy,-PARAMETER,-latlong),
+
+power_tidy%>% 
+  filter(PARAMETER == "WS10M") %>% 
+  mutate(wind_ann= ANN, wind_dry= dry, wind_rainy= rainy) %>% 
+  dplyr::select(-ANN, -dry, -rainy,-PARAMETER,-latlong)
+) %>% 
+  separate(latlong, into = c("x", "y"), sep = "_", convert = TRUE) %>% 
+  arrange(x,y) %>% 
+  bind_cols(
+    grid_incidence %>% 
+      arrange(x,y) %>%
+      mutate(large_area = medium+large,
+             small_area = mini+small, 
+             #mandarin = log(mandarin+1),
+             #orange = log(orange+1)
+             ) %>% 
+      dplyr::select(-x,-y)) %>% 
+  mutate(area = log(area)) %>%
+  # Add a column for random effect
+  mutate(S = 1:length(grid_incidence[,1]))
+
+head(data)
+```
+
+
+###Scaling
+
+```{r}
+# data= dataa %>% 
+#   mutate(prec_rainy = scale(prec_rainy),
+#          temp_dry = scale(temp_dry),
+#          wind_ann = scale(wind_ann),
+#          area = (area),
+#          mandarin = log(mandarin+1),
+#          orange = log(orange+1))
+
+```
+
+### Correlation
+
+```{r}
+correl = cor(data[c(3:11,14,20:19)])
+
+xy <- expand.grid(x=1:12,y=12:1)
+
+a=rowSums(xy)/12
+as.data.frame(correl) %>% 
+  rownames_to_column(var = "var1") %>% 
+  gather(2:13, key = "var", value = "value") %>% 
+  mutate(value = round(value,2)) %>% 
+  arrange(var1, var) %>% 
+  mutate(aa= round(a,3)) %>% 
+  # filter(aa<=0.52) %>% 
+  mutate(value = case_when(aa <= 1 ~ value,
+                           aa > 1 ~ NA_real_)) %>%
+  ggplot(aes(var1,var,fill = value, label = value)) + 
+  geom_tile()+
+  geom_text()+
+  coord_equal()+
+  scale_fill_gradient2(low = "red", mid = "white", high = "steelblue",
+                       limits= c(-1,1),na.value="white")+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  labs(x="",
+       y = "",
+       fill= "r")
+ggsave("figs/correl.png",dpi = 600, height = 7, width = 8)
+  
+```
+
+
+# Bayesian Modeling
+
+## Model Selection using variables
+
+### Hyperparameters 
+
+Simpson et al. (2017) prior distributions for hyperparameters
+
+```{r}
+u <- 0.2/0.31
+alpha <- 0.01
+phi.u <- 0.5
+phi.alpha <- 2/3
+```
+
+
+### Predictor variables
+
+```{r}
+#lembrar de colocar a especie e tamanho da lavoura
+# colnames(data)
+variables <- c(
+  # "large","medium","small","mini",
+  "area",
+  # "orange",
+  # "mandarin",
+  # "lemon","acid_lime",
+  # "small_area", 
+  # "large_area",
+# "prec_dry",
+"prec_rainy",
+# "temp_dry",
+"temp_dry",
+# "wind_dry",
+# "wind_rainy",
+"wind_ann",
+"f(S, model = 'bym2', graph=grid_grafo25, scale.model = TRUE, constr = TRUE,  
+        hyper=list(phi = list( prior = 'pc', param = c(phi.u, phi.alpha), initial = -3), 
+        prec = list(prior = 'pc.prec', param = c(u, alpha), initial = 5)))"
+)
+# 2^6
+```
+
+### Response variable
+```{r}
+resp<-data$positives
+total<-data$samples
+```
+
+### Modeling  
+```{r eval=FALSE, include=TRUE}
+models_bin<-Bdiclcpomodel_stack(resp=resp, variables=variables,
+                                Ntrials=total,
+                                datos=data, n=20,
+                                family="binomial",
+                                control.predictor=list(compute=FALSE), 
+                                control.compute = list( 
+                                config=TRUE, dic=TRUE, cpo=TRUE, waic=TRUE), 
+                                verbose=F)
+save(models_bin, file="./models/best_models_clim.RData")
+```
+
+
+```{r include=FALSE}
+load("./models/best_models_clim.RData")
+
+```
+
+### Ranking models by WAIC criteria
+```{r}
+models_bin$`Modelos segun waic`[1:10,]
+```
+
+### Best model  
+```{r eval=FALSE, include=TRUE}
+# models_bin$`Modelos segun waic`[1,1]
+
+f1 <- positives ~ 1 + temp_dry + wind_ann + f(S, model = "bym2",
+                        graph=grid_grafo25,
+                        scale.model = TRUE, 
+                        constr = TRUE, 
+                        hyper=list(
+                                phi = list(
+                                        prior = "pc",
+                                        param = c(phi.u, phi.alpha),
+                                        initial = -3), 
+                                prec = list(
+                                        prior = "pc.prec",
+                                        param = c(u, alpha),
+                                        initial = 5)))
+mod<-inla(f1, family="binomial", data=data, Ntrials = samples, 
+          control.compute=list(dic=TRUE,cpo=TRUE, waic=TRUE), verbose = FALSE)
+# bym2
+```
+
+```{r eval=FALSE, include=TRUE}
+mod <- inla.rerun(mod)
+saveRDS(mod, "./models/best_model.RDS")
+```
+
+
+```{r include=FALSE}
+mod<-readRDS("./models/best_model.RDS")
+```
+
+### Summary statistics
+```{r}
+# mod$logfile
+summary(mod)
+```
+
+
+```{r}
+
+bind_rows(#as.data.frame(mod$marginals.fixed$mandarin) %>% 
+     # mutate(var = "Mandarin"),
+   # as.data.frame(mod$marginals.fixed$prec_dry) %>%
+   # mutate(var = "prec_dry"),
+    as.data.frame(mod$marginals.fixed$temp_dry) %>% 
+      mutate(var = "Temperature dry"),
+    as.data.frame(mod$marginals.fixed$wind_ann) %>% 
+      mutate(var = "Wind annual")
+) %>% 
+  ggplot(aes(x, y, color = var))+
+  geom_vline(xintercept = 0)+
+  geom_line()+
+  facet_wrap(~var, scales = "free")
+
+```
+
+
+
+### Posterior distributions
+
+#### Spatial effect.
+##### Mean
+```{r}
+rr2 = rr>0
+### --- Mean of the structured effect --- ###
+rr2[as.numeric(names(tab))] <- mod$summary.random$S$mean[1:nrow(data)] 
+df = as(rr2, "SpatialPixelsDataFrame")
+test_df <- as.data.frame(df)
+colnames(test_df) <- c("value", "x", "y")
+g_spt_v = ggplot(test_df %>% 
+         filter(value!=0)) +
+  geom_sf( data = BRA, fill = "white", color = "gray60")+
+  geom_sf(data = MG, fill = "white", color = "black") +
+  geom_tile(aes(x=x, y=y, fill=value), alpha=1)+
+  scale_fill_viridis_c(option = "E")+
+  coord_sf() +
+  theme_minimal_grid(font_size = 8)+
+  labs(x = "Longitude",
+       y = "Latitude",
+       fill = "")+
+  north( location = "topleft", scale = 0.08, symbol = 10,
+      x.min=-51, x.max=-43.5, y.min=-23, y.max=-18)+
+  
+  scalebar(location = "bottomleft", dist = 50,
+           dist_unit = "km", transform = TRUE, 
+           x.min=-51, x.max=-44, y.min=-23, y.max=-18,
+           st.bottom = FALSE,
+           st.dist = 0.03, st.size = 2)+
+  ylim(-23, -18)+
+  xlim(-51, -43.5)+
+  theme(panel.border = element_rect(color = "gray")) 
+
+```
+
+##### Standard deviation
+
+```{r}
+rr2 = rr>0
+### --- Mean of the structured effect --- ###
+rr2[as.numeric(names(tab))] <- mod$summary.random$S$sd[1:nrow(data)] 
+df = as(rr2, "SpatialPixelsDataFrame")
+test_df <- as.data.frame(df)
+colnames(test_df) <- c("value", "x", "y")
+g_spt_v_sd = ggplot(test_df %>% 
+         filter(value!=0)) +
+  geom_sf( data = BRA, fill = "white", color = "gray60")+
+  geom_sf(data = MG, fill = "white", color = "black") +
+  geom_tile(aes(x=x, y=y, fill=value), alpha=0.95)+
+   scale_fill_gradient(low = "white", high = "#37bf87")+
+  coord_sf() +
+  theme_minimal_grid(font_size = 8)+
+  labs(x = "Longitude",
+       y = "Latitude",
+       fill = "")+
+  north( location = "topleft", scale = 0.08, symbol = 10,
+      x.min=-51, x.max=-43.5, y.min=-23, y.max=-18)+
+  
+  scalebar(location = "bottomleft", dist = 50,
+           dist_unit = "km", transform = TRUE, 
+           x.min=-51, x.max=-44, y.min=-23, y.max=-18,
+           st.bottom = FALSE,
+           st.dist = 0.03, st.size = 2)+
+  ylim(-23, -18)+
+  xlim(-51, -43.5)+
+  theme(panel.border = element_rect(color = "gray")) 
+```
+
+
+
+#### RISK
+##### Mean propability 
+```{r}
+rr2[as.numeric(names(tab))] <- mod$summary.fitted.values$mean
+
+# plot(rr2)
+
+df = as(rr2, "SpatialPixelsDataFrame")
+test_df <- as.data.frame(df)
+colnames(test_df) <- c("value", "x", "y")
+g1_v = ggplot(test_df %>% 
+         filter(value>0))+
+  geom_sf( data = BRA, fill = "white", color = "gray60")+
+  geom_sf(data = MG, fill = "white", color = "black") +
+  geom_tile(aes(x=x, y=y, fill=value), alpha=0.95)+
+  # geom_point(data = hh_hlb,
+  #            aes(lon, lat, color = presenca),
+  #            size = 0.4)+
+  # scale_color_manual(values  =c("black","red"))+
+  scale_fill_distiller(palette = "YlOrRd", direction = 1)+
+  coord_sf() +
+  theme_minimal_grid(font_size = 8)+
+  labs(x = "Longitude",
+       y = "Latitude",
+       fill = "")+
+  north( location = "topleft", scale = 0.08, symbol = 10,
+      x.min=-51, x.max=-43.5, y.min=-23, y.max=-18)+
+  
+  scalebar(location = "bottomleft", dist = 50,
+           dist_unit = "km", transform = TRUE, 
+           x.min=-51, x.max=-44, y.min=-23, y.max=-18,
+           st.bottom = FALSE,
+           st.dist = 0.03, st.size = 2)+
+  ylim(-23, -18)+
+  xlim(-51, -43.5)+
+  theme(panel.border = element_rect(color = "gray"))
+
+# ggsave("figs/map_posterior.png", dpi = 600, height = 5, width = 8)
+
+```
+ 
+
+##### Standard deviation
+```{r}
+rr2[as.numeric(names(tab))] <- mod$summary.fitted.values$sd
+df = as(rr2, "SpatialPixelsDataFrame")
+test_df <- as.data.frame(df)
+colnames(test_df) <- c("value", "x", "y")
+g1_v_sd = ggplot(test_df %>% 
+         filter(value>0))+
+  geom_sf( data = BRA, fill = "white", color = "gray60")+
+  geom_sf(data = MG, fill = "gray99", color = "black") +
+  geom_tile(aes(x=x, y=y, fill=value), alpha=0.95)+
+  # scale_fill_viridis_c(option = "B") +
+  scale_color_manual(values  ="black")+
+   scale_fill_gradient(low = "white", high = "steelblue")+
+  coord_sf() +
+  theme_minimal_grid(font_size = 8)+
+  labs(x = "Longitude",
+       y = "Latitude",
+       fill = "")+
+  north( location = "topleft", scale = 0.08, symbol = 10,
+      x.min=-51, x.max=-43.5, y.min=-23, y.max=-18)+
+  
+  scalebar(location = "bottomleft", dist = 50,
+           dist_unit = "km", transform = TRUE, 
+           x.min=-51, x.max=-44, y.min=-23, y.max=-18,
+           st.bottom = FALSE,
+           st.dist = 0.03, st.size = 2)+
+  ylim(-23, -18)+
+  xlim(-51, -43.5)+
+  theme(panel.border = element_rect(color = "gray"))
+```
+
+##### Combo
+```{r}
+plot_grid(g_spt_v,
+          g_spt_v_sd,
+          g1_v, 
+          g1_v_sd,
+          labels = "auto",
+          scale = 0.95)
+
+ggsave("figs/combo_var.png", dpi = 300, height = 6, width = 10)
+```
+
+
+
+## PCAs as predictors
+### Principal component analysis
+```{r}
+pca_rotated <- psych::principal(data[c(3:11,14,20:19)], rotate="varimax",
+                                nfactors=3,scores=TRUE, covar=FALSE)
+pca_rotated$loadings 
+# plot(pca_rotated)
+
+
+```
+
+Put the five first components into the data frame
+```{r}
+data_pca<-data[,c(1,2,12,13)]
+data_pca$PC1<-pca_rotated$scores[,1]
+data_pca$PC2<-pca_rotated$scores[,2]
+data_pca$PC3<-pca_rotated$scores[,3]
+
+# data_pca$PC4<-pca_rotated$scores[,4]
+# data_pca$PC5<-pca_rotated$scores[,5]
+write.table(data_pca, "./data/data_pca")
+data_pca<-read.table("./data/data_pca")
+```
+
+
+Add a column for the random effect
+```{r}
+data_pca <- data.frame(data_pca, S=c(1:length(data_pca[,1])))
+```
+
+### Hyperparameters
+Simpson et al. (2017) prior distributions for hyperparameters
+
+```{r}
+u <- 0.2/0.31
+alpha <- 0.01
+phi.u <- 0.5
+phi.alpha <- 2/3
+```
+
+
+### Predictor variables
+
+```{r}
+variables <- c(
+        paste("PC", c(1, 2, 3), sep = ""),
+        "f(S, model = 'bym2', graph=grid_grafo25, scale.model = TRUE, constr = TRUE,  
+        hyper=list(phi = list( prior = 'pc', param = c(phi.u, phi.alpha), initial = -3), 
+        prec = list(prior = 'pc.prec', param = c(u, alpha), initial = 5)))"
+)
+```
+
+
+### Response variable
+```{r}
+resp<-data_pca$positives
+total<-data_pca$samples
+```
+
+### Modeling
+```{r eval=FALSE, include=TRUE}
+models_pca<-Bdiclcpomodel_stack(resp=resp, variables=variables,
+                                Ntrials=total,
+                                datos=data_pca, n=20,
+                                family="binomial",
+                                control.predictor=list(compute=FALSE), 
+                                control.compute = list( 
+                                  config=TRUE, dic=TRUE, cpo=TRUE, waic=TRUE), 
+                                verbose=FALSE)
+save(models_pca, file="./models/best_models_pca.RData")
+```
+
+
+```{r include=FALSE}
+load("./models/best_models_pca.RData")
+```
+
+### Ranking models by WAIC
+
+```{r}
+models_pca$`Modelos segun waic`[1:10,]
+```
+
+### Best model 
+```{r eval=FALSE, include=TRUE}
+f1 <- positives ~ 1 + PC2 + PC3 +  f(S, model = "bym2",
+                        graph=grid_grafo25,
+                        scale.model = TRUE, 
+                        constr = TRUE, 
+                        hyper=list(
+                                phi = list(
+                                        prior = "pc",
+                                        param = c(phi.u, phi.alpha),
+                                        initial = -3), 
+                                prec = list(
+                                        prior = "pc.prec",
+                                        param = c(u, alpha),
+                                        initial = 5)))
+mod_pca<-inla(f1, family="binomial", data=data_pca, Ntrials = samples, 
+          control.compute=list(dic=TRUE,cpo=TRUE, waic=TRUE), verbose = FALSE)
+```
+
+```{r eval=FALSE, include=TRUE}
+mod_pca <- inla.rerun(mod_pca)
+saveRDS(mod_pca, "./models/best_model_pca.RDS")
+```
+
+
+```{r include=FALSE}
+mod_pca<-readRDS("./models/best_model_pca.RDS")
+```
+
+### Summary statistics
+```{r}
+# mod$logfile
+summary(mod_pca)
+```
+### Posterior distributions
+
+#### Spatial effect.
+##### Mean
+```{r}
+rr2 = rr>0
+### --- Mean of the structured effect --- ###
+rr2[as.numeric(names(tab))] <- mod_pca$summary.random$S$mean[1:nrow(data)] 
+df = as(rr2, "SpatialPixelsDataFrame")
+test_df <- as.data.frame(df)
+colnames(test_df) <- c("value", "x", "y")
+g_spt_pc = ggplot(test_df %>% 
+         filter(value!=0)) +
+  geom_sf( data = BRA, fill = "white", color = "gray60")+
+  geom_sf(data = MG, fill = "white", color = "black") +
+  geom_tile(aes(x=x, y=y, fill=value), alpha=0.95)+
+  scale_fill_viridis_c(option = "E")+
+  coord_sf() +
+  theme_minimal_grid(font_size = 8)+
+  labs(x = "Longitude",
+       y = "Latitude",
+       fill = "")+
+  north( location = "topleft", scale = 0.08, symbol = 10,
+      x.min=-51, x.max=-43.5, y.min=-23, y.max=-18)+
+  
+  scalebar(location = "bottomleft", dist = 50,
+           dist_unit = "km", transform = TRUE, 
+           x.min=-51, x.max=-44, y.min=-23, y.max=-18,
+           st.bottom = FALSE,
+           st.dist = 0.03, st.size = 2)+
+  ylim(-23, -18)+
+  xlim(-51, -43.5)+
+  theme(panel.border = element_rect(color = "gray")) 
+
+```
+
+##### Standard deviation
+
+```{r}
+rr2 = rr>0
+### --- Mean of the structured effect --- ###
+rr2[as.numeric(names(tab))] <- mod_pca$summary.random$S$sd[1:nrow(data)] 
+df = as(rr2, "SpatialPixelsDataFrame")
+test_df <- as.data.frame(df)
+colnames(test_df) <- c("value", "x", "y")
+g_spt_pc_sd = ggplot(test_df %>% 
+         filter(value!=0)) +
+  geom_sf( data = BRA, fill = "white", color = "gray60")+
+  geom_sf(data = MG, fill = "white", color = "black") +
+  geom_tile(aes(x=x, y=y, fill=value), alpha=0.95)+
+   scale_fill_gradient(low = "white", high = "#37bf87")+
+  coord_sf() +
+  theme_minimal_grid(font_size = 8)+
+  labs(x = "Longitude",
+       y = "Latitude",
+       fill = "")+
+  north( location = "topleft", scale = 0.08, symbol = 10,
+      x.min=-51, x.max=-43.5, y.min=-23, y.max=-18)+
+  
+  scalebar(location = "bottomleft", dist = 50,
+           dist_unit = "km", transform = TRUE, 
+           x.min=-51, x.max=-44, y.min=-23, y.max=-18,
+           st.bottom = FALSE,
+           st.dist = 0.03, st.size = 2)+
+  ylim(-23, -18)+
+  xlim(-51, -43.5)+
+  theme(panel.border = element_rect(color = "gray")) 
+```
+
+
+
+#### RISK
+
+#### Mean
+```{r}
+rr2[as.numeric(names(tab))] <- mod_pca$summary.fitted.values$mean
+
+# plot(rr2)
+
+
+df = as(rr2, "SpatialPixelsDataFrame")
+test_df <- as.data.frame(df)
+colnames(test_df) <- c("value", "x", "y")
+g1_pc = ggplot(test_df %>% 
+         filter(value>0))+
+  geom_sf( data = BRA, fill = "white", color = "gray60")+
+  geom_sf(data = MG, fill = "gray99", color = "black") +
+  geom_tile(aes(x=x, y=y, fill=value), alpha=0.95)+
+  # scale_fill_viridis_c(option = "B") +
+  scale_color_manual(values  ="black")+
+  scale_fill_distiller(palette = "YlOrRd", direction = 1)+
+  coord_sf() +
+  theme_minimal_grid(font_size = 8)+
+  labs(x = "Longitude",
+       y = "Latitude",
+       fill = "")+
+  north( location = "topleft", scale = 0.08, symbol = 10,
+      x.min=-51, x.max=-43.5, y.min=-23, y.max=-18)+
+  
+  scalebar(location = "bottomleft", dist = 50,
+           dist_unit = "km", transform = TRUE, 
+           x.min=-51, x.max=-44, y.min=-23, y.max=-18,
+           st.bottom = FALSE,
+           st.dist = 0.03, st.size = 2)+
+  ylim(-23, -18)+
+  xlim(-51, -43.5)+
+  theme(panel.border = element_rect(color = "gray"))
+
+# ggsave("figs/map_posterior_pca.png", dpi = 600, height = 5, width = 8)
+```
+
+#### SD
+```{r}
+rr2[as.numeric(names(tab))] <- mod_pca$summary.fitted.values$sd
+
+# plot(rr2)
+
+
+df = as(rr2, "SpatialPixelsDataFrame")
+test_df <- as.data.frame(df)
+colnames(test_df) <- c("value", "x", "y")
+g1_pc_sd = ggplot(test_df %>% 
+         filter(value>0))+
+  geom_sf( data = BRA, fill = "white", color = "gray60")+
+  geom_sf(data = MG, fill = "gray99", color = "black") +
+  geom_raster(aes(x=x, y=y, fill=value), alpha=0.95)+
+  # scale_fill_viridis_c(option = "B") +
+  scale_color_manual(values  ="black")+
+   scale_fill_gradient(low = "white", high = "steelblue")+
+  coord_sf() +
+  theme_minimal_grid(font_size = 8)+
+  labs(x = "Longitude",
+       y = "Latitude",
+       fill = "")+
+  north( location = "topleft", scale = 0.08, symbol = 10,
+      x.min=-51, x.max=-43.5, y.min=-23, y.max=-18)+
+  
+  scalebar(location = "bottomleft", dist = 50,
+           dist_unit = "km", transform = TRUE, 
+           x.min=-51, x.max=-44, y.min=-23, y.max=-18,
+           st.bottom = FALSE,
+           st.dist = 0.03, st.size = 2)+
+  ylim(-23, -18)+
+  xlim(-51, -43.5)+
+  theme(panel.border = element_rect(color = "gray"))
+
+# ggsave("figs/map_posterior_sd_pca.png", dpi = 600, height = 4, width = 6)
+```
+
+#### Combo
+
+```{r}
+plot_grid(g_spt_pc,
+          g_spt_pc_sd,
+          g1_pc,
+          g1_pc_sd,
+          labels = "auto",
+          scale = 0.95)
+ggsave("figs/combo_pca.png", dpi = 300, height = 6, width = 10)
+```
+
+
+## Supplemental graphs 
+
+```{r}
+Clime_map = function(data, var){
+
+z = as.numeric(data[[var]])
+data2 = data.frame(data[,c("x","y")],z)  
+
+
+g =data2 %>% 
+  # gather(c(4,5,7,8,10,11), key = "var", value = "value") %>% 
+ggplot()+
+  geom_sf( data = BRA, fill = "white", color = "gray60")+
+  geom_sf(data = MG, fill = "gray99", color = "black") +
+  geom_tile(aes(x,y, fill = z    ),
+            # fill ="gray60",
+            size = .2,
+            color = "gray65")+
+  geom_point(data = hh_hlb,
+             aes(lon, lat, color = presenca),
+             size = 0.4)+
+  scale_color_manual(values  =c("#3e9b39", 'red'))+
+  scale_fill_viridis_c(option = "B")+
+  coord_sf() +
+  guides(color = guide_legend(override.aes = list(size=2.5)))+
+  theme_minimal_grid(font_size = 8)+
+  labs(x = "Longitude",
+       y = "Latitude",
+       color = "", fill = "")+
+  north( location = "topleft", scale = 0.08, symbol = 10,
+      x.min=-51, x.max=-43.5, y.min=-23, y.max=-18)+
+  
+  scalebar(location = "bottomleft", dist = 50,
+           dist_unit = "km", transform = TRUE, 
+           x.min=-51, x.max=-44, y.min=-23, y.max=-18,
+           st.bottom = FALSE,
+           st.dist = 0.03, st.size = 2)+
+  ylim(-23, -18)+
+  xlim(-51, -43.5)+
+  facet_wrap(~presenca)+
+  theme(panel.border = element_rect(color = "gray"))
+  return(g)
+}
+```
+
+
+### Climate
+```{r}
+plot_grid(
+
+Clime_map(data=data, var="prec_rainy"),
+Clime_map(data=data, var="temp_dry"),
+Clime_map(data=data, var="wind_ann"),
+ncol = 1,
+labels = c("P_rainy", "T_dry","W_ann")
+)
+
+ggsave("figs/clim_var_mapas.png", dpi=300, height = 10,width = 8)
+```
+
+
+### Orchard
+```{r}
+plot_grid(
+
+Clime_map(data=data, var="orange"),
+Clime_map(data=data, var="mandarin"),
+Clime_map(data=data, var="area"),
+ncol = 1,
+labels = c("Orange","Mandarin","Area")
+)
+
+ggsave("figs/orchard_var_mapas.png", dpi=300, height = 8,width = 6)
+```
+
+
