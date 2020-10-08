@@ -1,0 +1,11 @@
+% HLB Bayesian Spatial Modeling in Minas Gerais Brazil 
+
+## Introduction 
+
+## Citation 
+
+The research compendium with all files for reproducing the work and generating the figures, as well as this website, are available as an OSF project and can be cited as follows:
+
+
+
+

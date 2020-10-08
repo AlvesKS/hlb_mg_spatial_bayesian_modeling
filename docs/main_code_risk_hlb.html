@@ -1,0 +1,2113 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Kaique Alves" />
+
+
+<title>HLB Bayesian Spatial Modeling in Minas Gerais Brazil</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<script src="site_libs/navigation-1.1/sourceembed.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+      </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+#rmd-source-code {
+  display: none;
+}
+</style>
+
+<link rel="stylesheet" href="my-style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">HLB Spatial Bayesian Modeling</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa fa fa-home"></span>
+     
+    About
+  </a>
+</li>
+<li>
+  <a href="main_code_risk_hlb.html">
+    <span class="fa fa fa fa-file-code-o"></span>
+     
+    Analysis
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/AlvesKS/hlb_mg_spatial_bayesian_modeling">
+    <span class="fa fa-github-square"></span>
+     
+    source
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+<div class="btn-group pull-right">
+<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu" style="min-width: 50px;">
+<li><a id="rmd-download-source" href="#">Download Rmd</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore">HLB Bayesian Spatial Modeling in Minas Gerais Brazil</h1>
+<h4 class="author">Kaique Alves</h4>
+<h4 class="date">26/08/2020</h4>
+
+</div>
+
+
+<div id="packages" class="section level1">
+<h1>Packages</h1>
+<pre class="r"><code>library(tidyverse)
+library(nasapower)
+library(cowplot)
+library(ggthemes)
+library(rgdal)
+library(raster)
+library(INLA)
+library(spdep)
+library(psych)
+library(ggsn)
+library(gstat)
+library(maptools)
+library(rnaturalearth)
+library(rnaturalearthhires)
+source(&quot;Bdiclcpomodel_stack.R&quot;)
+source(&quot;coord_transform.R&quot;)</code></pre>
+</div>
+<div id="load-data" class="section level1">
+<h1>Load data</h1>
+<pre class="r"><code>hh_hlb =  read.table(&quot;data/hlb_form_map2.txt&quot;)  %&gt;% 
+  mutate(positive = case_when(presenca==&quot;Present&quot; ~ 1,
+                              presenca==&quot;Absent&quot; ~ 0)) %&gt;% 
+  unite(&quot;latlon&quot;,lat,lon,remove = F) %&gt;% 
+  group_by(latlon) %&gt;% 
+  dplyr::filter(positive == max(positive)) %&gt;%
+  ungroup() %&gt;% 
+  dplyr::select(-latlon)</code></pre>
+<p>transform coordinates to utm</p>
+<div id="download-mg-shape-files" class="section level2">
+<h2>Download MG shape files</h2>
+<pre class="r"><code>BRA &lt;- ne_states(country = &quot;Brazil&quot;, returnclass = &quot;sf&quot;)
+# subset spatial objects of only the states of interest
+MG &lt;- BRA[BRA$name_en == &quot;Minas Gerais&quot;, ]</code></pre>
+</div>
+</div>
+<div id="section" class="section level1">
+<h1></h1>
+<pre class="r"><code>MG_shape = readOGR(&quot;./data/MG&quot;, &quot;MG_Unidade_Federacao_2017_ago&quot;)</code></pre>
+<pre><code>## Warning in OGRSpatialRef(dsn, layer, morphFromESRI =
+## morphFromESRI, dumpSRS = dumpSRS, : Discarded datum
+## Sistema_de_Referencia_Geocentrico_para_las_AmericaS_2000 in CRS definition:
+## +proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs</code></pre>
+<pre><code>## OGR data source with driver: ESRI Shapefile 
+## Source: &quot;C:\Users\kai-q\Google Drive\Kaique-Alves\HLB_MG\Paper_hlb_maping_risk\01 - data_analysis\data\MG&quot;, layer: &quot;MG_Unidade_Federacao_2017_ago&quot;
+## with 1 features
+## It has 4 fields</code></pre>
+<pre class="r"><code>MG_shape = spTransform(MG_shape, CRSobj = &quot;+proj=longlat&quot;)
+# MG_shape = spTransform(MG_shape,  CRS(&quot;+proj=utm +zone=23 +south ellps=WGS84&quot;))
+plot(MG_shape)</code></pre>
+<p><img src="main_code_risk_hlb_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+</div>
+<div id="maping-manipulation" class="section level1">
+<h1>Maping manipulation</h1>
+<div id="create-a-grid" class="section level2">
+<h2>Create a grid</h2>
+<pre class="r"><code>cs &lt;- c(.4,.4)
+# cs &lt;- c(25000,25000)
+grdpts =  makegrid(MG_shape, cellsize = cs)
+
+spgrd &lt;- SpatialPoints(grdpts, proj4string = CRS(proj4string(MG_shape)))</code></pre>
+<pre><code>## Warning in proj4string(MG_shape): CRS object has comment, which is lost in
+## output</code></pre>
+<pre class="r"><code>spgrdWithin &lt;- SpatialPixels(spgrd[MG_shape,])
+grid_df = as.data.frame(as(spgrdWithin,&quot;SpatialPixelsDataFrame&quot; )@coords)
+
+plot(spgrdWithin)</code></pre>
+<p><img src="main_code_risk_hlb_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+</div>
+<div id="counting-orchards-by-grid" class="section level2">
+<h2>Counting orchards by grid</h2>
+<div id="positive-cases" class="section level3">
+<h3>Positive cases</h3>
+<pre class="r"><code>#create dataframe with only positives
+hh_hlb_positive = hh_hlb %&gt;% 
+  filter(positive == 1)
+
+lon = hh_hlb_positive$lon
+lat = hh_hlb_positive$lat
+xy &lt;- data.frame( lon, lat)
+hlb_coords = SpatialPoints(xy,proj4string = CRS(proj4string(MG_shape)))</code></pre>
+<pre><code>## Warning in proj4string(MG_shape): CRS object has comment, which is lost in
+## output</code></pre>
+<pre class="r"><code>r = raster(spgrdWithin)
+r[] &lt;- 0
+
+mg_raster = raster(MG_shape)
+mg_raster[] &lt;- 0
+rr_positive = mask(r,mask = MG_shape)
+
+
+tab &lt;- table(cellFromXY(rr_positive, hlb_coords))
+rr_positive[as.numeric(names(tab))] &lt;- tab
+
+plot(rr_positive)</code></pre>
+<p><img src="main_code_risk_hlb_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+</div>
+<div id="counts-by-orchard-size" class="section level3">
+<h3>Counts by orchard size</h3>
+<pre class="r"><code># Mini
+hh_hlb_mini = hh_hlb %&gt;% 
+  filter(class==&quot;Mini&quot;)
+lon = hh_hlb_mini$lon
+lat = hh_hlb_mini$lat
+xy &lt;- data.frame( lon, lat)
+hlb_coords = SpatialPoints(xy,proj4string = CRS(proj4string(MG_shape)))</code></pre>
+<pre><code>## Warning in proj4string(MG_shape): CRS object has comment, which is lost in
+## output</code></pre>
+<pre class="r"><code>r = raster(spgrdWithin)
+r[] &lt;- 0
+mg_raster = raster(MG_shape)
+mg_raster[] &lt;- 0
+rr_mini = mask(r, mask = MG_shape) #&lt;&lt;&lt;&lt;&lt;
+tab &lt;- table(cellFromXY(rr_mini, hlb_coords))#&lt;&lt;&lt;&lt;&lt;
+rr_mini[as.numeric(names(tab))] &lt;- tab#&lt;&lt;&lt;&lt;&lt;
+
+# Small
+hh_hlb_small = hh_hlb %&gt;% 
+  filter(class==&quot;Small&quot;)
+lon = hh_hlb_small$lon#&lt;&lt;&lt;&lt;&lt;
+lat = hh_hlb_small$lat#&lt;&lt;&lt;&lt;&lt;
+xy &lt;- data.frame( lon, lat)
+hlb_coords = SpatialPoints(xy,proj4string = CRS(proj4string(MG_shape)))</code></pre>
+<pre><code>## Warning in proj4string(MG_shape): CRS object has comment, which is lost in
+## output</code></pre>
+<pre class="r"><code>r = raster(spgrdWithin)
+r[] &lt;- 0
+mg_raster = raster(MG_shape)
+mg_raster[] &lt;- 0
+rr_small = mask(r, mask = MG_shape) #&lt;&lt;&lt;&lt;&lt;
+tab &lt;- table(cellFromXY(rr_small, hlb_coords))#&lt;&lt;&lt;&lt;&lt;
+rr_small[as.numeric(names(tab))] &lt;- tab#&lt;&lt;&lt;&lt;&lt;
+
+# medium
+hh_hlb_medium = hh_hlb %&gt;% 
+  filter(class==&quot;Medium&quot;)
+lon = hh_hlb_medium$lon#&lt;&lt;&lt;&lt;&lt;
+lat = hh_hlb_medium$lat#&lt;&lt;&lt;&lt;&lt;
+xy &lt;- data.frame( lon, lat)
+hlb_coords = SpatialPoints(xy,proj4string = CRS(proj4string(MG_shape)))</code></pre>
+<pre><code>## Warning in proj4string(MG_shape): CRS object has comment, which is lost in
+## output</code></pre>
+<pre class="r"><code>r = raster(spgrdWithin)
+r[] &lt;- 0
+mg_raster = raster(MG_shape)
+mg_raster[] &lt;- 0
+rr_medium = mask(r, mask = MG_shape) #&lt;&lt;&lt;&lt;&lt;
+tab &lt;- table(cellFromXY(rr_medium, hlb_coords))#&lt;&lt;&lt;&lt;&lt;
+rr_medium[as.numeric(names(tab))] &lt;- tab#&lt;&lt;&lt;&lt;&lt;
+
+# Large
+hh_hlb_large = hh_hlb %&gt;% 
+  filter(class==&quot;Large&quot;)
+lon = hh_hlb_large$lon#&lt;&lt;&lt;&lt;&lt;
+lat = hh_hlb_large$lat#&lt;&lt;&lt;&lt;&lt;
+xy &lt;- data.frame( lon, lat)
+hlb_coords = SpatialPoints(xy,proj4string = CRS(proj4string(MG_shape)))</code></pre>
+<pre><code>## Warning in proj4string(MG_shape): CRS object has comment, which is lost in
+## output</code></pre>
+<pre class="r"><code>r = raster(spgrdWithin)
+r[] &lt;- 0
+mg_raster = raster(MG_shape)
+mg_raster[] &lt;- 0
+rr_large = mask(r, mask = MG_shape) #&lt;&lt;&lt;&lt;&lt;
+tab &lt;- table(cellFromXY(rr_large, hlb_coords))#&lt;&lt;&lt;&lt;&lt;
+rr_large[as.numeric(names(tab))] &lt;- tab#&lt;&lt;&lt;&lt;&lt;
+plot(rr_large)</code></pre>
+<p><img src="main_code_risk_hlb_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+</div>
+<div id="count-by-species" class="section level3">
+<h3>Count by species</h3>
+<pre class="r"><code># Orange
+hh_hlb_orange = hh_hlb %&gt;% 
+  filter(especie==&quot;Sweet orange&quot;)
+lon = hh_hlb_orange$lon
+lat = hh_hlb_orange$lat
+xy &lt;- data.frame( lon, lat)
+hlb_coords = SpatialPoints(xy,proj4string = CRS(proj4string(MG_shape)))</code></pre>
+<pre><code>## Warning in proj4string(MG_shape): CRS object has comment, which is lost in
+## output</code></pre>
+<pre class="r"><code>r = raster(spgrdWithin)
+r[] &lt;- 0
+mg_raster = raster(MG_shape)
+mg_raster[] &lt;- 0
+rr_orange = mask(r, mask = MG_shape) #&lt;&lt;&lt;&lt;&lt;
+tab &lt;- table(cellFromXY(rr_orange, hlb_coords))#&lt;&lt;&lt;&lt;&lt;
+rr_orange[as.numeric(names(tab))] &lt;- tab#&lt;&lt;&lt;&lt;&lt;
+
+# Mandarin
+hh_hlb_mandarin = hh_hlb %&gt;% 
+  filter(especie==&quot;Mandarins&quot;)
+lon = hh_hlb_mandarin$lon#&lt;&lt;&lt;&lt;&lt;
+lat = hh_hlb_mandarin$lat#&lt;&lt;&lt;&lt;&lt;
+xy &lt;- data.frame( lon, lat)
+hlb_coords = SpatialPoints(xy,proj4string = CRS(proj4string(MG_shape)))</code></pre>
+<pre><code>## Warning in proj4string(MG_shape): CRS object has comment, which is lost in
+## output</code></pre>
+<pre class="r"><code>r = raster(spgrdWithin)
+r[] &lt;- 0
+mg_raster = raster(MG_shape)
+mg_raster[] &lt;- 0
+rr_mandarin = mask(r, mask = MG_shape) #&lt;&lt;&lt;&lt;&lt;
+tab &lt;- table(cellFromXY(rr_mandarin, hlb_coords))#&lt;&lt;&lt;&lt;&lt;
+rr_mandarin[as.numeric(names(tab))] &lt;- tab#&lt;&lt;&lt;&lt;&lt;
+
+# Lemon
+hh_hlb_lemon = hh_hlb %&gt;% 
+  filter(especie==&quot;Lemon&quot;)
+lon = hh_hlb_lemon$lon#&lt;&lt;&lt;&lt;&lt;
+lat = hh_hlb_lemon$lat#&lt;&lt;&lt;&lt;&lt;
+xy &lt;- data.frame( lon, lat)
+hlb_coords = SpatialPoints(xy,proj4string = CRS(proj4string(MG_shape)))</code></pre>
+<pre><code>## Warning in proj4string(MG_shape): CRS object has comment, which is lost in
+## output</code></pre>
+<pre class="r"><code>r = raster(spgrdWithin)
+r[] &lt;- 0
+mg_raster = raster(MG_shape)
+mg_raster[] &lt;- 0
+rr_lemon = mask(r, mask = MG_shape) #&lt;&lt;&lt;&lt;&lt;
+tab &lt;- table(cellFromXY(rr_lemon, hlb_coords))#&lt;&lt;&lt;&lt;&lt;
+rr_lemon[as.numeric(names(tab))] &lt;- tab#&lt;&lt;&lt;&lt;&lt;
+
+# acide lime
+hh_hlb_acidlime = hh_hlb %&gt;% 
+  filter(especie==&quot;Acid lime&quot;)
+lon = hh_hlb_acidlime$lon#&lt;&lt;&lt;&lt;&lt;
+lat = hh_hlb_acidlime$lat#&lt;&lt;&lt;&lt;&lt;
+xy &lt;- data.frame( lon, lat)
+hlb_coords = SpatialPoints(xy,proj4string = CRS(proj4string(MG_shape)))</code></pre>
+<pre><code>## Warning in proj4string(MG_shape): CRS object has comment, which is lost in
+## output</code></pre>
+<pre class="r"><code>r = raster(spgrdWithin)
+r[] &lt;- 0
+mg_raster = raster(MG_shape)
+mg_raster[] &lt;- 0
+rr_acidlime = mask(r, mask = MG_shape) #&lt;&lt;&lt;&lt;&lt;
+tab &lt;- table(cellFromXY(rr_acidlime, hlb_coords))#&lt;&lt;&lt;&lt;&lt;
+rr_acidlime[as.numeric(names(tab))] &lt;- tab#&lt;&lt;&lt;&lt;&lt;
+plot(rr_mandarin)</code></pre>
+<p><img src="main_code_risk_hlb_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+</div>
+<div id="mean-area" class="section level3">
+<h3>Mean area</h3>
+<pre class="r"><code>lon = hh_hlb$lon
+lat = hh_hlb$lat
+xy &lt;- data.frame( lon, lat)
+hlb_coords = SpatialPoints(xy,proj4string = CRS(proj4string(MG_shape)))</code></pre>
+<pre><code>## Warning in proj4string(MG_shape): CRS object has comment, which is lost in
+## output</code></pre>
+<pre class="r"><code>r = raster(spgrdWithin)
+df_area =  aggregate(hh_hlb[, &#39;area&#39;, drop=FALSE], hh_hlb[,3:2], mean)
+coordinates(df_area) &lt;- ~ lon + lat
+# extent(r) &lt;- extent(df_area)
+rr_area =  rasterize(df_area, r, df_area$area, fun = mean)
+plot(rr_area)</code></pre>
+<p><img src="main_code_risk_hlb_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<pre class="r"><code># rr_area
+# rr</code></pre>
+</div>
+<div id="count-all-orchards-positives-and-negatives" class="section level3">
+<h3>Count All orchards (positives and negatives)</h3>
+<pre class="r"><code>lon = hh_hlb$lon
+lat = hh_hlb$lat
+xy &lt;- data.frame( lon, lat)
+hlb_coords = SpatialPoints(xy,proj4string = CRS(proj4string(MG_shape)))</code></pre>
+<pre><code>## Warning in proj4string(MG_shape): CRS object has comment, which is lost in
+## output</code></pre>
+<pre class="r"><code>r = raster(spgrdWithin)
+r[] &lt;- 0
+
+mg_raster = raster(MG_shape)
+mg_raster[] &lt;- 0
+rr = mask(r, mask = MG_shape)
+
+
+tab &lt;- table(cellFromXY(rr, hlb_coords))
+rr[as.numeric(names(tab))] &lt;- tab
+plot(rr)</code></pre>
+<p><img src="main_code_risk_hlb_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<pre class="r"><code>rr2 = rr&gt;0 &amp; !is.na(rr)
+grid_df = as.data.frame(as(rr2, &quot;SpatialPixels&quot;)@coords) %&gt;% 
+  mutate(samp = rr2[]) %&gt;% 
+  filter(samp ==TRUE)</code></pre>
+</div>
+</div>
+<div id="map-disease-grid" class="section level2">
+<h2>Map: Disease grid</h2>
+<pre class="r"><code>ggplot()+
+  geom_sf( data = BRA, fill = &quot;white&quot;, color = &quot;gray90&quot;)+
+  geom_sf(data = MG, fill = &quot;gray99&quot;, color = &quot;black&quot;) +
+  geom_tile(data =grid_df,aes(x,y),
+            fill =&quot;gray90&quot;,
+            size = .2,
+            color = &quot;gray75&quot;, alpha = 0.8)+
+  geom_point(data = hh_hlb %&gt;% dplyr::select(-presenca),
+             aes(lon, lat),
+             size = 0.3, color = &quot;gray80&quot;)+
+  geom_point(data = hh_hlb,
+             aes(lon, lat, color = presenca),
+             size = 0.3, alpha = 1)+
+  scale_color_manual(values  =c(&quot;#3e9b39&quot;, &#39;red&#39;))+
+  coord_sf() +
+  guides(color = guide_legend(override.aes = list(size=2.5)))+
+  theme_minimal_grid()+
+  labs(x = &quot;Longitude&quot;,
+       y = &quot;Latitude&quot;,
+       color = &quot;&quot;)+
+  north( location = &quot;topleft&quot;, scale = 0.08, symbol = 10,
+      x.min=-51, x.max=-43.5, y.min=-23, y.max=-18)+
+  
+  scalebar(location = &quot;bottomleft&quot;, dist = 50,
+           dist_unit = &quot;km&quot;, transform = TRUE, 
+           x.min=-51, x.max=-44, y.min=-23, y.max=-18,
+           st.bottom = FALSE,
+           st.dist = 0.03, st.size = 2)+
+  ylim(-23, -18)+
+  xlim(-51, -43.5)+
+  facet_wrap(~presenca)+
+  theme(panel.border = element_rect(color = &quot;gray&quot;))</code></pre>
+<p><img src="main_code_risk_hlb_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<pre class="r"><code># ylim(-22.5, -21.5)+
+#   xlim(-46, -44)
+
+ggsave(&quot;figs/map_disease.png&quot;, dpi = 600, height = 4, width = 11)</code></pre>
+<div id="tyding" class="section level3">
+<h3>Tyding</h3>
+<pre class="r"><code>grid_incidence = data.frame(coordinates(rr),
+                            samples=rr[],
+                            positives = rr_positive[],
+                            area = rr_area[],
+                            large = rr_large[],
+                            medium = rr_medium[],
+                            small = rr_small[],
+                            mini=rr_mini[],
+                            orange=rr_orange[],
+                            mandarin = rr_mandarin[],
+                            lemon=rr_lemon[],
+                            acid_lime=rr_acidlime[]) %&gt;% 
+  mutate(samples = replace_na(samples , 0),
+         positives = replace_na(positives , 0),
+         area = replace_na(area , 0),
+         large = replace_na(large , 0),
+         medium = replace_na(medium , 0),
+         small = replace_na(small , 0),
+         mini=replace_na(mini , 0),
+         orange=replace_na(orange , 0),
+         mandarin = replace_na(mandarin , 0),
+         lemon=replace_na(lemon , 0),
+         acid_lime=replace_na(acid_lime , 0)) %&gt;% 
+  filter(samples&gt;0)
+
+min(grid_incidence$area)</code></pre>
+<pre><code>## [1] 0.5</code></pre>
+</div>
+</div>
+<div id="create-the-neighborhood-structure-with-a-distance-criterion-of-30km" class="section level2">
+<h2>Create the neighborhood structure with a distance criterion of 30km</h2>
+<div id="transform-coordinates-to-utm" class="section level3">
+<h3>Transform coordinates to UTM</h3>
+<pre class="r"><code>long = grid_incidence$x
+lat = grid_incidence$y
+xy &lt;- data.frame(ID = 1:(length(lat)), long, lat)
+coordinates(xy) &lt;- c(&quot;long&quot;, &quot;lat&quot;)
+proj4string(xy) &lt;- CRS(&quot;+init=epsg:4326&quot;)
+res &lt;- spTransform(xy, CRS(&quot;+proj=utm +zone=23 +south ellps=WGS84&quot;))</code></pre>
+<pre><code>## Warning in showSRID(uprojargs, format = &quot;PROJ&quot;, multiline = &quot;NO&quot;): Discarded
+## datum Unknown based on WGS84 ellipsoid in CRS definition</code></pre>
+<pre class="r"><code>coords_grid = as.data.frame(res)
+coords2 = as.matrix(coords_grid[,2:3])
+colnames(coords2) &lt;- c(&quot;x1&quot;,&quot;x2&quot;)
+# max(coords_grid$long)-min(coords_grid$long)   </code></pre>
+</div>
+<div id="neighborhood-structure" class="section level3">
+<h3>Neighborhood structure</h3>
+<pre class="r"><code>ID &lt;- 1:dim(coords2)[1] 
+col.nb.0.all &lt;- dnearneigh(coords2, 0, 70000, row.names=ID)
+nb2INLA(&quot;./models/grid25.graph&quot;, col.nb.0.all)
+grid_grafo25 &lt;- inla.read.graph(&quot;./models/grid25.graph&quot;)
+
+plot(grid_grafo25)</code></pre>
+<p><img src="main_code_risk_hlb_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+</div>
+<div id="morans-test" class="section level3">
+<h3>Moran’s test</h3>
+<p>Moran’s I test for spatial autocorrelation</p>
+<pre class="r"><code>prop &lt;- grid_incidence$positives/grid_incidence$samples
+listw&lt;- nb2listw(col.nb.0.all, zero.policy = T)
+moran.test(prop, listw,zero.policy=T)</code></pre>
+<pre><code>## 
+##  Moran I test under randomisation
+## 
+## data:  prop  
+## weights: listw    
+## 
+## Moran I statistic standard deviate = 4.8088, p-value = 7.591e-07
+## alternative hypothesis: greater
+## sample estimates:
+## Moran I statistic       Expectation          Variance 
+##       0.291327369      -0.011111111       0.003955449</code></pre>
+</div>
+</div>
+</div>
+<div id="download-climatologic-data" class="section level1">
+<h1>Download climatologic data</h1>
+<div id="nasa-power" class="section level2">
+<h2>Nasa Power</h2>
+<p>Correcting coordinates values</p>
+<pre class="r"><code>power_load= read.table(&quot;data/power_data.txt&quot;) %&gt;% 
+  mutate(LON = LON-0.00001,
+         LAT = LAT-0.00001)
+head(power_load)</code></pre>
+<div class="kable-table">
+<table style="width:100%;">
+<colgroup>
+<col width="5%" />
+<col width="5%" />
+<col width="9%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">LON</th>
+<th align="right">LAT</th>
+<th align="left">PARAMETER</th>
+<th align="right">JAN</th>
+<th align="right">FEB</th>
+<th align="right">MAR</th>
+<th align="right">APR</th>
+<th align="right">MAY</th>
+<th align="right">JUN</th>
+<th align="right">JUL</th>
+<th align="right">AUG</th>
+<th align="right">SEP</th>
+<th align="right">OCT</th>
+<th align="right">NOV</th>
+<th align="right">DEC</th>
+<th align="right">ANN</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">-49.6</td>
+<td align="right">-18.7</td>
+<td align="left">T2M</td>
+<td align="right">24.90</td>
+<td align="right">24.85</td>
+<td align="right">24.56</td>
+<td align="right">23.84</td>
+<td align="right">21.77</td>
+<td align="right">20.99</td>
+<td align="right">21.56</td>
+<td align="right">23.99</td>
+<td align="right">26.48</td>
+<td align="right">27.36</td>
+<td align="right">26.30</td>
+<td align="right">25.30</td>
+<td align="right">24.33</td>
+</tr>
+<tr class="even">
+<td align="right">-49.6</td>
+<td align="right">-18.7</td>
+<td align="left">PRECTOT</td>
+<td align="right">8.06</td>
+<td align="right">6.72</td>
+<td align="right">5.83</td>
+<td align="right">2.44</td>
+<td align="right">1.05</td>
+<td align="right">0.54</td>
+<td align="right">0.23</td>
+<td align="right">0.52</td>
+<td align="right">1.85</td>
+<td align="right">3.42</td>
+<td align="right">5.74</td>
+<td align="right">7.41</td>
+<td align="right">3.65</td>
+</tr>
+<tr class="odd">
+<td align="right">-49.6</td>
+<td align="right">-18.7</td>
+<td align="left">WS10M</td>
+<td align="right">2.69</td>
+<td align="right">2.44</td>
+<td align="right">2.49</td>
+<td align="right">2.71</td>
+<td align="right">2.93</td>
+<td align="right">3.19</td>
+<td align="right">3.69</td>
+<td align="right">3.97</td>
+<td align="right">3.90</td>
+<td align="right">3.29</td>
+<td align="right">2.91</td>
+<td align="right">2.84</td>
+<td align="right">3.09</td>
+</tr>
+<tr class="even">
+<td align="right">-49.2</td>
+<td align="right">-18.7</td>
+<td align="left">T2M</td>
+<td align="right">24.32</td>
+<td align="right">24.31</td>
+<td align="right">24.01</td>
+<td align="right">23.26</td>
+<td align="right">21.13</td>
+<td align="right">20.15</td>
+<td align="right">20.64</td>
+<td align="right">22.93</td>
+<td align="right">25.56</td>
+<td align="right">26.51</td>
+<td align="right">25.53</td>
+<td align="right">24.65</td>
+<td align="right">23.58</td>
+</tr>
+<tr class="odd">
+<td align="right">-49.2</td>
+<td align="right">-18.7</td>
+<td align="left">PRECTOT</td>
+<td align="right">8.14</td>
+<td align="right">6.75</td>
+<td align="right">5.90</td>
+<td align="right">2.46</td>
+<td align="right">1.05</td>
+<td align="right">0.49</td>
+<td align="right">0.22</td>
+<td align="right">0.53</td>
+<td align="right">1.58</td>
+<td align="right">3.19</td>
+<td align="right">5.49</td>
+<td align="right">7.66</td>
+<td align="right">3.62</td>
+</tr>
+<tr class="even">
+<td align="right">-49.2</td>
+<td align="right">-18.7</td>
+<td align="left">WS10M</td>
+<td align="right">2.87</td>
+<td align="right">2.61</td>
+<td align="right">2.67</td>
+<td align="right">2.90</td>
+<td align="right">3.08</td>
+<td align="right">3.41</td>
+<td align="right">3.93</td>
+<td align="right">4.22</td>
+<td align="right">4.13</td>
+<td align="right">3.48</td>
+<td align="right">3.08</td>
+<td align="right">2.98</td>
+<td align="right">3.28</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="full-dataset" class="section level2">
+<h2>Full dataset</h2>
+<pre class="r"><code>dry_months = c(&quot;MAY&quot;,&quot;JUN&quot;,&quot;JUL&quot;,&quot;AUG&quot;)
+power_tidy  = power_load %&gt;% 
+  unite(&quot;latlong&quot;,LON,LAT) %&gt;% 
+  gather(3:14, key = &quot;month&quot;, value = &quot;measurement&quot;) %&gt;% 
+  mutate(season = case_when(month %in% dry_months ~&quot;dry&quot;,
+                            !month %in% dry_months ~&quot;rainy&quot;)) %&gt;%
+  group_by(latlong, PARAMETER, ANN, season) %&gt;% 
+  summarise(mean = mean(measurement)) %&gt;% 
+  spread(season, mean) %&gt;% 
+  ungroup()</code></pre>
+<pre><code>## `summarise()` regrouping output by &#39;latlong&#39;, &#39;PARAMETER&#39;, &#39;ANN&#39; (override with `.groups` argument)</code></pre>
+<pre class="r"><code>data = bind_cols(
+power_tidy %&gt;% 
+  filter(PARAMETER == &quot;PRECTOT&quot;) %&gt;% 
+  mutate(prec_ann= ANN, prec_dry= dry, prec_rainy= rainy) %&gt;% 
+  dplyr::select(-ANN, -dry, -rainy,-PARAMETER),
+
+power_tidy%&gt;% 
+  filter(PARAMETER == &quot;T2M&quot;) %&gt;% 
+  mutate(temp_ann= ANN, temp_dry= dry, temp_rainy= rainy) %&gt;% 
+  dplyr::select(-ANN, -dry, -rainy,-PARAMETER,-latlong),
+
+power_tidy%&gt;% 
+  filter(PARAMETER == &quot;WS10M&quot;) %&gt;% 
+  mutate(wind_ann= ANN, wind_dry= dry, wind_rainy= rainy) %&gt;% 
+  dplyr::select(-ANN, -dry, -rainy,-PARAMETER,-latlong)
+) %&gt;% 
+  separate(latlong, into = c(&quot;x&quot;, &quot;y&quot;), sep = &quot;_&quot;, convert = TRUE) %&gt;% 
+  arrange(x,y) %&gt;% 
+  bind_cols(
+    grid_incidence %&gt;% 
+      arrange(x,y) %&gt;%
+      mutate(large_area = medium+large,
+             small_area = mini+small, 
+             #mandarin = log(mandarin+1),
+             #orange = log(orange+1)
+             ) %&gt;% 
+      dplyr::select(-x,-y)) %&gt;% 
+  mutate(area = log(area)) %&gt;%
+  # Add a column for random effect
+  mutate(S = 1:length(grid_incidence[,1]))
+
+head(data)</code></pre>
+<div class="kable-table">
+<table>
+<colgroup>
+<col width="2%" />
+<col width="2%" />
+<col width="4%" />
+<col width="4%" />
+<col width="5%" />
+<col width="4%" />
+<col width="4%" />
+<col width="5%" />
+<col width="4%" />
+<col width="4%" />
+<col width="5%" />
+<col width="3%" />
+<col width="4%" />
+<col width="4%" />
+<col width="2%" />
+<col width="3%" />
+<col width="2%" />
+<col width="2%" />
+<col width="3%" />
+<col width="4%" />
+<col width="2%" />
+<col width="4%" />
+<col width="5%" />
+<col width="5%" />
+<col width="1%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">x</th>
+<th align="right">y</th>
+<th align="right">prec_ann</th>
+<th align="right">prec_dry</th>
+<th align="right">prec_rainy</th>
+<th align="right">temp_ann</th>
+<th align="right">temp_dry</th>
+<th align="right">temp_rainy</th>
+<th align="right">wind_ann</th>
+<th align="right">wind_dry</th>
+<th align="right">wind_rainy</th>
+<th align="right">samples</th>
+<th align="right">positives</th>
+<th align="right">area</th>
+<th align="right">large</th>
+<th align="right">medium</th>
+<th align="right">small</th>
+<th align="right">mini</th>
+<th align="right">orange</th>
+<th align="right">mandarin</th>
+<th align="right">lemon</th>
+<th align="right">acid_lime</th>
+<th align="right">large_area</th>
+<th align="right">small_area</th>
+<th align="right">S</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">-50.8</td>
+<td align="right">-19.5</td>
+<td align="right">3.77</td>
+<td align="right">0.7175</td>
+<td align="right">5.30125</td>
+<td align="right">24.63</td>
+<td align="right">22.1425</td>
+<td align="right">25.87375</td>
+<td align="right">2.89</td>
+<td align="right">3.1275</td>
+<td align="right">2.77875</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">1.996060</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="right">-50.4</td>
+<td align="right">-19.9</td>
+<td align="right">3.68</td>
+<td align="right">0.7875</td>
+<td align="right">5.12375</td>
+<td align="right">24.40</td>
+<td align="right">21.6250</td>
+<td align="right">25.79500</td>
+<td align="right">3.14</td>
+<td align="right">3.3700</td>
+<td align="right">3.02250</td>
+<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">4.653484</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="right">-50.4</td>
+<td align="right">-19.1</td>
+<td align="right">3.71</td>
+<td align="right">0.6725</td>
+<td align="right">5.22875</td>
+<td align="right">24.47</td>
+<td align="right">21.9725</td>
+<td align="right">25.71375</td>
+<td align="right">3.02</td>
+<td align="right">3.2975</td>
+<td align="right">2.87875</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">2.302585</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">3</td>
+</tr>
+<tr class="even">
+<td align="right">-50.0</td>
+<td align="right">-19.5</td>
+<td align="right">3.71</td>
+<td align="right">0.6525</td>
+<td align="right">5.23000</td>
+<td align="right">23.93</td>
+<td align="right">21.3500</td>
+<td align="right">25.22750</td>
+<td align="right">3.12</td>
+<td align="right">3.4175</td>
+<td align="right">2.97750</td>
+<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">3.931826</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">4</td>
+</tr>
+<tr class="odd">
+<td align="right">-50.0</td>
+<td align="right">-19.1</td>
+<td align="right">3.71</td>
+<td align="right">0.6525</td>
+<td align="right">5.23000</td>
+<td align="right">23.93</td>
+<td align="right">21.3500</td>
+<td align="right">25.22750</td>
+<td align="right">3.12</td>
+<td align="right">3.4175</td>
+<td align="right">2.97750</td>
+<td align="right">3</td>
+<td align="right">0</td>
+<td align="right">3.304442</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">5</td>
+</tr>
+<tr class="even">
+<td align="right">-49.6</td>
+<td align="right">-19.9</td>
+<td align="right">3.73</td>
+<td align="right">0.7650</td>
+<td align="right">5.20500</td>
+<td align="right">23.96</td>
+<td align="right">21.1050</td>
+<td align="right">25.39375</td>
+<td align="right">3.15</td>
+<td align="right">3.3700</td>
+<td align="right">3.04375</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">2.995732</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">6</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>###Scaling</p>
+<pre class="r"><code># data= dataa %&gt;% 
+#   mutate(prec_rainy = scale(prec_rainy),
+#          temp_dry = scale(temp_dry),
+#          wind_ann = scale(wind_ann),
+#          area = (area),
+#          mandarin = log(mandarin+1),
+#          orange = log(orange+1))</code></pre>
+<div id="correlation" class="section level3">
+<h3>Correlation</h3>
+<pre class="r"><code>correl = cor(data[c(3:11,14,20:19)])
+
+xy &lt;- expand.grid(x=1:12,y=12:1)
+
+a=rowSums(xy)/12
+as.data.frame(correl) %&gt;% 
+  rownames_to_column(var = &quot;var1&quot;) %&gt;% 
+  gather(2:13, key = &quot;var&quot;, value = &quot;value&quot;) %&gt;% 
+  mutate(value = round(value,2)) %&gt;% 
+  arrange(var1, var) %&gt;% 
+  mutate(aa= round(a,3)) %&gt;% 
+  # filter(aa&lt;=0.52) %&gt;% 
+  mutate(value = case_when(aa &lt;= 1 ~ value,
+                           aa &gt; 1 ~ NA_real_)) %&gt;%
+  ggplot(aes(var1,var,fill = value, label = value)) + 
+  geom_tile()+
+  geom_text()+
+  coord_equal()+
+  scale_fill_gradient2(low = &quot;red&quot;, mid = &quot;white&quot;, high = &quot;steelblue&quot;,
+                       limits= c(-1,1),na.value=&quot;white&quot;)+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  labs(x=&quot;&quot;,
+       y = &quot;&quot;,
+       fill= &quot;r&quot;)</code></pre>
+<pre><code>## Warning: Removed 78 rows containing missing values (geom_text).</code></pre>
+<p><img src="main_code_risk_hlb_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<pre class="r"><code>ggsave(&quot;figs/correl.png&quot;,dpi = 600, height = 7, width = 8)</code></pre>
+<pre><code>## Warning: Removed 78 rows containing missing values (geom_text).</code></pre>
+</div>
+</div>
+</div>
+<div id="bayesian-modeling" class="section level1">
+<h1>Bayesian Modeling</h1>
+<div id="model-selection-using-variables" class="section level2">
+<h2>Model Selection using variables</h2>
+<div id="hyperparameters" class="section level3">
+<h3>Hyperparameters</h3>
+<p>Simpson et al. (2017) prior distributions for hyperparameters</p>
+<pre class="r"><code>u &lt;- 0.2/0.31
+alpha &lt;- 0.01
+phi.u &lt;- 0.5
+phi.alpha &lt;- 2/3</code></pre>
+</div>
+<div id="predictor-variables" class="section level3">
+<h3>Predictor variables</h3>
+<pre class="r"><code>#lembrar de colocar a especie e tamanho da lavoura
+# colnames(data)
+variables &lt;- c(
+  # &quot;large&quot;,&quot;medium&quot;,&quot;small&quot;,&quot;mini&quot;,
+  &quot;area&quot;,
+  # &quot;orange&quot;,
+  # &quot;mandarin&quot;,
+  # &quot;lemon&quot;,&quot;acid_lime&quot;,
+  # &quot;small_area&quot;, 
+  # &quot;large_area&quot;,
+# &quot;prec_dry&quot;,
+&quot;prec_rainy&quot;,
+# &quot;temp_dry&quot;,
+&quot;temp_dry&quot;,
+# &quot;wind_dry&quot;,
+# &quot;wind_rainy&quot;,
+&quot;wind_ann&quot;,
+&quot;f(S, model = &#39;bym2&#39;, graph=grid_grafo25, scale.model = TRUE, constr = TRUE,  
+        hyper=list(phi = list( prior = &#39;pc&#39;, param = c(phi.u, phi.alpha), initial = -3), 
+        prec = list(prior = &#39;pc.prec&#39;, param = c(u, alpha), initial = 5)))&quot;
+)
+# 2^6</code></pre>
+</div>
+<div id="response-variable" class="section level3">
+<h3>Response variable</h3>
+<pre class="r"><code>resp&lt;-data$positives
+total&lt;-data$samples</code></pre>
+</div>
+<div id="modeling" class="section level3">
+<h3>Modeling</h3>
+<pre class="r"><code>models_bin&lt;-Bdiclcpomodel_stack(resp=resp, variables=variables,
+                                Ntrials=total,
+                                datos=data, n=20,
+                                family=&quot;binomial&quot;,
+                                control.predictor=list(compute=FALSE), 
+                                control.compute = list( 
+                                config=TRUE, dic=TRUE, cpo=TRUE, waic=TRUE), 
+                                verbose=F)
+save(models_bin, file=&quot;./models/best_models_clim.RData&quot;)</code></pre>
+</div>
+<div id="ranking-models-by-waic-criteria" class="section level3">
+<h3>Ranking models by WAIC criteria</h3>
+<pre class="r"><code>models_bin$`Modelos segun waic`[1:10,]</code></pre>
+<div class="kable-table">
+<table>
+<colgroup>
+<col width="88%" />
+<col width="2%" />
+<col width="2%" />
+<col width="2%" />
+<col width="3%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Modelos</th>
+<th align="right">Dic</th>
+<th align="right">Waic</th>
+<th align="right">LCPO</th>
+<th align="right">LCPO-failure</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">resp ~ 1 + temp_dry + wind_ann + f(S, model = ‘bym2’, graph=grid_grafo25, scale.model = TRUE, constr = TRUE,</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+</tbody>
+</table>
+<pre><code>    hyper=list(phi = list( prior = &#39;pc&#39;, param = c(phi.u, phi.alpha), initial = -3), 
+    prec = list(prior = &#39;pc.prec&#39;, param = c(u, alpha), initial = 5)))                     | 289.8902| 287.1569| 3.582138|     1.831771|</code></pre>
+<p>|resp ~ 1 + area + temp_dry + wind_ann + f(S, model = ‘bym2’, graph=grid_grafo25, scale.model = TRUE, constr = TRUE,<br />
+hyper=list(phi = list( prior = ‘pc’, param = c(phi.u, phi.alpha), initial = -3), prec = list(prior = ‘pc.prec’, param = c(u, alpha), initial = 5))) | 289.9658| 287.2445| 3.605226| 1.871398| |resp ~ 1 + prec_rainy + temp_dry + wind_ann + f(S, model = ‘bym2’, graph=grid_grafo25, scale.model = TRUE, constr = TRUE,<br />
+hyper=list(phi = list( prior = ‘pc’, param = c(phi.u, phi.alpha), initial = -3), prec = list(prior = ‘pc.prec’, param = c(u, alpha), initial = 5))) | 290.1758| 287.3756| 3.606311| 1.860893| |resp ~ 1 + area + prec_rainy + temp_dry + wind_ann + f(S, model = ‘bym2’, graph=grid_grafo25, scale.model = TRUE, constr = TRUE,<br />
+hyper=list(phi = list( prior = ‘pc’, param = c(phi.u, phi.alpha), initial = -3), prec = list(prior = ‘pc.prec’, param = c(u, alpha), initial = 5))) | 290.2063| 287.4870| 3.703742| 1.925097| |resp ~ 1 + area + prec_rainy + f(S, model = ‘bym2’, graph=grid_grafo25, scale.model = TRUE, constr = TRUE,<br />
+hyper=list(phi = list( prior = ‘pc’, param = c(phi.u, phi.alpha), initial = -3), prec = list(prior = ‘pc.prec’, param = c(u, alpha), initial = 5))) | 293.1504| 289.5868| 3.624217| 1.970548| |resp ~ 1 + area + temp_dry + f(S, model = ‘bym2’, graph=grid_grafo25, scale.model = TRUE, constr = TRUE,<br />
+hyper=list(phi = list( prior = ‘pc’, param = c(phi.u, phi.alpha), initial = -3), prec = list(prior = ‘pc.prec’, param = c(u, alpha), initial = 5))) | 292.2382| 290.1039| 3.477793| 1.691179| |resp ~ 1 + area + f(S, model = ‘bym2’, graph=grid_grafo25, scale.model = TRUE, constr = TRUE,<br />
+hyper=list(phi = list( prior = ‘pc’, param = c(phi.u, phi.alpha), initial = -3), prec = list(prior = ‘pc.prec’, param = c(u, alpha), initial = 5))) | 293.7477| 290.4239| 3.461486| 1.927860| |resp ~ 1 + area + prec_rainy + temp_dry + f(S, model = ‘bym2’, graph=grid_grafo25, scale.model = TRUE, constr = TRUE,<br />
+hyper=list(phi = list( prior = ‘pc’, param = c(phi.u, phi.alpha), initial = -3), prec = list(prior = ‘pc.prec’, param = c(u, alpha), initial = 5))) | 292.5277| 290.4247| 3.525270| 1.648551| |resp ~ 1 + prec_rainy + f(S, model = ‘bym2’, graph=grid_grafo25, scale.model = TRUE, constr = TRUE,<br />
+hyper=list(phi = list( prior = ‘pc’, param = c(phi.u, phi.alpha), initial = -3), prec = list(prior = ‘pc.prec’, param = c(u, alpha), initial = 5))) | 293.8329| 290.4345| 3.540200| 1.845202| |resp ~ 1 + temp_dry + f(S, model = ‘bym2’, graph=grid_grafo25, scale.model = TRUE, constr = TRUE,<br />
+hyper=list(phi = list( prior = ‘pc’, param = c(phi.u, phi.alpha), initial = -3), prec = list(prior = ‘pc.prec’, param = c(u, alpha), initial = 5))) | 292.5081| 290.5057| 3.483792| 1.645850|</p>
+</div>
+</div>
+<div id="best-model" class="section level3">
+<h3>Best model</h3>
+<pre class="r"><code># models_bin$`Modelos segun waic`[1,1]
+
+f1 &lt;- positives ~ 1 + temp_dry + wind_ann + f(S, model = &quot;bym2&quot;,
+                        graph=grid_grafo25,
+                        scale.model = TRUE, 
+                        constr = TRUE, 
+                        hyper=list(
+                                phi = list(
+                                        prior = &quot;pc&quot;,
+                                        param = c(phi.u, phi.alpha),
+                                        initial = -3), 
+                                prec = list(
+                                        prior = &quot;pc.prec&quot;,
+                                        param = c(u, alpha),
+                                        initial = 5)))
+mod&lt;-inla(f1, family=&quot;binomial&quot;, data=data, Ntrials = samples, 
+          control.compute=list(dic=TRUE,cpo=TRUE, waic=TRUE), verbose = FALSE)
+# bym2</code></pre>
+<pre class="r"><code>mod &lt;- inla.rerun(mod)
+saveRDS(mod, &quot;./models/best_model.RDS&quot;)</code></pre>
+</div>
+<div id="summary-statistics" class="section level3">
+<h3>Summary statistics</h3>
+<pre class="r"><code># mod$logfile
+summary(mod)</code></pre>
+<pre><code>## 
+## Call:
+##    c(&quot;inla(formula = f1, family = \&quot;binomial\&quot;, data = data, Ntrials = 
+##    samples, &quot;, &quot; verbose = FALSE, control.compute = list(dic = TRUE, cpo = 
+##    TRUE, &quot;, &quot; waic = TRUE))&quot;) 
+## Time used:
+##     Pre = 11.4, Running = 3.27, Post = 0.112, Total = 14.7 
+## Fixed effects:
+##               mean    sd 0.025quant 0.5quant 0.975quant   mode kld
+## (Intercept) 10.468 2.556      5.586   10.412     15.667 10.295   0
+## temp_dry    -0.764 0.184     -1.147   -0.756     -0.425 -0.739   0
+## wind_ann     1.050 0.585     -0.051    1.033      2.248  0.997   0
+## 
+## Random effects:
+##   Name     Model
+##     S BYM2 model
+## 
+## Model hyperparameters:
+##                  mean    sd 0.025quant 0.5quant 0.975quant  mode
+## Precision for S 0.600 0.174      0.331    0.575      1.010 0.529
+## Phi for S       0.343 0.232      0.023    0.307      0.827 0.059
+## 
+## Expected number of effective parameters(stdev): 50.47(4.12)
+## Number of equivalent replicates : 1.80 
+## 
+## Deviance Information Criterion (DIC) ...............: 289.89
+## Deviance Information Criterion (DIC, saturated) ....: 157.28
+## Effective number of parameters .....................: 49.25
+## 
+## Watanabe-Akaike information criterion (WAIC) ...: 287.16
+## Effective number of parameters .................: 35.58
+## 
+## Marginal log-Likelihood:  -149.96 
+## CPO and PIT are computed
+## 
+## Posterior marginals for the linear predictor and
+##  the fitted values are computed</code></pre>
+<pre class="r"><code>bind_rows(#as.data.frame(mod$marginals.fixed$mandarin) %&gt;% 
+     # mutate(var = &quot;Mandarin&quot;),
+   # as.data.frame(mod$marginals.fixed$prec_dry) %&gt;%
+   # mutate(var = &quot;prec_dry&quot;),
+    as.data.frame(mod$marginals.fixed$temp_dry) %&gt;% 
+      mutate(var = &quot;Temperature dry&quot;),
+    as.data.frame(mod$marginals.fixed$wind_ann) %&gt;% 
+      mutate(var = &quot;Wind annual&quot;)
+) %&gt;% 
+  ggplot(aes(x, y, color = var))+
+  geom_vline(xintercept = 0)+
+  geom_line()+
+  facet_wrap(~var, scales = &quot;free&quot;)</code></pre>
+<p><img src="main_code_risk_hlb_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
+</div>
+<div id="posterior-distributions" class="section level3">
+<h3>Posterior distributions</h3>
+<div id="spatial-effect." class="section level4">
+<h4>Spatial effect.</h4>
+<div id="mean" class="section level5">
+<h5>Mean</h5>
+<pre class="r"><code>rr2 = rr&gt;0
+### --- Mean of the structured effect --- ###
+rr2[as.numeric(names(tab))] &lt;- mod$summary.random$S$mean[1:nrow(data)] 
+df = as(rr2, &quot;SpatialPixelsDataFrame&quot;)
+test_df &lt;- as.data.frame(df)
+colnames(test_df) &lt;- c(&quot;value&quot;, &quot;x&quot;, &quot;y&quot;)
+g_spt_v = ggplot(test_df %&gt;% 
+         filter(value!=0)) +
+  geom_sf( data = BRA, fill = &quot;white&quot;, color = &quot;gray60&quot;)+
+  geom_sf(data = MG, fill = &quot;white&quot;, color = &quot;black&quot;) +
+  geom_tile(aes(x=x, y=y, fill=value), alpha=1)+
+  scale_fill_viridis_c(option = &quot;E&quot;)+
+  coord_sf() +
+  theme_minimal_grid(font_size = 8)+
+  labs(x = &quot;Longitude&quot;,
+       y = &quot;Latitude&quot;,
+       fill = &quot;&quot;)+
+  north( location = &quot;topleft&quot;, scale = 0.08, symbol = 10,
+      x.min=-51, x.max=-43.5, y.min=-23, y.max=-18)+
+  
+  scalebar(location = &quot;bottomleft&quot;, dist = 50,
+           dist_unit = &quot;km&quot;, transform = TRUE, 
+           x.min=-51, x.max=-44, y.min=-23, y.max=-18,
+           st.bottom = FALSE,
+           st.dist = 0.03, st.size = 2)+
+  ylim(-23, -18)+
+  xlim(-51, -43.5)+
+  theme(panel.border = element_rect(color = &quot;gray&quot;)) </code></pre>
+</div>
+<div id="standard-deviation" class="section level5">
+<h5>Standard deviation</h5>
+<pre class="r"><code>rr2 = rr&gt;0
+### --- Mean of the structured effect --- ###
+rr2[as.numeric(names(tab))] &lt;- mod$summary.random$S$sd[1:nrow(data)] 
+df = as(rr2, &quot;SpatialPixelsDataFrame&quot;)
+test_df &lt;- as.data.frame(df)
+colnames(test_df) &lt;- c(&quot;value&quot;, &quot;x&quot;, &quot;y&quot;)
+g_spt_v_sd = ggplot(test_df %&gt;% 
+         filter(value!=0)) +
+  geom_sf( data = BRA, fill = &quot;white&quot;, color = &quot;gray60&quot;)+
+  geom_sf(data = MG, fill = &quot;white&quot;, color = &quot;black&quot;) +
+  geom_tile(aes(x=x, y=y, fill=value), alpha=0.95)+
+   scale_fill_gradient(low = &quot;white&quot;, high = &quot;#37bf87&quot;)+
+  coord_sf() +
+  theme_minimal_grid(font_size = 8)+
+  labs(x = &quot;Longitude&quot;,
+       y = &quot;Latitude&quot;,
+       fill = &quot;&quot;)+
+  north( location = &quot;topleft&quot;, scale = 0.08, symbol = 10,
+      x.min=-51, x.max=-43.5, y.min=-23, y.max=-18)+
+  
+  scalebar(location = &quot;bottomleft&quot;, dist = 50,
+           dist_unit = &quot;km&quot;, transform = TRUE, 
+           x.min=-51, x.max=-44, y.min=-23, y.max=-18,
+           st.bottom = FALSE,
+           st.dist = 0.03, st.size = 2)+
+  ylim(-23, -18)+
+  xlim(-51, -43.5)+
+  theme(panel.border = element_rect(color = &quot;gray&quot;)) </code></pre>
+</div>
+</div>
+<div id="risk" class="section level4">
+<h4>RISK</h4>
+<div id="mean-propability" class="section level5">
+<h5>Mean propability</h5>
+<pre class="r"><code>rr2[as.numeric(names(tab))] &lt;- mod$summary.fitted.values$mean
+
+# plot(rr2)
+
+df = as(rr2, &quot;SpatialPixelsDataFrame&quot;)
+test_df &lt;- as.data.frame(df)
+colnames(test_df) &lt;- c(&quot;value&quot;, &quot;x&quot;, &quot;y&quot;)
+g1_v = ggplot(test_df %&gt;% 
+         filter(value&gt;0))+
+  geom_sf( data = BRA, fill = &quot;white&quot;, color = &quot;gray60&quot;)+
+  geom_sf(data = MG, fill = &quot;white&quot;, color = &quot;black&quot;) +
+  geom_tile(aes(x=x, y=y, fill=value), alpha=0.95)+
+  # geom_point(data = hh_hlb,
+  #            aes(lon, lat, color = presenca),
+  #            size = 0.4)+
+  # scale_color_manual(values  =c(&quot;black&quot;,&quot;red&quot;))+
+  scale_fill_distiller(palette = &quot;YlOrRd&quot;, direction = 1)+
+  coord_sf() +
+  theme_minimal_grid(font_size = 8)+
+  labs(x = &quot;Longitude&quot;,
+       y = &quot;Latitude&quot;,
+       fill = &quot;&quot;)+
+  north( location = &quot;topleft&quot;, scale = 0.08, symbol = 10,
+      x.min=-51, x.max=-43.5, y.min=-23, y.max=-18)+
+  
+  scalebar(location = &quot;bottomleft&quot;, dist = 50,
+           dist_unit = &quot;km&quot;, transform = TRUE, 
+           x.min=-51, x.max=-44, y.min=-23, y.max=-18,
+           st.bottom = FALSE,
+           st.dist = 0.03, st.size = 2)+
+  ylim(-23, -18)+
+  xlim(-51, -43.5)+
+  theme(panel.border = element_rect(color = &quot;gray&quot;))
+
+# ggsave(&quot;figs/map_posterior.png&quot;, dpi = 600, height = 5, width = 8)</code></pre>
+</div>
+<div id="standard-deviation-1" class="section level5">
+<h5>Standard deviation</h5>
+<pre class="r"><code>rr2[as.numeric(names(tab))] &lt;- mod$summary.fitted.values$sd
+df = as(rr2, &quot;SpatialPixelsDataFrame&quot;)
+test_df &lt;- as.data.frame(df)
+colnames(test_df) &lt;- c(&quot;value&quot;, &quot;x&quot;, &quot;y&quot;)
+g1_v_sd = ggplot(test_df %&gt;% 
+         filter(value&gt;0))+
+  geom_sf( data = BRA, fill = &quot;white&quot;, color = &quot;gray60&quot;)+
+  geom_sf(data = MG, fill = &quot;gray99&quot;, color = &quot;black&quot;) +
+  geom_tile(aes(x=x, y=y, fill=value), alpha=0.95)+
+  # scale_fill_viridis_c(option = &quot;B&quot;) +
+  scale_color_manual(values  =&quot;black&quot;)+
+   scale_fill_gradient(low = &quot;white&quot;, high = &quot;steelblue&quot;)+
+  coord_sf() +
+  theme_minimal_grid(font_size = 8)+
+  labs(x = &quot;Longitude&quot;,
+       y = &quot;Latitude&quot;,
+       fill = &quot;&quot;)+
+  north( location = &quot;topleft&quot;, scale = 0.08, symbol = 10,
+      x.min=-51, x.max=-43.5, y.min=-23, y.max=-18)+
+  
+  scalebar(location = &quot;bottomleft&quot;, dist = 50,
+           dist_unit = &quot;km&quot;, transform = TRUE, 
+           x.min=-51, x.max=-44, y.min=-23, y.max=-18,
+           st.bottom = FALSE,
+           st.dist = 0.03, st.size = 2)+
+  ylim(-23, -18)+
+  xlim(-51, -43.5)+
+  theme(panel.border = element_rect(color = &quot;gray&quot;))</code></pre>
+</div>
+<div id="combo" class="section level5">
+<h5>Combo</h5>
+<pre class="r"><code>plot_grid(g_spt_v,
+          g_spt_v_sd,
+          g1_v, 
+          g1_v_sd,
+          labels = &quot;auto&quot;,
+          scale = 0.95)</code></pre>
+<p><img src="main_code_risk_hlb_files/figure-html/unnamed-chunk-40-1.png" width="672" /></p>
+<pre class="r"><code>ggsave(&quot;figs/combo_var.png&quot;, dpi = 300, height = 6, width = 10)</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="pcas-as-predictors" class="section level2">
+<h2>PCAs as predictors</h2>
+<div id="principal-component-analysis" class="section level3">
+<h3>Principal component analysis</h3>
+<pre class="r"><code>pca_rotated &lt;- psych::principal(data[c(3:11,14,20:19)], rotate=&quot;varimax&quot;,
+                                nfactors=3,scores=TRUE, covar=FALSE)
+pca_rotated$loadings </code></pre>
+<pre><code>## 
+## Loadings:
+##            RC1    RC2    RC3   
+## prec_ann   -0.371         0.898
+## prec_dry   -0.774         0.475
+## prec_rainy                0.932
+## temp_ann    0.330  0.821 -0.391
+## temp_dry    0.437  0.747 -0.438
+## temp_rainy  0.268  0.851 -0.362
+## wind_ann    0.977  0.127 -0.122
+## wind_dry    0.911  0.361       
+## wind_rainy  0.972        -0.142
+## area        0.205  0.617  0.290
+## mandarin          -0.322       
+## orange             0.635  0.120
+## 
+##                  RC1   RC2   RC3
+## SS loadings    3.889 3.001 2.516
+## Proportion Var 0.324 0.250 0.210
+## Cumulative Var 0.324 0.574 0.784</code></pre>
+<pre class="r"><code># plot(pca_rotated)</code></pre>
+<p>Put the five first components into the data frame</p>
+<pre class="r"><code>data_pca&lt;-data[,c(1,2,12,13)]
+data_pca$PC1&lt;-pca_rotated$scores[,1]
+data_pca$PC2&lt;-pca_rotated$scores[,2]
+data_pca$PC3&lt;-pca_rotated$scores[,3]
+
+# data_pca$PC4&lt;-pca_rotated$scores[,4]
+# data_pca$PC5&lt;-pca_rotated$scores[,5]
+write.table(data_pca, &quot;./data/data_pca&quot;)
+data_pca&lt;-read.table(&quot;./data/data_pca&quot;)</code></pre>
+<p>Add a column for the random effect</p>
+<pre class="r"><code>data_pca &lt;- data.frame(data_pca, S=c(1:length(data_pca[,1])))</code></pre>
+</div>
+<div id="hyperparameters-1" class="section level3">
+<h3>Hyperparameters</h3>
+<p>Simpson et al. (2017) prior distributions for hyperparameters</p>
+<pre class="r"><code>u &lt;- 0.2/0.31
+alpha &lt;- 0.01
+phi.u &lt;- 0.5
+phi.alpha &lt;- 2/3</code></pre>
+</div>
+<div id="predictor-variables-1" class="section level3">
+<h3>Predictor variables</h3>
+<pre class="r"><code>variables &lt;- c(
+        paste(&quot;PC&quot;, c(1, 2, 3), sep = &quot;&quot;),
+        &quot;f(S, model = &#39;bym2&#39;, graph=grid_grafo25, scale.model = TRUE, constr = TRUE,  
+        hyper=list(phi = list( prior = &#39;pc&#39;, param = c(phi.u, phi.alpha), initial = -3), 
+        prec = list(prior = &#39;pc.prec&#39;, param = c(u, alpha), initial = 5)))&quot;
+)</code></pre>
+</div>
+<div id="response-variable-1" class="section level3">
+<h3>Response variable</h3>
+<pre class="r"><code>resp&lt;-data_pca$positives
+total&lt;-data_pca$samples</code></pre>
+</div>
+<div id="modeling-1" class="section level3">
+<h3>Modeling</h3>
+<pre class="r"><code>models_pca&lt;-Bdiclcpomodel_stack(resp=resp, variables=variables,
+                                Ntrials=total,
+                                datos=data_pca, n=20,
+                                family=&quot;binomial&quot;,
+                                control.predictor=list(compute=FALSE), 
+                                control.compute = list( 
+                                  config=TRUE, dic=TRUE, cpo=TRUE, waic=TRUE), 
+                                verbose=FALSE)
+save(models_pca, file=&quot;./models/best_models_pca.RData&quot;)</code></pre>
+</div>
+<div id="ranking-models-by-waic" class="section level3">
+<h3>Ranking models by WAIC</h3>
+<pre class="r"><code>models_pca$`Modelos segun waic`[1:10,]</code></pre>
+<div class="kable-table">
+<table>
+<colgroup>
+<col width="87%" />
+<col width="2%" />
+<col width="2%" />
+<col width="2%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Modelos</th>
+<th align="right">Dic</th>
+<th align="right">Waic</th>
+<th align="right">LCPO</th>
+<th align="right">LCPO-failure</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">resp ~ 1 + PC2 + PC3 + f(S, model = ‘bym2’, graph=grid_grafo25, scale.model = TRUE, constr = TRUE,</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+</tbody>
+</table>
+<pre><code>    hyper=list(phi = list( prior = &#39;pc&#39;, param = c(phi.u, phi.alpha), initial = -3), 
+    prec = list(prior = &#39;pc.prec&#39;, param = c(u, alpha), initial = 5)))       | 290.2614| 286.0155| 3.651664|     1.919868|</code></pre>
+<p>|resp ~ 1 + PC2 + f(S, model = ‘bym2’, graph=grid_grafo25, scale.model = TRUE, constr = TRUE,<br />
+hyper=list(phi = list( prior = ‘pc’, param = c(phi.u, phi.alpha), initial = -3), prec = list(prior = ‘pc.prec’, param = c(u, alpha), initial = 5))) | 291.6449| 286.8936| 3.595011| 1.835189| |resp ~ 1 + PC1 + PC2 + PC3 + f(S, model = ‘bym2’, graph=grid_grafo25, scale.model = TRUE, constr = TRUE,<br />
+hyper=list(phi = list( prior = ‘pc’, param = c(phi.u, phi.alpha), initial = -3), prec = list(prior = ‘pc.prec’, param = c(u, alpha), initial = 5))) | 291.9592| 287.9956| 3.751064| 1.841816| |resp ~ 1 + PC1 + PC2 + f(S, model = ‘bym2’, graph=grid_grafo25, scale.model = TRUE, constr = TRUE,<br />
+hyper=list(phi = list( prior = ‘pc’, param = c(phi.u, phi.alpha), initial = -3), prec = list(prior = ‘pc.prec’, param = c(u, alpha), initial = 5))) | 293.0395| 288.8244| 3.593485| 1.726358| |resp ~ 1 + PC3 + f(S, model = ‘bym2’, graph=grid_grafo25, scale.model = TRUE, constr = TRUE,<br />
+hyper=list(phi = list( prior = ‘pc’, param = c(phi.u, phi.alpha), initial = -3), prec = list(prior = ‘pc.prec’, param = c(u, alpha), initial = 5))) | 292.7390| 289.7045| 3.640913| 1.814727| |resp ~ 1 + PC1 + PC3 + f(S, model = ‘bym2’, graph=grid_grafo25, scale.model = TRUE, constr = TRUE,<br />
+hyper=list(phi = list( prior = ‘pc’, param = c(phi.u, phi.alpha), initial = -3), prec = list(prior = ‘pc.prec’, param = c(u, alpha), initial = 5))) | 293.6272| 290.6279| 3.572353| 1.899736| |resp ~ 1 + f(S, model = ‘bym2’, graph=grid_grafo25, scale.model = TRUE, constr = TRUE,<br />
+hyper=list(phi = list( prior = ‘pc’, param = c(phi.u, phi.alpha), initial = -3), prec = list(prior = ‘pc.prec’, param = c(u, alpha), initial = 5))) | 294.4201| 291.2162| 3.463111| 1.830511| |resp ~ 1 + PC1 + f(S, model = ‘bym2’, graph=grid_grafo25, scale.model = TRUE, constr = TRUE,<br />
+hyper=list(phi = list( prior = ‘pc’, param = c(phi.u, phi.alpha), initial = -3), prec = list(prior = ‘pc.prec’, param = c(u, alpha), initial = 5))) | 295.6989| 292.4524| 3.508525| 1.749499| |resp ~ 1 + PC1 + PC2 + PC3 | 521.8001| 540.8262| 2.981468| 0.000000| |resp ~ 1 + PC1 + PC2 | 531.6719| 549.7266| 3.030252| 0.000000|</p>
+</div>
+</div>
+<div id="best-model-1" class="section level3">
+<h3>Best model</h3>
+<pre class="r"><code>f1 &lt;- positives ~ 1 + PC2 + PC3 +  f(S, model = &quot;bym2&quot;,
+                        graph=grid_grafo25,
+                        scale.model = TRUE, 
+                        constr = TRUE, 
+                        hyper=list(
+                                phi = list(
+                                        prior = &quot;pc&quot;,
+                                        param = c(phi.u, phi.alpha),
+                                        initial = -3), 
+                                prec = list(
+                                        prior = &quot;pc.prec&quot;,
+                                        param = c(u, alpha),
+                                        initial = 5)))
+mod_pca&lt;-inla(f1, family=&quot;binomial&quot;, data=data_pca, Ntrials = samples, 
+          control.compute=list(dic=TRUE,cpo=TRUE, waic=TRUE), verbose = FALSE)</code></pre>
+<pre class="r"><code>mod_pca &lt;- inla.rerun(mod_pca)
+saveRDS(mod_pca, &quot;./models/best_model_pca.RDS&quot;)</code></pre>
+</div>
+<div id="summary-statistics-1" class="section level3">
+<h3>Summary statistics</h3>
+<pre class="r"><code># mod$logfile
+summary(mod_pca)</code></pre>
+<pre><code>## 
+## Call:
+##    c(&quot;inla(formula = f1, family = \&quot;binomial\&quot;, data = data_pca, Ntrials = 
+##    samples, &quot;, &quot; verbose = FALSE, control.compute = list(dic = TRUE, cpo = 
+##    TRUE, &quot;, &quot; waic = TRUE))&quot;) 
+## Time used:
+##     Pre = 11.3, Running = 4.17, Post = 0.149, Total = 15.6 
+## Fixed effects:
+##               mean    sd 0.025quant 0.5quant 0.975quant   mode kld
+## (Intercept) -0.438 0.170     -0.782   -0.434     -0.113 -0.427   0
+## PC2         -0.753 0.278     -1.314   -0.750     -0.211 -0.742   0
+## PC3          0.443 0.213      0.030    0.441      0.867  0.437   0
+## 
+## Random effects:
+##   Name     Model
+##     S BYM2 model
+## 
+## Model hyperparameters:
+##                  mean    sd 0.025quant 0.5quant 0.975quant  mode
+## Precision for S 0.503 0.139      0.285    0.485      0.828 0.450
+## Phi for S       0.424 0.234      0.050    0.411      0.867 0.239
+## 
+## Expected number of effective parameters(stdev): 52.40(3.96)
+## Number of equivalent replicates : 1.74 
+## 
+## Deviance Information Criterion (DIC) ...............: 290.26
+## Deviance Information Criterion (DIC, saturated) ....: 157.65
+## Effective number of parameters .....................: 50.98
+## 
+## Watanabe-Akaike information criterion (WAIC) ...: 286.01
+## Effective number of parameters .................: 35.62
+## 
+## Marginal log-Likelihood:  -153.63 
+## CPO and PIT are computed
+## 
+## Posterior marginals for the linear predictor and
+##  the fitted values are computed</code></pre>
+</div>
+<div id="posterior-distributions-1" class="section level3">
+<h3>Posterior distributions</h3>
+<div id="spatial-effect.-1" class="section level4">
+<h4>Spatial effect.</h4>
+<div id="mean-1" class="section level5">
+<h5>Mean</h5>
+<pre class="r"><code>rr2 = rr&gt;0
+### --- Mean of the structured effect --- ###
+rr2[as.numeric(names(tab))] &lt;- mod_pca$summary.random$S$mean[1:nrow(data)] 
+df = as(rr2, &quot;SpatialPixelsDataFrame&quot;)
+test_df &lt;- as.data.frame(df)
+colnames(test_df) &lt;- c(&quot;value&quot;, &quot;x&quot;, &quot;y&quot;)
+g_spt_pc = ggplot(test_df %&gt;% 
+         filter(value!=0)) +
+  geom_sf( data = BRA, fill = &quot;white&quot;, color = &quot;gray60&quot;)+
+  geom_sf(data = MG, fill = &quot;white&quot;, color = &quot;black&quot;) +
+  geom_tile(aes(x=x, y=y, fill=value), alpha=0.95)+
+  scale_fill_viridis_c(option = &quot;E&quot;)+
+  coord_sf() +
+  theme_minimal_grid(font_size = 8)+
+  labs(x = &quot;Longitude&quot;,
+       y = &quot;Latitude&quot;,
+       fill = &quot;&quot;)+
+  north( location = &quot;topleft&quot;, scale = 0.08, symbol = 10,
+      x.min=-51, x.max=-43.5, y.min=-23, y.max=-18)+
+  
+  scalebar(location = &quot;bottomleft&quot;, dist = 50,
+           dist_unit = &quot;km&quot;, transform = TRUE, 
+           x.min=-51, x.max=-44, y.min=-23, y.max=-18,
+           st.bottom = FALSE,
+           st.dist = 0.03, st.size = 2)+
+  ylim(-23, -18)+
+  xlim(-51, -43.5)+
+  theme(panel.border = element_rect(color = &quot;gray&quot;)) </code></pre>
+</div>
+<div id="standard-deviation-2" class="section level5">
+<h5>Standard deviation</h5>
+<pre class="r"><code>rr2 = rr&gt;0
+### --- Mean of the structured effect --- ###
+rr2[as.numeric(names(tab))] &lt;- mod_pca$summary.random$S$sd[1:nrow(data)] 
+df = as(rr2, &quot;SpatialPixelsDataFrame&quot;)
+test_df &lt;- as.data.frame(df)
+colnames(test_df) &lt;- c(&quot;value&quot;, &quot;x&quot;, &quot;y&quot;)
+g_spt_pc_sd = ggplot(test_df %&gt;% 
+         filter(value!=0)) +
+  geom_sf( data = BRA, fill = &quot;white&quot;, color = &quot;gray60&quot;)+
+  geom_sf(data = MG, fill = &quot;white&quot;, color = &quot;black&quot;) +
+  geom_tile(aes(x=x, y=y, fill=value), alpha=0.95)+
+   scale_fill_gradient(low = &quot;white&quot;, high = &quot;#37bf87&quot;)+
+  coord_sf() +
+  theme_minimal_grid(font_size = 8)+
+  labs(x = &quot;Longitude&quot;,
+       y = &quot;Latitude&quot;,
+       fill = &quot;&quot;)+
+  north( location = &quot;topleft&quot;, scale = 0.08, symbol = 10,
+      x.min=-51, x.max=-43.5, y.min=-23, y.max=-18)+
+  
+  scalebar(location = &quot;bottomleft&quot;, dist = 50,
+           dist_unit = &quot;km&quot;, transform = TRUE, 
+           x.min=-51, x.max=-44, y.min=-23, y.max=-18,
+           st.bottom = FALSE,
+           st.dist = 0.03, st.size = 2)+
+  ylim(-23, -18)+
+  xlim(-51, -43.5)+
+  theme(panel.border = element_rect(color = &quot;gray&quot;)) </code></pre>
+</div>
+</div>
+<div id="risk-1" class="section level4">
+<h4>RISK</h4>
+</div>
+<div id="mean-2" class="section level4">
+<h4>Mean</h4>
+<pre class="r"><code>rr2[as.numeric(names(tab))] &lt;- mod_pca$summary.fitted.values$mean
+
+# plot(rr2)
+
+
+df = as(rr2, &quot;SpatialPixelsDataFrame&quot;)
+test_df &lt;- as.data.frame(df)
+colnames(test_df) &lt;- c(&quot;value&quot;, &quot;x&quot;, &quot;y&quot;)
+g1_pc = ggplot(test_df %&gt;% 
+         filter(value&gt;0))+
+  geom_sf( data = BRA, fill = &quot;white&quot;, color = &quot;gray60&quot;)+
+  geom_sf(data = MG, fill = &quot;gray99&quot;, color = &quot;black&quot;) +
+  geom_tile(aes(x=x, y=y, fill=value), alpha=0.95)+
+  # scale_fill_viridis_c(option = &quot;B&quot;) +
+  scale_color_manual(values  =&quot;black&quot;)+
+  scale_fill_distiller(palette = &quot;YlOrRd&quot;, direction = 1)+
+  coord_sf() +
+  theme_minimal_grid(font_size = 8)+
+  labs(x = &quot;Longitude&quot;,
+       y = &quot;Latitude&quot;,
+       fill = &quot;&quot;)+
+  north( location = &quot;topleft&quot;, scale = 0.08, symbol = 10,
+      x.min=-51, x.max=-43.5, y.min=-23, y.max=-18)+
+  
+  scalebar(location = &quot;bottomleft&quot;, dist = 50,
+           dist_unit = &quot;km&quot;, transform = TRUE, 
+           x.min=-51, x.max=-44, y.min=-23, y.max=-18,
+           st.bottom = FALSE,
+           st.dist = 0.03, st.size = 2)+
+  ylim(-23, -18)+
+  xlim(-51, -43.5)+
+  theme(panel.border = element_rect(color = &quot;gray&quot;))
+
+# ggsave(&quot;figs/map_posterior_pca.png&quot;, dpi = 600, height = 5, width = 8)</code></pre>
+</div>
+<div id="sd" class="section level4">
+<h4>SD</h4>
+<pre class="r"><code>rr2[as.numeric(names(tab))] &lt;- mod_pca$summary.fitted.values$sd
+
+# plot(rr2)
+
+
+df = as(rr2, &quot;SpatialPixelsDataFrame&quot;)
+test_df &lt;- as.data.frame(df)
+colnames(test_df) &lt;- c(&quot;value&quot;, &quot;x&quot;, &quot;y&quot;)
+g1_pc_sd = ggplot(test_df %&gt;% 
+         filter(value&gt;0))+
+  geom_sf( data = BRA, fill = &quot;white&quot;, color = &quot;gray60&quot;)+
+  geom_sf(data = MG, fill = &quot;gray99&quot;, color = &quot;black&quot;) +
+  geom_raster(aes(x=x, y=y, fill=value), alpha=0.95)+
+  # scale_fill_viridis_c(option = &quot;B&quot;) +
+  scale_color_manual(values  =&quot;black&quot;)+
+   scale_fill_gradient(low = &quot;white&quot;, high = &quot;steelblue&quot;)+
+  coord_sf() +
+  theme_minimal_grid(font_size = 8)+
+  labs(x = &quot;Longitude&quot;,
+       y = &quot;Latitude&quot;,
+       fill = &quot;&quot;)+
+  north( location = &quot;topleft&quot;, scale = 0.08, symbol = 10,
+      x.min=-51, x.max=-43.5, y.min=-23, y.max=-18)+
+  
+  scalebar(location = &quot;bottomleft&quot;, dist = 50,
+           dist_unit = &quot;km&quot;, transform = TRUE, 
+           x.min=-51, x.max=-44, y.min=-23, y.max=-18,
+           st.bottom = FALSE,
+           st.dist = 0.03, st.size = 2)+
+  ylim(-23, -18)+
+  xlim(-51, -43.5)+
+  theme(panel.border = element_rect(color = &quot;gray&quot;))
+
+# ggsave(&quot;figs/map_posterior_sd_pca.png&quot;, dpi = 600, height = 4, width = 6)</code></pre>
+</div>
+<div id="combo-1" class="section level4">
+<h4>Combo</h4>
+<pre class="r"><code>plot_grid(g_spt_pc,
+          g_spt_pc_sd,
+          g1_pc,
+          g1_pc_sd,
+          labels = &quot;auto&quot;,
+          scale = 0.95)</code></pre>
+<p><img src="main_code_risk_hlb_files/figure-html/unnamed-chunk-58-1.png" width="672" /></p>
+<pre class="r"><code>ggsave(&quot;figs/combo_pca.png&quot;, dpi = 300, height = 6, width = 10)</code></pre>
+</div>
+</div>
+</div>
+<div id="supplemental-graphs" class="section level2">
+<h2>Supplemental graphs</h2>
+<pre class="r"><code>Clime_map = function(data, var){
+
+z = as.numeric(data[[var]])
+data2 = data.frame(data[,c(&quot;x&quot;,&quot;y&quot;)],z)  
+
+
+g =data2 %&gt;% 
+  # gather(c(4,5,7,8,10,11), key = &quot;var&quot;, value = &quot;value&quot;) %&gt;% 
+ggplot()+
+  geom_sf( data = BRA, fill = &quot;white&quot;, color = &quot;gray60&quot;)+
+  geom_sf(data = MG, fill = &quot;gray99&quot;, color = &quot;black&quot;) +
+  geom_tile(aes(x,y, fill = z    ),
+            # fill =&quot;gray60&quot;,
+            size = .2,
+            color = &quot;gray65&quot;)+
+  geom_point(data = hh_hlb,
+             aes(lon, lat, color = presenca),
+             size = 0.4)+
+  scale_color_manual(values  =c(&quot;#3e9b39&quot;, &#39;red&#39;))+
+  scale_fill_viridis_c(option = &quot;B&quot;)+
+  coord_sf() +
+  guides(color = guide_legend(override.aes = list(size=2.5)))+
+  theme_minimal_grid(font_size = 8)+
+  labs(x = &quot;Longitude&quot;,
+       y = &quot;Latitude&quot;,
+       color = &quot;&quot;, fill = &quot;&quot;)+
+  north( location = &quot;topleft&quot;, scale = 0.08, symbol = 10,
+      x.min=-51, x.max=-43.5, y.min=-23, y.max=-18)+
+  
+  scalebar(location = &quot;bottomleft&quot;, dist = 50,
+           dist_unit = &quot;km&quot;, transform = TRUE, 
+           x.min=-51, x.max=-44, y.min=-23, y.max=-18,
+           st.bottom = FALSE,
+           st.dist = 0.03, st.size = 2)+
+  ylim(-23, -18)+
+  xlim(-51, -43.5)+
+  facet_wrap(~presenca)+
+  theme(panel.border = element_rect(color = &quot;gray&quot;))
+  return(g)
+}</code></pre>
+<div id="climate" class="section level3">
+<h3>Climate</h3>
+<pre class="r"><code>plot_grid(
+
+Clime_map(data=data, var=&quot;prec_rainy&quot;),
+Clime_map(data=data, var=&quot;temp_dry&quot;),
+Clime_map(data=data, var=&quot;wind_ann&quot;),
+ncol = 1,
+labels = c(&quot;P_rainy&quot;, &quot;T_dry&quot;,&quot;W_ann&quot;)
+)</code></pre>
+<p><img src="main_code_risk_hlb_files/figure-html/unnamed-chunk-60-1.png" width="672" /></p>
+<pre class="r"><code>ggsave(&quot;figs/clim_var_mapas.png&quot;, dpi=300, height = 10,width = 8)</code></pre>
+</div>
+<div id="orchard" class="section level3">
+<h3>Orchard</h3>
+<pre class="r"><code>plot_grid(
+
+Clime_map(data=data, var=&quot;orange&quot;),
+Clime_map(data=data, var=&quot;mandarin&quot;),
+Clime_map(data=data, var=&quot;area&quot;),
+ncol = 1,
+labels = c(&quot;Orange&quot;,&quot;Mandarin&quot;,&quot;Area&quot;)
+)</code></pre>
+<p><img src="main_code_risk_hlb_files/figure-html/unnamed-chunk-61-1.png" width="672" /></p>
+<pre class="r"><code>ggsave(&quot;figs/orchard_var_mapas.png&quot;, dpi=300, height = 8,width = 6)</code></pre>
+</div>
+</div>
+</div>
+
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkhMQiBCYXllc2lhbiBTcGF0aWFsIE1vZGVsaW5nIGluIE1pbmFzIEdlcmFpcyBCcmF6aWwiDQphdXRob3I6ICJLYWlxdWUgQWx2ZXMiDQpkYXRlOiAiMjYvMDgvMjAyMCINCm91dHB1dDogDQogIGh0bWxfZG9jdW1lbnQ6IA0KICAgIGRmX3ByaW50OiBrYWJsZQ0KICAgIHRvYzogdHJ1ZQ0KICAgIHRvY19mbG9hdDoNCiAgICAgIGNvbGxhcHNlZDogeWVzDQotLS0NCg0KDQojIFBhY2thZ2VzDQpgYGB7ciBtZXNzYWdlPUZBTFNFLCB3YXJuaW5nPUZBTFNFfQ0KbGlicmFyeSh0aWR5dmVyc2UpDQpsaWJyYXJ5KG5hc2Fwb3dlcikNCmxpYnJhcnkoY293cGxvdCkNCmxpYnJhcnkoZ2d0aGVtZXMpDQpsaWJyYXJ5KHJnZGFsKQ0KbGlicmFyeShyYXN0ZXIpDQpsaWJyYXJ5KElOTEEpDQpsaWJyYXJ5KHNwZGVwKQ0KbGlicmFyeShwc3ljaCkNCmxpYnJhcnkoZ2dzbikNCmxpYnJhcnkoZ3N0YXQpDQpsaWJyYXJ5KG1hcHRvb2xzKQ0KbGlicmFyeShybmF0dXJhbGVhcnRoKQ0KbGlicmFyeShybmF0dXJhbGVhcnRoaGlyZXMpDQpzb3VyY2UoIkJkaWNsY3BvbW9kZWxfc3RhY2suUiIpDQpzb3VyY2UoImNvb3JkX3RyYW5zZm9ybS5SIikNCmBgYA0KDQojIExvYWQgZGF0YQ0KYGBge3J9DQpoaF9obGIgPSAgcmVhZC50YWJsZSgiZGF0YS9obGJfZm9ybV9tYXAyLnR4dCIpICAlPiUgDQogIG11dGF0ZShwb3NpdGl2ZSA9IGNhc2Vfd2hlbihwcmVzZW5jYT09IlByZXNlbnQiIH4gMSwNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHByZXNlbmNhPT0iQWJzZW50IiB+IDApKSAlPiUgDQogIHVuaXRlKCJsYXRsb24iLGxhdCxsb24scmVtb3ZlID0gRikgJT4lIA0KICBncm91cF9ieShsYXRsb24pICU+JSANCiAgZHBseXI6OmZpbHRlcihwb3NpdGl2ZSA9PSBtYXgocG9zaXRpdmUpKSAlPiUNCiAgdW5ncm91cCgpICU+JSANCiAgZHBseXI6OnNlbGVjdCgtbGF0bG9uKQ0KYGBgDQoNCnRyYW5zZm9ybSBjb29yZGluYXRlcyB0byB1dG0NCmBgYHtyIGV2YWw9RkFMU0UsIGluY2x1ZGU9RkFMU0V9DQpsb24gPSBoaF9obGIkbG9uDQpsYXQgPSBoaF9obGIkbGF0DQp1dG1fY29vcmRzID0gbG9uZ2xhdF90b19VVE0obG9uZyA9IGxvbiwgbGF0ID0gbGF0CSwgdW5pdHMgPSAnbScpDQpITEJfcHJlc2VuY2UgPSBoaF9obGIgJT4lDQogIG11dGF0ZShsb24gPXV0bV9jb29yZHMkeCwgbGF0ID0gdXRtX2Nvb3JkcyR5KQ0KSExCX3ByZXNlbmNlDQpgYGANCg0KDQoNCiMjIERvd25sb2FkIE1HIHNoYXBlIGZpbGVzDQoNCmBgYHtyfQ0KQlJBIDwtIG5lX3N0YXRlcyhjb3VudHJ5ID0gIkJyYXppbCIsIHJldHVybmNsYXNzID0gInNmIikNCiMgc3Vic2V0IHNwYXRpYWwgb2JqZWN0cyBvZiBvbmx5IHRoZSBzdGF0ZXMgb2YgaW50ZXJlc3QNCk1HIDwtIEJSQVtCUkEkbmFtZV9lbiA9PSAiTWluYXMgR2VyYWlzIiwgXQ0KYGBgDQoNCg0KDQoNCiMgDQpgYGB7cn0NCk1HX3NoYXBlID0gcmVhZE9HUigiLi9kYXRhL01HIiwgIk1HX1VuaWRhZGVfRmVkZXJhY2FvXzIwMTdfYWdvIikNCk1HX3NoYXBlID0gc3BUcmFuc2Zvcm0oTUdfc2hhcGUsIENSU29iaiA9ICIrcHJvaj1sb25nbGF0IikNCiMgTUdfc2hhcGUgPSBzcFRyYW5zZm9ybShNR19zaGFwZSwgIENSUygiK3Byb2o9dXRtICt6b25lPTIzICtzb3V0aCBlbGxwcz1XR1M4NCIpKQ0KcGxvdChNR19zaGFwZSkNCmBgYA0KDQojIE1hcGluZyBtYW5pcHVsYXRpb24NCiMjIENyZWF0ZSBhIGdyaWQNCg0KYGBge3J9DQpjcyA8LSBjKC40LC40KQ0KIyBjcyA8LSBjKDI1MDAwLDI1MDAwKQ0KZ3JkcHRzID0gIG1ha2VncmlkKE1HX3NoYXBlLCBjZWxsc2l6ZSA9IGNzKQ0KDQpzcGdyZCA8LSBTcGF0aWFsUG9pbnRzKGdyZHB0cywgcHJvajRzdHJpbmcgPSBDUlMocHJvajRzdHJpbmcoTUdfc2hhcGUpKSkNCnNwZ3JkV2l0aGluIDwtIFNwYXRpYWxQaXhlbHMoc3BncmRbTUdfc2hhcGUsXSkNCmdyaWRfZGYgPSBhcy5kYXRhLmZyYW1lKGFzKHNwZ3JkV2l0aGluLCJTcGF0aWFsUGl4ZWxzRGF0YUZyYW1lIiApQGNvb3JkcykNCg0KcGxvdChzcGdyZFdpdGhpbikNCg0KICANCmBgYA0KDQoNCg0KIyMgIENvdW50aW5nIG9yY2hhcmRzIGJ5IGdyaWQNCg0KIyMjIFBvc2l0aXZlIGNhc2VzDQoNCmBgYHtyfQ0KI2NyZWF0ZSBkYXRhZnJhbWUgd2l0aCBvbmx5IHBvc2l0aXZlcw0KaGhfaGxiX3Bvc2l0aXZlID0gaGhfaGxiICU+JSANCiAgZmlsdGVyKHBvc2l0aXZlID09IDEpDQoNCmxvbiA9IGhoX2hsYl9wb3NpdGl2ZSRsb24NCmxhdCA9IGhoX2hsYl9wb3NpdGl2ZSRsYXQNCnh5IDwtIGRhdGEuZnJhbWUoIGxvbiwgbGF0KQ0KaGxiX2Nvb3JkcyA9IFNwYXRpYWxQb2ludHMoeHkscHJvajRzdHJpbmcgPSBDUlMocHJvajRzdHJpbmcoTUdfc2hhcGUpKSkNCnIgPSByYXN0ZXIoc3BncmRXaXRoaW4pDQpyW10gPC0gMA0KDQptZ19yYXN0ZXIgPSByYXN0ZXIoTUdfc2hhcGUpDQptZ19yYXN0ZXJbXSA8LSAwDQpycl9wb3NpdGl2ZSA9IG1hc2socixtYXNrID0gTUdfc2hhcGUpDQoNCg0KdGFiIDwtIHRhYmxlKGNlbGxGcm9tWFkocnJfcG9zaXRpdmUsIGhsYl9jb29yZHMpKQ0KcnJfcG9zaXRpdmVbYXMubnVtZXJpYyhuYW1lcyh0YWIpKV0gPC0gdGFiDQoNCnBsb3QocnJfcG9zaXRpdmUpDQpgYGANCg0KIyMjIENvdW50cyBieSBvcmNoYXJkIHNpemUNCmBgYHtyfQ0KIyBNaW5pDQpoaF9obGJfbWluaSA9IGhoX2hsYiAlPiUgDQogIGZpbHRlcihjbGFzcz09Ik1pbmkiKQ0KbG9uID0gaGhfaGxiX21pbmkkbG9uDQpsYXQgPSBoaF9obGJfbWluaSRsYXQNCnh5IDwtIGRhdGEuZnJhbWUoIGxvbiwgbGF0KQ0KaGxiX2Nvb3JkcyA9IFNwYXRpYWxQb2ludHMoeHkscHJvajRzdHJpbmcgPSBDUlMocHJvajRzdHJpbmcoTUdfc2hhcGUpKSkNCnIgPSByYXN0ZXIoc3BncmRXaXRoaW4pDQpyW10gPC0gMA0KbWdfcmFzdGVyID0gcmFzdGVyKE1HX3NoYXBlKQ0KbWdfcmFzdGVyW10gPC0gMA0KcnJfbWluaSA9IG1hc2sociwgbWFzayA9IE1HX3NoYXBlKSAjPDw8PDwNCnRhYiA8LSB0YWJsZShjZWxsRnJvbVhZKHJyX21pbmksIGhsYl9jb29yZHMpKSM8PDw8PA0KcnJfbWluaVthcy5udW1lcmljKG5hbWVzKHRhYikpXSA8LSB0YWIjPDw8PDwNCg0KIyBTbWFsbA0KaGhfaGxiX3NtYWxsID0gaGhfaGxiICU+JSANCiAgZmlsdGVyKGNsYXNzPT0iU21hbGwiKQ0KbG9uID0gaGhfaGxiX3NtYWxsJGxvbiM8PDw8PA0KbGF0ID0gaGhfaGxiX3NtYWxsJGxhdCM8PDw8PA0KeHkgPC0gZGF0YS5mcmFtZSggbG9uLCBsYXQpDQpobGJfY29vcmRzID0gU3BhdGlhbFBvaW50cyh4eSxwcm9qNHN0cmluZyA9IENSUyhwcm9qNHN0cmluZyhNR19zaGFwZSkpKQ0KciA9IHJhc3RlcihzcGdyZFdpdGhpbikNCnJbXSA8LSAwDQptZ19yYXN0ZXIgPSByYXN0ZXIoTUdfc2hhcGUpDQptZ19yYXN0ZXJbXSA8LSAwDQpycl9zbWFsbCA9IG1hc2sociwgbWFzayA9IE1HX3NoYXBlKSAjPDw8PDwNCnRhYiA8LSB0YWJsZShjZWxsRnJvbVhZKHJyX3NtYWxsLCBobGJfY29vcmRzKSkjPDw8PDwNCnJyX3NtYWxsW2FzLm51bWVyaWMobmFtZXModGFiKSldIDwtIHRhYiM8PDw8PA0KDQojIG1lZGl1bQ0KaGhfaGxiX21lZGl1bSA9IGhoX2hsYiAlPiUgDQogIGZpbHRlcihjbGFzcz09Ik1lZGl1bSIpDQpsb24gPSBoaF9obGJfbWVkaXVtJGxvbiM8PDw8PA0KbGF0ID0gaGhfaGxiX21lZGl1bSRsYXQjPDw8PDwNCnh5IDwtIGRhdGEuZnJhbWUoIGxvbiwgbGF0KQ0KaGxiX2Nvb3JkcyA9IFNwYXRpYWxQb2ludHMoeHkscHJvajRzdHJpbmcgPSBDUlMocHJvajRzdHJpbmcoTUdfc2hhcGUpKSkNCnIgPSByYXN0ZXIoc3BncmRXaXRoaW4pDQpyW10gPC0gMA0KbWdfcmFzdGVyID0gcmFzdGVyKE1HX3NoYXBlKQ0KbWdfcmFzdGVyW10gPC0gMA0KcnJfbWVkaXVtID0gbWFzayhyLCBtYXNrID0gTUdfc2hhcGUpICM8PDw8PA0KdGFiIDwtIHRhYmxlKGNlbGxGcm9tWFkocnJfbWVkaXVtLCBobGJfY29vcmRzKSkjPDw8PDwNCnJyX21lZGl1bVthcy5udW1lcmljKG5hbWVzKHRhYikpXSA8LSB0YWIjPDw8PDwNCg0KIyBMYXJnZQ0KaGhfaGxiX2xhcmdlID0gaGhfaGxiICU+JSANCiAgZmlsdGVyKGNsYXNzPT0iTGFyZ2UiKQ0KbG9uID0gaGhfaGxiX2xhcmdlJGxvbiM8PDw8PA0KbGF0ID0gaGhfaGxiX2xhcmdlJGxhdCM8PDw8PA0KeHkgPC0gZGF0YS5mcmFtZSggbG9uLCBsYXQpDQpobGJfY29vcmRzID0gU3BhdGlhbFBvaW50cyh4eSxwcm9qNHN0cmluZyA9IENSUyhwcm9qNHN0cmluZyhNR19zaGFwZSkpKQ0KciA9IHJhc3RlcihzcGdyZFdpdGhpbikNCnJbXSA8LSAwDQptZ19yYXN0ZXIgPSByYXN0ZXIoTUdfc2hhcGUpDQptZ19yYXN0ZXJbXSA8LSAwDQpycl9sYXJnZSA9IG1hc2sociwgbWFzayA9IE1HX3NoYXBlKSAjPDw8PDwNCnRhYiA8LSB0YWJsZShjZWxsRnJvbVhZKHJyX2xhcmdlLCBobGJfY29vcmRzKSkjPDw8PDwNCnJyX2xhcmdlW2FzLm51bWVyaWMobmFtZXModGFiKSldIDwtIHRhYiM8PDw8PA0KcGxvdChycl9sYXJnZSkNCmBgYA0KDQojIyMgQ291bnQgYnkgc3BlY2llcw0KYGBge3J9DQojIE9yYW5nZQ0KaGhfaGxiX29yYW5nZSA9IGhoX2hsYiAlPiUgDQogIGZpbHRlcihlc3BlY2llPT0iU3dlZXQgb3JhbmdlIikNCmxvbiA9IGhoX2hsYl9vcmFuZ2UkbG9uDQpsYXQgPSBoaF9obGJfb3JhbmdlJGxhdA0KeHkgPC0gZGF0YS5mcmFtZSggbG9uLCBsYXQpDQpobGJfY29vcmRzID0gU3BhdGlhbFBvaW50cyh4eSxwcm9qNHN0cmluZyA9IENSUyhwcm9qNHN0cmluZyhNR19zaGFwZSkpKQ0KciA9IHJhc3RlcihzcGdyZFdpdGhpbikNCnJbXSA8LSAwDQptZ19yYXN0ZXIgPSByYXN0ZXIoTUdfc2hhcGUpDQptZ19yYXN0ZXJbXSA8LSAwDQpycl9vcmFuZ2UgPSBtYXNrKHIsIG1hc2sgPSBNR19zaGFwZSkgIzw8PDw8DQp0YWIgPC0gdGFibGUoY2VsbEZyb21YWShycl9vcmFuZ2UsIGhsYl9jb29yZHMpKSM8PDw8PA0KcnJfb3JhbmdlW2FzLm51bWVyaWMobmFtZXModGFiKSldIDwtIHRhYiM8PDw8PA0KDQojIE1hbmRhcmluDQpoaF9obGJfbWFuZGFyaW4gPSBoaF9obGIgJT4lIA0KICBmaWx0ZXIoZXNwZWNpZT09Ik1hbmRhcmlucyIpDQpsb24gPSBoaF9obGJfbWFuZGFyaW4kbG9uIzw8PDw8DQpsYXQgPSBoaF9obGJfbWFuZGFyaW4kbGF0Izw8PDw8DQp4eSA8LSBkYXRhLmZyYW1lKCBsb24sIGxhdCkNCmhsYl9jb29yZHMgPSBTcGF0aWFsUG9pbnRzKHh5LHByb2o0c3RyaW5nID0gQ1JTKHByb2o0c3RyaW5nKE1HX3NoYXBlKSkpDQpyID0gcmFzdGVyKHNwZ3JkV2l0aGluKQ0KcltdIDwtIDANCm1nX3Jhc3RlciA9IHJhc3RlcihNR19zaGFwZSkNCm1nX3Jhc3RlcltdIDwtIDANCnJyX21hbmRhcmluID0gbWFzayhyLCBtYXNrID0gTUdfc2hhcGUpICM8PDw8PA0KdGFiIDwtIHRhYmxlKGNlbGxGcm9tWFkocnJfbWFuZGFyaW4sIGhsYl9jb29yZHMpKSM8PDw8PA0KcnJfbWFuZGFyaW5bYXMubnVtZXJpYyhuYW1lcyh0YWIpKV0gPC0gdGFiIzw8PDw8DQoNCiMgTGVtb24NCmhoX2hsYl9sZW1vbiA9IGhoX2hsYiAlPiUgDQogIGZpbHRlcihlc3BlY2llPT0iTGVtb24iKQ0KbG9uID0gaGhfaGxiX2xlbW9uJGxvbiM8PDw8PA0KbGF0ID0gaGhfaGxiX2xlbW9uJGxhdCM8PDw8PA0KeHkgPC0gZGF0YS5mcmFtZSggbG9uLCBsYXQpDQpobGJfY29vcmRzID0gU3BhdGlhbFBvaW50cyh4eSxwcm9qNHN0cmluZyA9IENSUyhwcm9qNHN0cmluZyhNR19zaGFwZSkpKQ0KciA9IHJhc3RlcihzcGdyZFdpdGhpbikNCnJbXSA8LSAwDQptZ19yYXN0ZXIgPSByYXN0ZXIoTUdfc2hhcGUpDQptZ19yYXN0ZXJbXSA8LSAwDQpycl9sZW1vbiA9IG1hc2sociwgbWFzayA9IE1HX3NoYXBlKSAjPDw8PDwNCnRhYiA8LSB0YWJsZShjZWxsRnJvbVhZKHJyX2xlbW9uLCBobGJfY29vcmRzKSkjPDw8PDwNCnJyX2xlbW9uW2FzLm51bWVyaWMobmFtZXModGFiKSldIDwtIHRhYiM8PDw8PA0KDQojIGFjaWRlIGxpbWUNCmhoX2hsYl9hY2lkbGltZSA9IGhoX2hsYiAlPiUgDQogIGZpbHRlcihlc3BlY2llPT0iQWNpZCBsaW1lIikNCmxvbiA9IGhoX2hsYl9hY2lkbGltZSRsb24jPDw8PDwNCmxhdCA9IGhoX2hsYl9hY2lkbGltZSRsYXQjPDw8PDwNCnh5IDwtIGRhdGEuZnJhbWUoIGxvbiwgbGF0KQ0KaGxiX2Nvb3JkcyA9IFNwYXRpYWxQb2ludHMoeHkscHJvajRzdHJpbmcgPSBDUlMocHJvajRzdHJpbmcoTUdfc2hhcGUpKSkNCnIgPSByYXN0ZXIoc3BncmRXaXRoaW4pDQpyW10gPC0gMA0KbWdfcmFzdGVyID0gcmFzdGVyKE1HX3NoYXBlKQ0KbWdfcmFzdGVyW10gPC0gMA0KcnJfYWNpZGxpbWUgPSBtYXNrKHIsIG1hc2sgPSBNR19zaGFwZSkgIzw8PDw8DQp0YWIgPC0gdGFibGUoY2VsbEZyb21YWShycl9hY2lkbGltZSwgaGxiX2Nvb3JkcykpIzw8PDw8DQpycl9hY2lkbGltZVthcy5udW1lcmljKG5hbWVzKHRhYikpXSA8LSB0YWIjPDw8PDwNCnBsb3QocnJfbWFuZGFyaW4pDQpgYGANCg0KIyMjIE1lYW4gYXJlYQ0KYGBge3J9DQpsb24gPSBoaF9obGIkbG9uDQpsYXQgPSBoaF9obGIkbGF0DQp4eSA8LSBkYXRhLmZyYW1lKCBsb24sIGxhdCkNCmhsYl9jb29yZHMgPSBTcGF0aWFsUG9pbnRzKHh5LHByb2o0c3RyaW5nID0gQ1JTKHByb2o0c3RyaW5nKE1HX3NoYXBlKSkpDQpyID0gcmFzdGVyKHNwZ3JkV2l0aGluKQ0KZGZfYXJlYSA9ICBhZ2dyZWdhdGUoaGhfaGxiWywgJ2FyZWEnLCBkcm9wPUZBTFNFXSwgaGhfaGxiWywzOjJdLCBtZWFuKQ0KY29vcmRpbmF0ZXMoZGZfYXJlYSkgPC0gfiBsb24gKyBsYXQNCiMgZXh0ZW50KHIpIDwtIGV4dGVudChkZl9hcmVhKQ0KcnJfYXJlYSA9ICByYXN0ZXJpemUoZGZfYXJlYSwgciwgZGZfYXJlYSRhcmVhLCBmdW4gPSBtZWFuKQ0KcGxvdChycl9hcmVhKQ0KIyBycl9hcmVhDQojIHJyDQpgYGANCg0KDQoNCiMjIyBDb3VudCBBbGwgb3JjaGFyZHMgKHBvc2l0aXZlcyBhbmQgbmVnYXRpdmVzKQ0KYGBge3J9DQpsb24gPSBoaF9obGIkbG9uDQpsYXQgPSBoaF9obGIkbGF0DQp4eSA8LSBkYXRhLmZyYW1lKCBsb24sIGxhdCkNCmhsYl9jb29yZHMgPSBTcGF0aWFsUG9pbnRzKHh5LHByb2o0c3RyaW5nID0gQ1JTKHByb2o0c3RyaW5nKE1HX3NoYXBlKSkpDQpyID0gcmFzdGVyKHNwZ3JkV2l0aGluKQ0KcltdIDwtIDANCg0KbWdfcmFzdGVyID0gcmFzdGVyKE1HX3NoYXBlKQ0KbWdfcmFzdGVyW10gPC0gMA0KcnIgPSBtYXNrKHIsIG1hc2sgPSBNR19zaGFwZSkNCg0KDQp0YWIgPC0gdGFibGUoY2VsbEZyb21YWShyciwgaGxiX2Nvb3JkcykpDQpyclthcy5udW1lcmljKG5hbWVzKHRhYikpXSA8LSB0YWINCnBsb3QocnIpDQpgYGANCg0KDQpgYGB7cn0NCnJyMiA9IHJyPjAgJiAhaXMubmEocnIpDQpncmlkX2RmID0gYXMuZGF0YS5mcmFtZShhcyhycjIsICJTcGF0aWFsUGl4ZWxzIilAY29vcmRzKSAlPiUgDQogIG11dGF0ZShzYW1wID0gcnIyW10pICU+JSANCiAgZmlsdGVyKHNhbXAgPT1UUlVFKQ0KYGBgDQoNCiMjIE1hcDogRGlzZWFzZSBncmlkDQoNCmBgYHtyfQ0KZ2dwbG90KCkrDQogIGdlb21fc2YoIGRhdGEgPSBCUkEsIGZpbGwgPSAid2hpdGUiLCBjb2xvciA9ICJncmF5OTAiKSsNCiAgZ2VvbV9zZihkYXRhID0gTUcsIGZpbGwgPSAiZ3JheTk5IiwgY29sb3IgPSAiYmxhY2siKSArDQogIGdlb21fdGlsZShkYXRhID1ncmlkX2RmLGFlcyh4LHkpLA0KICAgICAgICAgICAgZmlsbCA9ImdyYXk5MCIsDQogICAgICAgICAgICBzaXplID0gLjIsDQogICAgICAgICAgICBjb2xvciA9ICJncmF5NzUiLCBhbHBoYSA9IDAuOCkrDQogIGdlb21fcG9pbnQoZGF0YSA9IGhoX2hsYiAlPiUgZHBseXI6OnNlbGVjdCgtcHJlc2VuY2EpLA0KICAgICAgICAgICAgIGFlcyhsb24sIGxhdCksDQogICAgICAgICAgICAgc2l6ZSA9IDAuMywgY29sb3IgPSAiZ3JheTgwIikrDQogIGdlb21fcG9pbnQoZGF0YSA9IGhoX2hsYiwNCiAgICAgICAgICAgICBhZXMobG9uLCBsYXQsIGNvbG9yID0gcHJlc2VuY2EpLA0KICAgICAgICAgICAgIHNpemUgPSAwLjMsIGFscGhhID0gMSkrDQogIHNjYWxlX2NvbG9yX21hbnVhbCh2YWx1ZXMgID1jKCIjM2U5YjM5IiwgJ3JlZCcpKSsNCiAgY29vcmRfc2YoKSArDQogIGd1aWRlcyhjb2xvciA9IGd1aWRlX2xlZ2VuZChvdmVycmlkZS5hZXMgPSBsaXN0KHNpemU9Mi41KSkpKw0KICB0aGVtZV9taW5pbWFsX2dyaWQoKSsNCiAgbGFicyh4ID0gIkxvbmdpdHVkZSIsDQogICAgICAgeSA9ICJMYXRpdHVkZSIsDQogICAgICAgY29sb3IgPSAiIikrDQogIG5vcnRoKCBsb2NhdGlvbiA9ICJ0b3BsZWZ0Iiwgc2NhbGUgPSAwLjA4LCBzeW1ib2wgPSAxMCwNCiAgICAgIHgubWluPS01MSwgeC5tYXg9LTQzLjUsIHkubWluPS0yMywgeS5tYXg9LTE4KSsNCiAgDQogIHNjYWxlYmFyKGxvY2F0aW9uID0gImJvdHRvbWxlZnQiLCBkaXN0ID0gNTAsDQogICAgICAgICAgIGRpc3RfdW5pdCA9ICJrbSIsIHRyYW5zZm9ybSA9IFRSVUUsIA0KICAgICAgICAgICB4Lm1pbj0tNTEsIHgubWF4PS00NCwgeS5taW49LTIzLCB5Lm1heD0tMTgsDQogICAgICAgICAgIHN0LmJvdHRvbSA9IEZBTFNFLA0KICAgICAgICAgICBzdC5kaXN0ID0gMC4wMywgc3Quc2l6ZSA9IDIpKw0KICB5bGltKC0yMywgLTE4KSsNCiAgeGxpbSgtNTEsIC00My41KSsNCiAgZmFjZXRfd3JhcCh+cHJlc2VuY2EpKw0KICB0aGVtZShwYW5lbC5ib3JkZXIgPSBlbGVtZW50X3JlY3QoY29sb3IgPSAiZ3JheSIpKQ0KDQojIHlsaW0oLTIyLjUsIC0yMS41KSsNCiMgICB4bGltKC00NiwgLTQ0KQ0KDQpnZ3NhdmUoImZpZ3MvbWFwX2Rpc2Vhc2UucG5nIiwgZHBpID0gNjAwLCBoZWlnaHQgPSA0LCB3aWR0aCA9IDExKQ0KICANCmBgYA0KDQojIyMgVHlkaW5nDQpgYGB7cn0NCmdyaWRfaW5jaWRlbmNlID0gZGF0YS5mcmFtZShjb29yZGluYXRlcyhyciksDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgc2FtcGxlcz1ycltdLA0KICAgICAgICAgICAgICAgICAgICAgICAgICAgIHBvc2l0aXZlcyA9IHJyX3Bvc2l0aXZlW10sDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgYXJlYSA9IHJyX2FyZWFbXSwNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBsYXJnZSA9IHJyX2xhcmdlW10sDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgbWVkaXVtID0gcnJfbWVkaXVtW10sDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgc21hbGwgPSBycl9zbWFsbFtdLA0KICAgICAgICAgICAgICAgICAgICAgICAgICAgIG1pbmk9cnJfbWluaVtdLA0KICAgICAgICAgICAgICAgICAgICAgICAgICAgIG9yYW5nZT1ycl9vcmFuZ2VbXSwNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBtYW5kYXJpbiA9IHJyX21hbmRhcmluW10sDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgbGVtb249cnJfbGVtb25bXSwNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBhY2lkX2xpbWU9cnJfYWNpZGxpbWVbXSkgJT4lIA0KICBtdXRhdGUoc2FtcGxlcyA9IHJlcGxhY2VfbmEoc2FtcGxlcyAsIDApLA0KICAgICAgICAgcG9zaXRpdmVzID0gcmVwbGFjZV9uYShwb3NpdGl2ZXMgLCAwKSwNCiAgICAgICAgIGFyZWEgPSByZXBsYWNlX25hKGFyZWEgLCAwKSwNCiAgICAgICAgIGxhcmdlID0gcmVwbGFjZV9uYShsYXJnZSAsIDApLA0KICAgICAgICAgbWVkaXVtID0gcmVwbGFjZV9uYShtZWRpdW0gLCAwKSwNCiAgICAgICAgIHNtYWxsID0gcmVwbGFjZV9uYShzbWFsbCAsIDApLA0KICAgICAgICAgbWluaT1yZXBsYWNlX25hKG1pbmkgLCAwKSwNCiAgICAgICAgIG9yYW5nZT1yZXBsYWNlX25hKG9yYW5nZSAsIDApLA0KICAgICAgICAgbWFuZGFyaW4gPSByZXBsYWNlX25hKG1hbmRhcmluICwgMCksDQogICAgICAgICBsZW1vbj1yZXBsYWNlX25hKGxlbW9uICwgMCksDQogICAgICAgICBhY2lkX2xpbWU9cmVwbGFjZV9uYShhY2lkX2xpbWUgLCAwKSkgJT4lIA0KICBmaWx0ZXIoc2FtcGxlcz4wKQ0KDQptaW4oZ3JpZF9pbmNpZGVuY2UkYXJlYSkNCmBgYA0KDQoNCg0KIyMgQ3JlYXRlIHRoZSBuZWlnaGJvcmhvb2Qgc3RydWN0dXJlIHdpdGggYSBkaXN0YW5jZSBjcml0ZXJpb24gb2YgMzBrbQ0KDQojIyMgVHJhbnNmb3JtIGNvb3JkaW5hdGVzIHRvIFVUTQ0KDQpgYGB7cn0NCmxvbmcgPSBncmlkX2luY2lkZW5jZSR4DQpsYXQgPSBncmlkX2luY2lkZW5jZSR5DQp4eSA8LSBkYXRhLmZyYW1lKElEID0gMToobGVuZ3RoKGxhdCkpLCBsb25nLCBsYXQpDQpjb29yZGluYXRlcyh4eSkgPC0gYygibG9uZyIsICJsYXQiKQ0KcHJvajRzdHJpbmcoeHkpIDwtIENSUygiK2luaXQ9ZXBzZzo0MzI2IikNCnJlcyA8LSBzcFRyYW5zZm9ybSh4eSwgQ1JTKCIrcHJvaj11dG0gK3pvbmU9MjMgK3NvdXRoIGVsbHBzPVdHUzg0IikpDQpjb29yZHNfZ3JpZCA9IGFzLmRhdGEuZnJhbWUocmVzKQ0KY29vcmRzMiA9IGFzLm1hdHJpeChjb29yZHNfZ3JpZFssMjozXSkNCmNvbG5hbWVzKGNvb3JkczIpIDwtIGMoIngxIiwieDIiKQ0KIyBtYXgoY29vcmRzX2dyaWQkbG9uZyktbWluKGNvb3Jkc19ncmlkJGxvbmcpCQ0KDQpgYGANCg0KYGBge3IgZXZhbD1GQUxTRSwgaW5jbHVkZT1GQUxTRX0NCiMgY29vcmRzPC0gY29vcmRpbmF0ZXMoc3BncmRXaXRoaW4pDQojIGNvb3Jkc19ncmlkID0gbG9uZ2xhdF90b19VVE0obG9uZyA9IGdyaWRfaW5jaWRlbmNlJHgsIGxhdCA9Z3JpZF9pbmNpZGVuY2UkeQksIHVuaXRzID0gJ20nKQ0KIyBjb29yZHMyID0gYXMubWF0cml4KGNvb3Jkc19ncmlkWywyOjNdKQ0KIyBjb2xuYW1lcyhjb29yZHMyKSA8LSBjKCJ4MSIsIngyIikNCg0KYGBgDQoNCmBgYHtyIGV2YWw9RkFMU0UsIGluY2x1ZGU9RkFMU0V9DQojIGxvbmdsYXRfdG9fVVRNKGxhdCA9IGMoMTkuMSwgMTkuMiksbG9uZyA9IGMoMjAuMSwgMjAuMikpDQpgYGANCg0KIyMjIE5laWdoYm9yaG9vZCBzdHJ1Y3R1cmUNCmBgYHtyfQ0KSUQgPC0gMTpkaW0oY29vcmRzMilbMV0gDQpjb2wubmIuMC5hbGwgPC0gZG5lYXJuZWlnaChjb29yZHMyLCAwLCA3MDAwMCwgcm93Lm5hbWVzPUlEKQ0KbmIySU5MQSgiLi9tb2RlbHMvZ3JpZDI1LmdyYXBoIiwgY29sLm5iLjAuYWxsKQ0KZ3JpZF9ncmFmbzI1IDwtIGlubGEucmVhZC5ncmFwaCgiLi9tb2RlbHMvZ3JpZDI1LmdyYXBoIikNCg0KcGxvdChncmlkX2dyYWZvMjUpDQoNCmBgYA0KDQojIyMgTW9yYW4ncyB0ZXN0DQpNb3JhbidzIEkgdGVzdCBmb3Igc3BhdGlhbCBhdXRvY29ycmVsYXRpb24NCg0KYGBge3J9DQpwcm9wIDwtIGdyaWRfaW5jaWRlbmNlJHBvc2l0aXZlcy9ncmlkX2luY2lkZW5jZSRzYW1wbGVzDQpsaXN0dzwtIG5iMmxpc3R3KGNvbC5uYi4wLmFsbCwgemVyby5wb2xpY3kgPSBUKQ0KbW9yYW4udGVzdChwcm9wLCBsaXN0dyx6ZXJvLnBvbGljeT1UKQ0KDQpgYGANCg0KIyBEb3dubG9hZCBjbGltYXRvbG9naWMgZGF0YQ0KIyMgTmFzYSBQb3dlcg0KDQpgYGB7ciBldmFsPUZBTFNFLCBpbmNsdWRlPUZBTFNFfQ0KYm94PWRhdGEuZnJhbWUoKQ0KZm9yKGkgaW4gMTpsZW5ndGgoZ3JpZF9pbmNpZGVuY2VbLDFdKSl7DQpwb3dlciAgPSBnZXRfcG93ZXIobG9ubGF0ID1jKCBncmlkX2luY2lkZW5jZVtpLDFdLCBncmlkX2luY2lkZW5jZVtpLDJdKSwNCiAgICAgICAgICBwYXJzID0gYygiVDJNIiwiUFJFQ1RPVCIsIldTMTBNIiksDQogICAgICAgICAgY29tbXVuaXR5ID0gIkFHIiwNCiAgICAgICAgICB0ZW1wb3JhbF9hdmVyYWdlID0gIkNMSU1BVE9MT0dZIikNCmJveCA9IGJveCAlPiUgDQogIGJpbmRfcm93cyhwb3dlcikNCn0NCndyaXRlLnRhYmxlKGJveCwiZGF0YS9wb3dlcl9kYXRhLnR4dCIpDQpgYGANCg0KQ29ycmVjdGluZyBjb29yZGluYXRlcyB2YWx1ZXMNCmBgYHtyfQ0KcG93ZXJfbG9hZD0gcmVhZC50YWJsZSgiZGF0YS9wb3dlcl9kYXRhLnR4dCIpICU+JSANCiAgbXV0YXRlKExPTiA9IExPTi0wLjAwMDAxLA0KICAgICAgICAgTEFUID0gTEFULTAuMDAwMDEpDQpoZWFkKHBvd2VyX2xvYWQpDQpgYGANCg0KIyMgRnVsbCBkYXRhc2V0DQpgYGB7cn0NCmRyeV9tb250aHMgPSBjKCJNQVkiLCJKVU4iLCJKVUwiLCJBVUciKQ0KcG93ZXJfdGlkeSAgPSBwb3dlcl9sb2FkICU+JSANCiAgdW5pdGUoImxhdGxvbmciLExPTixMQVQpICU+JSANCiAgZ2F0aGVyKDM6MTQsIGtleSA9ICJtb250aCIsIHZhbHVlID0gIm1lYXN1cmVtZW50IikgJT4lIA0KICBtdXRhdGUoc2Vhc29uID0gY2FzZV93aGVuKG1vbnRoICVpbiUgZHJ5X21vbnRocyB+ImRyeSIsDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgIW1vbnRoICVpbiUgZHJ5X21vbnRocyB+InJhaW55IikpICU+JQ0KICBncm91cF9ieShsYXRsb25nLCBQQVJBTUVURVIsIEFOTiwgc2Vhc29uKSAlPiUgDQogIHN1bW1hcmlzZShtZWFuID0gbWVhbihtZWFzdXJlbWVudCkpICU+JSANCiAgc3ByZWFkKHNlYXNvbiwgbWVhbikgJT4lIA0KICB1bmdyb3VwKCkNCg0KZGF0YSA9IGJpbmRfY29scygNCnBvd2VyX3RpZHkgJT4lIA0KICBmaWx0ZXIoUEFSQU1FVEVSID09ICJQUkVDVE9UIikgJT4lIA0KICBtdXRhdGUocHJlY19hbm49IEFOTiwgcHJlY19kcnk9IGRyeSwgcHJlY19yYWlueT0gcmFpbnkpICU+JSANCiAgZHBseXI6OnNlbGVjdCgtQU5OLCAtZHJ5LCAtcmFpbnksLVBBUkFNRVRFUiksDQoNCnBvd2VyX3RpZHklPiUgDQogIGZpbHRlcihQQVJBTUVURVIgPT0gIlQyTSIpICU+JSANCiAgbXV0YXRlKHRlbXBfYW5uPSBBTk4sIHRlbXBfZHJ5PSBkcnksIHRlbXBfcmFpbnk9IHJhaW55KSAlPiUgDQogIGRwbHlyOjpzZWxlY3QoLUFOTiwgLWRyeSwgLXJhaW55LC1QQVJBTUVURVIsLWxhdGxvbmcpLA0KDQpwb3dlcl90aWR5JT4lIA0KICBmaWx0ZXIoUEFSQU1FVEVSID09ICJXUzEwTSIpICU+JSANCiAgbXV0YXRlKHdpbmRfYW5uPSBBTk4sIHdpbmRfZHJ5PSBkcnksIHdpbmRfcmFpbnk9IHJhaW55KSAlPiUgDQogIGRwbHlyOjpzZWxlY3QoLUFOTiwgLWRyeSwgLXJhaW55LC1QQVJBTUVURVIsLWxhdGxvbmcpDQopICU+JSANCiAgc2VwYXJhdGUobGF0bG9uZywgaW50byA9IGMoIngiLCAieSIpLCBzZXAgPSAiXyIsIGNvbnZlcnQgPSBUUlVFKSAlPiUgDQogIGFycmFuZ2UoeCx5KSAlPiUgDQogIGJpbmRfY29scygNCiAgICBncmlkX2luY2lkZW5jZSAlPiUgDQogICAgICBhcnJhbmdlKHgseSkgJT4lDQogICAgICBtdXRhdGUobGFyZ2VfYXJlYSA9IG1lZGl1bStsYXJnZSwNCiAgICAgICAgICAgICBzbWFsbF9hcmVhID0gbWluaStzbWFsbCwgDQogICAgICAgICAgICAgI21hbmRhcmluID0gbG9nKG1hbmRhcmluKzEpLA0KICAgICAgICAgICAgICNvcmFuZ2UgPSBsb2cob3JhbmdlKzEpDQogICAgICAgICAgICAgKSAlPiUgDQogICAgICBkcGx5cjo6c2VsZWN0KC14LC15KSkgJT4lIA0KICBtdXRhdGUoYXJlYSA9IGxvZyhhcmVhKSkgJT4lDQogICMgQWRkIGEgY29sdW1uIGZvciByYW5kb20gZWZmZWN0DQogIG11dGF0ZShTID0gMTpsZW5ndGgoZ3JpZF9pbmNpZGVuY2VbLDFdKSkNCg0KaGVhZChkYXRhKQ0KYGBgDQoNCg0KIyMjU2NhbGluZw0KDQpgYGB7cn0NCiMgZGF0YT0gZGF0YWEgJT4lIA0KIyAgIG11dGF0ZShwcmVjX3JhaW55ID0gc2NhbGUocHJlY19yYWlueSksDQojICAgICAgICAgIHRlbXBfZHJ5ID0gc2NhbGUodGVtcF9kcnkpLA0KIyAgICAgICAgICB3aW5kX2FubiA9IHNjYWxlKHdpbmRfYW5uKSwNCiMgICAgICAgICAgYXJlYSA9IChhcmVhKSwNCiMgICAgICAgICAgbWFuZGFyaW4gPSBsb2cobWFuZGFyaW4rMSksDQojICAgICAgICAgIG9yYW5nZSA9IGxvZyhvcmFuZ2UrMSkpDQoNCmBgYA0KDQojIyMgQ29ycmVsYXRpb24NCg0KYGBge3J9DQpjb3JyZWwgPSBjb3IoZGF0YVtjKDM6MTEsMTQsMjA6MTkpXSkNCg0KeHkgPC0gZXhwYW5kLmdyaWQoeD0xOjEyLHk9MTI6MSkNCg0KYT1yb3dTdW1zKHh5KS8xMg0KYXMuZGF0YS5mcmFtZShjb3JyZWwpICU+JSANCiAgcm93bmFtZXNfdG9fY29sdW1uKHZhciA9ICJ2YXIxIikgJT4lIA0KICBnYXRoZXIoMjoxMywga2V5ID0gInZhciIsIHZhbHVlID0gInZhbHVlIikgJT4lIA0KICBtdXRhdGUodmFsdWUgPSByb3VuZCh2YWx1ZSwyKSkgJT4lIA0KICBhcnJhbmdlKHZhcjEsIHZhcikgJT4lIA0KICBtdXRhdGUoYWE9IHJvdW5kKGEsMykpICU+JSANCiAgIyBmaWx0ZXIoYWE8PTAuNTIpICU+JSANCiAgbXV0YXRlKHZhbHVlID0gY2FzZV93aGVuKGFhIDw9IDEgfiB2YWx1ZSwNCiAgICAgICAgICAgICAgICAgICAgICAgICAgIGFhID4gMSB+IE5BX3JlYWxfKSkgJT4lDQogIGdncGxvdChhZXModmFyMSx2YXIsZmlsbCA9IHZhbHVlLCBsYWJlbCA9IHZhbHVlKSkgKyANCiAgZ2VvbV90aWxlKCkrDQogIGdlb21fdGV4dCgpKw0KICBjb29yZF9lcXVhbCgpKw0KICBzY2FsZV9maWxsX2dyYWRpZW50Mihsb3cgPSAicmVkIiwgbWlkID0gIndoaXRlIiwgaGlnaCA9ICJzdGVlbGJsdWUiLA0KICAgICAgICAgICAgICAgICAgICAgICBsaW1pdHM9IGMoLTEsMSksbmEudmFsdWU9IndoaXRlIikrDQogIHRoZW1lKGF4aXMudGV4dC54ID0gZWxlbWVudF90ZXh0KGFuZ2xlID0gOTAsIGhqdXN0ID0gMSkpKw0KICBsYWJzKHg9IiIsDQogICAgICAgeSA9ICIiLA0KICAgICAgIGZpbGw9ICJyIikNCmdnc2F2ZSgiZmlncy9jb3JyZWwucG5nIixkcGkgPSA2MDAsIGhlaWdodCA9IDcsIHdpZHRoID0gOCkNCiAgDQpgYGANCg0KDQojIEJheWVzaWFuIE1vZGVsaW5nDQoNCiMjIE1vZGVsIFNlbGVjdGlvbiB1c2luZyB2YXJpYWJsZXMNCg0KIyMjIEh5cGVycGFyYW1ldGVycyANCg0KU2ltcHNvbiBldCBhbC4gKDIwMTcpIHByaW9yIGRpc3RyaWJ1dGlvbnMgZm9yIGh5cGVycGFyYW1ldGVycw0KDQpgYGB7cn0NCnUgPC0gMC4yLzAuMzENCmFscGhhIDwtIDAuMDENCnBoaS51IDwtIDAuNQ0KcGhpLmFscGhhIDwtIDIvMw0KYGBgDQoNCg0KIyMjIFByZWRpY3RvciB2YXJpYWJsZXMNCg0KYGBge3J9DQojbGVtYnJhciBkZSBjb2xvY2FyIGEgZXNwZWNpZSBlIHRhbWFuaG8gZGEgbGF2b3VyYQ0KIyBjb2xuYW1lcyhkYXRhKQ0KdmFyaWFibGVzIDwtIGMoDQogICMgImxhcmdlIiwibWVkaXVtIiwic21hbGwiLCJtaW5pIiwNCiAgImFyZWEiLA0KICAjICJvcmFuZ2UiLA0KICAjICJtYW5kYXJpbiIsDQogICMgImxlbW9uIiwiYWNpZF9saW1lIiwNCiAgIyAic21hbGxfYXJlYSIsIA0KICAjICJsYXJnZV9hcmVhIiwNCiMgInByZWNfZHJ5IiwNCiJwcmVjX3JhaW55IiwNCiMgInRlbXBfZHJ5IiwNCiJ0ZW1wX2RyeSIsDQojICJ3aW5kX2RyeSIsDQojICJ3aW5kX3JhaW55IiwNCiJ3aW5kX2FubiIsDQoiZihTLCBtb2RlbCA9ICdieW0yJywgZ3JhcGg9Z3JpZF9ncmFmbzI1LCBzY2FsZS5tb2RlbCA9IFRSVUUsIGNvbnN0ciA9IFRSVUUsICANCiAgICAgICAgaHlwZXI9bGlzdChwaGkgPSBsaXN0KCBwcmlvciA9ICdwYycsIHBhcmFtID0gYyhwaGkudSwgcGhpLmFscGhhKSwgaW5pdGlhbCA9IC0zKSwgDQogICAgICAgIHByZWMgPSBsaXN0KHByaW9yID0gJ3BjLnByZWMnLCBwYXJhbSA9IGModSwgYWxwaGEpLCBpbml0aWFsID0gNSkpKSINCikNCiMgMl42DQpgYGANCg0KIyMjIFJlc3BvbnNlIHZhcmlhYmxlDQpgYGB7cn0NCnJlc3A8LWRhdGEkcG9zaXRpdmVzDQp0b3RhbDwtZGF0YSRzYW1wbGVzDQpgYGANCg0KIyMjIE1vZGVsaW5nICANCmBgYHtyIGV2YWw9RkFMU0UsIGluY2x1ZGU9VFJVRX0NCm1vZGVsc19iaW48LUJkaWNsY3BvbW9kZWxfc3RhY2socmVzcD1yZXNwLCB2YXJpYWJsZXM9dmFyaWFibGVzLA0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBOdHJpYWxzPXRvdGFsLA0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBkYXRvcz1kYXRhLCBuPTIwLA0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBmYW1pbHk9ImJpbm9taWFsIiwNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29udHJvbC5wcmVkaWN0b3I9bGlzdChjb21wdXRlPUZBTFNFKSwgDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvbnRyb2wuY29tcHV0ZSA9IGxpc3QoIA0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBjb25maWc9VFJVRSwgZGljPVRSVUUsIGNwbz1UUlVFLCB3YWljPVRSVUUpLCANCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdmVyYm9zZT1GKQ0Kc2F2ZShtb2RlbHNfYmluLCBmaWxlPSIuL21vZGVscy9iZXN0X21vZGVsc19jbGltLlJEYXRhIikNCmBgYA0KDQoNCmBgYHtyIGluY2x1ZGU9RkFMU0V9DQpsb2FkKCIuL21vZGVscy9iZXN0X21vZGVsc19jbGltLlJEYXRhIikNCg0KYGBgDQoNCiMjIyBSYW5raW5nIG1vZGVscyBieSBXQUlDIGNyaXRlcmlhDQpgYGB7cn0NCm1vZGVsc19iaW4kYE1vZGVsb3Mgc2VndW4gd2FpY2BbMToxMCxdDQpgYGANCg0KIyMjIEJlc3QgbW9kZWwgIA0KYGBge3IgZXZhbD1GQUxTRSwgaW5jbHVkZT1UUlVFfQ0KIyBtb2RlbHNfYmluJGBNb2RlbG9zIHNlZ3VuIHdhaWNgWzEsMV0NCg0KZjEgPC0gcG9zaXRpdmVzIH4gMSArIHRlbXBfZHJ5ICsgd2luZF9hbm4gKyBmKFMsIG1vZGVsID0gImJ5bTIiLA0KICAgICAgICAgICAgICAgICAgICAgICAgZ3JhcGg9Z3JpZF9ncmFmbzI1LA0KICAgICAgICAgICAgICAgICAgICAgICAgc2NhbGUubW9kZWwgPSBUUlVFLCANCiAgICAgICAgICAgICAgICAgICAgICAgIGNvbnN0ciA9IFRSVUUsIA0KICAgICAgICAgICAgICAgICAgICAgICAgaHlwZXI9bGlzdCgNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcGhpID0gbGlzdCgNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBwcmlvciA9ICJwYyIsDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcGFyYW0gPSBjKHBoaS51LCBwaGkuYWxwaGEpLA0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGluaXRpYWwgPSAtMyksIA0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBwcmVjID0gbGlzdCgNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBwcmlvciA9ICJwYy5wcmVjIiwNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBwYXJhbSA9IGModSwgYWxwaGEpLA0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGluaXRpYWwgPSA1KSkpDQptb2Q8LWlubGEoZjEsIGZhbWlseT0iYmlub21pYWwiLCBkYXRhPWRhdGEsIE50cmlhbHMgPSBzYW1wbGVzLCANCiAgICAgICAgICBjb250cm9sLmNvbXB1dGU9bGlzdChkaWM9VFJVRSxjcG89VFJVRSwgd2FpYz1UUlVFKSwgdmVyYm9zZSA9IEZBTFNFKQ0KIyBieW0yDQpgYGANCg0KYGBge3IgZXZhbD1GQUxTRSwgaW5jbHVkZT1UUlVFfQ0KbW9kIDwtIGlubGEucmVydW4obW9kKQ0Kc2F2ZVJEUyhtb2QsICIuL21vZGVscy9iZXN0X21vZGVsLlJEUyIpDQpgYGANCg0KDQpgYGB7ciBpbmNsdWRlPUZBTFNFfQ0KbW9kPC1yZWFkUkRTKCIuL21vZGVscy9iZXN0X21vZGVsLlJEUyIpDQpgYGANCg0KIyMjIFN1bW1hcnkgc3RhdGlzdGljcw0KYGBge3J9DQojIG1vZCRsb2dmaWxlDQpzdW1tYXJ5KG1vZCkNCmBgYA0KDQoNCmBgYHtyfQ0KDQpiaW5kX3Jvd3MoI2FzLmRhdGEuZnJhbWUobW9kJG1hcmdpbmFscy5maXhlZCRtYW5kYXJpbikgJT4lIA0KICAgICAjIG11dGF0ZSh2YXIgPSAiTWFuZGFyaW4iKSwNCiAgICMgYXMuZGF0YS5mcmFtZShtb2QkbWFyZ2luYWxzLmZpeGVkJHByZWNfZHJ5KSAlPiUNCiAgICMgbXV0YXRlKHZhciA9ICJwcmVjX2RyeSIpLA0KICAgIGFzLmRhdGEuZnJhbWUobW9kJG1hcmdpbmFscy5maXhlZCR0ZW1wX2RyeSkgJT4lIA0KICAgICAgbXV0YXRlKHZhciA9ICJUZW1wZXJhdHVyZSBkcnkiKSwNCiAgICBhcy5kYXRhLmZyYW1lKG1vZCRtYXJnaW5hbHMuZml4ZWQkd2luZF9hbm4pICU+JSANCiAgICAgIG11dGF0ZSh2YXIgPSAiV2luZCBhbm51YWwiKQ0KKSAlPiUgDQogIGdncGxvdChhZXMoeCwgeSwgY29sb3IgPSB2YXIpKSsNCiAgZ2VvbV92bGluZSh4aW50ZXJjZXB0ID0gMCkrDQogIGdlb21fbGluZSgpKw0KICBmYWNldF93cmFwKH52YXIsIHNjYWxlcyA9ICJmcmVlIikNCg0KYGBgDQoNCg0KDQojIyMgUG9zdGVyaW9yIGRpc3RyaWJ1dGlvbnMNCg0KIyMjIyBTcGF0aWFsIGVmZmVjdC4NCiMjIyMjIE1lYW4NCmBgYHtyfQ0KcnIyID0gcnI+MA0KIyMjIC0tLSBNZWFuIG9mIHRoZSBzdHJ1Y3R1cmVkIGVmZmVjdCAtLS0gIyMjDQpycjJbYXMubnVtZXJpYyhuYW1lcyh0YWIpKV0gPC0gbW9kJHN1bW1hcnkucmFuZG9tJFMkbWVhblsxOm5yb3coZGF0YSldIA0KZGYgPSBhcyhycjIsICJTcGF0aWFsUGl4ZWxzRGF0YUZyYW1lIikNCnRlc3RfZGYgPC0gYXMuZGF0YS5mcmFtZShkZikNCmNvbG5hbWVzKHRlc3RfZGYpIDwtIGMoInZhbHVlIiwgIngiLCAieSIpDQpnX3NwdF92ID0gZ2dwbG90KHRlc3RfZGYgJT4lIA0KICAgICAgICAgZmlsdGVyKHZhbHVlIT0wKSkgKw0KICBnZW9tX3NmKCBkYXRhID0gQlJBLCBmaWxsID0gIndoaXRlIiwgY29sb3IgPSAiZ3JheTYwIikrDQogIGdlb21fc2YoZGF0YSA9IE1HLCBmaWxsID0gIndoaXRlIiwgY29sb3IgPSAiYmxhY2siKSArDQogIGdlb21fdGlsZShhZXMoeD14LCB5PXksIGZpbGw9dmFsdWUpLCBhbHBoYT0xKSsNCiAgc2NhbGVfZmlsbF92aXJpZGlzX2Mob3B0aW9uID0gIkUiKSsNCiAgY29vcmRfc2YoKSArDQogIHRoZW1lX21pbmltYWxfZ3JpZChmb250X3NpemUgPSA4KSsNCiAgbGFicyh4ID0gIkxvbmdpdHVkZSIsDQogICAgICAgeSA9ICJMYXRpdHVkZSIsDQogICAgICAgZmlsbCA9ICIiKSsNCiAgbm9ydGgoIGxvY2F0aW9uID0gInRvcGxlZnQiLCBzY2FsZSA9IDAuMDgsIHN5bWJvbCA9IDEwLA0KICAgICAgeC5taW49LTUxLCB4Lm1heD0tNDMuNSwgeS5taW49LTIzLCB5Lm1heD0tMTgpKw0KICANCiAgc2NhbGViYXIobG9jYXRpb24gPSAiYm90dG9tbGVmdCIsIGRpc3QgPSA1MCwNCiAgICAgICAgICAgZGlzdF91bml0ID0gImttIiwgdHJhbnNmb3JtID0gVFJVRSwgDQogICAgICAgICAgIHgubWluPS01MSwgeC5tYXg9LTQ0LCB5Lm1pbj0tMjMsIHkubWF4PS0xOCwNCiAgICAgICAgICAgc3QuYm90dG9tID0gRkFMU0UsDQogICAgICAgICAgIHN0LmRpc3QgPSAwLjAzLCBzdC5zaXplID0gMikrDQogIHlsaW0oLTIzLCAtMTgpKw0KICB4bGltKC01MSwgLTQzLjUpKw0KICB0aGVtZShwYW5lbC5ib3JkZXIgPSBlbGVtZW50X3JlY3QoY29sb3IgPSAiZ3JheSIpKSANCg0KYGBgDQoNCiMjIyMjIFN0YW5kYXJkIGRldmlhdGlvbg0KDQpgYGB7cn0NCnJyMiA9IHJyPjANCiMjIyAtLS0gTWVhbiBvZiB0aGUgc3RydWN0dXJlZCBlZmZlY3QgLS0tICMjIw0KcnIyW2FzLm51bWVyaWMobmFtZXModGFiKSldIDwtIG1vZCRzdW1tYXJ5LnJhbmRvbSRTJHNkWzE6bnJvdyhkYXRhKV0gDQpkZiA9IGFzKHJyMiwgIlNwYXRpYWxQaXhlbHNEYXRhRnJhbWUiKQ0KdGVzdF9kZiA8LSBhcy5kYXRhLmZyYW1lKGRmKQ0KY29sbmFtZXModGVzdF9kZikgPC0gYygidmFsdWUiLCAieCIsICJ5IikNCmdfc3B0X3Zfc2QgPSBnZ3Bsb3QodGVzdF9kZiAlPiUgDQogICAgICAgICBmaWx0ZXIodmFsdWUhPTApKSArDQogIGdlb21fc2YoIGRhdGEgPSBCUkEsIGZpbGwgPSAid2hpdGUiLCBjb2xvciA9ICJncmF5NjAiKSsNCiAgZ2VvbV9zZihkYXRhID0gTUcsIGZpbGwgPSAid2hpdGUiLCBjb2xvciA9ICJibGFjayIpICsNCiAgZ2VvbV90aWxlKGFlcyh4PXgsIHk9eSwgZmlsbD12YWx1ZSksIGFscGhhPTAuOTUpKw0KICAgc2NhbGVfZmlsbF9ncmFkaWVudChsb3cgPSAid2hpdGUiLCBoaWdoID0gIiMzN2JmODciKSsNCiAgY29vcmRfc2YoKSArDQogIHRoZW1lX21pbmltYWxfZ3JpZChmb250X3NpemUgPSA4KSsNCiAgbGFicyh4ID0gIkxvbmdpdHVkZSIsDQogICAgICAgeSA9ICJMYXRpdHVkZSIsDQogICAgICAgZmlsbCA9ICIiKSsNCiAgbm9ydGgoIGxvY2F0aW9uID0gInRvcGxlZnQiLCBzY2FsZSA9IDAuMDgsIHN5bWJvbCA9IDEwLA0KICAgICAgeC5taW49LTUxLCB4Lm1heD0tNDMuNSwgeS5taW49LTIzLCB5Lm1heD0tMTgpKw0KICANCiAgc2NhbGViYXIobG9jYXRpb24gPSAiYm90dG9tbGVmdCIsIGRpc3QgPSA1MCwNCiAgICAgICAgICAgZGlzdF91bml0ID0gImttIiwgdHJhbnNmb3JtID0gVFJVRSwgDQogICAgICAgICAgIHgubWluPS01MSwgeC5tYXg9LTQ0LCB5Lm1pbj0tMjMsIHkubWF4PS0xOCwNCiAgICAgICAgICAgc3QuYm90dG9tID0gRkFMU0UsDQogICAgICAgICAgIHN0LmRpc3QgPSAwLjAzLCBzdC5zaXplID0gMikrDQogIHlsaW0oLTIzLCAtMTgpKw0KICB4bGltKC01MSwgLTQzLjUpKw0KICB0aGVtZShwYW5lbC5ib3JkZXIgPSBlbGVtZW50X3JlY3QoY29sb3IgPSAiZ3JheSIpKSANCmBgYA0KDQoNCg0KIyMjIyBSSVNLDQojIyMjIyBNZWFuIHByb3BhYmlsaXR5IA0KYGBge3J9DQpycjJbYXMubnVtZXJpYyhuYW1lcyh0YWIpKV0gPC0gbW9kJHN1bW1hcnkuZml0dGVkLnZhbHVlcyRtZWFuDQoNCiMgcGxvdChycjIpDQoNCmRmID0gYXMocnIyLCAiU3BhdGlhbFBpeGVsc0RhdGFGcmFtZSIpDQp0ZXN0X2RmIDwtIGFzLmRhdGEuZnJhbWUoZGYpDQpjb2xuYW1lcyh0ZXN0X2RmKSA8LSBjKCJ2YWx1ZSIsICJ4IiwgInkiKQ0KZzFfdiA9IGdncGxvdCh0ZXN0X2RmICU+JSANCiAgICAgICAgIGZpbHRlcih2YWx1ZT4wKSkrDQogIGdlb21fc2YoIGRhdGEgPSBCUkEsIGZpbGwgPSAid2hpdGUiLCBjb2xvciA9ICJncmF5NjAiKSsNCiAgZ2VvbV9zZihkYXRhID0gTUcsIGZpbGwgPSAid2hpdGUiLCBjb2xvciA9ICJibGFjayIpICsNCiAgZ2VvbV90aWxlKGFlcyh4PXgsIHk9eSwgZmlsbD12YWx1ZSksIGFscGhhPTAuOTUpKw0KICAjIGdlb21fcG9pbnQoZGF0YSA9IGhoX2hsYiwNCiAgIyAgICAgICAgICAgIGFlcyhsb24sIGxhdCwgY29sb3IgPSBwcmVzZW5jYSksDQogICMgICAgICAgICAgICBzaXplID0gMC40KSsNCiAgIyBzY2FsZV9jb2xvcl9tYW51YWwodmFsdWVzICA9YygiYmxhY2siLCJyZWQiKSkrDQogIHNjYWxlX2ZpbGxfZGlzdGlsbGVyKHBhbGV0dGUgPSAiWWxPclJkIiwgZGlyZWN0aW9uID0gMSkrDQogIGNvb3JkX3NmKCkgKw0KICB0aGVtZV9taW5pbWFsX2dyaWQoZm9udF9zaXplID0gOCkrDQogIGxhYnMoeCA9ICJMb25naXR1ZGUiLA0KICAgICAgIHkgPSAiTGF0aXR1ZGUiLA0KICAgICAgIGZpbGwgPSAiIikrDQogIG5vcnRoKCBsb2NhdGlvbiA9ICJ0b3BsZWZ0Iiwgc2NhbGUgPSAwLjA4LCBzeW1ib2wgPSAxMCwNCiAgICAgIHgubWluPS01MSwgeC5tYXg9LTQzLjUsIHkubWluPS0yMywgeS5tYXg9LTE4KSsNCiAgDQogIHNjYWxlYmFyKGxvY2F0aW9uID0gImJvdHRvbWxlZnQiLCBkaXN0ID0gNTAsDQogICAgICAgICAgIGRpc3RfdW5pdCA9ICJrbSIsIHRyYW5zZm9ybSA9IFRSVUUsIA0KICAgICAgICAgICB4Lm1pbj0tNTEsIHgubWF4PS00NCwgeS5taW49LTIzLCB5Lm1heD0tMTgsDQogICAgICAgICAgIHN0LmJvdHRvbSA9IEZBTFNFLA0KICAgICAgICAgICBzdC5kaXN0ID0gMC4wMywgc3Quc2l6ZSA9IDIpKw0KICB5bGltKC0yMywgLTE4KSsNCiAgeGxpbSgtNTEsIC00My41KSsNCiAgdGhlbWUocGFuZWwuYm9yZGVyID0gZWxlbWVudF9yZWN0KGNvbG9yID0gImdyYXkiKSkNCg0KIyBnZ3NhdmUoImZpZ3MvbWFwX3Bvc3Rlcmlvci5wbmciLCBkcGkgPSA2MDAsIGhlaWdodCA9IDUsIHdpZHRoID0gOCkNCg0KYGBgDQogDQoNCiMjIyMjIFN0YW5kYXJkIGRldmlhdGlvbg0KYGBge3J9DQpycjJbYXMubnVtZXJpYyhuYW1lcyh0YWIpKV0gPC0gbW9kJHN1bW1hcnkuZml0dGVkLnZhbHVlcyRzZA0KZGYgPSBhcyhycjIsICJTcGF0aWFsUGl4ZWxzRGF0YUZyYW1lIikNCnRlc3RfZGYgPC0gYXMuZGF0YS5mcmFtZShkZikNCmNvbG5hbWVzKHRlc3RfZGYpIDwtIGMoInZhbHVlIiwgIngiLCAieSIpDQpnMV92X3NkID0gZ2dwbG90KHRlc3RfZGYgJT4lIA0KICAgICAgICAgZmlsdGVyKHZhbHVlPjApKSsNCiAgZ2VvbV9zZiggZGF0YSA9IEJSQSwgZmlsbCA9ICJ3aGl0ZSIsIGNvbG9yID0gImdyYXk2MCIpKw0KICBnZW9tX3NmKGRhdGEgPSBNRywgZmlsbCA9ICJncmF5OTkiLCBjb2xvciA9ICJibGFjayIpICsNCiAgZ2VvbV90aWxlKGFlcyh4PXgsIHk9eSwgZmlsbD12YWx1ZSksIGFscGhhPTAuOTUpKw0KICAjIHNjYWxlX2ZpbGxfdmlyaWRpc19jKG9wdGlvbiA9ICJCIikgKw0KICBzY2FsZV9jb2xvcl9tYW51YWwodmFsdWVzICA9ImJsYWNrIikrDQogICBzY2FsZV9maWxsX2dyYWRpZW50KGxvdyA9ICJ3aGl0ZSIsIGhpZ2ggPSAic3RlZWxibHVlIikrDQogIGNvb3JkX3NmKCkgKw0KICB0aGVtZV9taW5pbWFsX2dyaWQoZm9udF9zaXplID0gOCkrDQogIGxhYnMoeCA9ICJMb25naXR1ZGUiLA0KICAgICAgIHkgPSAiTGF0aXR1ZGUiLA0KICAgICAgIGZpbGwgPSAiIikrDQogIG5vcnRoKCBsb2NhdGlvbiA9ICJ0b3BsZWZ0Iiwgc2NhbGUgPSAwLjA4LCBzeW1ib2wgPSAxMCwNCiAgICAgIHgubWluPS01MSwgeC5tYXg9LTQzLjUsIHkubWluPS0yMywgeS5tYXg9LTE4KSsNCiAgDQogIHNjYWxlYmFyKGxvY2F0aW9uID0gImJvdHRvbWxlZnQiLCBkaXN0ID0gNTAsDQogICAgICAgICAgIGRpc3RfdW5pdCA9ICJrbSIsIHRyYW5zZm9ybSA9IFRSVUUsIA0KICAgICAgICAgICB4Lm1pbj0tNTEsIHgubWF4PS00NCwgeS5taW49LTIzLCB5Lm1heD0tMTgsDQogICAgICAgICAgIHN0LmJvdHRvbSA9IEZBTFNFLA0KICAgICAgICAgICBzdC5kaXN0ID0gMC4wMywgc3Quc2l6ZSA9IDIpKw0KICB5bGltKC0yMywgLTE4KSsNCiAgeGxpbSgtNTEsIC00My41KSsNCiAgdGhlbWUocGFuZWwuYm9yZGVyID0gZWxlbWVudF9yZWN0KGNvbG9yID0gImdyYXkiKSkNCmBgYA0KDQojIyMjIyBDb21ibw0KYGBge3J9DQpwbG90X2dyaWQoZ19zcHRfdiwNCiAgICAgICAgICBnX3NwdF92X3NkLA0KICAgICAgICAgIGcxX3YsIA0KICAgICAgICAgIGcxX3Zfc2QsDQogICAgICAgICAgbGFiZWxzID0gImF1dG8iLA0KICAgICAgICAgIHNjYWxlID0gMC45NSkNCg0KZ2dzYXZlKCJmaWdzL2NvbWJvX3Zhci5wbmciLCBkcGkgPSAzMDAsIGhlaWdodCA9IDYsIHdpZHRoID0gMTApDQpgYGANCg0KDQoNCiMjIFBDQXMgYXMgcHJlZGljdG9ycw0KIyMjIFByaW5jaXBhbCBjb21wb25lbnQgYW5hbHlzaXMNCmBgYHtyfQ0KcGNhX3JvdGF0ZWQgPC0gcHN5Y2g6OnByaW5jaXBhbChkYXRhW2MoMzoxMSwxNCwyMDoxOSldLCByb3RhdGU9InZhcmltYXgiLA0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBuZmFjdG9ycz0zLHNjb3Jlcz1UUlVFLCBjb3Zhcj1GQUxTRSkNCnBjYV9yb3RhdGVkJGxvYWRpbmdzIA0KIyBwbG90KHBjYV9yb3RhdGVkKQ0KDQoNCmBgYA0KDQpQdXQgdGhlIGZpdmUgZmlyc3QgY29tcG9uZW50cyBpbnRvIHRoZSBkYXRhIGZyYW1lDQpgYGB7cn0NCmRhdGFfcGNhPC1kYXRhWyxjKDEsMiwxMiwxMyldDQpkYXRhX3BjYSRQQzE8LXBjYV9yb3RhdGVkJHNjb3Jlc1ssMV0NCmRhdGFfcGNhJFBDMjwtcGNhX3JvdGF0ZWQkc2NvcmVzWywyXQ0KZGF0YV9wY2EkUEMzPC1wY2Ffcm90YXRlZCRzY29yZXNbLDNdDQoNCiMgZGF0YV9wY2EkUEM0PC1wY2Ffcm90YXRlZCRzY29yZXNbLDRdDQojIGRhdGFfcGNhJFBDNTwtcGNhX3JvdGF0ZWQkc2NvcmVzWyw1XQ0Kd3JpdGUudGFibGUoZGF0YV9wY2EsICIuL2RhdGEvZGF0YV9wY2EiKQ0KZGF0YV9wY2E8LXJlYWQudGFibGUoIi4vZGF0YS9kYXRhX3BjYSIpDQpgYGANCg0KDQpBZGQgYSBjb2x1bW4gZm9yIHRoZSByYW5kb20gZWZmZWN0DQpgYGB7cn0NCmRhdGFfcGNhIDwtIGRhdGEuZnJhbWUoZGF0YV9wY2EsIFM9YygxOmxlbmd0aChkYXRhX3BjYVssMV0pKSkNCmBgYA0KDQojIyMgSHlwZXJwYXJhbWV0ZXJzDQpTaW1wc29uIGV0IGFsLiAoMjAxNykgcHJpb3IgZGlzdHJpYnV0aW9ucyBmb3IgaHlwZXJwYXJhbWV0ZXJzDQoNCmBgYHtyfQ0KdSA8LSAwLjIvMC4zMQ0KYWxwaGEgPC0gMC4wMQ0KcGhpLnUgPC0gMC41DQpwaGkuYWxwaGEgPC0gMi8zDQpgYGANCg0KDQojIyMgUHJlZGljdG9yIHZhcmlhYmxlcw0KDQpgYGB7cn0NCnZhcmlhYmxlcyA8LSBjKA0KICAgICAgICBwYXN0ZSgiUEMiLCBjKDEsIDIsIDMpLCBzZXAgPSAiIiksDQogICAgICAgICJmKFMsIG1vZGVsID0gJ2J5bTInLCBncmFwaD1ncmlkX2dyYWZvMjUsIHNjYWxlLm1vZGVsID0gVFJVRSwgY29uc3RyID0gVFJVRSwgIA0KICAgICAgICBoeXBlcj1saXN0KHBoaSA9IGxpc3QoIHByaW9yID0gJ3BjJywgcGFyYW0gPSBjKHBoaS51LCBwaGkuYWxwaGEpLCBpbml0aWFsID0gLTMpLCANCiAgICAgICAgcHJlYyA9IGxpc3QocHJpb3IgPSAncGMucHJlYycsIHBhcmFtID0gYyh1LCBhbHBoYSksIGluaXRpYWwgPSA1KSkpIg0KKQ0KYGBgDQoNCg0KIyMjIFJlc3BvbnNlIHZhcmlhYmxlDQpgYGB7cn0NCnJlc3A8LWRhdGFfcGNhJHBvc2l0aXZlcw0KdG90YWw8LWRhdGFfcGNhJHNhbXBsZXMNCmBgYA0KDQojIyMgTW9kZWxpbmcNCmBgYHtyIGV2YWw9RkFMU0UsIGluY2x1ZGU9VFJVRX0NCm1vZGVsc19wY2E8LUJkaWNsY3BvbW9kZWxfc3RhY2socmVzcD1yZXNwLCB2YXJpYWJsZXM9dmFyaWFibGVzLA0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBOdHJpYWxzPXRvdGFsLA0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBkYXRvcz1kYXRhX3BjYSwgbj0yMCwNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZmFtaWx5PSJiaW5vbWlhbCIsDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvbnRyb2wucHJlZGljdG9yPWxpc3QoY29tcHV0ZT1GQUxTRSksIA0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBjb250cm9sLmNvbXB1dGUgPSBsaXN0KCANCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBjb25maWc9VFJVRSwgZGljPVRSVUUsIGNwbz1UUlVFLCB3YWljPVRSVUUpLCANCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdmVyYm9zZT1GQUxTRSkNCnNhdmUobW9kZWxzX3BjYSwgZmlsZT0iLi9tb2RlbHMvYmVzdF9tb2RlbHNfcGNhLlJEYXRhIikNCmBgYA0KDQoNCmBgYHtyIGluY2x1ZGU9RkFMU0V9DQpsb2FkKCIuL21vZGVscy9iZXN0X21vZGVsc19wY2EuUkRhdGEiKQ0KYGBgDQoNCiMjIyBSYW5raW5nIG1vZGVscyBieSBXQUlDDQoNCmBgYHtyfQ0KbW9kZWxzX3BjYSRgTW9kZWxvcyBzZWd1biB3YWljYFsxOjEwLF0NCmBgYA0KDQojIyMgQmVzdCBtb2RlbCANCmBgYHtyIGV2YWw9RkFMU0UsIGluY2x1ZGU9VFJVRX0NCmYxIDwtIHBvc2l0aXZlcyB+IDEgKyBQQzIgKyBQQzMgKyAgZihTLCBtb2RlbCA9ICJieW0yIiwNCiAgICAgICAgICAgICAgICAgICAgICAgIGdyYXBoPWdyaWRfZ3JhZm8yNSwNCiAgICAgICAgICAgICAgICAgICAgICAgIHNjYWxlLm1vZGVsID0gVFJVRSwgDQogICAgICAgICAgICAgICAgICAgICAgICBjb25zdHIgPSBUUlVFLCANCiAgICAgICAgICAgICAgICAgICAgICAgIGh5cGVyPWxpc3QoDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHBoaSA9IGxpc3QoDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcHJpb3IgPSAicGMiLA0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHBhcmFtID0gYyhwaGkudSwgcGhpLmFscGhhKSwNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBpbml0aWFsID0gLTMpLCANCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcHJlYyA9IGxpc3QoDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcHJpb3IgPSAicGMucHJlYyIsDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcGFyYW0gPSBjKHUsIGFscGhhKSwNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBpbml0aWFsID0gNSkpKQ0KbW9kX3BjYTwtaW5sYShmMSwgZmFtaWx5PSJiaW5vbWlhbCIsIGRhdGE9ZGF0YV9wY2EsIE50cmlhbHMgPSBzYW1wbGVzLCANCiAgICAgICAgICBjb250cm9sLmNvbXB1dGU9bGlzdChkaWM9VFJVRSxjcG89VFJVRSwgd2FpYz1UUlVFKSwgdmVyYm9zZSA9IEZBTFNFKQ0KYGBgDQoNCmBgYHtyIGV2YWw9RkFMU0UsIGluY2x1ZGU9VFJVRX0NCm1vZF9wY2EgPC0gaW5sYS5yZXJ1bihtb2RfcGNhKQ0Kc2F2ZVJEUyhtb2RfcGNhLCAiLi9tb2RlbHMvYmVzdF9tb2RlbF9wY2EuUkRTIikNCmBgYA0KDQoNCmBgYHtyIGluY2x1ZGU9RkFMU0V9DQptb2RfcGNhPC1yZWFkUkRTKCIuL21vZGVscy9iZXN0X21vZGVsX3BjYS5SRFMiKQ0KYGBgDQoNCiMjIyBTdW1tYXJ5IHN0YXRpc3RpY3MNCmBgYHtyfQ0KIyBtb2QkbG9nZmlsZQ0Kc3VtbWFyeShtb2RfcGNhKQ0KYGBgDQojIyMgUG9zdGVyaW9yIGRpc3RyaWJ1dGlvbnMNCg0KIyMjIyBTcGF0aWFsIGVmZmVjdC4NCiMjIyMjIE1lYW4NCmBgYHtyfQ0KcnIyID0gcnI+MA0KIyMjIC0tLSBNZWFuIG9mIHRoZSBzdHJ1Y3R1cmVkIGVmZmVjdCAtLS0gIyMjDQpycjJbYXMubnVtZXJpYyhuYW1lcyh0YWIpKV0gPC0gbW9kX3BjYSRzdW1tYXJ5LnJhbmRvbSRTJG1lYW5bMTpucm93KGRhdGEpXSANCmRmID0gYXMocnIyLCAiU3BhdGlhbFBpeGVsc0RhdGFGcmFtZSIpDQp0ZXN0X2RmIDwtIGFzLmRhdGEuZnJhbWUoZGYpDQpjb2xuYW1lcyh0ZXN0X2RmKSA8LSBjKCJ2YWx1ZSIsICJ4IiwgInkiKQ0KZ19zcHRfcGMgPSBnZ3Bsb3QodGVzdF9kZiAlPiUgDQogICAgICAgICBmaWx0ZXIodmFsdWUhPTApKSArDQogIGdlb21fc2YoIGRhdGEgPSBCUkEsIGZpbGwgPSAid2hpdGUiLCBjb2xvciA9ICJncmF5NjAiKSsNCiAgZ2VvbV9zZihkYXRhID0gTUcsIGZpbGwgPSAid2hpdGUiLCBjb2xvciA9ICJibGFjayIpICsNCiAgZ2VvbV90aWxlKGFlcyh4PXgsIHk9eSwgZmlsbD12YWx1ZSksIGFscGhhPTAuOTUpKw0KICBzY2FsZV9maWxsX3ZpcmlkaXNfYyhvcHRpb24gPSAiRSIpKw0KICBjb29yZF9zZigpICsNCiAgdGhlbWVfbWluaW1hbF9ncmlkKGZvbnRfc2l6ZSA9IDgpKw0KICBsYWJzKHggPSAiTG9uZ2l0dWRlIiwNCiAgICAgICB5ID0gIkxhdGl0dWRlIiwNCiAgICAgICBmaWxsID0gIiIpKw0KICBub3J0aCggbG9jYXRpb24gPSAidG9wbGVmdCIsIHNjYWxlID0gMC4wOCwgc3ltYm9sID0gMTAsDQogICAgICB4Lm1pbj0tNTEsIHgubWF4PS00My41LCB5Lm1pbj0tMjMsIHkubWF4PS0xOCkrDQogIA0KICBzY2FsZWJhcihsb2NhdGlvbiA9ICJib3R0b21sZWZ0IiwgZGlzdCA9IDUwLA0KICAgICAgICAgICBkaXN0X3VuaXQgPSAia20iLCB0cmFuc2Zvcm0gPSBUUlVFLCANCiAgICAgICAgICAgeC5taW49LTUxLCB4Lm1heD0tNDQsIHkubWluPS0yMywgeS5tYXg9LTE4LA0KICAgICAgICAgICBzdC5ib3R0b20gPSBGQUxTRSwNCiAgICAgICAgICAgc3QuZGlzdCA9IDAuMDMsIHN0LnNpemUgPSAyKSsNCiAgeWxpbSgtMjMsIC0xOCkrDQogIHhsaW0oLTUxLCAtNDMuNSkrDQogIHRoZW1lKHBhbmVsLmJvcmRlciA9IGVsZW1lbnRfcmVjdChjb2xvciA9ICJncmF5IikpIA0KDQpgYGANCg0KIyMjIyMgU3RhbmRhcmQgZGV2aWF0aW9uDQoNCmBgYHtyfQ0KcnIyID0gcnI+MA0KIyMjIC0tLSBNZWFuIG9mIHRoZSBzdHJ1Y3R1cmVkIGVmZmVjdCAtLS0gIyMjDQpycjJbYXMubnVtZXJpYyhuYW1lcyh0YWIpKV0gPC0gbW9kX3BjYSRzdW1tYXJ5LnJhbmRvbSRTJHNkWzE6bnJvdyhkYXRhKV0gDQpkZiA9IGFzKHJyMiwgIlNwYXRpYWxQaXhlbHNEYXRhRnJhbWUiKQ0KdGVzdF9kZiA8LSBhcy5kYXRhLmZyYW1lKGRmKQ0KY29sbmFtZXModGVzdF9kZikgPC0gYygidmFsdWUiLCAieCIsICJ5IikNCmdfc3B0X3BjX3NkID0gZ2dwbG90KHRlc3RfZGYgJT4lIA0KICAgICAgICAgZmlsdGVyKHZhbHVlIT0wKSkgKw0KICBnZW9tX3NmKCBkYXRhID0gQlJBLCBmaWxsID0gIndoaXRlIiwgY29sb3IgPSAiZ3JheTYwIikrDQogIGdlb21fc2YoZGF0YSA9IE1HLCBmaWxsID0gIndoaXRlIiwgY29sb3IgPSAiYmxhY2siKSArDQogIGdlb21fdGlsZShhZXMoeD14LCB5PXksIGZpbGw9dmFsdWUpLCBhbHBoYT0wLjk1KSsNCiAgIHNjYWxlX2ZpbGxfZ3JhZGllbnQobG93ID0gIndoaXRlIiwgaGlnaCA9ICIjMzdiZjg3IikrDQogIGNvb3JkX3NmKCkgKw0KICB0aGVtZV9taW5pbWFsX2dyaWQoZm9udF9zaXplID0gOCkrDQogIGxhYnMoeCA9ICJMb25naXR1ZGUiLA0KICAgICAgIHkgPSAiTGF0aXR1ZGUiLA0KICAgICAgIGZpbGwgPSAiIikrDQogIG5vcnRoKCBsb2NhdGlvbiA9ICJ0b3BsZWZ0Iiwgc2NhbGUgPSAwLjA4LCBzeW1ib2wgPSAxMCwNCiAgICAgIHgubWluPS01MSwgeC5tYXg9LTQzLjUsIHkubWluPS0yMywgeS5tYXg9LTE4KSsNCiAgDQogIHNjYWxlYmFyKGxvY2F0aW9uID0gImJvdHRvbWxlZnQiLCBkaXN0ID0gNTAsDQogICAgICAgICAgIGRpc3RfdW5pdCA9ICJrbSIsIHRyYW5zZm9ybSA9IFRSVUUsIA0KICAgICAgICAgICB4Lm1pbj0tNTEsIHgubWF4PS00NCwgeS5taW49LTIzLCB5Lm1heD0tMTgsDQogICAgICAgICAgIHN0LmJvdHRvbSA9IEZBTFNFLA0KICAgICAgICAgICBzdC5kaXN0ID0gMC4wMywgc3Quc2l6ZSA9IDIpKw0KICB5bGltKC0yMywgLTE4KSsNCiAgeGxpbSgtNTEsIC00My41KSsNCiAgdGhlbWUocGFuZWwuYm9yZGVyID0gZWxlbWVudF9yZWN0KGNvbG9yID0gImdyYXkiKSkgDQpgYGANCg0KDQoNCiMjIyMgUklTSw0KDQojIyMjIE1lYW4NCmBgYHtyfQ0KcnIyW2FzLm51bWVyaWMobmFtZXModGFiKSldIDwtIG1vZF9wY2Ekc3VtbWFyeS5maXR0ZWQudmFsdWVzJG1lYW4NCg0KIyBwbG90KHJyMikNCg0KDQpkZiA9IGFzKHJyMiwgIlNwYXRpYWxQaXhlbHNEYXRhRnJhbWUiKQ0KdGVzdF9kZiA8LSBhcy5kYXRhLmZyYW1lKGRmKQ0KY29sbmFtZXModGVzdF9kZikgPC0gYygidmFsdWUiLCAieCIsICJ5IikNCmcxX3BjID0gZ2dwbG90KHRlc3RfZGYgJT4lIA0KICAgICAgICAgZmlsdGVyKHZhbHVlPjApKSsNCiAgZ2VvbV9zZiggZGF0YSA9IEJSQSwgZmlsbCA9ICJ3aGl0ZSIsIGNvbG9yID0gImdyYXk2MCIpKw0KICBnZW9tX3NmKGRhdGEgPSBNRywgZmlsbCA9ICJncmF5OTkiLCBjb2xvciA9ICJibGFjayIpICsNCiAgZ2VvbV90aWxlKGFlcyh4PXgsIHk9eSwgZmlsbD12YWx1ZSksIGFscGhhPTAuOTUpKw0KICAjIHNjYWxlX2ZpbGxfdmlyaWRpc19jKG9wdGlvbiA9ICJCIikgKw0KICBzY2FsZV9jb2xvcl9tYW51YWwodmFsdWVzICA9ImJsYWNrIikrDQogIHNjYWxlX2ZpbGxfZGlzdGlsbGVyKHBhbGV0dGUgPSAiWWxPclJkIiwgZGlyZWN0aW9uID0gMSkrDQogIGNvb3JkX3NmKCkgKw0KICB0aGVtZV9taW5pbWFsX2dyaWQoZm9udF9zaXplID0gOCkrDQogIGxhYnMoeCA9ICJMb25naXR1ZGUiLA0KICAgICAgIHkgPSAiTGF0aXR1ZGUiLA0KICAgICAgIGZpbGwgPSAiIikrDQogIG5vcnRoKCBsb2NhdGlvbiA9ICJ0b3BsZWZ0Iiwgc2NhbGUgPSAwLjA4LCBzeW1ib2wgPSAxMCwNCiAgICAgIHgubWluPS01MSwgeC5tYXg9LTQzLjUsIHkubWluPS0yMywgeS5tYXg9LTE4KSsNCiAgDQogIHNjYWxlYmFyKGxvY2F0aW9uID0gImJvdHRvbWxlZnQiLCBkaXN0ID0gNTAsDQogICAgICAgICAgIGRpc3RfdW5pdCA9ICJrbSIsIHRyYW5zZm9ybSA9IFRSVUUsIA0KICAgICAgICAgICB4Lm1pbj0tNTEsIHgubWF4PS00NCwgeS5taW49LTIzLCB5Lm1heD0tMTgsDQogICAgICAgICAgIHN0LmJvdHRvbSA9IEZBTFNFLA0KICAgICAgICAgICBzdC5kaXN0ID0gMC4wMywgc3Quc2l6ZSA9IDIpKw0KICB5bGltKC0yMywgLTE4KSsNCiAgeGxpbSgtNTEsIC00My41KSsNCiAgdGhlbWUocGFuZWwuYm9yZGVyID0gZWxlbWVudF9yZWN0KGNvbG9yID0gImdyYXkiKSkNCg0KIyBnZ3NhdmUoImZpZ3MvbWFwX3Bvc3Rlcmlvcl9wY2EucG5nIiwgZHBpID0gNjAwLCBoZWlnaHQgPSA1LCB3aWR0aCA9IDgpDQpgYGANCg0KIyMjIyBTRA0KYGBge3J9DQpycjJbYXMubnVtZXJpYyhuYW1lcyh0YWIpKV0gPC0gbW9kX3BjYSRzdW1tYXJ5LmZpdHRlZC52YWx1ZXMkc2QNCg0KIyBwbG90KHJyMikNCg0KDQpkZiA9IGFzKHJyMiwgIlNwYXRpYWxQaXhlbHNEYXRhRnJhbWUiKQ0KdGVzdF9kZiA8LSBhcy5kYXRhLmZyYW1lKGRmKQ0KY29sbmFtZXModGVzdF9kZikgPC0gYygidmFsdWUiLCAieCIsICJ5IikNCmcxX3BjX3NkID0gZ2dwbG90KHRlc3RfZGYgJT4lIA0KICAgICAgICAgZmlsdGVyKHZhbHVlPjApKSsNCiAgZ2VvbV9zZiggZGF0YSA9IEJSQSwgZmlsbCA9ICJ3aGl0ZSIsIGNvbG9yID0gImdyYXk2MCIpKw0KICBnZW9tX3NmKGRhdGEgPSBNRywgZmlsbCA9ICJncmF5OTkiLCBjb2xvciA9ICJibGFjayIpICsNCiAgZ2VvbV9yYXN0ZXIoYWVzKHg9eCwgeT15LCBmaWxsPXZhbHVlKSwgYWxwaGE9MC45NSkrDQogICMgc2NhbGVfZmlsbF92aXJpZGlzX2Mob3B0aW9uID0gIkIiKSArDQogIHNjYWxlX2NvbG9yX21hbnVhbCh2YWx1ZXMgID0iYmxhY2siKSsNCiAgIHNjYWxlX2ZpbGxfZ3JhZGllbnQobG93ID0gIndoaXRlIiwgaGlnaCA9ICJzdGVlbGJsdWUiKSsNCiAgY29vcmRfc2YoKSArDQogIHRoZW1lX21pbmltYWxfZ3JpZChmb250X3NpemUgPSA4KSsNCiAgbGFicyh4ID0gIkxvbmdpdHVkZSIsDQogICAgICAgeSA9ICJMYXRpdHVkZSIsDQogICAgICAgZmlsbCA9ICIiKSsNCiAgbm9ydGgoIGxvY2F0aW9uID0gInRvcGxlZnQiLCBzY2FsZSA9IDAuMDgsIHN5bWJvbCA9IDEwLA0KICAgICAgeC5taW49LTUxLCB4Lm1heD0tNDMuNSwgeS5taW49LTIzLCB5Lm1heD0tMTgpKw0KICANCiAgc2NhbGViYXIobG9jYXRpb24gPSAiYm90dG9tbGVmdCIsIGRpc3QgPSA1MCwNCiAgICAgICAgICAgZGlzdF91bml0ID0gImttIiwgdHJhbnNmb3JtID0gVFJVRSwgDQogICAgICAgICAgIHgubWluPS01MSwgeC5tYXg9LTQ0LCB5Lm1pbj0tMjMsIHkubWF4PS0xOCwNCiAgICAgICAgICAgc3QuYm90dG9tID0gRkFMU0UsDQogICAgICAgICAgIHN0LmRpc3QgPSAwLjAzLCBzdC5zaXplID0gMikrDQogIHlsaW0oLTIzLCAtMTgpKw0KICB4bGltKC01MSwgLTQzLjUpKw0KICB0aGVtZShwYW5lbC5ib3JkZXIgPSBlbGVtZW50X3JlY3QoY29sb3IgPSAiZ3JheSIpKQ0KDQojIGdnc2F2ZSgiZmlncy9tYXBfcG9zdGVyaW9yX3NkX3BjYS5wbmciLCBkcGkgPSA2MDAsIGhlaWdodCA9IDQsIHdpZHRoID0gNikNCmBgYA0KDQojIyMjIENvbWJvDQoNCmBgYHtyfQ0KcGxvdF9ncmlkKGdfc3B0X3BjLA0KICAgICAgICAgIGdfc3B0X3BjX3NkLA0KICAgICAgICAgIGcxX3BjLA0KICAgICAgICAgIGcxX3BjX3NkLA0KICAgICAgICAgIGxhYmVscyA9ICJhdXRvIiwNCiAgICAgICAgICBzY2FsZSA9IDAuOTUpDQpnZ3NhdmUoImZpZ3MvY29tYm9fcGNhLnBuZyIsIGRwaSA9IDMwMCwgaGVpZ2h0ID0gNiwgd2lkdGggPSAxMCkNCmBgYA0KDQoNCiMjIFN1cHBsZW1lbnRhbCBncmFwaHMgDQoNCmBgYHtyfQ0KQ2xpbWVfbWFwID0gZnVuY3Rpb24oZGF0YSwgdmFyKXsNCg0KeiA9IGFzLm51bWVyaWMoZGF0YVtbdmFyXV0pDQpkYXRhMiA9IGRhdGEuZnJhbWUoZGF0YVssYygieCIsInkiKV0seikgIA0KDQoNCmcgPWRhdGEyICU+JSANCiAgIyBnYXRoZXIoYyg0LDUsNyw4LDEwLDExKSwga2V5ID0gInZhciIsIHZhbHVlID0gInZhbHVlIikgJT4lIA0KZ2dwbG90KCkrDQogIGdlb21fc2YoIGRhdGEgPSBCUkEsIGZpbGwgPSAid2hpdGUiLCBjb2xvciA9ICJncmF5NjAiKSsNCiAgZ2VvbV9zZihkYXRhID0gTUcsIGZpbGwgPSAiZ3JheTk5IiwgY29sb3IgPSAiYmxhY2siKSArDQogIGdlb21fdGlsZShhZXMoeCx5LCBmaWxsID0geiAgICApLA0KICAgICAgICAgICAgIyBmaWxsID0iZ3JheTYwIiwNCiAgICAgICAgICAgIHNpemUgPSAuMiwNCiAgICAgICAgICAgIGNvbG9yID0gImdyYXk2NSIpKw0KICBnZW9tX3BvaW50KGRhdGEgPSBoaF9obGIsDQogICAgICAgICAgICAgYWVzKGxvbiwgbGF0LCBjb2xvciA9IHByZXNlbmNhKSwNCiAgICAgICAgICAgICBzaXplID0gMC40KSsNCiAgc2NhbGVfY29sb3JfbWFudWFsKHZhbHVlcyAgPWMoIiMzZTliMzkiLCAncmVkJykpKw0KICBzY2FsZV9maWxsX3ZpcmlkaXNfYyhvcHRpb24gPSAiQiIpKw0KICBjb29yZF9zZigpICsNCiAgZ3VpZGVzKGNvbG9yID0gZ3VpZGVfbGVnZW5kKG92ZXJyaWRlLmFlcyA9IGxpc3Qoc2l6ZT0yLjUpKSkrDQogIHRoZW1lX21pbmltYWxfZ3JpZChmb250X3NpemUgPSA4KSsNCiAgbGFicyh4ID0gIkxvbmdpdHVkZSIsDQogICAgICAgeSA9ICJMYXRpdHVkZSIsDQogICAgICAgY29sb3IgPSAiIiwgZmlsbCA9ICIiKSsNCiAgbm9ydGgoIGxvY2F0aW9uID0gInRvcGxlZnQiLCBzY2FsZSA9IDAuMDgsIHN5bWJvbCA9IDEwLA0KICAgICAgeC5taW49LTUxLCB4Lm1heD0tNDMuNSwgeS5taW49LTIzLCB5Lm1heD0tMTgpKw0KICANCiAgc2NhbGViYXIobG9jYXRpb24gPSAiYm90dG9tbGVmdCIsIGRpc3QgPSA1MCwNCiAgICAgICAgICAgZGlzdF91bml0ID0gImttIiwgdHJhbnNmb3JtID0gVFJVRSwgDQogICAgICAgICAgIHgubWluPS01MSwgeC5tYXg9LTQ0LCB5Lm1pbj0tMjMsIHkubWF4PS0xOCwNCiAgICAgICAgICAgc3QuYm90dG9tID0gRkFMU0UsDQogICAgICAgICAgIHN0LmRpc3QgPSAwLjAzLCBzdC5zaXplID0gMikrDQogIHlsaW0oLTIzLCAtMTgpKw0KICB4bGltKC01MSwgLTQzLjUpKw0KICBmYWNldF93cmFwKH5wcmVzZW5jYSkrDQogIHRoZW1lKHBhbmVsLmJvcmRlciA9IGVsZW1lbnRfcmVjdChjb2xvciA9ICJncmF5IikpDQogIHJldHVybihnKQ0KfQ0KYGBgDQoNCg0KIyMjIENsaW1hdGUNCmBgYHtyfQ0KcGxvdF9ncmlkKA0KDQpDbGltZV9tYXAoZGF0YT1kYXRhLCB2YXI9InByZWNfcmFpbnkiKSwNCkNsaW1lX21hcChkYXRhPWRhdGEsIHZhcj0idGVtcF9kcnkiKSwNCkNsaW1lX21hcChkYXRhPWRhdGEsIHZhcj0id2luZF9hbm4iKSwNCm5jb2wgPSAxLA0KbGFiZWxzID0gYygiUF9yYWlueSIsICJUX2RyeSIsIldfYW5uIikNCikNCg0KZ2dzYXZlKCJmaWdzL2NsaW1fdmFyX21hcGFzLnBuZyIsIGRwaT0zMDAsIGhlaWdodCA9IDEwLHdpZHRoID0gOCkNCmBgYA0KDQoNCiMjIyBPcmNoYXJkDQpgYGB7cn0NCnBsb3RfZ3JpZCgNCg0KQ2xpbWVfbWFwKGRhdGE9ZGF0YSwgdmFyPSJvcmFuZ2UiKSwNCkNsaW1lX21hcChkYXRhPWRhdGEsIHZhcj0ibWFuZGFyaW4iKSwNCkNsaW1lX21hcChkYXRhPWRhdGEsIHZhcj0iYXJlYSIpLA0KbmNvbCA9IDEsDQpsYWJlbHMgPSBjKCJPcmFuZ2UiLCJNYW5kYXJpbiIsIkFyZWEiKQ0KKQ0KDQpnZ3NhdmUoImZpZ3Mvb3JjaGFyZF92YXJfbWFwYXMucG5nIiwgZHBpPTMwMCwgaGVpZ2h0ID0gOCx3aWR0aCA9IDYpDQpgYGANCg0KDQo=</div>
+
+
+Copyright 2017 Emerson Del Ponte
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeSourceEmbed("main_code_risk_hlb.Rmd");
+});
+</script>
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = false;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

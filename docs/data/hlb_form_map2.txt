@@ -1,0 +1,1488 @@
+"presenca" "lat" "lon" "class" "especie" "area" "Incidencia" "Total_erradicadas" "total_plantas"
+"1" "Present" -19.10686 -48.53906 "Large" "Sweet orange" 221.3 8.03 8968 111698
+"2" "Absent" -19.02092 -49.0143 "Mini" "Sweet orange" 3.5 0 0 1500
+"3" "Absent" -19.01961 -49.0046 "Small" "Mandarins" 14 0 0 5000
+"4" "Absent" -19.01283 -48.9612 "Small" "Sweet orange" 29.1 0 0 10400
+"5" "Absent" -19.01011 -48.9459 "Mini" "Sweet orange" 9 0 0 3000
+"6" "Absent" -18.97961 -49.0236 "Mini" "Sweet orange" 4 0 0 1850
+"7" "Absent" -18.97111 -48.83694 "Small" "Sweet orange" 40 0 0 20000
+"8" "Absent" -18.9603 -48.71972 "Large" "Sweet orange" 498.48 0 0 294365
+"9" "Absent" -18.93647 -48.7904 "Medium" "Sweet orange" 54.5 0 0 19000
+"10" "Absent" -18.92411 -49.0713 "Mini" "Acid lime" 7.8 0 0 2730
+"11" "Absent" -18.9225 -48.9622 "Large" "Sweet orange" 867.46 0 0 578321
+"12" "Absent" -18.88781 -48.9645 "Mini" "Sweet orange" 1.5 0 0 600
+"13" "Absent" -18.88703 -49.0053 "Small" "Sweet orange" 50 0 0 23500
+"14" "Absent" -18.88617 -48.9654 "Small" "Sweet orange" 14.11 0 0 7235
+"15" "Absent" -18.88147 -49.0713 "Medium" "Sweet orange" 73.4 0 0 34900
+"16" "Absent" -18.8794 -49.0056 "Small" "Sweet orange" 27.3 0 0 13000
+"17" "Absent" -18.8794 -49.0056 "Small" "Sweet orange" 10.5 0 0 5000
+"18" "Absent" -18.87733 -48.9998 "Small" "Sweet orange" 15.9 0 0 5200
+"19" "Absent" -18.8764 -48.9194 "Mini" "Sweet orange" 8.4 0 0 3000
+"20" "Absent" -18.87581 -48.9024 "Mini" "Sweet orange" 5 0 0 3900
+"21" "Absent" -18.87539 -49.1148 "Mini" "Sweet orange" 0.65 0 0 300
+"22" "Absent" -18.86753 -48.9998 "Small" "Sweet orange" 30.2 0 0 12200
+"23" "Absent" -18.8675 -48.9997 "Small" "Sweet orange" 12.6 0 0 6000
+"24" "Absent" -18.84769 -49.0906 "Mini" "Sweet orange" 2.1 0 0 570
+"25" "Absent" -18.81992 -49.0059 "Small" "Sweet orange" 12 0 0 6040
+"26" "Absent" -18.81992 -49.0856 "Mini" "Sweet orange" 1.1 0 0 500
+"27" "Absent" -18.80389 -49.0721 "Mini" "Sweet orange" 2 0 0 1100
+"28" "Absent" -18.77336 -48.9551 "Mini" "Sweet orange" 3.96 0 0 2200
+"29" "Absent" -18.76211 -48.9573 "Medium" "Sweet orange" 60.82 0 0 33100
+"30" "Absent" -18.74086 -49.0523 "Mini" "Mandarins" 2.62 0 0 1000
+"31" "Absent" -19.73028 -49.69888 "Small" "Mandarins" 20 0 0 7000
+"32" "Absent" -19.67167 -49.80333 "Medium" "Sweet orange" 75 0 0 52930
+"33" "Present" -19.9983 -46.5592 "Medium" "Sweet orange" 150 0.05 60 132329
+"34" "Present" -19.9889 -46.55917 "Medium" "Sweet orange" 150 0.03 40 132384
+"35" "Present" -19.9758 -46.515 "Medium" "Sweet orange" 111.07 0.03 29 95940
+"36" "Present" -19.9803 -46.515 "Medium" "Sweet orange" 111.07 0.05 51 95893
+"37" "Present" -19.95469 -46.355 "Mini" "Mandarins" 7.2 0.41 12 2928
+"38" "Absent" -20.0453 -46.355 "Mini" "Mandarins" 7.2 0 0 2928
+"39" "Absent" -19.9172 -46.33167 "Medium" "Sweet orange" 113.96 0 0 47736
+"40" "Absent" -20.88387 -47.00488 "Large" "Sweet orange" 498 0 0 266979
+"41" "Absent" -19.58933 -48.19417 "Large" "Sweet orange" 500 0 0 282228
+"42" "Present" -20.87594 -47.2201 "Large" "Sweet orange" 681.1 4.97 20972 422379
+"43" "Present" -20.90561 -47.1911 "Medium" "Sweet orange" 149.7 7.19 5641 78461
+"44" "Present" -20.9475 -46.9356 "Large" "Sweet orange" 457 6.67 16069 240784
+"45" "Present" -20.91744 -46.9333 "Medium" "Sweet orange" 80.4 1.79 674 37755
+"46" "Present" -20.91483 -46.9324 "Medium" "Sweet orange" 80.4 7.49 2994 39974
+"47" "Absent" -18.78528 -48.3075 "Mini" "Sweet orange" 1.8 0 0 163
+"48" "Absent" -19.89361 -48.536 "Mini" "Mandarins" 0.9 0 0 224
+"49" "Present" -19.31472 -48.3694 "Large" "Sweet orange" 2611.25 0.01 202 1359386
+"50" "Absent" -19.20314 -48.3411 "Mini" "Acid lime" 0.6 0 0 119
+"51" "Absent" -19.1819 -48.73278 "Mini" "Acid lime" 2 0 0 710
+"52" "Absent" -19.11406 -48.3904 "Small" "Sweet orange" 45 0 0 8000
+"53" "Absent" -19.09034 -48.6329 "Large" "Sweet orange" 609.1 0 9 351670
+"54" "Absent" -19.08278 -48.5835 "Mini" "Acid lime" 0.78 0 0 162
+"55" "Absent" -19.01103 -48.3616 "Mini" "Acid lime" 2 0 0 250
+"56" "Absent" -18.90539 -48.3416 "Mini" "Acid lime" 0.3 0 0 60
+"57" "Absent" -18.89669 -48.1841 "Mini" "Sweet orange" 3 0 0 5000
+"58" "Absent" -18.87808 -48.1949 "Mini" "Acid lime" 0.7 0 0 92
+"59" "Absent" -18.83328 -48.1314 "Mini" "Acid lime" 1 0 0 200
+"60" "Absent" -18.83286 -48.1102 "Mini" "Mandarins" 0.53 0 0 130
+"61" "Absent" -18.80808 -48.3803 "Mini" "Acid lime" 0.8 0 0 136
+"62" "Absent" -18.78 -48.42 "Mini" "Acid lime" 1.94 0 0 447
+"63" "Absent" -18.754 -48.31241 "Mini" "Mandarins" 5.3 0 0 510
+"64" "Absent" -18.75226 -48.29933 "Mini" "Acid lime" 1 0 0 180
+"65" "Absent" -18.75158 -48.3125 "Mini" "Acid lime" 5.62 0 0 2100
+"66" "Absent" -18.74872 -48.3084 "Mini" "Acid lime" 2.75 0 0 250
+"67" "Absent" -18.70572 -48.3936 "Mini" "Sweet orange" 4 0 0 428
+"68" "Present" -20.89514 -47.2048 "Small" "Mandarins" 50 2.56 813 31711
+"69" "Present" -20.51514 -47.1652 "Medium" "Sweet orange" 152.19 4.5 3581 79514
+"70" "Present" -20.46278 -47.1628 "Medium" "Sweet orange" 65 1.63 760 46615
+"71" "Present" -20.47203 -47.1542 "Medium" "Sweet orange" 62.59 4.96 1797 36209
+"72" "Absent" -20.47203 -47.1542 "Medium" "Mandarins" 85 0 0 34636
+"73" "Present" -20.41914 -47.1342 "Small" "Mandarins" 16.26 4.16 431 10352
+"74" "Present" -20.47583 -47.1328 "Medium" "Sweet orange" 72.25 7.92 5147 64947
+"75" "Present" -20.48694 -47.0433 "Small" "Mandarins" 12 9.71 784 8074
+"76" "Absent" -20.33611 -46.9035 "Mini" "Sweet orange" 4.7 0 0 2100
+"77" "Absent" -20.32333 -46.8457 "Small" "Sweet orange" 13.6 0 0 6000
+"78" "Absent" -20.37231 -46.77555 "Small" "Sweet orange" 45 0 0 20000
+"79" "Absent" -21.81203 -45.4851 "Mini" "Mandarins" 4 0 0 2000
+"80" "Absent" -20.38189 -44.0877 "Small" "Mandarins" 22 0 0 11000
+"81" "Absent" -19.9981 -45.8575 "Medium" "Sweet orange" 74.3 0 0 32500
+"82" "Absent" -19.79681 -45.35556 "Mini" "Mandarins" 9 0 0 9000
+"83" "Absent" -20.19 -45.0967 "Small" "Mandarins" 12 0 0 6000
+"84" "Absent" -19.81803 -45.085 "Small" "Mandarins" 15 0 0 7500
+"85" "Absent" -20.2936 -45.075 "Small" "Mandarins" 40 0 0 23111
+"86" "Absent" -20.2992 -45.0514 "Small" "Mandarins" 18.86 0 0 20477
+"87" "Absent" -19.72697 -45.02583 "Mini" "Mandarins" 8 0 0 4000
+"88" "Absent" -19.75686 -44.86833 "Mini" "Mandarins" 3 0 0 1500
+"89" "Absent" -19.77981 -44.17889 "Mini" "Mandarins" 5.21 0 0 2600
+"90" "Absent" -19.77292 -44.16111 "Mini" "Mandarins" 6.25 0 0 4500
+"91" "Absent" -19.77725 -44.15722 "Mini" "Mandarins" 6.7 0 0 3350
+"92" "Absent" -19.80447 -44.15639 "Small" "Mandarins" 13 0 0 6500
+"93" "Absent" -20.1978 -44.1556 "Mini" "Mandarins" 6 0 0 3000
+"94" "Absent" -20.1986 -44.1539 "Mini" "Mandarins" 3 0 0 1500
+"95" "Absent" -19.80122 -44.15389 "Mini" "Mandarins" 3 0 0 1500
+"96" "Absent" -20.1836 -44.1508 "Mini" "Mandarins" 3 0 0 3000
+"97" "Absent" -19.80228 -44.14611 "Small" "Mandarins" 47.5 0 0 22000
+"98" "Absent" -19.81331 -44.13861 "Small" "Mandarins" 22 0 0 11000
+"99" "Absent" -19.78925 -44.12889 "Medium" "Mandarins" 73 0 0 30000
+"100" "Absent" -19.76247 -44.12778 "Mini" "Mandarins" 3.4 0 0 2000
+"101" "Absent" -19.76286 -44.12667 "Small" "Mandarins" 20 0 0 10000
+"102" "Absent" -19.80894 -44.12583 "Mini" "Mandarins" 3.79 0 0 1895
+"103" "Absent" -19.84575 -44.12278 "Small" "Mandarins" 25.89 0 0 13000
+"104" "Absent" -19.79406 -44.12167 "Mini" "Mandarins" 1 0 0 500
+"105" "Absent" -19.74064 -44.11833 "Mini" "Mandarins" 9.8 0 0 5000
+"106" "Absent" -19.7365 -44.11806 "Mini" "Mandarins" 4 0 0 2000
+"107" "Absent" -19.81014 -44.11611 "Mini" "Mandarins" 4.87 0 0 2435
+"108" "Absent" -19.79331 -44.11583 "Mini" "Mandarins" 2.75 0 0 1375
+"109" "Absent" -19.74147 -44.11528 "Small" "Mandarins" 15 0 0 7500
+"110" "Absent" -19.76317 -44.11472 "Mini" "Mandarins" 5.5 0 0 3200
+"111" "Absent" -19.72706 -44.11417 "Small" "Mandarins" 17 0 0 8500
+"112" "Absent" -20.2733 -44.1139 "Small" "Mandarins" 18 0 0 9000
+"113" "Absent" -19.72664 -44.11389 "Small" "Mandarins" 18 0 0 9000
+"114" "Absent" -19.73575 -44.11361 "Mini" "Mandarins" 9 0 0 4500
+"115" "Absent" -20.1875 -44.1131 "Mini" "Mandarins" 6.32 0 0 3150
+"116" "Absent" -19.81244 -44.11306 "Mini" "Mandarins" 7.5 0 0 3750
+"117" "Absent" -19.75328 -44.11278 "Small" "Mandarins" 14.01 0 0 7000
+"118" "Absent" -20.29953 -44.1119 "Medium" "Mandarins" 92 0 0 46000
+"119" "Absent" -19.81 -44.11167 "Mini" "Mandarins" 3.5 0 0 1750
+"120" "Absent" -19.73222 -44.11139 "Mini" "Mandarins" 1 0 0 500
+"121" "Absent" -19.76447 -44.11056 "Mini" "Mandarins" 7.29 0 0 3650
+"122" "Absent" -19.76478 -44.10833 "Mini" "Mandarins" 8 0 0 4000
+"123" "Absent" -19.70653 -44.10667 "Medium" "Mandarins" 71.36 0 0 40532
+"124" "Absent" -20.2764 -44.1061 "Mini" "Mandarins" 5.07 0 0 2500
+"125" "Absent" -19.72367 -44.09972 "Mini" "Mandarins" 4.43 0 0 2250
+"126" "Absent" -19.73267 -44.09806 "Medium" "Mandarins" 74 0 0 37000
+"127" "Absent" -19.74042 -44.09778 "Small" "Mandarins" 14 0 0 8000
+"128" "Absent" -19.71456 -44.09667 "Small" "Mandarins" 18 0 0 9000
+"129" "Absent" -19.77814 -44.09639 "Small" "Mandarins" 15 0 0 7500
+"130" "Absent" -20.2306 -44.0942 "Small" "Mandarins" 14.5 0 0 9500
+"131" "Absent" -19.79653 -44.09139 "Mini" "Mandarins" 1.82 0 0 1000
+"132" "Absent" -20.2431 -44.0896 "Mini" "Mandarins" 3 0 0 1500
+"133" "Absent" -20.2447 -44.0892 "Small" "Mandarins" 20.2 0 0 10000
+"134" "Absent" -19.7855 -44.08583 "Mini" "Mandarins" 9.2 0 0 4600
+"135" "Absent" -20.2144 -44.0858 "Small" "Mandarins" 14 0 0 7000
+"136" "Absent" -20.2164 -44.0831 "Small" "Mandarins" 24.5 0 0 12250
+"137" "Absent" -20.2869 -44.0825 "Mini" "Mandarins" 5.6 0 0 2800
+"138" "Absent" -20.2544 -44.0808 "Small" "Mandarins" 20.4 0 0 10200
+"139" "Absent" -19.73386 -44.07889 "Mini" "Mandarins" 1 0 0 600
+"140" "Absent" -19.81797 -44.0775 "Mini" "Mandarins" 3.2 0 0 1600
+"141" "Absent" -19.71947 -44.075 "Mini" "Mandarins" 4.54 0 0 2270
+"142" "Absent" -19.71585 -44.0725 "Small" "Mandarins" 15 0 0 7500
+"143" "Absent" -19.8165 -44.06444 "Mini" "Mandarins" 1 0 0 500
+"144" "Absent" -19.74247 -44.06333 "Mini" "Mandarins" 1.15 0 0 600
+"145" "Absent" -20.27 -44.0575 "Mini" "Mandarins" 5.5 0 0 2750
+"146" "Absent" -20.29778 -44.0494 "Small" "Mandarins" 12 0 0 6000
+"147" "Absent" -20.30083 -44.0489 "Mini" "Mandarins" 6 0 0 3000
+"148" "Present" -20.40083 -45.1667 "Mini" "Mandarins" 1 1.58 8 507
+"149" "Present" -20.30278 -44.3087 "Mini" "Mandarins" 0.5 0.4 1 251
+"150" "Present" -20.59667 -44.2953 "Mini" "Mandarins" 5.6 1.96 55 2800
+"151" "Present" -19.70319 -44.24778 "Mini" "Mandarins" 8.2 16.25 650 4000
+"152" "Absent" -20.2964 -44.2425 "Small" "Mandarins" 15 0 0 10000
+"153" "Absent" -20.30289 -44.2342 "Small" "Mandarins" 13 0 0 5800
+"154" "Absent" -20.31417 -44.2045 "Mini" "Mandarins" 2.5 0 0 1500
+"155" "Present" -20.3864 -44.1969 "Mini" "Mandarins" 1.8 0.42 5 1200
+"156" "Absent" -20.27 -44.1964 "Small" "Mandarins" 12.5 0 0 8500
+"157" "Present" -20.27364 -44.1929 "Mini" "Mandarins" 2 2.12 32 1512
+"158" "Present" -20.36861 -44.1911 "Mini" "Mandarins" 4 0.6 12 2002
+"159" "Absent" -20.28283 -44.191 "Mini" "Mandarins" 10 0 0 6500
+"160" "Absent" -19.73636 -44.19083 "Small" "Mandarins" 11 0 0 9000
+"161" "Absent" -20.3592 -44.1906 "Mini" "Mandarins" 1 0 0 500
+"162" "Present" -20.39083 -44.1903 "Mini" "Mandarins" 6 7.74 253 3270
+"163" "Absent" -20.23539 -44.1875 "Mini" "Mandarins" 3.5 0 0 2200
+"164" "Absent" -20.25811 -44.1872 "Mini" "Mandarins" 7 0 0 4500
+"165" "Absent" -20.36528 -44.1817 "Mini" "Mandarins" 2 0 0 1000
+"166" "Absent" -21.82301 -44.1814 "Mini" "Mandarins" 0.6 0 0 900
+"167" "Present" -20.39603 -44.1813 "Mini" "Mandarins" 5 0.33 10 3000
+"168" "Present" -20.3775 -44.1803 "Mini" "Mandarins" 0.18 10 18 180
+"169" "Absent" -20.3775 -44.1803 "Mini" "Mandarins" 0.06 0 0 60
+"170" "Present" -20.37806 -44.1792 "Mini" "Mandarins" 1.9 3.26 28 858
+"171" "Present" -20.25784 -44.1788 "Mini" "Mandarins" 4 0.35 7 2007
+"172" "Present" -20.3806 -44.1767 "Small" "Mandarins" 20 0.17 17 10000
+"173" "Absent" -20.28269 -44.1757 "Mini" "Mandarins" 3 0 0 2000
+"174" "Present" -20.3578 -44.1736 "Mini" "Mandarins" 4 0.3 6 2000
+"175" "Present" -20.375 -44.1731 "Small" "Mandarins" 20.2 0.2 20 10100
+"176" "Present" -20.3794 -44.1714 "Mini" "Mandarins" 9 1.11 50 4500
+"177" "Present" -20.3808 -44.1714 "Mini" "Mandarins" 10 0.4 20 5000
+"178" "Present" -20.39492 -44.1713 "Mini" "Mandarins" 2.8 0.28 5 1800
+"179" "Present" -20.3858 -44.1706 "Mini" "Mandarins" 10 4 200 5000
+"180" "Absent" -19.72081 -44.17 "Mini" "Mandarins" 1.2 0 0 500
+"181" "Present" -20.39694 -44.1697 "Mini" "Mandarins" 2 2.98 30 1008
+"182" "Present" -20.41 -44.1694 "Mini" "Mandarins" 0.8 1 3 300
+"183" "Present" -20.405 -44.1692 "Mini" "Mandarins" 5.2 0.12 3 2600
+"184" "Present" -20.40833 -44.1689 "Mini" "Mandarins" 2 1.67 10 600
+"185" "Present" -20.405 -44.1683 "Mini" "Mandarins" 4.3 32.76 709 2164
+"186" "Present" -20.4011 -44.1681 "Mini" "Mandarins" 1.05 30 150 500
+"187" "Present" -20.4008 -44.1681 "Mini" "Mandarins" 2 0.67 5 750
+"188" "Absent" -20.4119 -44.1678 "Mini" "Mandarins" 1.5 0 0 750
+"189" "Present" -20.4014 -44.1675 "Mini" "Mandarins" 2.6 0.77 10 1300
+"190" "Present" -20.26589 -44.1654 "Mini" "Mandarins" 2.2 0.18 2 1100
+"191" "Present" -20.26978 -44.1653 "Mini" "Mandarins" 6.9 1.2 48 4000
+"192" "Present" -20.38806 -44.1636 "Mini" "Mandarins" 3 0.26 4 1563
+"193" "Present" -20.27367 -44.1633 "Mini" "Mandarins" 1.4 2.53 38 1500
+"194" "Present" -20.4064 -44.1592 "Medium" "Mandarins" 51.7 0.12 30 25250
+"195" "Absent" -19.71464 -44.15861 "Mini" "Mandarins" 1.6 0 0 800
+"196" "Present" -20.3897 -44.1572 "Small" "Mandarins" 13 0.15 10 6500
+"197" "Present" -20.26403 -44.1534 "Mini" "Mandarins" 1.5 23.31 500 2145
+"198" "Present" -20.26444 -44.1479 "Mini" "Mandarins" 7.5 10.58 550 5200
+"199" "Present" -20.25822 -44.146 "Mini" "Mandarins" 2 0.1 1 1001
+"200" "Absent" -19.73736 -44.14528 "Mini" "Mandarins" 2.5 0 0 1500
+"201" "Absent" -20.26169 -44.1447 "Mini" "Mandarins" 2.4 0 0 1500
+"202" "Absent" -19.75083 -44.14333 "Mini" "Mandarins" 1.5 0 0 900
+"203" "Present" -19.70208 -44.14306 "Mini" "Mandarins" 4 5 100 2000
+"204" "Absent" -19.73969 -44.14278 "Mini" "Mandarins" 2 0 0 1200
+"205" "Present" -20.30282 -44.1422 "Mini" "Mandarins" 0.8 1.99 7 352
+"206" "Present" -20.27631 -44.1413 "Small" "Mandarins" 10.8 4.2 210 5000
+"207" "Absent" -20.27817 -44.1395 "Mini" "Mandarins" 1.8 0 0 500
+"208" "Absent" -20.27267 -44.1377 "Mini" "Mandarins" 4.5 0 0 2000
+"209" "Absent" -19.73389 -44.13639 "Mini" "Mandarins" 5.5 0 0 4500
+"210" "Absent" -20.2639 -44.1344 "Mini" "Mandarins" 2 0 0 1000
+"211" "Present" -20.26265 -44.1339 "Small" "Mandarins" 11.8 0.25 10 4000
+"212" "Present" -20.28886 -44.1331 "Small" "Mandarins" 10.5 0.05 3 6000
+"213" "Absent" -20.2544 -44.1314 "Mini" "Mandarins" 5.6 0 0 2800
+"214" "Absent" -20.26264 -44.1308 "Mini" "Mandarins" 6.7 0 0 3000
+"215" "Absent" -20.31056 -44.1299 "Mini" "Mandarins" 5.6 0 0 3500
+"216" "Absent" -20.2625 -44.1272 "Mini" "Mandarins" 2.7 0 0 1800
+"217" "Present" -20.26136 -44.1256 "Small" "Mandarins" 24.5 0.15 25 17000
+"218" "Absent" -19.72606 -44.125 "Mini" "Mandarins" 3 0 0 1500
+"219" "Absent" -20.28947 -44.1195 "Mini" "Mandarins" 6.5 0 0 3500
+"220" "Absent" -20.27778 -44.1191 "Mini" "Mandarins" 2 0 0 700
+"221" "Absent" -19.71006 -44.11833 "Mini" "Mandarins" 5 0 0 2500
+"222" "Present" -20.42583 -44.0142 "Small" "Mandarins" 16 22.41 231 1031
+"223" "Present" -20.26056 -44.0106 "Mini" "Mandarins" 1 0.17 1 600
+"224" "Present" -20.17413 -47.0888 "Small" "Mandarins" 40 12.99 2598 20002
+"225" "Present" -20.16433 -47.1167 "Small" "Mandarins" 20 13.13 1576 12000
+"226" "Absent" -19.88525 -47.347 "Mini" "Acid lime" 5 0 0 1400
+"227" "Absent" -19.88111 -47.4756 "Small" "Acid lime" 18 0 0 5000
+"228" "Present" -19.83639 -47.51806 "Small" "Mandarins" 20 13.38 1606 12000
+"229" "Present" -21.23406 -46.9854 "Small" "Sweet orange" 13 11.29 856 7584
+"230" "Present" -21.22642 -46.9726 "Small" "Mandarins" 25 4.01 540 13474
+"231" "Present" -21.14147 -46.9623 "Small" "Sweet orange" 47.5 9.95 3149 31653
+"232" "Present" -21.15269 -46.8303 "Mini" "Sweet orange" 10 1.25 25 2008
+"233" "Present" -21.14122 -46.8292 "Mini" "Sweet orange" 4 6.85 114 1664
+"234" "Present" -21.14106 -46.8228 "Medium" "Sweet orange" 71 5.48 1785 32551
+"235" "Present" -21.30264 -46.9498 "Small" "Sweet orange" 14.4 1.06 80 7580
+"236" "Absent" -20.14469 -48.9378 "Small" "Sweet orange" 42.48 0 1 26801
+"237" "Absent" -20.14011 -48.8491 "Mini" "Sweet orange" 8.5 0 0 2200
+"238" "Absent" -20.13497 -48.8039 "Small" "Sweet orange" 25 0 0 10000
+"239" "Absent" -20.13172 -49.137 "Small" "Sweet orange" 34 0 0 12000
+"240" "Absent" -20.12989 -48.9332 "Large" "Sweet orange" 309.96 0 0 90943
+"241" "Present" -20.12293 -48.8029 "Large" "Sweet orange" 1417.65 0.69 3985 575055
+"242" "Present" -20.11564 -49.1248 "Large" "Sweet orange" 267.44 1.04 1408 135627
+"243" "Present" -20.09991 -48.9598 "Medium" "Sweet orange" 180.59 0.98 603 61408
+"244" "Present" -20.08356 -49.0748 "Large" "Sweet orange" 301.32 1.78 1707 95651
+"245" "Absent" -20.08058 -49.0748 "Mini" "Sweet orange" 8.5 0 0 3000
+"246" "Absent" -20.07289 -48.7871 "Small" "Sweet orange" 24 0 0 8500
+"247" "Present" -20.07 -48.77 "Large" "Sweet orange" 409.68 0.15 358 245739
+"248" "Absent" -20.06842 -48.8986 "Mini" "Sweet orange" 7.57 0 0 3921
+"249" "Absent" -20.06 -48.83 "Small" "Sweet orange" 21 0 0 10000
+"250" "Present" -20.04247 -48.8916 "Medium" "Sweet orange" 85.69 0.47 234 49707
+"251" "Absent" -20.04214 -48.881 "Small" "Sweet orange" 12 0 0 3500
+"252" "Absent" -20.03689 -49.0841 "Small" "Sweet orange" 30 0 0 10500
+"253" "Absent" -20.02789 -49.0091 "Small" "Sweet orange" 27 0 0 12000
+"254" "Absent" -20.02694 -48.9936 "Mini" "Sweet orange" 3.5 0 0 1300
+"255" "Absent" -20.00147 -49.0543 "Small" "Sweet orange" 11 0 0 5400
+"256" "Present" -19.99035 -48.9119 "Medium" "Sweet orange" 119.51 0.01 5 46946
+"257" "Present" -19.99035 -48.9119 "Medium" "Sweet orange" 119.51 0.33 157 47098
+"258" "Absent" -19.9903 -48.9117 "Medium" "Sweet orange" 119.51 0 0 46941
+"259" "Absent" -19.97462 -49.011 "Small" "Sweet orange" 13.33 0 0 4360
+"260" "Absent" -19.97124 -49.0106 "Small" "Sweet orange" 21.88 0 0 9347
+"261" "Absent" -19.9711 -49.0106 "Small" "Sweet orange" 21.88 0 0 9347
+"262" "Absent" -19.9685 -48.8531 "Mini" "Sweet orange" 5 0 0 2500
+"263" "Present" -19.92238 -48.8557 "Large" "Sweet orange" 1439.24 0.53 2907 549645
+"264" "Absent" -19.91806 -48.9503 "Small" "Sweet orange" 16 0 0 5700
+"265" "Absent" -18.94835 -48.99 "Small" "Sweet orange" 15.01 0 0 8000
+"266" "Present" -21.05011 -46.8645 "Medium" "Acid lime" 143.5 6.6 5324 80689
+"267" "Present" -21.04225 -46.7678 "Small" "Mandarins" 10.5 8.33 500 6000
+"268" "Present" -20.92493 -46.7995 "Medium" "Sweet orange" 170.84 6 4908 81816
+"269" "Present" -20.91217 -46.7122 "Small" "Sweet orange" 20.5 0.55 36 6536
+"270" "Present" -21.29558 -46.7798 "Small" "Sweet orange" 17.32 0.09 10 11171
+"271" "Absent" -21.34364 -46.61647 "Small" "Acid lime" 15 0 0 4500
+"272" "Absent" -21.37781 -46.75712 "Mini" "Mandarins" 2 0 0 1000
+"273" "Absent" -21.34106 -46.74 "Mini" "Mandarins" 2 0 0 1500
+"274" "Present" -21.28631 -46.7356 "Small" "Mandarins" 13.2 1.94 101 5217
+"275" "Absent" -21.33308 -46.7136 "Mini" "Sweet orange" 5 0 0 2000
+"276" "Absent" -21.33236 -46.7133 "Mini" "Sweet orange" 2.2 0 0 1477
+"277" "Present" -21.37635 -46.7086 "Mini" "Mandarins" 1.7 20.98 150 715
+"278" "Absent" -21.32 -46.7079 "Small" "Acid lime" 27 0 0 7000
+"279" "Present" -21.33441 -46.69177 "Mini" "Mandarins" 3.2 15.41 291 1888
+"280" "Present" -21.32461 -46.6884 "Mini" "Acid lime" 2.2 30.13 615 2041
+"281" "Present" -20.67539 -46.68833 "Mini" "Acid lime" 2.2 1.06 15 1411
+"282" "Absent" -21.27567 -46.6781 "Mini" "Mandarins" 5 0 0 2500
+"283" "Present" -21.28889 -46.6775 "Mini" "Mandarins" 2 3.43 32 932
+"284" "Present" -21.23794 -46.3559 "Mini" "Sweet orange" 4 100 1998 1998
+"285" "Absent" -20.44556 -44.9981 "Mini" "Mandarins" 4.4 0 0 2200
+"286" "Absent" -20.42317 -44.9969 "Small" "Mandarins" 35.4 0 0 11700
+"287" "Absent" -20.44403 -44.9968 "Mini" "Mandarins" 3.04 0 0 1700
+"288" "Absent" -20.44344 -44.9852 "Mini" "Mandarins" 1.6 0 0 800
+"289" "Absent" -20.4433 -44.985 "Mini" "Mandarins" 0.84 0 0 700
+"290" "Present" -20.44333 -44.9839 "Mini" "Mandarins" 4 0.45 9 2000
+"291" "Absent" -20.44056 -44.9806 "Small" "Mandarins" 22 0 0 11000
+"292" "Absent" -20.4411 -44.9806 "Small" "Mandarins" 15 0 0 7400
+"293" "Absent" -19.59561 -44.95222 "Mini" "Mandarins" 5.66 0 0 2830
+"294" "Absent" -20.48306 -44.2631 "Mini" "Mandarins" 9.4 0 0 4700
+"295" "Present" -20.4939 -44.19 "Mini" "Mandarins" 4 0.35 7 2000
+"296" "Present" -20.45444 -44.1733 "Medium" "Mandarins" 100 0.03 14 50002
+"297" "Present" -19.54322 -44.17111 "Small" "Mandarins" 40 0.08 15 20000
+"298" "Absent" -20.4542 -44.1697 "Small" "Mandarins" 15 0 0 7500
+"299" "Present" -20.38194 -44.1697 "Small" "Mandarins" 16 0.84 68 8060
+"300" "Absent" -19.55167 -44.16806 "Mini" "Mandarins" 9 0 0 3000
+"301" "Present" -19.51408 -44.16528 "Small" "Mandarins" 26.5 0.15 20 13250
+"302" "Absent" -20.45456 -44.1629 "Medium" "Mandarins" 70 0 0 35000
+"303" "Absent" -19.53692 -44.16278 "Mini" "Mandarins" 5 0 0 2100
+"304" "Absent" -20.5083 -44.1581 "Mini" "Mandarins" 8.2 0 0 4100
+"305" "Present" -19.59531 -44.15694 "Small" "Mandarins" 11.8 2.54 150 5900
+"306" "Present" -20.3653 -44.1522 "Small" "Mandarins" 50 0.04 10 25000
+"307" "Present" -20.36528 -44.1522 "Small" "Mandarins" 12 0.15 9 6008
+"308" "Present" -20.3911 -44.1519 "Mini" "Mandarins" 4 0.5 10 2000
+"309" "Absent" -20.50871 -44.151 "Mini" "Mandarins" 8.2 0 0 4100
+"310" "Present" -19.64578 -44.14972 "Small" "Mandarins" 10.2 0.29 15 5100
+"311" "Present" -20.42083 -44.1497 "Small" "Mandarins" 34 0.18 30 17010
+"312" "Present" -20.39111 -44.1494 "Small" "Mandarins" 12 3.23 200 6200
+"313" "Present" -20.44481 -44.1487 "Mini" "Mandarins" 10 0.04 2 5000
+"314" "Present" -20.37083 -44.1486 "Small" "Mandarins" 34 2.05 350 17050
+"315" "Present" -19.55386 -44.1475 "Small" "Mandarins" 44 0.01 2 22000
+"316" "Present" -19.60011 -44.14639 "Mini" "Mandarins" 4 3 60 2000
+"317" "Present" -19.60011 -44.14639 "Mini" "Mandarins" 5.35 3.89 104 2675
+"318" "Present" -20.44333 -44.1456 "Small" "Mandarins" 35 0.02 5 20005
+"319" "Absent" -19.57861 -44.145 "Small" "Mandarins" 18.4 0 0 9200
+"320" "Absent" -19.50683 -44.14472 "Mini" "Mandarins" 8 0 0 4000
+"321" "Present" -20.3928 -44.1444 "Small" "Mandarins" 12 2 120 6000
+"322" "Absent" -20.41667 -44.1425 "Mini" "Mandarins" 8 0 0 4000
+"323" "Absent" -20.4425 -44.1422 "Mini" "Mandarins" 6 0 0 3000
+"324" "Absent" -20.4425 -44.1422 "Mini" "Mandarins" 4 0 0 2000
+"325" "Absent" -20.3681 -44.1419 "Mini" "Mandarins" 8 0 0 4000
+"326" "Present" -19.56628 -44.14139 "Mini" "Mandarins" 2.4 0.17 2 1200
+"327" "Present" -19.55614 -44.14111 "Mini" "Mandarins" 2 15 150 1000
+"328" "Present" -20.44389 -44.1411 "Small" "Mandarins" 12 0.03 2 6000
+"329" "Absent" -20.44389 -44.1406 "Mini" "Mandarins" 5.6 0 0 2800
+"330" "Absent" -20.45086 -44.1392 "Small" "Mandarins" 16 0 0 8000
+"331" "Present" -19.51378 -44.13861 "Small" "Mandarins" 30 0.35 53 15000
+"332" "Present" -20.41361 -44.1386 "Mini" "Mandarins" 4 7.25 150 2070
+"333" "Absent" -20.41333 -44.1386 "Mini" "Mandarins" 6 0 0 3000
+"334" "Absent" -20.4875 -44.1381 "Mini" "Mandarins" 5.79 0 0 2910
+"335" "Absent" -20.44944 -44.1378 "Small" "Mandarins" 12 0 0 6000
+"336" "Absent" -19.56392 -44.13778 "Mini" "Mandarins" 2 0 0 800
+"337" "Absent" -20.43306 -44.1364 "Mini" "Mandarins" 10 0 0 6000
+"338" "Present" -20.42233 -44.1359 "Mini" "Mandarins" 6 0.2 6 3003
+"339" "Absent" -19.58175 -44.13528 "Mini" "Mandarins" 4.2 0 0 2100
+"340" "Absent" -19.51075 -44.13528 "Mini" "Mandarins" 9.3 0 0 5450
+"341" "Absent" -19.55456 -44.135 "Mini" "Mandarins" 4.2 0 0 2100
+"342" "Absent" -20.43458 -44.13436 "Mini" "Mandarins" 2.4 0 0 1200
+"343" "Present" -20.49528 -44.1335 "Mini" "Mandarins" 4 0.2 4 2000
+"344" "Present" -20.42028 -44.1333 "Small" "Mandarins" 14.4 0.38 27 7200
+"345" "Absent" -20.43253 -44.1331 "Mini" "Mandarins" 6 0 0 3000
+"346" "Present" -20.43306 -44.1328 "Mini" "Mandarins" 6 0.2 6 3006
+"347" "Absent" -20.4031 -44.1328 "Small" "Mandarins" 24 0 0 12000
+"348" "Present" -20.39694 -44.1325 "Small" "Mandarins" 12 2.7 162 6002
+"349" "Present" -20.42861 -44.1308 "Small" "Mandarins" 31.8 0.16 26 16002
+"350" "Absent" -20.5069 -44.1306 "Small" "Mandarins" 15 0 0 7500
+"351" "Present" -20.40639 -44.1303 "Mini" "Mandarins" 8.4 0.24 10 4200
+"352" "Present" -20.40583 -44.13 "Mini" "Mandarins" 6.8 0.29 10 3400
+"353" "Present" -20.4269 -44.13 "Mini" "Mandarins" 6 0.33 10 3000
+"354" "Present" -19.57303 -44.13 "Small" "Mandarins" 12.2 1.23 75 6100
+"355" "Absent" -19.57303 -44.13 "Mini" "Mandarins" 10 0 0 5000
+"356" "Present" -20.37139 -44.1297 "Small" "Mandarins" 26 3.93 526 13380
+"357" "Present" -20.42711 -44.1293 "Mini" "Mandarins" 5.6 0.14 4 2802
+"358" "Absent" -19.57889 -44.12889 "Mini" "Mandarins" 8 0 0 4000
+"359" "Present" -20.4267 -44.1283 "Small" "Mandarins" 32 0.14 22 16000
+"360" "Present" -19.5725 -44.12778 "Small" "Mandarins" 32 0.03 4 16000
+"361" "Present" -20.37139 -44.1275 "Mini" "Mandarins" 7 15.21 610 4010
+"362" "Absent" -19.59722 -44.12722 "Mini" "Mandarins" 3.2 0 0 1600
+"363" "Absent" -19.59606 -44.12694 "Mini" "Mandarins" 2.4 0 0 1200
+"364" "Absent" -20.46939 -44.1268 "Mini" "Mandarins" 6 0 0 3000
+"365" "Present" -20.41819 -44.1261 "Mini" "Mandarins" 8.5 0.02 1 4250
+"366" "Present" -20.40278 -44.1261 "Small" "Mandarins" 18 0.33 30 9000
+"367" "Absent" -19.57111 -44.12444 "Mini" "Mandarins" 3 0 0 1500
+"368" "Absent" -20.39611 -44.1244 "Mini" "Mandarins" 8 0 0 4000
+"369" "Present" -20.4275 -44.1233 "Mini" "Mandarins" 10 3.48 175 5025
+"370" "Present" -20.45222 -44.1228 "Mini" "Mandarins" 2 15 150 1000
+"371" "Absent" -19.56391 -44.12278 "Small" "Mandarins" 16 0 0 8000
+"372" "Absent" -20.42472 -44.1225 "Mini" "Mandarins" 5 0 0 2500
+"373" "Absent" -20.38667 -44.1214 "Small" "Mandarins" 32 0 0 16000
+"374" "Present" -20.42472 -44.1212 "Mini" "Mandarins" 7.6 0.16 6 3800
+"375" "Absent" -19.58944 -44.12111 "Mini" "Mandarins" 2.2 0 0 1100
+"376" "Absent" -20.41056 -44.1211 "Mini" "Mandarins" 8 0 0 4000
+"377" "Present" -20.39069 -44.1204 "Medium" "Mandarins" 120 0.04 30 70000
+"378" "Present" -20.38989 -44.1203 "Mini" "Mandarins" 4 5 100 2000
+"379" "Present" -19.54861 -44.11944 "Mini" "Mandarins" 4.6 0.35 8 2300
+"380" "Present" -20.43306 -44.1186 "Small" "Mandarins" 30 0.45 66 14516
+"381" "Present" -19.50619 -44.11833 "Small" "Mandarins" 14 0.14 10 7000
+"382" "Absent" -20.39083 -44.1183 "Mini" "Mandarins" 8 0 0 4000
+"383" "Present" -20.43833 -44.1175 "Small" "Mandarins" 14 0.11 8 7002
+"384" "Absent" -20.36719 -44.1149 "Small" "Mandarins" 12 0 0 6000
+"385" "Present" -19.63281 -44.11472 "Mini" "Mandarins" 10 0.1 5 5000
+"386" "Absent" -20.44278 -44.1147 "Small" "Mandarins" 16 0 0 8000
+"387" "Absent" -20.4475 -44.1147 "Small" "Mandarins" 35 0 0 17500
+"388" "Present" -20.39944 -44.1142 "Small" "Mandarins" 22 0.05 5 11000
+"389" "Present" -19.59778 -44.11361 "Small" "Mandarins" 16.5 0.1 8 8250
+"390" "Absent" -20.38917 -44.1125 "Small" "Mandarins" 11 0 0 5500
+"391" "Absent" -20.35633 -44.1122 "Small" "Mandarins" 14 0 0 7000
+"392" "Absent" -19.52694 -44.11167 "Mini" "Mandarins" 0.8 0 0 400
+"393" "Present" -20.40378 -44.1113 "Mini" "Mandarins" 6 0.67 20 3000
+"394" "Present" -20.41278 -44.1111 "Small" "Mandarins" 34 0.06 10 16751
+"395" "Absent" -20.47319 -44.1111 "Mini" "Mandarins" 1.23 0 0 615
+"396" "Present" -20.50637 -44.1101 "Mini" "Mandarins" 10 0.08 4 5000
+"397" "Present" -20.43839 -44.109 "Small" "Mandarins" 28 0.78 110 14110
+"398" "Absent" -19.56167 -44.10889 "Mini" "Mandarins" 2.5 0 0 1562
+"399" "Absent" -19.57167 -44.10861 "Small" "Mandarins" 12 0 0 6000
+"400" "Absent" -20.42833 -44.1086 "Small" "Mandarins" 12 0 0 6000
+"401" "Absent" -19.55833 -44.10694 "Mini" "Mandarins" 6 0 0 3000
+"402" "Absent" -19.56092 -44.10611 "Mini" "Mandarins" 4.6 0 0 2300
+"403" "Absent" -19.52936 -44.10556 "Mini" "Mandarins" 1.6 0 0 800
+"404" "Present" -19.53017 -44.10472 "Mini" "Mandarins" 5.6 0.17 6 3500
+"405" "Present" -20.3903 -44.1044 "Mini" "Mandarins" 7 0.57 20 3500
+"406" "Absent" -19.5325 -44.10417 "Mini" "Mandarins" 1 0 0 500
+"407" "Absent" -20.37581 -44.104 "Mini" "Mandarins" 2.4 0 0 1200
+"408" "Present" -20.45611 -44.1039 "Small" "Mandarins" 12 0.17 10 6000
+"409" "Absent" -20.3756 -44.1039 "Mini" "Mandarins" 2.4 0 0 1200
+"410" "Absent" -19.62419 -44.10389 "Mini" "Mandarins" 2.4 0 0 1200
+"411" "Absent" -19.60783 -44.10333 "Mini" "Mandarins" 3.4 0 0 1700
+"412" "Present" -20.43111 -44.1033 "Small" "Mandarins" 12 0.22 13 6000
+"413" "Absent" -19.55808 -44.10306 "Mini" "Mandarins" 1.56 0 0 975
+"414" "Absent" -20.40614 -44.1028 "Small" "Mandarins" 22 0 0 11000
+"415" "Absent" -19.66586 -44.1025 "Mini" "Mandarins" 8 0 0 4000
+"416" "Absent" -20.30722 -44.1019 "Small" "Mandarins" 50 0 0 25000
+"417" "Absent" -19.59006 -44.10056 "Mini" "Mandarins" 6 0 0 3000
+"418" "Present" -20.42194 -44.0992 "Small" "Mandarins" 14 0.06 4 7000
+"419" "Present" -20.41392 -44.0986 "Mini" "Mandarins" 6 2.37 71 3001
+"420" "Present" -19.58278 -44.09833 "Mini" "Mandarins" 5 92 2300 2500
+"421" "Absent" -20.32136 -44.0978 "Mini" "Mandarins" 6.3 0 0 3150
+"422" "Present" -19.56114 -44.0975 "Mini" "Mandarins" 8 0.25 10 4000
+"423" "Absent" -19.55378 -44.09694 "Mini" "Mandarins" 4 0 0 2000
+"424" "Absent" -20.48 -44.0967 "Small" "Mandarins" 21 0 0 11000
+"425" "Absent" -20.4372 -44.0967 "Mini" "Mandarins" 9 0 0 4500
+"426" "Present" -20.41167 -44.0961 "Mini" "Mandarins" 8 3.57 145 4065
+"427" "Present" -19.60394 -44.09583 "Small" "Mandarins" 16.1 0.07 6 8050
+"428" "Present" -20.42933 -44.0945 "Small" "Mandarins" 17.4 0.05 4 8700
+"429" "Absent" -20.4219 -44.0942 "Mini" "Mandarins" 3.56 0 0 1780
+"430" "Absent" -19.53661 -44.09417 "Mini" "Mandarins" 1 0 0 500
+"431" "Present" -20.41142 -44.0936 "Mini" "Mandarins" 8 4.08 170 4170
+"432" "Absent" -20.3306 -44.0931 "Small" "Mandarins" 12 0 0 6666
+"433" "Present" -20.4772 -44.0928 "Small" "Mandarins" 23.4 0.1 12 11700
+"434" "Absent" -19.52278 -44.09278 "Small" "Mandarins" 23.4 0 0 11700
+"435" "Absent" -19.57642 -44.09 "Mini" "Mandarins" 4.68 0 0 2925
+"436" "Present" -20.42874 -44.0895 "Small" "Mandarins" 11.6 1.03 60 5800
+"437" "Present" -20.41611 -44.0894 "Mini" "Mandarins" 4 1.09 22 2011
+"438" "Present" -19.52311 -44.08833 "Mini" "Mandarins" 4 0.05 1 2000
+"439" "Present" -20.41444 -44.0883 "Small" "Mandarins" 12 0.09 6 7000
+"440" "Absent" -20.3819 -44.0881 "Mini" "Mandarins" 10 0 0 5000
+"441" "Present" -20.40069 -44.0878 "Small" "Mandarins" 31 0.01 1 15500
+"442" "Present" -20.38639 -44.0861 "Small" "Mandarins" 16 0.88 70 8000
+"443" "Absent" -20.43028 -44.0858 "Mini" "Mandarins" 6 0 0 3000
+"444" "Absent" -20.47139 -44.0856 "Small" "Mandarins" 24 0 0 12000
+"445" "Present" -20.42778 -44.0833 "Small" "Mandarins" 20 0.3 30 10000
+"446" "Absent" -20.38222 -44.0828 "Small" "Mandarins" 24 0 0 12000
+"447" "Absent" -20.38178 -44.0826 "Mini" "Mandarins" 5 0 0 2500
+"448" "Present" -19.56558 -44.08194 "Mini" "Mandarins" 8.8 0.07 4 5500
+"449" "Absent" -20.41239 -44.0818 "Small" "Mandarins" 14 0 0 8000
+"450" "Absent" -20.41239 -44.0818 "Small" "Mandarins" 13 0 0 7000
+"451" "Absent" -20.3453 -44.0817 "Mini" "Mandarins" 0.68 0 0 340
+"452" "Present" -19.5355 -44.08167 "Mini" "Mandarins" 3.6 0.17 3 1800
+"453" "Present" -20.46092 -44.0814 "Mini" "Mandarins" 7.2 0.83 30 3600
+"454" "Absent" -19.48747 -44.08139 "Small" "Mandarins" 18.8 0 0 9400
+"455" "Present" -20.47694 -44.0811 "Small" "Mandarins" 16 9.09 800 8800
+"456" "Present" -20.47694 -44.0811 "Small" "Mandarins" 12 0.03 2 6002
+"457" "Absent" -20.3425 -44.0808 "Mini" "Mandarins" 7.1 0 0 4200
+"458" "Absent" -20.41972 -44.0806 "Mini" "Mandarins" 7 0 0 3500
+"459" "Present" -20.45778 -44.08 "Small" "Mandarins" 50 1.31 328 25008
+"460" "Present" -20.4597 -44.0797 "Mini" "Mandarins" 9.42 2.04 120 5890
+"461" "Present" -20.39972 -44.0789 "Small" "Mandarins" 30 0.67 100 15000
+"462" "Absent" -20.395 -44.0789 "Mini" "Mandarins" 6 0 0 4000
+"463" "Present" -20.46083 -44.0781 "Small" "Mandarins" 24 3.33 406 12186
+"464" "Absent" -20.3865 -44.077 "Small" "Mandarins" 16 0 0 5000
+"465" "Present" -20.4347 -44.0767 "Small" "Mandarins" 18 2.78 250 9000
+"466" "Present" -20.43472 -44.0767 "Small" "Mandarins" 18 0.11 10 9010
+"467" "Absent" -20.4944 -44.0758 "Mini" "Mandarins" 1.5 0 0 750
+"468" "Absent" -20.43375 -44.0756 "Mini" "Mandarins" 4.12 0 0 2060
+"469" "Absent" -19.56625 -44.07556 "Mini" "Mandarins" 5.04 0 0 2600
+"470" "Absent" -19.56625 -44.07555 "Small" "Mandarins" 10.2 0 0 5100
+"471" "Present" -20.43556 -44.0753 "Small" "Mandarins" 24 0.1 12 12000
+"472" "Present" -20.4925 -44.075 "Small" "Mandarins" 20 0.02 2 10000
+"473" "Present" -20.38 -44.0747 "Small" "Mandarins" 20.6 0.17 17 10300
+"474" "Absent" -19.56844 -44.07361 "Mini" "Mandarins" 4 0 0 2000
+"475" "Present" -20.4314 -44.0736 "Mini" "Mandarins" 4 3 60 2000
+"476" "Present" -20.44 -44.0719 "Small" "Mandarins" 11.4 0.96 50 5200
+"477" "Absent" -20.49306 -44.0711 "Small" "Mandarins" 15 0 0 7500
+"478" "Present" -20.44083 -44.0706 "Small" "Mandarins" 14 0.04 3 7000
+"479" "Absent" -20.44083 -44.0706 "Small" "Mandarins" 21 0 0 10500
+"480" "Absent" -19.565 -44.06917 "Mini" "Mandarins" 1.4 0 0 700
+"481" "Present" -20.46564 -44.0662 "Mini" "Mandarins" 9 0.29 13 4513
+"482" "Absent" -19.63028 -44.06528 "Mini" "Mandarins" 8 0 0 4000
+"483" "Present" -20.42528 -44.0633 "Small" "Mandarins" 22 0.04 4 11000
+"484" "Absent" -19.51256 -44.06222 "Mini" "Mandarins" 2 0 0 4000
+"485" "Absent" -20.4289 -44.0622 "Mini" "Mandarins" 3.8 0 0 1900
+"486" "Absent" -19.56939 -44.06194 "Mini" "Mandarins" 4 0 0 2000
+"487" "Absent" -20.4253 -44.0586 "Mini" "Mandarins" 2.96 0 0 1480
+"488" "Present" -19.57789 -44.05722 "Mini" "Mandarins" 1.4 0.43 3 700
+"489" "Absent" -19.57114 -44.05722 "Mini" "Mandarins" 6.32 0 0 3160
+"490" "Absent" -20.39806 -44.0572 "Mini" "Mandarins" 4.8 0 0 2400
+"491" "Absent" -19.57439 -44.05694 "Mini" "Mandarins" 4.52 0 0 2260
+"492" "Absent" -19.59103 -44.05611 "Mini" "Mandarins" 2.4 0 0 1200
+"493" "Absent" -19.64739 -44.05333 "Mini" "Mandarins" 4 0 0 2000
+"494" "Absent" -19.59711 -44.04611 "Mini" "Mandarins" 3.6 0 0 1800
+"495" "Present" -19.51286 -44.0425 "Mini" "Mandarins" 8 0.1 4 4000
+"496" "Absent" -20.37194 -44.0406 "Mini" "Mandarins" 7 0 0 3500
+"497" "Absent" -20.3725 -44.0403 "Mini" "Mandarins" 6 0 0 3000
+"498" "Absent" -19.59801 -44.04 "Mini" "Mandarins" 6.8 0 0 3400
+"499" "Absent" -20.37239 -44.0399 "Small" "Mandarins" 20.6 0 0 10300
+"500" "Present" -20.4575 -44.0386 "Small" "Mandarins" 15 2.86 215 7525
+"501" "Absent" -20.47611 -44.0346 "Mini" "Mandarins" 3.4 0 0 1700
+"502" "Present" -20.48658 -44.0324 "Small" "Mandarins" 22 0.18 20 11020
+"503" "Absent" -20.46231 -44.0309 "Small" "Mandarins" 18 0 0 9000
+"504" "Absent" -20.43481 -44.0276 "Small" "Mandarins" 14.5 0 0 7200
+"505" "Absent" -20.3861 -44.0272 "Small" "Mandarins" 13.2 0 0 6500
+"506" "Present" -20.427 -44.0248 "Small" "Mandarins" 23 0.57 66 11519
+"507" "Absent" -20.38889 -44.0242 "Small" "Mandarins" 15 0 0 7500
+"508" "Present" -20.42556 -44.0156 "Small" "Mandarins" 16.3 0.38 30 8000
+"509" "Absent" -20.42583 -44.0142 "Small" "Mandarins" 16 0 0 8000
+"510" "Absent" -20.42583 -44.0142 "Small" "Mandarins" 16 0 0 8000
+"511" "Absent" -20.43806 -44.0139 "Mini" "Mandarins" 3.6 0 0 1800
+"512" "Present" -20.4528 -44.0128 "Small" "Mandarins" 16 0.4 32 8000
+"513" "Present" -20.45806 -44.0122 "Small" "Mandarins" 46 0.57 131 23021
+"514" "Present" -20.45472 -44.01 "Small" "Mandarins" 18 1.67 151 9051
+"515" "Present" -20.36944 -44.0097 "Small" "Mandarins" 20 0.3 30 10000
+"516" "Present" -20.44028 -44.0089 "Mini" "Mandarins" 4 0.4 8 2000
+"517" "Absent" -20.44672 -44.0079 "Mini" "Mandarins" 6 0 0 3000
+"518" "Present" -20.4617 -44.0069 "Small" "Mandarins" 34 0.01 1 17000
+"519" "Absent" -20.4456 -44.0061 "Mini" "Mandarins" 8.4 0 0 4200
+"520" "Absent" -20.42972 -44.0058 "Mini" "Mandarins" 4 0 0 2000
+"521" "Absent" -19.60389 -44.00306 "Mini" "Mandarins" 10 0 0 5000
+"522" "Absent" -19.55833 -44.00222 "Mini" "Mandarins" 3.4 0 0 1700
+"523" "Absent" -20.44167 -44.0003 "Mini" "Mandarins" 2.3 0 0 1200
+"524" "Absent" -20.4539 -43.9967 "Mini" "Mandarins" 6.4 0 0 3200
+"525" "Absent" -19.55581 -43.99556 "Mini" "Mandarins" 2.2 0 0 1100
+"526" "Absent" -19.55903 -43.98861 "Mini" "Mandarins" 3.6 0 0 1800
+"527" "Absent" -19.56128 -43.98722 "Mini" "Mandarins" 4.59 0 0 2295
+"528" "Absent" -19.55819 -43.985 "Mini" "Mandarins" 2.52 0 0 1260
+"529" "Present" -19.55889 -43.98 "Mini" "Mandarins" 8 1.3 52 4000
+"530" "Absent" -20.44309 -43.979 "Mini" "Mandarins" 1.5 0 0 750
+"531" "Absent" -20.4011 -43.955 "Mini" "Mandarins" 6 0 0 3000
+"532" "Present" -20.1372 -44.9935 "Mini" "Mandarins" 3 0.3 6 2000
+"533" "Present" -19.86281 -44.99333 "Mini" "Mandarins" 2 1.67 20 1200
+"534" "Present" -21.04925 -46.6514 "Small" "Sweet orange" 11.5 0.46 30 6524
+"535" "Absent" -21.03833 -46.6455 "Small" "Sweet orange" 13 0 0 5600
+"536" "Present" -21.10931 -46.6228 "Mini" "Mandarins" 3.5 6.61 119 1800
+"537" "Absent" -21.18672 -46.6146 "Mini" "Mandarins" 4.5 0 0 4260
+"538" "Present" -21.08467 -46.6056 "Mini" "Sweet orange" 10 0.6 29 4829
+"539" "Absent" -21.0844 -46.6056 "Mini" "Sweet orange" 10 0 0 4800
+"540" "Present" -21.07369 -46.5999 "Small" "Sweet orange" 23.15 1.28 120 9370
+"541" "Present" -21.07611 -46.5934 "Mini" "Sweet orange" 2 0.27 3 1103
+"542" "Absent" -20.92389 -46.59333 "Mini" "Sweet orange" 2.5 0 0 1200
+"543" "Absent" -20.39 -44.4103 "Mini" "Mandarins" 3 0 0 1500
+"544" "Absent" -20.34956 -44.3276 "Mini" "Mandarins" 2 0 0 1000
+"545" "Present" -20.35367 -44.3251 "Mini" "Mandarins" 2.5 0.99 15 1515
+"546" "Absent" -20.0589 -46.5595 "Small" "Mandarins" 11 0 0 5500
+"547" "Present" -20.67542 -46.55944 "Mini" "Mandarins" 2 1.44 23 1600
+"548" "Absent" -21.22278 -44.9674 "Small" "Sweet orange" 12 0 0 6850
+"549" "Present" -20.47444 -44.3328 "Small" "Mandarins" 11.2 0.36 20 5601
+"550" "Absent" -20.52889 -44.3239 "Small" "Mandarins" 17 0 0 8300
+"551" "Absent" -20.5064 -44.3131 "Small" "Mandarins" 25.2 0 0 14000
+"552" "Present" -20.48575 -44.3112 "Small" "Mandarins" 16 0.12 10 8350
+"553" "Present" -20.51 -44.31 "Small" "Mandarins" 15.2 0.04 3 7603
+"554" "Absent" -20.505 -44.3061 "Small" "Mandarins" 14.3 0 0 7600
+"555" "Absent" -19.46964 -44.30222 "Mini" "Mandarins" 6.6 0 0 3300
+"556" "Absent" -19.47178 -44.30194 "Mini" "Mandarins" 10 0 0 5000
+"557" "Absent" -20.4614 -44.2961 "Small" "Mandarins" 27.78 0 0 13000
+"558" "Present" -20.46114 -44.2873 "Mini" "Mandarins" 10 0.6 30 5000
+"559" "Present" -20.47028 -44.2849 "Small" "Mandarins" 12.8 0.57 37 6500
+"560" "Absent" -19.53167 -44.27972 "Small" "Mandarins" 24.7 0 0 15000
+"561" "Absent" -20.4536 -44.2742 "Mini" "Mandarins" 2.9 0 0 2500
+"562" "Present" -20.43694 -44.2636 "Small" "Mandarins" 22.5 0.1 15 15000
+"563" "Absent" -20.44378 -44.2624 "Mini" "Mandarins" 2.9 0 0 1300
+"564" "Present" -20.41975 -44.2222 "Mini" "Mandarins" 6 2.07 75 3629
+"565" "Present" -20.42 -44.2147 "Mini" "Mandarins" 7 0.14 5 3505
+"566" "Absent" -20.42194 -44.2106 "Mini" "Mandarins" 6 0 0 3000
+"567" "Present" -19.47194 -44.20361 "Small" "Mandarins" 37.08 0.84 173 20600
+"568" "Present" -19.49047 -44.2025 "Small" "Mandarins" 39.6 0.13 26 19400
+"569" "Present" -20.51611 -44.2019 "Medium" "Mandarins" 51 0.02 4 25004
+"570" "Present" -20.42425 -44.1981 "Small" "Mandarins" 25.7 1.69 235 13878
+"571" "Present" -19.58831 -44.19778 "Small" "Mandarins" 13.8 0.24 17 7200
+"572" "Present" -20.45472 -44.1911 "Small" "Mandarins" 34 0.01 2 17000
+"573" "Present" -20.41944 -44.1906 "Mini" "Mandarins" 1.5 10.61 95 895
+"574" "Present" -20.42528 -44.1875 "Mini" "Mandarins" 2.2 0.18 2 1102
+"575" "Absent" -20.43278 -44.1831 "Mini" "Mandarins" 0.36 0 0 160
+"576" "Absent" -20.46247 -44.1803 "Mini" "Mandarins" 8.2 0 0 4100
+"577" "Absent" -20.43558 -44.1791 "Small" "Mandarins" 13.2 0 0 6600
+"578" "Present" -20.45083 -44.1775 "Small" "Mandarins" 21 0.15 16 10600
+"579" "Absent" -20.43556 -44.1733 "Small" "Mandarins" 12 0 0 6000
+"580" "Absent" -20.45694 -44.1692 "Medium" "Mandarins" 142 0 0 71000
+"581" "Absent" -20.45528 -44.1689 "Small" "Mandarins" 20 0 0 10000
+"582" "Absent" -20.44528 -44.1617 "Mini" "Mandarins" 8 0 0 4000
+"583" "Absent" -20.43447 -44.1601 "Mini" "Mandarins" 7 0 0 3500
+"584" "Present" -20.4742 -44.1592 "Mini" "Mandarins" 5.4 0.74 20 2700
+"585" "Absent" -19.53214 -44.1575 "Mini" "Mandarins" 6.4 0 0 3200
+"586" "Absent" -20.4675 -44.1542 "Mini" "Mandarins" 5.4 0 0 2700
+"587" "Present" -20.46472 -44.1514 "Mini" "Mandarins" 8 0.38 15 4000
+"588" "Present" -20.38722 -46.5508 "Mini" "Sweet orange" 0.5 6 15 250
+"589" "Present" -20.39639 -46.0736 "Mini" "Sweet orange" 5 0.24 4 1700
+"590" "Absent" -20.39281 -46.0626 "Mini" "Mandarins" 7.1 0 0 3000
+"591" "Absent" -20.40447 -45.9842 "Small" "Sweet orange" 15.4 0 0 8000
+"592" "Present" -20.39167 -45.9528 "Small" "Sweet orange" 12.47 0.16 4 2504
+"593" "Present" -19.6075 -45.95278 "Small" "Sweet orange" 12.47 0.12 3 2500
+"594" "Present" -21.132 -46.5469 "Small" "Sweet orange" 29.7 0.02 3 14000
+"595" "Absent" -21.13275 -46.5403 "Small" "Mandarins" 30.2 0 0 14000
+"596" "Present" -21.12636 -46.5312 "Medium" "Sweet orange" 69 2.22 600 27000
+"597" "Present" -21.56694 -46.4714 "Mini" "Acid lime" 9.84 0.3 12 4000
+"598" "Present" -21.56017 -46.4505 "Small" "Sweet orange" 26.4 0.05 6 10967
+"599" "Present" -21.55594 -46.4486 "Medium" "Sweet orange" 75.6 0.04 13 30860
+"600" "Present" -21.55007 -46.4383 "Small" "Acid lime" 34 0.83 115 13900
+"601" "Present" -21.54931 -46.437 "Small" "Acid lime" 12 1.18 54 4570
+"602" "Present" -21.55 -46.4256 "Medium" "Acid lime" 80 0.41 125 30523
+"603" "Absent" -22.43044 -46.4613 "Mini" "Mandarins" 3 0 0 3000
+"604" "Present" -22.43778 -46.4592 "Mini" "Mandarins" 6 100 5500 5500
+"605" "Absent" -21.55931 -46.4497 "Small" "Acid lime" 28.8 0 0 11000
+"606" "Absent" -21.74083 -46.4206 "Mini" "Mandarins" 0.8 0 0 700
+"607" "Absent" -21.74172 -46.4181 "Mini" "Mandarins" 2.4 0 0 900
+"608" "Absent" -20.2517 -44.3092 "Small" "Mandarins" 15 0 0 4000
+"609" "Absent" -22.5125 -46.4164 "Small" "Mandarins" 30 0 0 14650
+"610" "Absent" -21.4875 -46.41639 "Small" "Mandarins" 30 0 0 14650
+"611" "Absent" -21.31789 -46.3738 "Mini" "Acid lime" 2.5 0 0 200
+"612" "Present" -20.5364 -46.315 "Mini" "Mandarins" 10 0.11 5 4700
+"613" "Absent" -22.3003 -46.2956 "Mini" "Mandarins" 1.5 0 0 1400
+"614" "Present" -22.3106 -46.2853 "Mini" "Mandarins" 0.36 10.68 55 515
+"615" "Absent" -20.85716 -46.2686 "Mini" "Acid lime" 2 0 0 640
+"616" "Absent" -21.97569 -46.2452 "Small" "Sweet orange" 22 0 0 6000
+"617" "Present" -19.46587 -46.21889 "Medium" "Mandarins" 196.53 0.36 264 74353
+"618" "Present" -19.5482 -46.21056 "Mini" "Mandarins" 2 19.6 186 949
+"619" "Absent" -21.5422 -46.1917 "Small" "Sweet orange" 29 0 0 13000
+"620" "Absent" -20.45769 -46.19167 "Small" "Sweet orange" 29 0 0 13000
+"621" "Present" -21.57667 -46.1852 "Medium" "Sweet orange" 58.05 4.55 1348 29621
+"622" "Absent" -21.24467 -46.1776 "Medium" "Sweet orange" 97.9 0 0 40000
+"623" "Present" -21.59347 -46.1664 "Small" "Mandarins" 31.7 5.16 738 14299
+"624" "Present" -21.58625 -46.1664 "Small" "Mandarins" 20.93 5.52 467 8467
+"625" "Present" -21.59136 -46.1659 "Small" "Mandarins" 31.68 4.81 694 14426
+"626" "Present" -21.60908 -46.1631 "Small" "Sweet orange" 27.32 3.92 520 13278
+"627" "Present" -21.59033 -46.1591 "Small" "Sweet orange" 26 0.73 144 19724
+"628" "Present" -20.0508 -48.7053 "Large" "Sweet orange" 218.52 0.03 41 118467
+"629" "Present" -20.04847 -48.6877 "Large" "Sweet orange" 285.73 1.05 1577 150889
+"630" "Present" -19.95153 -48.6875 "Medium" "Sweet orange" 58.23 0.25 76 30890
+"631" "Absent" -21.95511 -46.1083 "Mini" "Mandarins" 1.5 0 0 1500
+"632" "Absent" -21.92758 -46.1041 "Mini" "Lemon" 3 0 0 500
+"633" "Present" -21.91639 -45.1456 "Small" "Mandarins" 14 1.32 107 8093
+"634" "Absent" -21.93125 -45.1143 "Mini" "Mandarins" 1 0 0 500
+"635" "Present" -21.93147 -45.0977 "Mini" "Mandarins" 1 6.06 37 611
+"636" "Present" -21.86014 -45.0621 "Mini" "Mandarins" 4 6.93 111 1602
+"637" "Present" -21.8769 -45.0581 "Mini" "Mandarins" 9.38 0.25 5 2000
+"638" "Present" -21.87694 -45.0581 "Mini" "Mandarins" 9.38 5.93 126 2126
+"639" "Present" -21.86919 -45.0539 "Mini" "Mandarins" 3 4.2 65 1546
+"640" "Absent" -21.85456 -45.0484 "Mini" "Lemon" 2 0 0 1000
+"641" "Present" -21.82236 -45.0446 "Mini" "Sweet orange" 3 21.64 275 1271
+"642" "Present" -21.89308 -45.0337 "Mini" "Mandarins" 4 1.22 25 2054
+"643" "Present" -21.84558 -45.0318 "Small" "Mandarins" 14.4 0.13 10 7755
+"644" "Present" -21.93147 -45.0242 "Mini" "Mandarins" 1 3.33 20 600
+"645" "Present" -21.8453 -45.0212 "Mini" "Mandarins" 2 8.61 92 1069
+"646" "Present" -21.94789 -45.0212 "Mini" "Mandarins" 4 3.29 76 2308
+"647" "Present" -21.88931 -45.0109 "Mini" "Mandarins" 0.3 2.91 9 309
+"648" "Absent" -21.84436 -44.9487 "Mini" "Sweet orange" 2.6 0 0 1000
+"649" "Present" -22.27953 -46.10613 "Mini" "Sweet orange" 1.5 3.47 41 1181
+"650" "Present" -22.29 -46.0948 "Mini" "Lemon" 5.8 25.43 904 3555
+"651" "Present" -20.74988 -46.0525 "Mini" "Mandarins" 1.1 36.67 220 600
+"652" "Present" -21.08391 -45.9482 "Mini" "Mandarins" 10 2.94 175 5957
+"653" "Present" -22.2108 -45.5828 "Small" "Mandarins" 11.2 1.2 90 7500
+"654" "Present" -21.14256 -45.1184 "Small" "Mandarins" 44 0.61 142 23142
+"655" "Present" -20.8675 -45.1175 "Small" "Mandarins" 16 3.8 300 7900
+"656" "Present" -21.1325 -45.1175 "Small" "Mandarins" 16 10.26 910 8870
+"657" "Present" -21.14306 -45.1084 "Mini" "Mandarins" 3.4 94.63 1761 1861
+"658" "Absent" -21.0872 -45.0958 "Mini" "Mandarins" 3 0 0 1200
+"659" "Present" -21.03458 -45.0917 "Mini" "Mandarins" 1 33.33 500 1500
+"660" "Present" -21.05042 -45.0894 "Mini" "Mandarins" 5 16.14 385 2385
+"661" "Present" -21.03458 -45.0894 "Mini" "Mandarins" 5.5 70.72 2174 3074
+"662" "Present" -21.03306 -45.0808 "Small" "Mandarins" 12.9 18.37 1181 6429
+"663" "Present" -21.06222 -45.0783 "Mini" "Mandarins" 9.4 18.69 928 4966
+"664" "Present" -21.11344 -45.047 "Mini" "Mandarins" 4.5 100 2200 2200
+"665" "Absent" -21.08292 -45.0382 "Mini" "Mandarins" 10 0 0 5000
+"666" "Present" -21.10803 -45.0235 "Mini" "Mandarins" 1.3 33.7 620 1840
+"667" "Present" -21.07789 -45.0149 "Mini" "Mandarins" 4 100 1800 1800
+"668" "Present" -21.06553 -45.0094 "Mini" "Mandarins" 4.6 0.77 20 2600
+"669" "Present" -21.02364 -45.0053 "Mini" "Mandarins" 5.3 100 2500 2500
+"670" "Present" -22.04 -44.9967 "Mini" "Mandarins" 5 3.33 100 3000
+"671" "Present" -21.07 -44.9892 "Mini" "Mandarins" 1.5 3.63 29 800
+"672" "Present" -21.60306 -44.9847 "Mini" "Mandarins" 4 11.78 187 1587
+"673" "Present" -21.07683 -44.9832 "Mini" "Mandarins" 2.5 1 14 1400
+"674" "Present" -21.09111 -44.9769 "Small" "Mandarins" 14.3 2.58 181 7016
+"675" "Present" -21.0914 -44.9758 "Small" "Mandarins" 15.5 1.12 94 8400
+"676" "Present" -21.08239 -44.971 "Mini" "Mandarins" 6.5 8.8 409 4649
+"677" "Present" -21.09667 -44.9625 "Mini" "Mandarins" 6 0.77 28 3613
+"678" "Present" -21.078 -44.8962 "Small" "Mandarins" 28.6 1.6 241 15041
+"679" "Present" -21.0778 -44.8961 "Mini" "Mandarins" 2.9 2.41 99 4100
+"680" "Absent" -20.35256 -46.04861 "Mini" "Mandarins" 8.21 0 0 4100
+"681" "Absent" -20.31389 -45.87472 "Mini" "Acid lime" 5.27 0 0 2108
+"682" "Absent" -21.68611 -45.8747 "Mini" "Acid lime" 4.02 0 0 960
+"683" "Present" -21.13233 -46.0033 "Small" "Sweet orange" 47.3 0.87 227 26217
+"684" "Absent" -20.56694 -45.9981 "Mini" "Sweet orange" 2 0 0 600
+"685" "Absent" -21.67272 -45.99806 "Mini" "Acid lime" 0.4 0 0 80
+"686" "Present" -21.68453 -45.98194 "Mini" "Sweet orange" 5.3 9.66 86 890
+"687" "Present" -22.31333 -45.98138 "Mini" "Mandarins" 5.3 19.74 261 1322
+"688" "Present" -22.36 -45.9475 "Mini" "Mandarins" 1 85.35 338 396
+"689" "Present" -22.34722 -45.9367 "Small" "Sweet orange" 20.3 5.25 422 8040
+"690" "Absent" -22.3158 -45.3153 "Mini" "Sweet orange" 0.48 0 0 200
+"691" "Present" -21.7344 -45.984 "Mini" "Mandarins" 3 2.4 36 1500
+"692" "Absent" -21.6985 -45.4489 "Mini" "Mandarins" 2 0 0 1000
+"693" "Present" -21.85331 -45.43 "Small" "Mandarins" 23.76 3.35 589 17570
+"694" "Absent" -21.83942 -45.4094 "Mini" "Mandarins" 0.5 0 0 4000
+"695" "Present" -21.63944 -45.3803 "Mini" "Mandarins" 1.5 18.66 195 1045
+"696" "Present" -21.63972 -45.3797 "Mini" "Mandarins" 1 17.22 104 604
+"697" "Present" -21.66028 -45.3769 "Mini" "Mandarins" 6 24.3 1056 4346
+"698" "Present" -21.76167 -45.3503 "Mini" "Mandarins" 6 4.65 144 3099
+"699" "Present" -21.74753 -45.3422 "Mini" "Mandarins" 5 6.4 134 2094
+"700" "Present" -21.77097 -45.335 "Mini" "Mandarins" 7.6 12.34 380 3080
+"701" "Present" -21.77364 -45.3344 "Mini" "Mandarins" 10 8.38 376 4486
+"702" "Present" -21.75944 -45.3334 "Mini" "Mandarins" 7 22.3 818 3668
+"703" "Present" -21.7864 -45.3331 "Mini" "Mandarins" 10 5.9 295 5000
+"704" "Present" -20.21361 -45.33306 "Mini" "Mandarins" 10 2.52 126 5000
+"705" "Present" -21.76511 -45.3317 "Mini" "Mandarins" 3.9 25.33 870 3435
+"706" "Present" -21.60611 -45.3314 "Mini" "Mandarins" 10 0.02 1 5550
+"707" "Present" -21.78333 -45.3292 "Small" "Mandarins" 15.9 3.53 233 6593
+"708" "Present" -21.75839 -45.3292 "Mini" "Mandarins" 1.5 0.25 2 802
+"709" "Present" -21.76972 -45.3281 "Small" "Mandarins" 15.6 4.54 359 7909
+"710" "Present" -20.23028 -45.32806 "Small" "Mandarins" 27 2.6 351 13520
+"711" "Present" -21.77333 -45.3267 "Small" "Mandarins" 34.5 8.59 1507 17542
+"712" "Absent" -21.74792 -45.3256 "Mini" "Mandarins" 1 0 0 500
+"713" "Present" -21.77889 -45.3236 "Small" "Mandarins" 15.6 0.04 3 7803
+"714" "Present" -21.64194 -45.3231 "Small" "Mandarins" 17 1.82 179 9851
+"715" "Present" -21.75 -45.3228 "Mini" "Mandarins" 10 15.65 933 5963
+"716" "Present" -21.77806 -45.3222 "Mini" "Mandarins" 7.5 4.51 177 3927
+"717" "Present" -21.76556 -45.3208 "Mini" "Mandarins" 3 51.01 937 1837
+"718" "Present" -21.7525 -45.3206 "Mini" "Mandarins" 3.3 63.57 1021 1606
+"719" "Present" -21.75583 -45.3206 "Mini" "Mandarins" 5.5 45.3 2120 4680
+"720" "Present" -21.75722 -45.3194 "Mini" "Mandarins" 0.3 29.51 54 183
+"721" "Present" -21.75972 -45.3183 "Mini" "Mandarins" 0.3 100 125 125
+"722" "Present" -21.76569 -45.3172 "Mini" "Mandarins" 6 30.99 1100 3550
+"723" "Present" -21.73972 -45.3164 "Mini" "Mandarins" 1.5 2.25 23 1023
+"724" "Present" -21.71481 -45.3163 "Mini" "Mandarins" 6.5 21.42 695 3245
+"725" "Present" -21.71472 -45.3163 "Mini" "Mandarins" 7.1 28.4 1150 4050
+"726" "Present" -21.75722 -45.3158 "Mini" "Mandarins" 2 17.51 191 1091
+"727" "Present" -21.67722 -45.3158 "Mini" "Mandarins" 2.4 5.62 94 1672
+"728" "Present" -21.6772 -45.3158 "Mini" "Mandarins" 3 6.25 100 1600
+"729" "Present" -21.7375 -45.3144 "Mini" "Mandarins" 2 14.95 174 1164
+"730" "Present" -21.73778 -45.3142 "Mini" "Mandarins" 0.5 10 50 500
+"731" "Present" -21.74194 -45.3128 "Mini" "Mandarins" 1 13.79 80 580
+"732" "Present" -21.74453 -45.3126 "Mini" "Mandarins" 7 79.6 3160 3970
+"733" "Present" -21.67944 -45.3122 "Mini" "Mandarins" 2.5 6.95 80 1151
+"734" "Present" -21.74461 -45.3094 "Mini" "Mandarins" 0.36 8.81 29 329
+"735" "Present" -20.39381 -45.30861 "Mini" "Mandarins" 9 1.2 60 5000
+"736" "Present" -21.76778 -45.3081 "Mini" "Mandarins" 2.5 49.97 2427 4857
+"737" "Present" -21.73778 -45.3078 "Mini" "Mandarins" 4 10.04 222 2212
+"738" "Present" -21.67722 -45.3075 "Mini" "Mandarins" 2 0.2 2 1002
+"739" "Present" -21.76828 -45.3038 "Small" "Mandarins" 16 9.8 717 7317
+"740" "Present" -21.74681 -45.3019 "Mini" "Mandarins" 5 8.4 178 2118
+"741" "Present" -21.78183 -45.3 "Small" "Mandarins" 11 13.56 979 7222
+"742" "Present" -21.74781 -45.2923 "Mini" "Mandarins" 0.3 35.11 165 470
+"743" "Present" -21.74781 -45.2923 "Mini" "Mandarins" 1.5 31.08 184 592
+"744" "Present" -21.79633 -45.2821 "Mini" "Mandarins" 3.06 10.53 200 1900
+"745" "Absent" -20.20389 -45.28194 "Mini" "Mandarins" 3.06 0 0 1700
+"746" "Absent" -21.7961 -45.2819 "Mini" "Mandarins" 3.06 0 0 1700
+"747" "Present" -21.72444 -45.2783 "Mini" "Mandarins" 0.2 14.53 17 117
+"748" "Present" -21.64778 -45.2775 "Mini" "Mandarins" 0.5 43.76 249 569
+"749" "Present" -21.76028 -45.2744 "Mini" "Mandarins" 2 3.47 35 1008
+"750" "Present" -21.66111 -45.2621 "Mini" "Mandarins" 6.2 11.02 384 3484
+"751" "Absent" -20.33889 -45.26194 "Mini" "Mandarins" 6.2 0 0 3600
+"752" "Present" -20.07028 -45.26194 "Mini" "Mandarins" 10 0.74 37 5000
+"753" "Present" -21.78446 -45.2572 "Small" "Mandarins" 21 1.13 120 10614
+"754" "Present" -21.74681 -45.2544 "Mini" "Mandarins" 1.4 6.73 70 1040
+"755" "Present" -21.74819 -45.2542 "Mini" "Mandarins" 1 11.54 77 667
+"756" "Present" -21.78239 -45.2535 "Small" "Mandarins" 12 5.71 377 6597
+"757" "Absent" -20.27806 -45.25083 "Mini" "Mandarins" 1 0 0 400
+"758" "Present" -21.72194 -45.2508 "Mini" "Mandarins" 1 4.05 19 469
+"759" "Present" -21.72808 -45.2488 "Mini" "Mandarins" 5 5.66 252 4452
+"760" "Present" -21.60319 -45.2167 "Mini" "Mandarins" 4 10.69 268 2508
+"761" "Present" -21.45814 -45.1955 "Small" "Mandarins" 17.33 38.66 6061 15679
+"762" "Present" -21.76669 -45.1782 "Mini" "Mandarins" 3 9.58 194 2025
+"763" "Absent" -21.7139 -45.1569 "Mini" "Mandarins" 5 0 0 2500
+"764" "Present" -21.55881 -45.1516 "Small" "Mandarins" 18 0.16 16 10000
+"765" "Present" -21.65806 -45.1381 "Medium" "Sweet orange" 95 0.37 147 39520
+"766" "Present" -21.76539 -45.1014 "Mini" "Mandarins" 6 1.59 48 3028
+"767" "Present" -20.31361 -45.09083 "Small" "Mandarins" 15 0.9 75 8325
+"768" "Present" -21.74939 -45.0761 "Small" "Mandarins" 41.7 14.87 3271 21998
+"769" "Absent" -21.7339 -45.9756 "Large" "Acid lime" 300 0 0 1e+05
+"770" "Absent" -20.02694 -48.9936 "Large" "Sweet orange" 479.58 0 0 256328
+"771" "Absent" -20.0269 -48.9933 "Large" "Sweet orange" 836.28 0 0 198968
+"772" "Absent" -20.00147 -49.0543 "Medium" "Sweet orange" 55.7 0 0 26500
+"773" "Absent" -19.8178 -49.00111 "Medium" "Sweet orange" 62.99 0 0 40171
+"774" "Absent" -19.8164 -49.0011 "Medium" "Sweet orange" 62.99 0 0 20100
+"775" "Absent" -19.80472 -48.9833 "Medium" "Sweet orange" 110.18 0 0 45177
+"776" "Present" -19.7725 -48.9664 "Small" "Sweet orange" 18.5 0.16 18 11318
+"777" "Present" -19.7722 -48.9656 "Small" "Sweet orange" 13.17 0.24 18 7650
+"778" "Present" -19.71513 -48.9737 "Large" "Sweet orange" 287.19 0.43 426 99376
+"779" "Absent" -19.69742 -48.9869 "Small" "Sweet orange" 26 0 0 11700
+"780" "Present" -19.63056 -48.9517 "Large" "Sweet orange" 2472.87 0.11 977 909383
+"781" "Absent" -19.62721 -48.9578 "Mini" "Sweet orange" 9.5 0 0 4200
+"782" "Present" -19.6122 -48.99 "Large" "Sweet orange" 1783.01 0.06 407 642457
+"783" "Present" -22.00583 -45.8525 "Mini" "Mandarins" 7 26.25 679 2587
+"784" "Present" -21.9025 -45.8317 "Mini" "Sweet orange" 8.2 0.06 2 3201
+"785" "Present" -21.89556 -45.83 "Mini" "Mandarins" 3.6 0.08 2 2500
+"786" "Present" -21.93361 -45.8178 "Mini" "Mandarins" 1.95 0.15 2 1302
+"787" "Absent" -21.92342 -45.8047 "Mini" "Mandarins" 6 0 0 1150
+"788" "Absent" -21.92333 -45.8008 "Mini" "Mandarins" 2.9 0 0 2120
+"789" "Absent" -21.935 -45.7933 "Mini" "Mandarins" 1 0 0 400
+"790" "Absent" -21.95167 -45.7889 "Mini" "Mandarins" 1 0 0 500
+"791" "Absent" -21.95306 -45.7856 "Mini" "Mandarins" 0.6 0 0 400
+"792" "Absent" -21.95111 -45.7822 "Mini" "Mandarins" 4.2 0 0 600
+"793" "Present" -21.30511 -45.8017 "Mini" "Mandarins" 1.8 6.91 72 1042
+"794" "Present" -21.39725 -45.799 "Mini" "Mandarins" 2.8 50.59 1587 3137
+"795" "Absent" -21.37253 -45.7927 "Mini" "Sweet orange" 2.1 0 0 1050
+"796" "Present" -21.41928 -45.7614 "Mini" "Mandarins" 1 99.21 624 629
+"797" "Present" -21.42056 -45.7583 "Mini" "Mandarins" 10 16.67 872 5232
+"798" "Present" -21.41911 -45.7552 "Mini" "Mandarins" 5 94.04 2605 2770
+"799" "Present" -21.38702 -45.7491 "Small" "Mandarins" 25 27.2 355 1305
+"800" "Absent" -20.60417 -45.71972 "Mini" "Mandarins" 3.8 0 0 2500
+"801" "Present" -20.60417 -45.71972 "Mini" "Mandarins" 8 3.83 186 4860
+"802" "Absent" -21.60222 -45.7947 "Medium" "Acid lime" 63 0 0 33371
+"803" "Absent" -21.66194 -45.7831 "Mini" "Sweet orange" 7 0 0 9740
+"804" "Absent" -20.33806 -45.78306 "Mini" "Sweet orange" 1 0 0 70000
+"805" "Present" -21.52139 -45.7269 "Mini" "Mandarins" 0.36 0.87 3 343
+"806" "Absent" -21.6989 -45.7269 "Mini" "Acid lime" 4.3 0 0 450
+"807" "Absent" -21.69889 -45.7269 "Mini" "Acid lime" 2.5 0 0 450
+"808" "Absent" -20.7739 -45.7208 "Mini" "Mandarins" 1.5 0 0 850
+"809" "Present" -20.37861 -45.1978 "Small" "Sweet orange" 39.07 0.04 7 18451
+"810" "Absent" -19.51231 -45.05722 "Mini" "Mandarins" 2 0 0 600
+"811" "Absent" -20.48746 -45.0572 "Mini" "Mandarins" 1.3 0 0 820
+"812" "Present" -20.66244 -45.68361 "Mini" "Mandarins" 3 100 1500 1500
+"813" "Present" -21.33833 -45.6825 "Mini" "Mandarins" 4.5 40.35 1522 3772
+"814" "Present" -21.37363 -45.6817 "Small" "Sweet orange" 17 18.75 1638 8738
+"815" "Present" -20.79 -45.65 "Mini" "Mandarins" 2 23.91 220 920
+"816" "Present" -20.82864 -45.5716 "Small" "Sweet orange" 18 0.49 44 9011
+"817" "Present" -20.82914 -45.5713 "Small" "Mandarins" 42 3.31 666 20136
+"818" "Present" -20.8289 -45.5711 "Mini" "Mandarins" 10 0.24 12 5000
+"819" "Present" -21.86361 -45.5267 "Mini" "Mandarins" 4 5.66 120 2120
+"820" "Present" -20.83167 -45.4897 "Mini" "Mandarins" 3 8.57 150 1750
+"821" "Present" -21.06222 -45.0783 "Mini" "Mandarins" 2 3.2 59 1845
+"822" "Absent" -21.96589 -45.6114 "Mini" "Mandarins" 9.5 0 0 4500
+"823" "Present" -21.80595 -45.5922 "Small" "Mandarins" 27 6.47 991 15311
+"824" "Present" -21.80464 -45.5859 "Mini" "Mandarins" 3 7.71 122 1582
+"825" "Present" -21.87251 -45.5753 "Mini" "Mandarins" 7 1.22 80 6563
+"826" "Present" -21.83528 -45.5744 "Mini" "Mandarins" 3 1 20 2000
+"827" "Present" -21.84223 -45.56339 "Small" "Mandarins" 18 4.81 448 9318
+"828" "Absent" -21.91056 -45.5155 "Mini" "Mandarins" 3 0 0 1500
+"829" "Present" -21.8425 -45.5142 "Mini" "Mandarins" 2 18.24 209 1146
+"830" "Present" -21.84938 -45.5132 "Mini" "Mandarins" 1.65 17.55 149 849
+"831" "Present" -21.85186 -45.511 "Mini" "Mandarins" 1.76 6.47 67 1035
+"832" "Present" -20.14833 -45.51083 "Mini" "Mandarins" 1.76 0.41 4 968
+"833" "Present" -21.90556 -45.5106 "Mini" "Mandarins" 5.4 1.2 36 3000
+"834" "Present" -21.84375 -45.5084 "Mini" "Mandarins" 0.5 9.05 39 431
+"835" "Present" -21.84583 -45.5075 "Mini" "Mandarins" 9 2.59 130 5010
+"836" "Present" -21.86022 -45.507 "Mini" "Mandarins" 1.5 4.4 66 1500
+"837" "Present" -21.83983 -45.5053 "Medium" "Mandarins" 78.3 4.9 1757 35838
+"838" "Present" -21.86431 -45.5039 "Mini" "Mandarins" 1.7 2.28 16 703
+"839" "Absent" -21.90982 -45.5025 "Mini" "Mandarins" 2 0 0 750
+"840" "Present" -21.86111 -45.4986 "Mini" "Mandarins" 2.88 1.25 20 1600
+"841" "Present" -21.89706 -45.4949 "Small" "Mandarins" 13.6 1.41 108 7656
+"842" "Present" -21.90475 -45.4925 "Small" "Sweet orange" 19 2.07 273 13193
+"843" "Present" -20.19333 -45.60528 "Mini" "Mandarins" 0.6 3 24 800
+"844" "Present" -20.09139 -45.50278 "Mini" "Mandarins" 2 0.53 4 750
+"845" "Absent" -22.5139 -45.5872 "Mini" "Mandarins" 1 0 0 500
+"846" "Absent" -22.5058 -45.5781 "Mini" "Mandarins" 6 0 0 4000
+"847" "Absent" -22.4981 -45.5758 "Mini" "Mandarins" 2.4 0 0 1400
+"848" "Present" -22.4708 -45.5592 "Mini" "Mandarins" 1.92 5 60 1200
+"849" "Absent" -22.4986 -45.5528 "Mini" "Mandarins" 1.4 0 0 550
+"850" "Present" -21.47097 -45.54333 "Mini" "Mandarins" 1.61 7.27 80 1100
+"851" "Absent" -21.66417 -45.46083 "Mini" "Mandarins" 2.03 0 0 1000
+"852" "Present" -21.6255 -45.40389 "Mini" "Mandarins" 0.6 5.43 19 350
+"853" "Present" -21.62617 -45.3825 "Mini" "Mandarins" 1.76 5.6 70 1250
+"854" "Absent" -21.76919 -45.02611 "Mini" "Mandarins" 2 0 0 1000
+"855" "Absent" -22.5 -45.5331 "Mini" "Sweet orange" 2.82 0 0 6000
+"856" "Absent" -21.72389 -45.52667 "Mini" "Mandarins" 1.37 0 0 915
+"857" "Absent" -21.72694 -45.52361 "Mini" "Mandarins" 1.6 0 0 1070
+"858" "Absent" -22.5292 -45.5169 "Mini" "Mandarins" 1 0 0 500
+"859" "Present" -21.78892 -45.5317 "Mini" "Mandarins" 5.04 0.4 12 3012
+"860" "Present" -21.76911 -45.4761 "Mini" "Mandarins" 9 10.64 231 2171
+"861" "Present" -20.23089 -45.47583 "Small" "Mandarins" 16.5 0.9 81 9000
+"862" "Present" -21.78921 -45.4616 "Mini" "Sweet orange" 8 4.31 180 4180
+"863" "Present" -20.21081 -45.46139 "Mini" "Mandarins" 8 0.63 25 4000
+"864" "Present" -21.75724 -45.4562 "Small" "Mandarins" 12.6 1.65 106 6406
+"865" "Present" -21.77929 -45.4532 "Small" "Mandarins" 20.1 1.27 99 7787
+"866" "Present" -21.76056 -45.4522 "Small" "Mandarins" 12 25.45 1810 7111
+"867" "Present" -21.74889 -45.4401 "Mini" "Mandarins" 4.84 6.92 177 2558
+"868" "Present" -21.761 -45.4338 "Medium" "Mandarins" 54.9 4.34 1250 28832
+"869" "Present" -21.74253 -45.4332 "Mini" "Mandarins" 3.42 2.41 47 1947
+"870" "Present" -21.759 -45.429 "Small" "Mandarins" 19.2 5.65 555 9821
+"871" "Present" -21.73081 -45.4155 "Small" "Mandarins" 12.9 5.35 367 6857
+"872" "Present" -21.6914 -45.4064 "Mini" "Mandarins" 4 10 180 1800
+"873" "Present" -21.73522 -45.4058 "Small" "Mandarins" 41.4 1.25 289 23071
+"874" "Present" -21.73736 -45.4007 "Mini" "Mandarins" 5 10.54 285 2705
+"875" "Present" -19.904 -47.9807 "Small" "Sweet orange" 12.7 1.56 157 10079
+"876" "Absent" -19.8031 -48.1856 "Small" "Sweet orange" 35 0 0 10400
+"877" "Present" -19.80306 -48.1856 "Small" "Sweet orange" 35 23.29 3141 13489
+"878" "Absent" -19.74 -48.14 "Medium" "Mandarins" 85 0 0 33636
+"879" "Absent" -19.74 -48.14 "Medium" "Sweet orange" 78 0 0 25886
+"880" "Absent" -19.72111 -49.2106 "Mini" "Acid lime" 2.5 0 0 1500
+"881" "Present" -19.67022 -47.8158 "Mini" "Sweet orange" 2 92.31 972 1053
+"882" "Present" -19.52981 -48.1152 "Large" "Sweet orange" 268 17.22 18800 109172
+"883" "Absent" -19.5297 -48.115 "Large" "Sweet orange" 268 0 0 86372
+"884" "Present" -19.47483 -48.1156 "Medium" "Sweet orange" 75 2.85 640 22460
+"885" "Present" -19.47 -48.0375 "Medium" "Sweet orange" 99.44 8.91 3851 43226
+"886" "Absent" -19.2864 -49.01889 "Mini" "Acid lime" 6 0 0 3700
+"887" "Present" -21.8467 -45.5147 "Mini" "Mandarins" 1.5 0.1 1 1000
+"888" "Absent" -21.8436 -45.5083 "Mini" "Mandarins" 0.5 0 0 400
+"889" "Present" -21.8397 -45.5053 "Medium" "Mandarins" 78.3 1.1 384 34800
+"890" "Absent" -21.8969 -45.495 "Small" "Mandarins" 13.6 0 0 7500
+"891" "Present" -19.90114 -48.2664 "Medium" "Sweet orange" 133.8 2.35 1783 75863
+"892" "Present" -19.84883 -48.1947 "Medium" "Sweet orange" 52.3 10.92 2335 21390
+"893" "Present" -19.847 -48.196 "Mini" "Sweet orange" 3 0.73 7 957
+"894" "Present" -19.84558 -48.2061 "Mini" "Sweet orange" 5.5 17.18 222 1292
+"895" "Absent" -19.84361 -48.1947 "Small" "Sweet orange" 28.3 0 0 10000
+"896" "Present" -19.84203 -48.3758 "Small" "Sweet orange" 25.86 1.27 127 9965
+"897" "Absent" -19.80728 -48.3043 "Small" "Mandarins" 19 0 0 5400
+"898" "Present" -21.87058 -45.4984 "Small" "Mandarins" 17.2 13.95 1292 9264
+"899" "Present" -21.8775 -45.4967 "Mini" "Mandarins" 8 21.89 1121 5121
+"900" "Present" -21.8408 -45.4961 "Mini" "Mandarins" 9 0.23 13 5700
+"901" "Present" -21.88278 -45.4889 "Small" "Mandarins" 12 2.9 179 6179
+"902" "Present" -21.84764 -45.4867 "Small" "Mandarins" 24 1.55 210 13530
+"903" "Present" -21.81783 -45.4861 "Mini" "Mandarins" 2.42 6.59 90 1365
+"904" "Present" -21.81906 -45.484 "Small" "Mandarins" 16.5 2.58 247 9577
+"905" "Present" -21.84819 -45.4837 "Mini" "Mandarins" 7 0.72 28 3878
+"906" "Present" -21.71486 -45.4837 "Mini" "Mandarins" 7 1 39 3889
+"907" "Absent" -21.83481 -45.4827 "Mini" "Mandarins" 4.5 0 0 2250
+"908" "Present" -21.76966 -45.4803 "Mini" "Mandarins" 8 5.58 261 4681
+"909" "Present" -21.90617 -45.4784 "Mini" "Mandarins" 4 100 2302 2302
+"910" "Present" -21.84572 -45.4784 "Mini" "Mandarins" 5 0.63 18 2868
+"911" "Present" -21.86195 -45.4769 "Small" "Mandarins" 18 1.79 180 10056
+"912" "Present" -21.90283 -45.4767 "Small" "Sweet orange" 18.5 1.91 180 9420
+"913" "Present" -21.8985 -45.4763 "Small" "Mandarins" 17 3.53 255 7227
+"914" "Present" -21.84378 -45.4763 "Mini" "Mandarins" 9.5 6.08 333 5473
+"915" "Present" -21.89397 -45.4753 "Mini" "Mandarins" 2 0.48 5 1050
+"916" "Present" -21.80663 -45.4751 "Mini" "Mandarins" 4.6 9.7 233 2403
+"917" "Present" -21.8064 -45.475 "Mini" "Mandarins" 4.6 1.36 30 2200
+"918" "Present" -21.86753 -45.4737 "Small" "Sweet orange" 21.6 1.5 106 7066
+"919" "Present" -21.90487 -45.4733 "Mini" "Mandarins" 4 2.84 58 2043
+"920" "Present" -21.87304 -45.4727 "Mini" "Mandarins" 10 9.31 544 5844
+"921" "Present" -21.88919 -45.4723 "Mini" "Mandarins" 3.36 3.24 46 1420
+"922" "Absent" -20.10583 -45.47222 "Mini" "Mandarins" 2 0 0 1050
+"923" "Present" -21.83422 -45.4721 "Small" "Sweet orange" 13 0.78 70 9000
+"924" "Present" -21.84265 -45.4714 "Mini" "Sweet orange" 9 1.51 78 5166
+"925" "Present" -20.1505 -45.47111 "Mini" "Mandarins" 3 0.53 8 1500
+"926" "Present" -21.90382 -45.4709 "Mini" "Mandarins" 2 4.72 48 1018
+"927" "Present" -21.86328 -45.4695 "Mini" "Sweet orange" 10 0.44 20 4514
+"928" "Present" -21.88678 -45.4693 "Mini" "Mandarins" 6 47.29 1687 3567
+"929" "Present" -21.8495 -45.4689 "Mini" "Mandarins" 3 0.07 1 1501
+"930" "Present" -21.90091 -45.4687 "Mini" "Mandarins" 2.7 1.59 24 1512
+"931" "Present" -21.83896 -45.4684 "Mini" "Mandarins" 9 52.13 5200 9975
+"932" "Present" -21.90253 -45.4683 "Mini" "Mandarins" 5.4 10.29 335 3257
+"933" "Present" -21.85911 -45.4673 "Small" "Sweet orange" 17.5 0.84 51 6036
+"934" "Present" -21.86939 -45.4664 "Mini" "Mandarins" 1 10 40 400
+"935" "Present" -21.84155 -45.4659 "Mini" "Mandarins" 4 3.96 82 2069
+"936" "Present" -21.83744 -45.4657 "Mini" "Mandarins" 1.5 5.8 42 724
+"937" "Present" -21.83614 -45.4643 "Mini" "Mandarins" 3 10.06 166 1650
+"938" "Present" -21.82236 -45.4642 "Small" "Mandarins" 11.5 2.19 141 6441
+"939" "Present" -21.89461 -45.4641 "Small" "Mandarins" 37.8 26.67 5786 21691
+"940" "Present" -21.86186 -45.4637 "Mini" "Mandarins" 2 7.88 85 1078
+"941" "Present" -21.84054 -45.4636 "Mini" "Mandarins" 8 4.47 186 4160
+"942" "Present" -21.83569 -45.4633 "Mini" "Mandarins" 6 2.4 73 3040
+"943" "Present" -21.84978 -45.4618 "Small" "Mandarins" 20.5 2.45 288 11756
+"944" "Present" -21.89452 -45.4616 "Small" "Mandarins" 37 0.36 61 16837
+"945" "Present" -21.85452 -45.4605 "Mini" "Mandarins" 5 17.55 532 3032
+"946" "Present" -20.1455 -45.46028 "Mini" "Mandarins" 5 12.98 292 2250
+"947" "Present" -21.85375 -45.4602 "Mini" "Mandarins" 3 11.4 588 5160
+"948" "Present" -20.15814 -45.46 "Mini" "Mandarins" 2.88 1.38 22 1600
+"949" "Present" -21.8285 -45.4597 "Small" "Mandarins" 15 3.07 282 9182
+"950" "Present" -21.79899 -45.4594 "Small" "Mandarins" 19.4 0.05 5 10005
+"951" "Present" -21.8008 -45.4592 "Small" "Mandarins" 17.6 2.15 172 8000
+"952" "Present" -21.85444 -45.4592 "Small" "Mandarins" 14.69 6.52 518 7940
+"953" "Present" -21.9364 -45.4589 "Mini" "Mandarins" 3.6 13.56 276 2036
+"954" "Present" -21.83278 -45.4584 "Mini" "Mandarins" 3 1.26 19 1505
+"955" "Present" -21.92856 -45.4584 "Mini" "Mandarins" 8 0.45 20 4462
+"956" "Present" -20.07144 -45.45833 "Mini" "Mandarins" 8 0.64 35 5442
+"957" "Present" -21.82932 -45.4581 "Mini" "Mandarins" 8 3.13 231 7386
+"958" "Present" -21.84736 -45.458 "Mini" "Mandarins" 2 94.73 2842 3000
+"959" "Present" -21.89075 -45.4572 "Small" "Mandarins" 41 0.48 107 22306
+"960" "Present" -21.08923 -45.4572 "Medium" "Mandarins" 104.5 0.05 32 67533
+"961" "Present" -21.83492 -45.4569 "Mini" "Mandarins" 3.6 1.04 21 2021
+"962" "Present" -20.10725 -45.45667 "Medium" "Sweet orange" 130 1.05 936 89000
+"963" "Present" -20.16508 -45.45667 "Small" "Mandarins" 36 1.3 26 2000
+"964" "Present" -21.81823 -45.4566 "Small" "Mandarins" 14.7 38.17 3185 8345
+"965" "Present" -21.88833 -45.4559 "Mini" "Mandarins" 6.4 2.08 78 3744
+"966" "Present" -21.93161 -45.4556 "Mini" "Mandarins" 2 4.99 231 4631
+"967" "Present" -21.93161 -45.4556 "Mini" "Mandarins" 9 7.58 356 4696
+"968" "Present" -21.83156 -45.4553 "Small" "Mandarins" 24 41.28 3540 8576
+"969" "Absent" -21.92561 -45.4549 "Mini" "Mandarins" 1.8 0 0 1000
+"970" "Present" -21.9256 -45.4547 "Mini" "Mandarins" 4.7 1.92 50 2600
+"971" "Present" -21.80681 -45.4538 "Mini" "Mandarins" 2 2.73 28 1025
+"972" "Present" -21.93192 -45.4528 "Mini" "Mandarins" 2.5 0.3 4 1354
+"973" "Present" -20.13683 -45.45167 "Mini" "Mandarins" 1.6 0.78 7 900
+"974" "Present" -21.84807 -45.4512 "Mini" "Mandarins" 9 6.77 346 5114
+"975" "Present" -21.81442 -45.4506 "Mini" "Mandarins" 2 8.49 90 1060
+"976" "Present" -21.92464 -45.4504 "Mini" "Mandarins" 2 5.77 59 1023
+"977" "Present" -21.97 -45.45 "Mini" "Mandarins" 10 6.06 444 7324
+"978" "Present" -21.80697 -45.4496 "Mini" "Mandarins" 4.7 2.21 58 2630
+"979" "Present" -20.07692 -45.44806 "Mini" "Mandarins" 3.6 3.02 60 1990
+"980" "Present" -21.85674 -45.4479 "Mini" "Mandarins" 2 24.64 327 1327
+"981" "Absent" -21.82931 -45.4478 "Mini" "Mandarins" 4 0 0 2200
+"982" "Present" -21.799 -45.4474 "Small" "Mandarins" 19.6 1.74 191 10995
+"983" "Present" -21.92492 -45.4468 "Mini" "Mandarins" 1 4.31 18 418
+"984" "Present" -21.93233 -45.4434 "Mini" "Mandarins" 4.5 1.04 25 2400
+"985" "Absent" -20.11792 -45.44306 "Mini" "Mandarins" 4.1 0 0 2300
+"986" "Present" -21.79569 -45.4427 "Mini" "Mandarins" 4.95 2.03 57 2807
+"987" "Present" -21.85056 -45.4416 "Small" "Mandarins" 13.4 9.26 757 8178
+"988" "Present" -21.83248 -45.4416 "Mini" "Sweet orange" 4.2 0.41 9 2200
+"989" "Present" -20.14944 -45.44139 "Small" "Mandarins" 13.4 4 297 7421
+"990" "Present" -21.88509 -45.4406 "Mini" "Mandarins" 5 12.29 612 4978
+"991" "Present" -21.85244 -45.4404 "Small" "Mandarins" 15 5.95 525 8825
+"992" "Absent" -21.79068 -45.4401 "Mini" "Mandarins" 9 0 0 5000
+"993" "Present" -21.88281 -45.4401 "Mini" "Mandarins" 6.4 11.59 427 3684
+"994" "Present" -21.81632 -45.4398 "Small" "Mandarins" 23 18.08 2831 15658
+"995" "Present" -20.08803 -45.43972 "Mini" "Mandarins" 1.5 6.5 52 800
+"996" "Present" -21.84139 -45.4388 "Mini" "Mandarins" 1.5 1.32 8 608
+"997" "Present" -21.87509 -45.4386 "Small" "Mandarins" 14 0.2 15 7515
+"998" "Present" -21.85403 -45.4386 "Mini" "Mandarins" 2 41.12 433 1053
+"999" "Present" -21.83828 -45.4383 "Mini" "Mandarins" 3 38.45 531 1381
+"1000" "Present" -21.83547 -45.438 "Mini" "Mandarins" 5 3.59 93 2593
+"1001" "Present" -21.85024 -45.4379 "Mini" "Mandarins" 3.3 12.26 246 2006
+"1002" "Present" -21.88204 -45.4376 "Mini" "Mandarins" 1.2 17.82 149 836
+"1003" "Absent" -20.15138 -45.4375 "Mini" "Mandarins" 1.5 0 0 1200
+"1004" "Present" -20.05089 -45.4375 "Mini" "Mandarins" 0.54 2 6 300
+"1005" "Present" -21.89194 -45.4375 "Small" "Sweet orange" 31.79 15.02 2738 18226
+"1006" "Present" -21.87792 -45.4373 "Mini" "Mandarins" 4 26.53 614 2314
+"1007" "Present" -21.87792 -45.4373 "Mini" "Mandarins" 2 4.09 47 1150
+"1008" "Present" -21.87221 -45.437 "Small" "Mandarins" 21.6 8.15 1000 12271
+"1009" "Present" -21.76992 -45.4355 "Mini" "Mandarins" 8 0.69 31 4515
+"1010" "Present" -21.90475 -45.4352 "Small" "Mandarins" 12.6 1.47 104 7079
+"1011" "Present" -20.08611 -45.435 "Mini" "Mandarins" 5 3.86 85 2200
+"1012" "Present" -21.86307 -45.4345 "Mini" "Mandarins" 7.2 4.44 182 4102
+"1013" "Present" -21.79747 -45.4339 "Mini" "Mandarins" 0.8 10.17 30 295
+"1014" "Present" -21.89192 -45.4333 "Mini" "Mandarins" 2 4.44 50 1125
+"1015" "Present" -21.8893 -45.4331 "Mini" "Mandarins" 2 0.7 7 1007
+"1016" "Absent" -21.90258 -45.4328 "Mini" "Mandarins" 3.8 0 0 1600
+"1017" "Present" -21.88181 -45.4326 "Mini" "Mandarins" 4.5 20.89 660 3160
+"1018" "Present" -21.79495 -45.4315 "Small" "Mandarins" 12.7 1.81 130 7180
+"1019" "Present" -21.86182 -45.4315 "Mini" "Mandarins" 2.6 5.96 88 1477
+"1020" "Present" -21.88494 -45.4303 "Mini" "Sweet orange" 7 6.72 249 3703
+"1021" "Present" -21.85194 -45.4303 "Mini" "Mandarins" 5 41.23 1412 3425
+"1022" "Present" -21.834 -45.4295 "Small" "Mandarins" 20 25.07 2840 11328
+"1023" "Present" -21.81825 -45.4292 "Mini" "Mandarins" 1.5 33.27 374 1124
+"1024" "Present" -21.84103 -45.4286 "Small" "Mandarins" 14 10.13 773 7628
+"1025" "Present" -21.88071 -45.4273 "Small" "Sweet orange" 14.3 9.11 761 8351
+"1026" "Present" -21.87806 -45.4272 "Mini" "Mandarins" 3.5 10.9 205 1880
+"1027" "Present" -21.91706 -45.427 "Mini" "Mandarins" 1.4 17.39 160 920
+"1028" "Present" -21.88228 -45.4268 "Mini" "Mandarins" 2 2.78 28 1006
+"1029" "Present" -21.80678 -45.4253 "Mini" "Mandarins" 8 5.52 200 3620
+"1030" "Present" -21.87739 -45.4247 "Mini" "Mandarins" 1 25.71 173 673
+"1031" "Present" -21.88544 -45.4245 "Mini" "Sweet orange" 6.5 2.04 58 2837
+"1032" "Present" -21.76564 -45.4245 "Small" "Mandarins" 12 25.48 2005 7870
+"1033" "Present" -21.88303 -45.4237 "Mini" "Sweet orange" 4.5 2.68 60 2242
+"1034" "Present" -21.91884 -45.4236 "Mini" "Mandarins" 0.6 7.89 42 532
+"1035" "Absent" -21.8531 -45.4233 "Mini" "Mandarins" 5.4 0 0 3000
+"1036" "Absent" -20.04872 -45.42306 "Mini" "Mandarins" 4.6 0 0 2200
+"1037" "Present" -21.91708 -45.4229 "Mini" "Mandarins" 2.3 7.23 97 1341
+"1038" "Present" -21.87626 -45.4228 "Mini" "Mandarins" 10 9.4 493 5243
+"1039" "Present" -20.16509 -45.4225 "Small" "Mandarins" 17.6 0.03 6 23600
+"1040" "Present" -21.83067 -45.4222 "Mini" "Mandarins" 3.5 0.64 11 1706
+"1041" "Absent" -21.8306 -45.4222 "Mini" "Mandarins" 3.5 0 0 1700
+"1042" "Present" -21.85678 -45.4217 "Small" "Mandarins" 10.8 1 60 6015
+"1043" "Present" -22 -45.4217 "Medium" "Mandarins" 79.6 2.78 1045 37614
+"1044" "Present" -20.14556 -45.42111 "Small" "Mandarins" 36.8 4.3 952 22121
+"1045" "Present" -21.85444 -45.4211 "Small" "Mandarins" 36.8 12.38 2600 20996
+"1046" "Present" -21.85044 -45.4193 "Small" "Mandarins" 10.81 3.16 194 6139
+"1047" "Present" -21.916 -45.4193 "Mini" "Mandarins" 2.3 4.83 71 1471
+"1048" "Present" -20.084 -45.41917 "Mini" "Mandarins" 2.3 3.57 50 1400
+"1049" "Present" -21.84564 -45.4191 "Small" "Mandarins" 29.2 4.34 735 16947
+"1050" "Present" -21.79539 -45.4185 "Mini" "Mandarins" 6.5 31.85 1285 4035
+"1051" "Absent" -21.7953 -45.4183 "Mini" "Mandarins" 6.5 0 0 3500
+"1052" "Present" -21.80199 -45.4179 "Mini" "Mandarins" 6 23.47 899 3830
+"1053" "Present" -21.8019 -45.4178 "Mini" "Mandarins" 6 0.88 22 2500
+"1054" "Present" -21.91792 -45.4175 "Mini" "Mandarins" 4.82 0.63 15 2375
+"1055" "Present" -21.89769 -45.4168 "Mini" "Mandarins" 9.5 6.4 351 5488
+"1056" "Absent" -21.85953 -45.4159 "Mini" "Mandarins" 1.2 0 0 700
+"1057" "Present" -21.8594 -45.4158 "Mini" "Mandarins" 1.2 3.71 26 700
+"1058" "Absent" -21.81492 -45.4134 "Mini" "Mandarins" 1 0 0 250
+"1059" "Present" -21.79089 -45.4134 "Mini" "Mandarins" 2 4.31 44 1020
+"1060" "Present" -21.80838 -45.4132 "Mini" "Mandarins" 3.9 33.13 1065 3215
+"1061" "Present" -21.80806 -45.4129 "Small" "Mandarins" 12.4 0.19 14 7414
+"1062" "Present" -21.80806 -45.4129 "Small" "Mandarins" 12.4 21.2 1655 7805
+"1063" "Present" -21.88302 -45.4127 "Mini" "Mandarins" 8 1.14 52 4543
+"1064" "Present" -21.8828 -45.4125 "Mini" "Mandarins" 8 1.35 27 2000
+"1065" "Absent" -21.8453 -45.4117 "Mini" "Mandarins" 3.6 0 0 2000
+"1066" "Present" -21.85866 -45.4107 "Mini" "Mandarins" 5.4 2.07 63 3038
+"1067" "Present" -21.82 -45.41 "Small" "Mandarins" 16.21 6.84 640 9360
+"1068" "Present" -21.79094 -45.4096 "Mini" "Mandarins" 6 6.23 216 3466
+"1069" "Present" -21.87055 -45.4083 "Mini" "Mandarins" 1.4 7.3 63 863
+"1070" "Present" -21.78925 -45.4079 "Mini" "Mandarins" 2 3.73 38 1020
+"1071" "Present" -21.78675 -45.4073 "Mini" "Mandarins" 2 3.32 39 1174
+"1072" "Absent" -21.7867 -45.4072 "Mini" "Mandarins" 2 0 0 1150
+"1073" "Present" -21.78509 -45.4071 "Small" "Mandarins" 23 8.01 101 1261
+"1074" "Present" -20.18633 -45.40611 "Mini" "Mandarins" 2.6 2.36 35 1480
+"1075" "Present" -21.80984 -45.4057 "Small" "Mandarins" 18 2.35 229 9726
+"1076" "Present" -21.94531 -45.4033 "Mini" "Mandarins" 3.42 0.79 15 1900
+"1077" "Present" -21.79141 -45.4031 "Mini" "Mandarins" 4.5 20.44 601 2941
+"1078" "Present" -21.81743 -45.4025 "Small" "Mandarins" 18 7.41 801 10807
+"1079" "Present" -21.88281 -45.4009 "Mini" "Mandarins" 3.6 4.15 84 2024
+"1080" "Present" -20.11961 -45.40083 "Mini" "Mandarins" 3.96 0.14 3 2200
+"1081" "Present" -21.8768 -45.3998 "Mini" "Mandarins" 5.5 100 4140 4140
+"1082" "Present" -21.93328 -45.3989 "Mini" "Mandarins" 5.4 1.23 37 3012
+"1083" "Absent" -21.8197 -45.3972 "Mini" "Mandarins" 10 0 0 4800
+"1084" "Present" -21.79461 -45.3959 "Mini" "Mandarins" 7 3.92 162 4137
+"1085" "Present" -21.78456 -45.3959 "Small" "Mandarins" 12 5.8 400 6902
+"1086" "Present" -20.07516 -45.395 "Mini" "Mandarins" 6.5 3.33 120 3600
+"1087" "Absent" -21.81959 -45.3924 "Mini" "Mandarins" 1 0 0 250
+"1088" "Present" -21.79839 -45.3923 "Mini" "Mandarins" 7 4.78 174 3641
+"1089" "Present" -21.80908 -45.3923 "Small" "Mandarins" 34.2 2.38 463 19450
+"1090" "Present" -21.80306 -45.3906 "Mini" "Mandarins" 6 10.19 311 3051
+"1091" "Present" -21.7963 -45.3901 "Mini" "Mandarins" 1.5 19.59 144 735
+"1092" "Present" -21.8255 -45.3894 "Mini" "Mandarins" 2 13.04 150 1150
+"1093" "Present" -20.1745 -45.38917 "Mini" "Mandarins" 3 1.88 30 1600
+"1094" "Present" -21.87483 -45.3889 "Small" "Mandarins" 12 5.68 411 7231
+"1095" "Absent" -21.7381 -45.3883 "Mini" "Mandarins" 1.2 0 0 600
+"1096" "Present" -21.75997 -45.3865 "Mini" "Mandarins" 4.8 34.54 7048 20405
+"1097" "Absent" -21.8547 -45.3861 "Mini" "Mandarins" 9.8 0 0 4700
+"1098" "Present" -20.14719 -45.385 "Mini" "Mandarins" 3 6 90 1500
+"1099" "Absent" -21.8528 -45.385 "Mini" "Mandarins" 3 0 0 1500
+"1100" "Present" -21.82911 -45.3847 "Medium" "Mandarins" 55 3.28 771 23511
+"1101" "Present" -21.85281 -45.3835 "Mini" "Mandarins" 3 3.6 56 1556
+"1102" "Present" -21.83008 -45.3831 "Mini" "Mandarins" 5 90.88 3817 4200
+"1103" "Present" -21.85539 -45.3819 "Small" "Mandarins" 11.7 2.86 164 5727
+"1104" "Present" -21.86172 -45.3808 "Mini" "Mandarins" 7.2 12.51 562 4493
+"1105" "Present" -21.82066 -45.3803 "Mini" "Mandarins" 10 3.28 165 5035
+"1106" "Present" -21.86352 -45.3798 "Mini" "Mandarins" 6 11.49 368 3204
+"1107" "Present" -21.87741 -45.3783 "Small" "Mandarins" 16.8 3.22 298 9252
+"1108" "Present" -21.85274 -45.3768 "Small" "Mandarins" 13 4.92 370 7515
+"1109" "Present" -20.21069 -45.37472 "Mini" "Mandarins" 10 0.92 46 5000
+"1110" "Present" -21.86097 -45.3747 "Mini" "Mandarins" 3.5 9 182 2022
+"1111" "Present" -21.86195 -45.3745 "Small" "Mandarins" 33 2.92 50 1712
+"1112" "Present" -21.78861 -45.3744 "Small" "Mandarins" 17.5 3.75 358 9552
+"1113" "Absent" -21.8608 -45.3744 "Mini" "Mandarins" 3.5 0 0 1920
+"1114" "Present" -21.82739 -45.3742 "Small" "Mandarins" 15 98.94 6061 6126
+"1115" "Present" -21.84028 -45.3739 "Mini" "Mandarins" 7.5 10.44 400 3833
+"1116" "Present" -21.74842 -45.3738 "Mini" "Mandarins" 1 0.79 4 504
+"1117" "Present" -21.74842 -45.3738 "Mini" "Mandarins" 1 1.57 8 508
+"1118" "Present" -21.71383 -45.3729 "Mini" "Mandarins" 0.2 22.58 35 155
+"1119" "Present" -21.89673 -45.3715 "Mini" "Mandarins" 5 17.46 611 3500
+"1120" "Present" -21.8967 -45.3714 "Mini" "Mandarins" 5 0.1 3 2900
+"1121" "Present" -21.86013 -45.3709 "Small" "Mandarins" 19 6.75 737 10923
+"1122" "Absent" -21.83775 -45.3705 "Mini" "Mandarins" 0.1 0 0 120
+"1123" "Present" -21.71736 -45.3694 "Mini" "Sweet orange" 6 9.03 287 3177
+"1124" "Absent" -20.31031 -45.36917 "Small" "Mandarins" 14 0 0 7380
+"1125" "Present" -21.75335 -45.3687 "Mini" "Mandarins" 0.5 4.31 9 209
+"1126" "Present" -20.24667 -45.36861 "Mini" "Mandarins" 0.5 50 100 200
+"1127" "Present" -21.84681 -45.3683 "Mini" "Mandarins" 5.5 7.96 250 3140
+"1128" "Present" -21.78458 -45.3679 "Mini" "Mandarins" 3.2 13.2 254 1924
+"1129" "Present" -21.84358 -45.3674 "Mini" "Mandarins" 5.6 0.06 2 3102
+"1130" "Present" -21.75144 -45.3673 "Mini" "Mandarins" 5.8 32.82 1280 3900
+"1131" "Present" -21.79478 -45.3673 "Mini" "Mandarins" 9 4.94 202 4092
+"1132" "Present" -21.72413 -45.3671 "Mini" "Mandarins" 2 8.06 85 1055
+"1133" "Present" -21.7239 -45.3669 "Mini" "Mandarins" 2 1 10 1000
+"1134" "Present" -21.75539 -45.3669 "Mini" "Mandarins" 7.7 4.31 204 4734
+"1135" "Present" -21.8125 -45.3669 "Mini" "Mandarins" 1 19.35 120 620
+"1136" "Present" -21.73441 -45.3655 "Small" "Mandarins" 22 0.75 109 14525
+"1137" "Present" -21.84111 -45.3653 "Mini" "Mandarins" 2 4 49 1224
+"1138" "Present" -21.87716 -45.365 "Small" "Sweet orange" 25.81 6.39 904 14157
+"1139" "Present" -21.76094 -45.3647 "Mini" "Mandarins" 7 31.58 1569 4969
+"1140" "Present" -21.91386 -45.3647 "Medium" "Sweet orange" 56 1.97 604 30722
+"1141" "Present" -21.79194 -45.3646 "Small" "Mandarins" 13.2 6.36 383 6025
+"1142" "Present" -20.14842 -45.36444 "Small" "Mandarins" 12.2 0.08 6 7780
+"1143" "Present" -21.93198 -45.3644 "Small" "Mandarins" 19 2.03 226 11120
+"1144" "Present" -21.80071 -45.3643 "Mini" "Mandarins" 10 1.39 126 9047
+"1145" "Present" -21.76706 -45.3642 "Mini" "Mandarins" 10 2.38 92 3862
+"1146" "Absent" -21.7547 -45.3639 "Mini" "Mandarins" 1.2 0 0 700
+"1147" "Present" -21.75281 -45.3639 "Mini" "Mandarins" 4 12.76 281 2202
+"1148" "Present" -21.74475 -45.3638 "Small" "Mandarins" 20 2.41 210 8710
+"1149" "Present" -21.79601 -45.3636 "Small" "Mandarins" 16.2 2.27 184 8115
+"1150" "Present" -20.14489 -45.36306 "Small" "Mandarins" 23 2.04 326 16000
+"1151" "Absent" -21.7328 -45.3628 "Mini" "Mandarins" 4 0 0 2500
+"1152" "Present" -21.74709 -45.3627 "Mini" "Mandarins" 1 1.96 10 510
+"1153" "Present" -21.79044 -45.3623 "Small" "Mandarins" 16 12.84 1287 10026
+"1154" "Present" -21.75803 -45.3619 "Mini" "Mandarins" 1 14.96 92 615
+"1155" "Present" -21.73227 -45.36143 "Mini" "Mandarins" 6 17.2 596 3466
+"1156" "Present" -20.086 -45.36139 "Medium" "Mandarins" 55 0.31 86 28000
+"1157" "Present" -21.7516 -45.3613 "Mini" "Mandarins" 7 55.08 3065 5565
+"1158" "Present" -21.75986 -45.3611 "Small" "Mandarins" 17.5 6.78 462 6816
+"1159" "Present" -21.858 -45.3603 "Mini" "Mandarins" 0.5 35.4 103 291
+"1160" "Present" -21.858 -45.3603 "Mini" "Mandarins" 0.5 15.36 43 280
+"1161" "Present" -21.75033 -45.3599 "Mini" "Mandarins" 4 0.6 15 2500
+"1162" "Present" -21.75033 -45.3599 "Mini" "Mandarins" 2.5 5.26 119 2264
+"1163" "Absent" -20.14183 -45.35972 "Mini" "Mandarins" 0.4 0 0 200
+"1164" "Present" -21.87235 -45.3584 "Mini" "Mandarins" 3 2.62 35 1335
+"1165" "Absent" -21.8722 -45.3583 "Mini" "Mandarins" 3 0 0 1300
+"1166" "Present" -21.01267 -45.3581 "Mini" "Mandarins" 4 2.96 64 2164
+"1167" "Present" -21.82644 -45.3579 "Small" "Mandarins" 17 0.97 92 9479
+"1168" "Present" -21.75292 -45.3565 "Mini" "Mandarins" 6 5.54 174 3142
+"1169" "Present" -20.24708 -45.35639 "Mini" "Mandarins" 6 2.73 82 3000
+"1170" "Present" -20.25808 -45.35528 "Mini" "Mandarins" 9.37 0.64 25 3900
+"1171" "Present" -21.86411 -45.3549 "Mini" "Mandarins" 6 3.91 120 3070
+"1172" "Absent" -21.7675 -45.3542 "Mini" "Mandarins" 2.7 0 0 1500
+"1173" "Present" -20.24383 -45.3525 "Mini" "Mandarins" 4 2.5 50 2000
+"1174" "Present" -21.75619 -45.3525 "Mini" "Mandarins" 2 5.62 119 2119
+"1175" "Present" -21.7325 -45.352 "Mini" "Mandarins" 7 4.76 192 4034
+"1176" "Present" -21.72789 -45.3453 "Mini" "Mandarins" 2 48.28 560 1160
+"1177" "Present" -21.76544 -45.342 "Medium" "Sweet orange" 65 31.96 15839 49553
+"1178" "Present" -21.766 -45.3333 "Mini" "Mandarins" 2.2 10.61 128 1206
+"1179" "Present" -21.91198 -45.3317 "Medium" "Mandarins" 60 1.19 384 32299
+"1180" "Present" -20.37528 -44.1822 "Mini" "Mandarins" 2 25 75 300
+"1181" "Absent" -19.8239 -50.384 "Medium" "Acid lime" 140 0 0 85500
+"1182" "Absent" -19.81258 -50.3843 "Medium" "Acid lime" 69.9 0 0 46599
+"1183" "Present" -21.88356 -45.47447 "Small" "Mandarins" 25 7.56 1123 14853
+"1184" "Present" -21.81756 -45.3759 "Mini" "Mandarins" 5.7 5.59 185 3308
+"1185" "Present" -20.09369 -45.36472 "Medium" "Acid lime" 71.61 0.07 27 40977
+"1186" "Present" -21.8439 -45.3613 "Mini" "Mandarins" 1.5 12.26 96 783
+"1187" "Present" -21.85372 -45.3592 "Mini" "Mandarins" 5 1.5 32 2132
+"1188" "Present" -21.85372 -45.3592 "Mini" "Mandarins" 2.2 33.57 469 1397
+"1189" "Present" -21.84403 -45.3568 "Mini" "Mandarins" 1.5 12.23 92 752
+"1190" "Present" -21.85972 -45.3555 "Mini" "Mandarins" 1 90.65 1813 2000
+"1191" "Present" -21.84469 -45.3552 "Mini" "Mandarins" 1.5 17.9 182 1017
+"1192" "Present" -20.15533 -45.355 "Mini" "Mandarins" 1.5 5.89 108 1835
+"1193" "Present" -21.86106 -45.3543 "Mini" "Mandarins" 9 3.49 155 4435
+"1194" "Present" -21.84403 -45.3525 "Mini" "Mandarins" 1 23.14 140 605
+"1195" "Present" -21.86306 -45.35 "Small" "Mandarins" 13 10.61 761 7171
+"1196" "Present" -21.83444 -45.3492 "Mini" "Mandarins" 4 45.08 985 2185
+"1197" "Present" -21.85491 -45.3489 "Small" "Sweet orange" 12.6 1.28 90 7047
+"1198" "Present" -21.91736 -45.3478 "Mini" "Mandarins" 6.4 39.78 1277 3210
+"1199" "Present" -21.86681 -45.3477 "Mini" "Mandarins" 0.63 19.35 60 310
+"1200" "Present" -21.86625 -45.3467 "Mini" "Mandarins" 0.72 3.97 16 403
+"1201" "Present" -21.87029 -45.3451 "Small" "Sweet orange" 22 11.71 1567 13387
+"1202" "Present" -21.9164 -45.3447 "Small" "Mandarins" 17.84 5.38 406 7550
+"1203" "Present" -21.87789 -45.3432 "Small" "Sweet orange" 27 2.2 302 13702
+"1204" "Present" -21.89506 -45.3416 "Mini" "Mandarins" 3 3.17 80 2527
+"1205" "Present" -21.89228 -45.3388 "Mini" "Mandarins" 4 3.57 80 2242
+"1206" "Present" -21.84891 -45.3378 "Mini" "Mandarins" 8.5 7.56 354 4680
+"1207" "Present" -21.88589 -45.3371 "Mini" "Mandarins" 9 1.15 58 5028
+"1208" "Present" -21.84214 -45.3366 "Mini" "Mandarins" 0.5 5.91 43 728
+"1209" "Present" -21.80706 -45.33179 "Mini" "Mandarins" 1.2 11.3 91 805
+"1210" "Absent" -21.9119 -45.3317 "Medium" "Mandarins" 60 0 0 31995
+"1211" "Present" -21.80889 -45.3297 "Medium" "Sweet orange" 66.98 11.05 4430 40078
+"1212" "Present" -21.90833 -45.3269 "Mini" "Mandarins" 6 17.04 586 3439
+"1213" "Present" -21.85579 -45.3263 "Mini" "Mandarins" 8.8 8.59 374 4354
+"1214" "Present" -20.14422 -45.32611 "Mini" "Mandarins" 2 15.29 130 850
+"1215" "Present" -21.8556 -45.3242 "Mini" "Mandarins" 8.8 6.9 290 4200
+"1216" "Absent" -21.87807 -45.3217 "Mini" "Mandarins" 0.12 0 0 65
+"1217" "Present" -21.87874 -45.3214 "Mini" "Mandarins" 0.5 2.6 8 308
+"1218" "Present" -21.87295 -45.321 "Mini" "Mandarins" 1 24.89 116 466
+"1219" "Present" -21.87295 -45.321 "Mini" "Mandarins" 0.5 1.96 6 306
+"1220" "Absent" -21.87903 -45.3203 "Mini" "Mandarins" 1 0 0 350
+"1221" "Absent" -20.12717 -45.31944 "Mini" "Mandarins" 2.52 0 0 1200
+"1222" "Present" -21.88418 -45.3192 "Mini" "Mandarins" 1 5.37 19 354
+"1223" "Absent" -21.87603 -45.3188 "Mini" "Mandarins" 1 0 0 500
+"1224" "Present" -21.87714 -45.3188 "Mini" "Mandarins" 0.5 32.2 190 590
+"1225" "Present" -21.80956 -45.3187 "Small" "Mandarins" 23 1.43 111 7756
+"1226" "Present" -21.87576 -45.3184 "Mini" "Mandarins" 4 3.29 80 2430
+"1227" "Absent" -21.83719 -45.3153 "Mini" "Mandarins" 4.5 0 0 2500
+"1228" "Present" -21.83906 -45.315 "Mini" "Mandarins" 4 20.04 455 2271
+"1229" "Present" -21.81689 -45.3121 "Mini" "Mandarins" 3 32.25 495 1535
+"1230" "Present" -21.83715 -45.312 "Mini" "Mandarins" 3.2 8.16 160 1960
+"1231" "Present" -21.88269 -45.312 "Mini" "Mandarins" 8 2.64 110 4160
+"1232" "Present" -21.88636 -45.3103 "Mini" "Mandarins" 2.5 38.46 600 1560
+"1233" "Present" -21.83943 -45.3086 "Mini" "Mandarins" 0.5 73.33 220 300
+"1234" "Absent" -21.8851 -45.3082 "Mini" "Mandarins" 0.2 0 0 110
+"1235" "Present" -21.8851 -45.3081 "Mini" "Mandarins" 1.2 3.21 18 560
+"1236" "Present" -21.87875 -45.3079 "Mini" "Mandarins" 1 100 467 467
+"1237" "Present" -21.83336 -45.3076 "Mini" "Mandarins" 4.3 68.48 1955 2855
+"1238" "Absent" -21.8067 -45.3047 "Mini" "Mandarins" 3 0 0 1820
+"1239" "Present" -21.83273 -45.3034 "Mini" "Mandarins" 3.9 100 3666 3666
+"1240" "Present" -21.90297 -45.3024 "Mini" "Mandarins" 4 12.95 293 2263
+"1241" "Absent" -21.89733 -45.3012 "Mini" "Mandarins" 1 0 0 1000
+"1242" "Present" -21.80437 -45.293 "Medium" "Mandarins" 128.28 16.32 13852 84852
+"1243" "Absent" -21.82619 -45.2915 "Mini" "Mandarins" 0.5 0 0 280
+"1244" "Present" -21.89755 -45.2904 "Mini" "Mandarins" 8 6.37 260 4080
+"1245" "Absent" -21.83661 -45.2849 "Mini" "Mandarins" 4 0 0 2000
+"1246" "Present" -21.89764 -45.2841 "Mini" "Mandarins" 9.75 8.94 313 3500
+"1247" "Present" -20.11 -45.28056 "Mini" "Mandarins" 1.44 0.17 2 1155
+"1248" "Present" -21.88797 -45.2733 "Mini" "Mandarins" 1 62.67 376 600
+"1249" "Present" -21.88592 -45.2717 "Mini" "Mandarins" 2 47.02 710 1510
+"1250" "Present" -21.89167 -45.2647 "Mini" "Mandarins" 0.32 11.17 21 188
+"1251" "Present" -21.88789 -45.2539 "Mini" "Mandarins" 1 62.35 318 510
+"1252" "Present" -21.88715 -45.2536 "Mini" "Mandarins" 1 6.27 26 415
+"1253" "Present" -21.88369 -45.2499 "Mini" "Mandarins" 0.5 10.47 31 296
+"1254" "Present" -21.88778 -45.2468 "Mini" "Mandarins" 3.5 27.42 680 2480
+"1255" "Present" -21.8935 -45.2434 "Mini" "Mandarins" 4.85 5.68 162 2850
+"1256" "Present" -21.87153 -45.2414 "Small" "Mandarins" 10.5 1.95 123 6298
+"1257" "Present" -21.90886 -45.2404 "Mini" "Mandarins" 2.7 5.94 73 1228
+"1258" "Present" -21.90089 -45.2337 "Mini" "Sweet orange" 1.34 2.67 20 750
+"1259" "Present" -21.8945 -45.2334 "Mini" "Mandarins" 1 1.96 8 408
+"1260" "Present" -21.89397 -45.2329 "Mini" "Mandarins" 1 11.59 59 509
+"1261" "Present" -21.89413 -45.2323 "Mini" "Mandarins" 1.5 18.27 38 208
+"1262" "Present" -21.88928 -45.232 "Mini" "Mandarins" 0.5 5 15 300
+"1263" "Present" -21.89233 -45.2303 "Mini" "Mandarins" 0.5 10.4 26 250
+"1264" "Present" -21.89028 -45.2294 "Mini" "Mandarins" 0.4 13.21 70 530
+"1265" "Present" -21.89061 -45.2283 "Mini" "Mandarins" 0.25 83.66 128 153
+"1266" "Present" -21.89739 -45.2277 "Mini" "Mandarins" 2 6.5 66 1016
+"1267" "Present" -21.89094 -45.2277 "Mini" "Mandarins" 1.2 9.21 56 608
+"1268" "Present" -21.89011 -45.2267 "Mini" "Mandarins" 1 18.1 95 525
+"1269" "Present" -21.88925 -45.226 "Mini" "Mandarins" 0.35 5.47 11 201
+"1270" "Present" -21.88958 -45.2258 "Mini" "Mandarins" 2 1.82 20 1100
+"1271" "Present" -21.89228 -45.2246 "Mini" "Mandarins" 2 4.86 50 1028
+"1272" "Absent" -20.10772 -45.22444 "Mini" "Mandarins" 2 0 0 1010
+"1273" "Present" -21.88953 -45.2238 "Mini" "Acid lime" 3.1 13.77 237 1721
+"1274" "Present" -21.88967 -45.2218 "Mini" "Mandarins" 0.4 36.41 75 206
+"1275" "Present" -21.88889 -45.2167 "Mini" "Mandarins" 0.6 3.45 5 145
+"1276" "Present" -21.82861 -45.215 "Small" "Mandarins" 15 8.21 741 9028
+"1277" "Present" -21.88525 -45.2082 "Mini" "Mandarins" 2 99.88 1621 1623
+"1278" "Present" -21.88723 -45.2008 "Mini" "Mandarins" 5 5.05 133 2633
+"1279" "Present" -21.88675 -45.1686 "Mini" "Mandarins" 0.5 42.23 212 502
+"1280" "Present" -20.40681 -44.1145 "Mini" "Mandarins" 1.5 11.11 175 1575
+"1281" "Absent" -19.79464 -48.6177 "Large" "Sweet orange" 352 0 0 105604
+"1282" "Absent" -19.777 -48.9545 "Small" "Sweet orange" 35.5 0 0 13000
+"1283" "Absent" -19.71725 -48.4885 "Small" "Sweet orange" 21 0 0 7700
+"1284" "Present" -21.66139 -45.46611 "Mini" "Mandarins" 1 6.25 50 800
+"1285" "Present" -21.66222 -45.46556 "Mini" "Mandarins" 1.68 9.52 100 1050
+"1286" "Present" -21.66417 -45.46222 "Mini" "Mandarins" 1 0.8 4 500
+"1287" "Present" -21.66306 -45.45361 "Mini" "Mandarins" 3 3.33 50 1500
+"1288" "Absent" -20.5317 -44.1494 "Small" "Mandarins" 12 0 0 6000
+"1289" "Present" -20.5453 -44.1444 "Small" "Mandarins" 20 0.02 2 10000
+"1290" "Present" -20.5022 -44.0917 "Small" "Mandarins" 14 0.04 3 7000
+"1291" "Absent" -20.5347 -44.0611 "Mini" "Mandarins" 3.44 0 0 1892
+"1292" "Present" -20.5083 -44.0567 "Mini" "Mandarins" 1.34 3.39 25 737
+"1293" "Absent" -20.5253 -44.0564 "Mini" "Mandarins" 2.5 0 0 1370
+"1294" "Present" -20.5064 -44.0553 "Mini" "Mandarins" 7.6 0.37 15 4080
+"1295" "Present" -20.5047 -44.0547 "Mini" "Mandarins" 3.1 1.06 18 1705
+"1296" "Present" -20.5139 -44.0456 "Mini" "Mandarins" 2.02 27.03 300 1110
+"1297" "Present" -20.5108 -44.0428 "Mini" "Mandarins" 3.25 0.22 4 1780
+"1298" "Absent" -20.5225 -44.0397 "Mini" "Mandarins" 2.48 0 0 1350
+"1299" "Absent" -20.5164 -44.0386 "Mini" "Mandarins" 2.25 0 0 1237
+"1300" "Present" -20.50786 -44.0342 "Mini" "Mandarins" 10 4 200 5000
+"1301" "Absent" -21.73389 -45.44694 "Mini" "Mandarins" 1.62 0 0 1040
+"1302" "Absent" -19.65892 -49.3363 "Medium" "Sweet orange" 53.5 0 0 37000
+"1303" "Absent" -19.60875 -49.3701 "Small" "Mandarins" 26.35 0 0 11270
+"1304" "Present" -19.64667 -50.9381 "Mini" "Sweet orange" 5.72 0.03 1 2988
+"1305" "Absent" -19.5972 -48.8314 "Large" "Sweet orange" 2225 0 41 1120633
+"1306" "Present" -19.59403 -48.8442 "Large" "Sweet orange" 1777.2 0.06 581 910574
+"1307" "Absent" -19.555 -49.183 "Medium" "Sweet orange" 94.92 0 0 38380
+"1308" "Absent" -19.5283 -49.7103 "Small" "Sweet orange" 18.9 0 0 9000
+"1309" "Absent" -19.5283 -49.7103 "Small" "Sweet orange" 36.8 0 0 17500
+"1310" "Absent" -19.43944 -48.9581 "Large" "Sweet orange" 285.79 0 0 170459
+"1311" "Absent" -19.4306 -48.97138 "Large" "Sweet orange" 285.79 0 0 170459
+"1312" "Absent" -19.42681 -49.1637 "Large" "Sweet orange" 303 0 0 17000
+"1313" "Absent" -19.41486 -49.0183 "Large" "Sweet orange" 657.81 0 0 425834
+"1314" "Absent" -19.41472 -48.9524 "Medium" "Sweet orange" 64.71 0 0 43000
+"1315" "Absent" -19.41222 -48.9692 "Small" "Sweet orange" 21.92 0 0 10400
+"1316" "Absent" -19.41222 -48.9692 "Medium" "Sweet orange" 143.6 0 0 90000
+"1317" "Absent" -19.41222 -48.9692 "Small" "Sweet orange" 21.82 0 0 10400
+"1318" "Absent" -19.38664 -49.1694 "Large" "Sweet orange" 445.08 0 2 228522
+"1319" "Present" -19.36278 -48.8204 "Mini" "Sweet orange" 3 0.02 224 1242735
+"1320" "Absent" -19.36103 -49.1055 "Medium" "Sweet orange" 60 0 0 22700
+"1321" "Absent" -19.36 -48.8331 "Large" "Sweet orange" 2955 0 36 1242798
+"1322" "Absent" -19.30758 -48.9786 "Small" "Sweet orange" 20 0 0 9000
+"1323" "Absent" -19.27017 -49.3486 "Large" "Sweet orange" 306.5 0 0 187960
+"1324" "Absent" -19.2407 -49.04194 "Small" "Sweet orange" 41 0 0 19470
+"1325" "Absent" -19.22233 -49.1019 "Medium" "Sweet orange" 133.7 0 0 55800
+"1326" "Absent" -19.19239 -49.0973 "Medium" "Sweet orange" 122.5 0 0 57750
+"1327" "Absent" -19.19239 -49.0973 "Small" "Sweet orange" 15 0 0 7050
+"1328" "Absent" -19.15653 -49.6422 "Medium" "Sweet orange" 53 0 0 25000
+"1329" "Absent" -19.14764 -49.1106 "Small" "Sweet orange" 23.7 0 0 15000
+"1330" "Absent" -19.14189 -49.0003 "Small" "Sweet orange" 13.9 0 0 7500
+"1331" "Absent" -19.10592 -49.0309 "Small" "Sweet orange" 12.5 0 0 5000
+"1332" "Absent" -19.10469 -49.0331 "Small" "Sweet orange" 15.7 0 0 7400
+"1333" "Absent" -19.05394 -49.0733 "Medium" "Sweet orange" 55.7 0 0 26500
+"1334" "Absent" -19.56178 -49.872 "Small" "Sweet orange" 27 0 0 27000
+"1335" "Present" -19.55994 -49.4044 "Small" "Sweet orange" 50 0.01 2 19400
+"1336" "Absent" -19.54081 -49.7024 "Mini" "Sweet orange" 2.4 0 0 1000
+"1337" "Absent" -19.533 -49.6969 "Medium" "Sweet orange" 160 0 0 82500
+"1338" "Absent" -19.52728 -49.7066 "Medium" "Sweet orange" 162 0 0 79000
+"1339" "Absent" -19.5272 -49.7064 "Medium" "Sweet orange" 162 0 0 79000
+"1340" "Absent" -19.52706 -49.3934 "Medium" "Sweet orange" 87.12 0 0 35000
+"1341" "Absent" -19.52439 -49.6685 "Small" "Sweet orange" 35.7 0 0 12200
+"1342" "Absent" -19.51122 -49.3969 "Medium" "Sweet orange" 60 0 0 30000
+"1343" "Absent" -19.50647 -49.5689 "Small" "Sweet orange" 24 0 0 8000
+"1344" "Absent" -19.47369 -49.3969 "Small" "Sweet orange" 35 0 0 18000
+"1345" "Absent" -19.43711 -49.3176 "Small" "Sweet orange" 23.5 0 0 13000
+"1346" "Absent" -19.35192 -49.6287 "Small" "Sweet orange" 31.3 0 0 10860
+"1347" "Absent" -19.24961 -49.4703 "Medium" "Sweet orange" 159.7 0 0 72230
+"1348" "Absent" -19.2474 -49.47028 "Medium" "Sweet orange" 60 0 0 25600
+"1349" "Absent" -19.5492 -50.7103 "Mini" "Mandarins" 9 0 0 6000
+"1350" "Absent" -19.58944 -44.12111 "Mini" "Mandarins" 2 0 0 1000
+"1351" "Absent" -20.3303 -44.0347 "Mini" "Mandarins" 6 0 0 3000
+"1352" "Present" -20.35889 -44.0317 "Small" "Mandarins" 18 0.48 43 9003
+"1353" "Absent" -20.3589 -44.0308 "Mini" "Mandarins" 7.2 0 0 3000
+"1354" "Absent" -20.2825 -44.0281 "Mini" "Mandarins" 4 0 0 2000
+"1355" "Absent" -19.62217 -44.02361 "Mini" "Mandarins" 2.1 0 0 1050
+"1356" "Absent" -19.63483 -44.02333 "Mini" "Mandarins" 6 0 0 3000
+"1357" "Absent" -19.62497 -44.01472 "Mini" "Mandarins" 3.2 0 0 1600
+"1358" "Absent" -20.4458 -43.9983 "Mini" "Mandarins" 9.4 0 0 5260
+"1359" "Absent" -19.65436 -43.98639 "Mini" "Mandarins" 5.17 0 0 3800
+"1360" "Absent" -20.385 -43.9511 "Mini" "Mandarins" 2 0 0 1000
+"1361" "Absent" -22.1828 -45.3628 "Mini" "Mandarins" 6.8 0 0 5000
+"1362" "Present" -19.20569 -46.94528 "Mini" "Acid lime" 2.3 3.57 25 700
+"1363" "Absent" -19.05592 -49.7526 "Medium" "Sweet orange" 73.5 0 0 35000
+"1364" "Absent" -19.04072 -49.7285 "Medium" "Sweet orange" 95 0 0 35000
+"1365" "Absent" -18.99339 -49.7143 "Small" "Sweet orange" 46 0 0 21800
+"1366" "Absent" -18.9928 -49.81694 "Small" "Sweet orange" 25.2 0 0 12000
+"1367" "Absent" -18.976 -49.8068 "Small" "Sweet orange" 46 0 0 22000
+"1368" "Absent" -18.9758 -49.8067 "Small" "Sweet orange" 10.5 0 0 5000
+"1369" "Absent" -20.06656 -45.31222 "Mini" "Mandarins" 1.71 0 0 1150
+"1370" "Present" -21.95235 -45.3113 "Mini" "Mandarins" 6 2.2 56 2542
+"1371" "Absent" -21.95235 -45.3113 "Mini" "Mandarins" 2.61 0 0 1750
+"1372" "Present" -21.9647 -45.2997 "Mini" "Mandarins" 1.16 0.69 9 1300
+"1373" "Present" -20.02872 -45.29444 "Mini" "Mandarins" 5.4 2.85 171 6000
+"1374" "Present" -21.92303 -45.2858 "Mini" "Mandarins" 0.3 20 50 250
+"1375" "Present" -21.92708 -45.2836 "Mini" "Mandarins" 0.13 50 75 150
+"1376" "Absent" -19.03256 -47.91 "Mini" "Mandarins" 2 0 0 700
+"1377" "Absent" -18.88 -48.05 "Mini" "Acid lime" 3 0 0 800
+"1378" "Absent" -19.01203 -49.5134 "Small" "Sweet orange" 12 0 0 5600
+"1379" "Absent" -18.9824 -49.56417 "Small" "Sweet orange" 31 0 0 15000
+"1380" "Absent" -18.9781 -49.5444 "Medium" "Sweet orange" 80 0 0 38000
+"1381" "Absent" -18.97808 -49.5444 "Medium" "Sweet orange" 94.5 0 0 45000
+"1382" "Absent" -18.96853 -49.5319 "Medium" "Sweet orange" 52.5 0 0 25000
+"1383" "Absent" -18.96722 -49.5685 "Medium" "Sweet orange" 90 0 0 31820
+"1384" "Absent" -18.92917 -49.4851 "Mini" "Sweet orange" 6 0 0 2000
+"1385" "Absent" -18.91525 -49.3274 "Small" "Sweet orange" 50 0 0 18006
+"1386" "Absent" -18.91472 -49.3275 "Small" "Sweet orange" 25.1 0 0 6000
+"1387" "Absent" -18.9006 -49.5175 "Small" "Sweet orange" 34.7 0 0 14040
+"1388" "Absent" -18.90058 -49.5177 "Small" "Sweet orange" 34.7 0 0 14040
+"1389" "Absent" -18.88889 -49.7664 "Small" "Sweet orange" 15.14 0 0 5300
+"1390" "Absent" -18.88883 -49.7664 "Small" "Lemon" 15.1 0 0 5300
+"1391" "Absent" -18.87333 -49.566 "Small" "Sweet orange" 23.5 0 0 11000
+"1392" "Absent" -18.86386 -49.5729 "Small" "Sweet orange" 25.5 0 0 12000
+"1393" "Absent" -18.86386 -49.5729 "Small" "Sweet orange" 25.5 0 0 12000
+"1394" "Absent" -18.86 -49.6 "Small" "Sweet orange" 25 0 0 9000
+"1395" "Absent" -18.85186 -49.4339 "Small" "Sweet orange" 25 0 0 9000
+"1396" "Absent" -18.82142 -49.55 "Medium" "Sweet orange" 62 0 0 29000
+"1397" "Absent" -18.80392 -49.599 "Small" "Sweet orange" 35 0 0 14000
+"1398" "Absent" -21.98531 -45.2924 "Mini" "Mandarins" 0.5 0 0 300
+"1399" "Absent" -21.98268 -45.2775 "Mini" "Mandarins" 6 0 0 2180
+"1400" "Absent" -21.96903 -45.2567 "Mini" "Mandarins" 0.5 0 0 200
+"1401" "Absent" -18.97011 -50.4475 "Mini" "Sweet orange" 10 0 0 5000
+"1402" "Present" -21.41158 -45.2318 "Mini" "Sweet orange" 9 4.6 233 5068
+"1403" "Present" -21.43078 -45.2178 "Mini" "Mandarins" 9 8.84 278 3146
+"1404" "Present" -21.56031 -45.188 "Mini" "Mandarins" 0.5 20.42 59 289
+"1405" "Absent" -21.54403 -45.0919 "Mini" "Mandarins" 3.75 0 0 2064
+"1406" "Present" -21.02533 -45.2188 "Mini" "Mandarins" 5 41.54 1350 3250
+"1407" "Present" -21.03889 -45.2089 "Mini" "Mandarins" 2 31.69 348 1098
+"1408" "Absent" -21.02773 -45.1657 "Mini" "Mandarins" 1 0 0 500
+"1409" "Present" -21.03619 -45.1587 "Mini" "Mandarins" 2.3 78.46 1020 1300
+"1410" "Present" -19.00433 -45.15083 "Mini" "Mandarins" 2 23.08 150 650
+"1411" "Present" -21.03989 -45.1392 "Mini" "Mandarins" 1.6 34.62 900 2600
+"1412" "Present" -21.03894 -45.1267 "Small" "Mandarins" 11 100 5518 5518
+"1413" "Present" -21.00794 -45.1216 "Small" "Mandarins" 19 38.88 3948 10154
+"1414" "Present" -21.06111 -45.0611 "Mini" "Mandarins" 5 12.96 390 3010
+"1415" "Present" -21.01056 -44.1314 "Mini" "Mandarins" 6.5 1.47 44 3000
+"1416" "Present" -21.27167 -45.2089 "Mini" "Mandarins" 3.5 2.06 40 1940
+"1417" "Absent" -21.27222 -45.2047 "Mini" "Mandarins" 4.67 0 0 3336
+"1418" "Absent" -22.13761 -45.1734 "Mini" "Lemon" 1.5 0 0 1300
+"1419" "Absent" -22.13661 -45.0878 "Mini" "Mandarins" 2.5 0 0 800
+"1420" "Present" -22.3815 -45.1625 "Mini" "Mandarins" 2 0.17 2 1200
+"1421" "Absent" -22.26508 -45.1309 "Small" "Sweet orange" 14 0 0 12000
+"1422" "Absent" -22.2878 -45.0822 "Small" "Mandarins" 10.5 0 0 5000
+"1423" "Present" -22.28189 -45.0813 "Small" "Mandarins" 18 0.28 25 9025
+"1424" "Present" -22.2783 -45.0756 "Small" "Mandarins" 29.3 0.01 2 16200
+"1425" "Present" -22.29228 -45.0398 "Mini" "Mandarins" 2 0.1 1 1000
+"1426" "Absent" -22.3111 -45.0381 "Mini" "Mandarins" 8 0 0 5000
+"1427" "Absent" -22.3131 -45.0369 "Mini" "Mandarins" 10 0 0 5000
+"1428" "Absent" -22.31083 -45.034 "Small" "Mandarins" 13 0 0 7500
+"1429" "Present" -21.03619 -45.1587 "Mini" "Mandarins" 0.4 100 500 500
+"1430" "Present" -21.13469 -45.0949 "Mini" "Mandarins" 2 60 1500 2500
+"1431" "Present" -21.1392 -45.0911 "Mini" "Mandarins" 3.2 1.76 30 1700
+"1432" "Present" -21.13583 -45.0889 "Mini" "Mandarins" 4 11 220 2000
+"1433" "Present" -21.1267 -45.0819 "Mini" "Mandarins" 4 100 7900 7900
+"1434" "Absent" -22.4919 -45.1444 "Small" "Lemon" 20 0 0 2000
+"1435" "Absent" -22.4322 -45.1325 "Mini" "Lemon" 1 0 0 250
+"1436" "Absent" -22.23806 -45.1369 "Mini" "Mandarins" 2 0 0 1500
+"1437" "Present" -21.04686 -45.1009 "Mini" "Mandarins" 2.5 100 1000 1000
+"1438" "Present" -20.96981 -45.03 "Mini" "Mandarins" 5.3 3.2 80 2500
+"1439" "Absent" -20.87406 -44.8911 "Small" "Sweet orange" 16 0 0 6000
+"1440" "Absent" -21.5439 -45.0917 "Mini" "Mandarins" 4.7 0 0 2350
+"1441" "Absent" -20.6625 -45.0828 "Small" "Mandarins" 25 0 0 12500
+"1442" "Absent" -19.32769 -45.06389 "Mini" "Mandarins" 2 0 0 1261
+"1443" "Absent" -20.8108 -45.0319 "Small" "Sweet orange" 19.5 0 0 11400
+"1444" "Absent" -20.67717 -45.0265 "Small" "Sweet orange" 40 0 0 28000
+"1445" "Absent" -20.6653 -45.0094 "Mini" "Mandarins" 2.4 0 0 1090
+"1446" "Present" -20.6558 -44.9617 "Mini" "Mandarins" 4.5 0.05 3 6500
+"1447" "Absent" -20.8142 -44.8206 "Small" "Sweet orange" 40 0 0 14000
+"1448" "Absent" -21.62019 -45.0036 "Small" "Sweet orange" 20 0 0 10000
+"1449" "Absent" -21.62028 -45.0036 "Small" "Sweet orange" 18 0 0 10000
+"1450" "Present" -21.84467 -44.9517 "Mini" "Mandarins" 4 4.45 95 2137
+"1451" "Absent" -21.84467 -44.9444 "Mini" "Mandarins" 4 0 0 2100
+"1452" "Present" -20.62068 -44.942 "Small" "Mandarins" 20 0.38 38 10015
+"1453" "Present" -21.09033 -44.9318 "Mini" "Mandarins" 1.2 6.82 41 601
+"1454" "Absent" -20.8435 -44.8867 "Medium" "Sweet orange" 103 0 0 42000
+"1455" "Absent" -20.29642 -44.8828 "Mini" "Acid lime" 1 0 0 700
+"1456" "Absent" -20.35083 -44.86111 "Medium" "Mandarins" 102.53 0 0 50000
+"1457" "Absent" -21.71372 -44.5826 "Mini" "Mandarins" 10 0 0 5000
+"1458" "Absent" -20.30639 -44.57583 "Medium" "Sweet orange" 72.04 0 0 44000
+"1459" "Absent" -20.30333 -44.57222 "Medium" "Mandarins" 110 0 0 90000
+"1460" "Absent" -20.32444 -44.57028 "Small" "Sweet orange" 45 0 0 40000
+"1461" "Absent" -20.29347 -44.55639 "Small" "Acid lime" 10.5 0 0 5775
+"1462" "Absent" -20.32447 -44.50389 "Small" "Mandarins" 26.15 0 0 14512
+"1463" "Absent" -20.26922 -44.49667 "Small" "Sweet orange" 20.95 0 0 11626
+"1464" "Absent" -20.30228 -44.44833 "Mini" "Acid lime" 3 0 0 1650
+"1465" "Present" -21.64167 -44.5475 "Small" "Mandarins" 20.3 0.01 2 14001
+"1466" "Absent" -20.36508 -44.4869 "Mini" "Mandarins" 9.4 0 0 4500
+"1467" "Absent" -21.46375 -44.3842 "Medium" "Mandarins" 79.3 0 0 35448
+"1468" "Present" -21.31217 -44.3823 "Medium" "Sweet orange" 180 0.33 244 75062
+"1469" "Absent" -21.29833 -44.3722 "Small" "Sweet orange" 18 0 0 7500
+"1470" "Absent" -21.3474 -44.2991 "Medium" "Sweet orange" 52.4 0 0 37000
+"1471" "Absent" -21.095 -44.2547 "Mini" "Mandarins" 7.5 0 0 5000
+"1472" "Absent" -21.095 -44.2503 "Mini" "Mandarins" 7.5 0 0 5000
+"1473" "Absent" -21.09 -44.2469 "Mini" "Mandarins" 5 0 0 2000
+"1474" "Absent" -21.09 -44.2469 "Mini" "Mandarins" 8 0 0 4000
+"1475" "Absent" -21.09289 -44.2445 "Mini" "Mandarins" 5 0 0 3000
+"1476" "Absent" -21.0536 -44.3 "Small" "Mandarins" 16 0 0 7000
+"1477" "Absent" -21.0608 -44.1814 "Medium" "Mandarins" 60 0 0 24000
+"1478" "Present" -21.038 -44.1803 "Small" "Mandarins" 31 0.02 3 15003
+"1479" "Present" -21.07778 -44.1789 "Small" "Mandarins" 50 0.01 2 25002
+"1480" "Absent" -21.05422 -44.1764 "Medium" "Mandarins" 100 0 0 45000
+"1481" "Absent" -21.65403 -44.2863 "Small" "Sweet orange" 15 0 0 34900
+"1482" "Absent" -18.78494 -49.3748 "Small" "Sweet orange" 50 0 0 20000
+"1483" "Absent" -21.08778 -44.2158 "Mini" "Mandarins" 8 0 0 6000
+"1484" "Absent" -21.07 -44.2103 "Mini" "Mandarins" 7 0 0 4000
+"1485" "Absent" -20.41472 -44.20639 "Mini" "Mandarins" 8 0 0 3200
+"1486" "Absent" -21.06611 -44.2039 "Mini" "Mandarins" 8 0 0 5000
+"1487" "Absent" -21.06611 -44.2039 "Mini" "Mandarins" 7 0 0 4000
