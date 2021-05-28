@@ -27,9 +27,11 @@ library(gstat)
 library(maptools)
 library(rnaturalearth)
 library(rnaturalearthhires)
+library(patchwork)
 source("Bdiclcpomodel_stack.R")
 source("coord_transform.R")
 ```
+
 
 # Load data
 ```{r}
@@ -42,6 +44,7 @@ hh_hlb =  read.table("data/hlb_form_map2.txt")  %>%
   ungroup() %>% 
   dplyr::select(-latlon)
 ```
+
 
 transform coordinates to utm
 ```{r eval=FALSE, include=FALSE}
@@ -66,19 +69,44 @@ MG <- BRA[BRA$name_en == "Minas Gerais", ]
 
 
 
-# 
+# MG
 ```{r}
 MG_shape = readOGR("./data/MG", "MG_Unidade_Federacao_2017_ago")
 MG_shape = spTransform(MG_shape, CRSobj = "+proj=longlat")
 # MG_shape = spTransform(MG_shape,  CRS("+proj=utm +zone=23 +south ellps=WGS84"))
 plot(MG_shape)
 ```
+# sudeste
+
+```{r}
+MG_shape = readOGR("./data/mesoregiao", "mesoregiao")
+MG_shape = spTransform(MG_shape, CRSobj = "+proj=longlat")
+# MG_shape = spTransform(MG_shape,  CRS("+proj=utm +zone=23 +south ellps=WGS84"))
+plot(MG_shape)
+```
 
 # Maping manipulation
+
+```{r}
+crds <- cbind(x=runif(100,-30,-10), y=runif(100,-60,-30))
+# str(crds)
+Pl <- Polygon(crds)
+# str(Pl)
+ID <- "400x400"
+Pls <- Polygons(list(Pl), ID=ID)
+# str(Pls)
+SPls <- SpatialPolygons(list(Pls))
+# str(SPls)
+df <- data.frame(value=1, row.names=ID)
+# str(df)
+SPDF <- SpatialPolygonsDataFrame(SPls, df)
+
+```
+
 ## Create a grid
 
 ```{r}
-cs <- c(.4,.4)
+cs <- c(.5, .5)
 # cs <- c(25000,25000)
 grdpts =  makegrid(MG_shape, cellsize = cs)
 
@@ -88,7 +116,6 @@ grid_df = as.data.frame(as(spgrdWithin,"SpatialPixelsDataFrame" )@coords)
 
 plot(spgrdWithin)
 
-  
 ```
 
 
@@ -291,6 +318,7 @@ rr2 = rr>0 & !is.na(rr)
 grid_df = as.data.frame(as(rr2, "SpatialPixels")@coords) %>% 
   mutate(samp = rr2[]) %>% 
   filter(samp ==TRUE)
+
 ```
 
 ## Map: Disease grid
@@ -310,6 +338,7 @@ ggplot()+
              aes(lon, lat, color = presenca),
              size = 0.3, alpha = 1)+
   scale_color_manual(values  =c("#3e9b39", 'red'))+
+   # scale_color_manual(values  =c("black", 'orange'))+
   coord_sf() +
   guides(color = guide_legend(override.aes = list(size=2.5)))+
   theme_minimal_grid()+
@@ -319,20 +348,19 @@ ggplot()+
   north( location = "topleft", scale = 0.08, symbol = 10,
       x.min=-51, x.max=-43.5, y.min=-23, y.max=-18)+
   
-  scalebar(location = "bottomleft", dist = 50,
+  scalebar(location = "bottomleft", dist = 100,
            dist_unit = "km", transform = TRUE, 
            x.min=-51, x.max=-44, y.min=-23, y.max=-18,
-           st.bottom = FALSE,
-           st.dist = 0.03, st.size = 2)+
+           st.bottom = FALSE, height = 0.04,
+           st.dist = 0.05, st.size = 3)+
   ylim(-23, -18)+
   xlim(-51, -43.5)+
   facet_wrap(~presenca)+
-  theme(panel.border = element_rect(color = "gray"))
+  theme(panel.border = element_rect(color = "gray"),
+        axis.text = element_text(size =8))
 
-# ylim(-22.5, -21.5)+
-#   xlim(-46, -44)
 
-ggsave("figs/map_disease.png", dpi = 600, height = 4, width = 11)
+ggsave("figs/map_disease.png", dpi = 600, height = 4, width = 10)
   
 ```
 
@@ -401,7 +429,7 @@ colnames(coords2) <- c("x1","x2")
 ### Neighborhood structure
 ```{r}
 ID <- 1:dim(coords2)[1] 
-col.nb.0.all <- dnearneigh(coords2, 0, 70000, row.names=ID)
+col.nb.0.all <- dnearneigh(coords2, 0, 100000, row.names=ID)
 nb2INLA("./models/grid25.graph", col.nb.0.all)
 grid_grafo25 <- inla.read.graph("./models/grid25.graph")
 
@@ -422,7 +450,7 @@ moran.test(prop, listw,zero.policy=T)
 # Download climatologic data
 ## Nasa Power
 
-```{r eval=FALSE, include=FALSE}
+```{r eval=FALSE, include=TRUE}
 box=data.frame()
 for(i in 1:length(grid_incidence[,1])){
 power  = get_power(lonlat =c( grid_incidence[i,1], grid_incidence[i,2]),
@@ -479,8 +507,8 @@ power_tidy%>%
       arrange(x,y) %>%
       mutate(large_area = medium+large,
              small_area = mini+small, 
-             #mandarin = log(mandarin+1),
-             #orange = log(orange+1)
+             mandarin = log(mandarin+1),
+             orange = log(orange+1)
              ) %>% 
       dplyr::select(-x,-y)) %>% 
   mutate(area = log(area)) %>%
@@ -531,7 +559,7 @@ as.data.frame(correl) %>%
   labs(x="",
        y = "",
        fill= "r")
-ggsave("figs/correl.png",dpi = 600, height = 7, width = 8)
+# ggsave("figs/correl.png",dpi = 600, height = 7, width = 8)
   
 ```
 
@@ -560,8 +588,8 @@ phi.alpha <- 2/3
 variables <- c(
   # "large","medium","small","mini",
   "area",
-  # "orange",
-  # "mandarin",
+  "orange", #<
+  "mandarin", #<
   # "lemon","acid_lime",
   # "small_area", 
   # "large_area",
@@ -571,7 +599,7 @@ variables <- c(
 "temp_dry",
 # "wind_dry",
 # "wind_rainy",
-"wind_ann",
+"wind_ann",#<
 "f(S, model = 'bym2', graph=grid_grafo25, scale.model = TRUE, constr = TRUE,  
         hyper=list(phi = list( prior = 'pc', param = c(phi.u, phi.alpha), initial = -3), 
         prec = list(prior = 'pc.prec', param = c(u, alpha), initial = 5)))"
@@ -613,7 +641,7 @@ models_bin$`Modelos segun waic`[1:10,]
 ```{r eval=FALSE, include=TRUE}
 # models_bin$`Modelos segun waic`[1,1]
 
-f1 <- positives ~ 1 + temp_dry + wind_ann + f(S, model = "bym2",
+f1 <- positives ~ 1 + prec_rainy + temp_dry + wind_ann +  f(S, model = "bym2",
                         graph=grid_grafo25,
                         scale.model = TRUE, 
                         constr = TRUE, 
@@ -628,6 +656,8 @@ f1 <- positives ~ 1 + temp_dry + wind_ann + f(S, model = "bym2",
                                         initial = 5)))
 mod<-inla(f1, family="binomial", data=data, Ntrials = samples, 
           control.compute=list(dic=TRUE,cpo=TRUE, waic=TRUE), verbose = FALSE)
+
+# plot(data$wind_dry,data$wind_rainy)
 # bym2
 ```
 
@@ -647,23 +677,41 @@ mod<-readRDS("./models/best_model.RDS")
 summary(mod)
 ```
 
+```{r}
+inla.hpdmarginal(0.95,mod$marginals.fixed$`(Intercept)`)
+inla.hpdmarginal(0.95,mod$marginals.fixed$prec_rainy)
+inla.hpdmarginal(0.95,mod$marginals.fixed$temp_dry)
+inla.hpdmarginal(0.95,mod$marginals.fixed$wind_ann)
+inla.hpdmarginal(0.95,mod$marginals.hyperpar$`Precision for S`)
+inla.hpdmarginal(0.95,mod$marginals.hyperpar$`Phi for S`)
+```
 
 ```{r}
 
-bind_rows(#as.data.frame(mod$marginals.fixed$mandarin) %>% 
-     # mutate(var = "Mandarin"),
-   # as.data.frame(mod$marginals.fixed$prec_dry) %>%
-   # mutate(var = "prec_dry"),
-    as.data.frame(mod$marginals.fixed$temp_dry) %>% 
-      mutate(var = "Temperature dry"),
-    as.data.frame(mod$marginals.fixed$wind_ann) %>% 
-      mutate(var = "Wind annual")
+bind_rows(#as.data.frame(mod$marginals.fixed$area) %>% 
+     #mutate(var = "Orachard Area"),
+     as.data.frame(mod$marginals.fixed$prec_rainy) %>% 
+     mutate(var = "Preciptation rainy"),
+   as.data.frame(mod$marginals.fixed$temp_dry) %>%
+   mutate(var = "Temp. dry season"),
+    as.data.frame(mod$marginals.fixed$wind_ann) %>%
+      mutate(var = "Annual wind speed "),
+   as.data.frame(mod$marginals.hyperpar$`Precision for S`) %>%
+      mutate(var = "Precision for S"),
+   as.data.frame(mod$marginals.hyperpar$`Phi for S`) %>%
+      mutate(var = "Phi for S")
 ) %>% 
-  ggplot(aes(x, y, color = var))+
+  ggplot(aes(x, y, fill = var))+
+  geom_area(alpha = 0.5)+
   geom_vline(xintercept = 0)+
-  geom_line()+
-  facet_wrap(~var, scales = "free")
-
+  facet_wrap(~var, scales = "free")+
+  scale_fill_calc()+
+  theme_minimal_grid(font_size = 12)+
+  theme(panel.grid = element_line(color = NA),
+        panel.border = element_rect(color ="gray"),
+        legend.position = "none")+
+  labs(y = "Density",
+       x = "Parameter")
 ```
 
 
@@ -672,6 +720,12 @@ bind_rows(#as.data.frame(mod$marginals.fixed$mandarin) %>%
 
 #### Spatial effect.
 ##### Mean
+
+```{r}
+summary(mod$summary.random$S$mean)
+summary(mod$summary.random$S$sd)
+```
+
 ```{r}
 rr2 = rr>0
 ### --- Mean of the structured effect --- ###
@@ -691,15 +745,15 @@ g_spt_v = ggplot(test_df %>%
        y = "Latitude",
        fill = "")+
   north( location = "topleft", scale = 0.08, symbol = 10,
-      x.min=-51, x.max=-43.5, y.min=-23, y.max=-18)+
+      x.min=-51.5, x.max=-43.5, y.min=-23, y.max=-18)+
   
-  scalebar(location = "bottomleft", dist = 50,
+  scalebar(location = "bottomleft", dist = 100,
            dist_unit = "km", transform = TRUE, 
            x.min=-51, x.max=-44, y.min=-23, y.max=-18,
-           st.bottom = FALSE,
-           st.dist = 0.03, st.size = 2)+
+           st.bottom = FALSE, height = 0.04,
+           st.dist = 0.05, st.size = 3)+
   ylim(-23, -18)+
-  xlim(-51, -43.5)+
+  xlim(-51.5, -43.5)+
   theme(panel.border = element_rect(color = "gray")) 
 
 ```
@@ -725,15 +779,15 @@ g_spt_v_sd = ggplot(test_df %>%
        y = "Latitude",
        fill = "")+
   north( location = "topleft", scale = 0.08, symbol = 10,
-      x.min=-51, x.max=-43.5, y.min=-23, y.max=-18)+
+      x.min=-51.5, x.max=-43.5, y.min=-23, y.max=-18)+
   
-  scalebar(location = "bottomleft", dist = 50,
+  scalebar(location = "bottomleft", dist = 100,
            dist_unit = "km", transform = TRUE, 
            x.min=-51, x.max=-44, y.min=-23, y.max=-18,
-           st.bottom = FALSE,
-           st.dist = 0.03, st.size = 2)+
+           st.bottom = FALSE, height = 0.04,
+           st.dist = 0.05, st.size = 3)+
   ylim(-23, -18)+
-  xlim(-51, -43.5)+
+  xlim(-51.5, -43.5)+
   theme(panel.border = element_rect(color = "gray")) 
 ```
 
@@ -742,9 +796,15 @@ g_spt_v_sd = ggplot(test_df %>%
 #### RISK
 ##### Mean propability 
 ```{r}
+summary( mod$summary.fitted.values$mean)
+summary( mod$summary.fitted.values$sd)
+```
+
+
+```{r}
 rr2[as.numeric(names(tab))] <- mod$summary.fitted.values$mean
 
-# plot(rr2)
+ # plot(rr2)
 
 df = as(rr2, "SpatialPixelsDataFrame")
 test_df <- as.data.frame(df)
@@ -754,26 +814,28 @@ g1_v = ggplot(test_df %>%
   geom_sf( data = BRA, fill = "white", color = "gray60")+
   geom_sf(data = MG, fill = "white", color = "black") +
   geom_tile(aes(x=x, y=y, fill=value), alpha=0.95)+
+    # geom_text(aes(x=x, y=y, label=round(value,3)), alpha=0.95)+
   # geom_point(data = hh_hlb,
   #            aes(lon, lat, color = presenca),
   #            size = 0.4)+
   # scale_color_manual(values  =c("black","red"))+
-  scale_fill_distiller(palette = "YlOrRd", direction = 1)+
+  # scale_fill_distiller(palette = "Spectral", direction = -1)+
+   scale_fill_distiller(palette = "YlOrRd", direction = 1)+
   coord_sf() +
   theme_minimal_grid(font_size = 8)+
   labs(x = "Longitude",
        y = "Latitude",
        fill = "")+
   north( location = "topleft", scale = 0.08, symbol = 10,
-      x.min=-51, x.max=-43.5, y.min=-23, y.max=-18)+
+      x.min=-51.5, x.max=-43.5, y.min=-23, y.max=-18)+
   
-  scalebar(location = "bottomleft", dist = 50,
+  scalebar(location = "bottomleft", dist = 100,
            dist_unit = "km", transform = TRUE, 
            x.min=-51, x.max=-44, y.min=-23, y.max=-18,
-           st.bottom = FALSE,
-           st.dist = 0.03, st.size = 2)+
+           st.bottom = FALSE, height = 0.04,
+           st.dist = 0.05, st.size = 3)+
   ylim(-23, -18)+
-  xlim(-51, -43.5)+
+  xlim(-51.5, -43.5)+
   theme(panel.border = element_rect(color = "gray"))
 
 # ggsave("figs/map_posterior.png", dpi = 600, height = 5, width = 8)
@@ -801,15 +863,15 @@ g1_v_sd = ggplot(test_df %>%
        y = "Latitude",
        fill = "")+
   north( location = "topleft", scale = 0.08, symbol = 10,
-      x.min=-51, x.max=-43.5, y.min=-23, y.max=-18)+
+      x.min=-51.5, x.max=-43.5, y.min=-23, y.max=-18)+
   
-  scalebar(location = "bottomleft", dist = 50,
+  scalebar(location = "bottomleft", dist = 100,
            dist_unit = "km", transform = TRUE, 
            x.min=-51, x.max=-44, y.min=-23, y.max=-18,
-           st.bottom = FALSE,
-           st.dist = 0.03, st.size = 2)+
+           st.bottom = FALSE, height = 0.04,
+           st.dist = 0.05, st.size = 3)+
   ylim(-23, -18)+
-  xlim(-51, -43.5)+
+  xlim(-51.5, -43.5)+
   theme(panel.border = element_rect(color = "gray"))
 ```
 
@@ -822,9 +884,41 @@ plot_grid(g_spt_v,
           labels = "auto",
           scale = 0.95)
 
-ggsave("figs/combo_var.png", dpi = 300, height = 6, width = 10)
+# ggsave("figs/combo_var.png", dpi = 300, height = 6, width = 10)
 ```
 
+### Prediction 
+```{r}
+data %>% 
+  mutate(prev = positives/samples) %>% 
+  mutate(prob = mod$summary.fitted.values$mean,) %>% 
+  summarise(r = cor(prev, prob),
+            r2 = cor(prev, prob)^2,
+            ccc =  DescTools::CCC(prev, prob)$rho[,1])
+```
+
+```{r}
+
+prediction_var = data %>% 
+  mutate(prev = positives/samples) %>% 
+  mutate(prob = mod$summary.fitted.values$mean,
+         min = mod$summary.fitted.values$`0.025quant`,
+          max = mod$summary.fitted.values$`0.975quant`)  %>% 
+  ggplot(aes(prev,prob))+
+  geom_point(color ="gray", size =2.5)+
+  geom_errorbar(aes(ymin= min, ymax = max), width = 0, color ="gray", alpha = 0.5)+
+  geom_smooth(method = "lm", color = "steelblue", size =1.2) +
+  # theme_minimal_grid()+
+  coord_equal(xlim=c(0,1), ylim = c(0,1))+
+  theme(axis.line = element_line(color = "gray"),
+        panel.grid = element_blank(),
+        panel.background = element_blank())+
+  labs(subtitle = "Model with climate Variables",
+       y = "Predicted risk",
+       x = "Actual prevalence")
+prediction_var
+# ggsave("figs/pred_actual_var.png", dpi = 300, height = 3, width = 3)
+```
 
 
 ## PCAs as predictors
@@ -832,8 +926,14 @@ ggsave("figs/combo_var.png", dpi = 300, height = 6, width = 10)
 ```{r}
 pca_rotated <- psych::principal(data[c(3:11,14,20:19)], rotate="varimax",
                                 nfactors=3,scores=TRUE, covar=FALSE)
-pca_rotated$loadings 
+pca_rotated$loadings
+as.data.frame(pca_rotated$loadings[]) %>%
+  rownames_to_column() %>% 
+  arrange(rowname)
 # plot(pca_rotated)
+
+pca_rotated$rot.mat
+biplot(pca_rotated)
 
 
 ```
@@ -912,7 +1012,7 @@ models_pca$`Modelos segun waic`[1:10,]
 
 ### Best model 
 ```{r eval=FALSE, include=TRUE}
-f1 <- positives ~ 1 + PC2 + PC3 +  f(S, model = "bym2",
+f1 <- positives ~ 1 + PC1 + PC2 +  f(S, model = "bym2",
                         graph=grid_grafo25,
                         scale.model = TRUE, 
                         constr = TRUE, 
@@ -944,10 +1044,25 @@ mod_pca<-readRDS("./models/best_model_pca.RDS")
 # mod$logfile
 summary(mod_pca)
 ```
+
+```{r}
+inla.hpdmarginal(0.95,mod_pca$marginals.fixed$`(Intercept)`)
+inla.hpdmarginal(0.95,mod_pca$marginals.fixed$PC1)
+inla.hpdmarginal(0.95,mod_pca$marginals.fixed$PC2)
+inla.hpdmarginal(0.95,mod_pca$marginals.hyperpar$`Precision for S`)
+inla.hpdmarginal(0.95,mod_pca$marginals.hyperpar$`Phi for S`)
+```
+
+
 ### Posterior distributions
 
 #### Spatial effect.
 ##### Mean
+```{r}
+summary(mod_pca$summary.random$S$mean)
+summary(mod_pca$summary.random$S$sd)
+```
+
 ```{r}
 rr2 = rr>0
 ### --- Mean of the structured effect --- ###
@@ -967,15 +1082,15 @@ g_spt_pc = ggplot(test_df %>%
        y = "Latitude",
        fill = "")+
   north( location = "topleft", scale = 0.08, symbol = 10,
-      x.min=-51, x.max=-43.5, y.min=-23, y.max=-18)+
+      x.min=-51.5, x.max=-43.5, y.min=-23, y.max=-18)+
   
-  scalebar(location = "bottomleft", dist = 50,
+  scalebar(location = "bottomleft", dist = 100,
            dist_unit = "km", transform = TRUE, 
            x.min=-51, x.max=-44, y.min=-23, y.max=-18,
-           st.bottom = FALSE,
-           st.dist = 0.03, st.size = 2)+
+           st.bottom = FALSE, height = 0.04,
+           st.dist = 0.05, st.size = 3)+
   ylim(-23, -18)+
-  xlim(-51, -43.5)+
+  xlim(-51.5, -43.5)+
   theme(panel.border = element_rect(color = "gray")) 
 
 ```
@@ -1001,15 +1116,15 @@ g_spt_pc_sd = ggplot(test_df %>%
        y = "Latitude",
        fill = "")+
   north( location = "topleft", scale = 0.08, symbol = 10,
-      x.min=-51, x.max=-43.5, y.min=-23, y.max=-18)+
+      x.min=-51.5, x.max=-43.5, y.min=-23, y.max=-18)+
   
-  scalebar(location = "bottomleft", dist = 50,
+  scalebar(location = "bottomleft", dist = 100,
            dist_unit = "km", transform = TRUE, 
            x.min=-51, x.max=-44, y.min=-23, y.max=-18,
-           st.bottom = FALSE,
-           st.dist = 0.03, st.size = 2)+
+           st.bottom = FALSE, height = 0.04,
+           st.dist = 0.05, st.size = 3)+
   ylim(-23, -18)+
-  xlim(-51, -43.5)+
+  xlim(-51.5, -43.5)+
   theme(panel.border = element_rect(color = "gray")) 
 ```
 
@@ -1018,6 +1133,12 @@ g_spt_pc_sd = ggplot(test_df %>%
 #### RISK
 
 #### Mean
+
+```{r}
+summary( mod_pca$summary.fitted.values$mean)
+summary( mod_pca$summary.fitted.values$sd)
+```
+
 ```{r}
 rr2[as.numeric(names(tab))] <- mod_pca$summary.fitted.values$mean
 
@@ -1032,6 +1153,7 @@ g1_pc = ggplot(test_df %>%
   geom_sf( data = BRA, fill = "white", color = "gray60")+
   geom_sf(data = MG, fill = "gray99", color = "black") +
   geom_tile(aes(x=x, y=y, fill=value), alpha=0.95)+
+  # geom_text(aes(x=x, y=y, label=round(value,2)), alpha=0.95)+
   # scale_fill_viridis_c(option = "B") +
   scale_color_manual(values  ="black")+
   scale_fill_distiller(palette = "YlOrRd", direction = 1)+
@@ -1041,15 +1163,15 @@ g1_pc = ggplot(test_df %>%
        y = "Latitude",
        fill = "")+
   north( location = "topleft", scale = 0.08, symbol = 10,
-      x.min=-51, x.max=-43.5, y.min=-23, y.max=-18)+
+      x.min=-51.5, x.max=-43.5, y.min=-23, y.max=-18)+
   
-  scalebar(location = "bottomleft", dist = 50,
+  scalebar(location = "bottomleft", dist = 100,
            dist_unit = "km", transform = TRUE, 
            x.min=-51, x.max=-44, y.min=-23, y.max=-18,
-           st.bottom = FALSE,
-           st.dist = 0.03, st.size = 2)+
+           st.bottom = FALSE, height = 0.04,
+           st.dist = 0.05, st.size = 3)+
   ylim(-23, -18)+
-  xlim(-51, -43.5)+
+  xlim(-51.5, -43.5)+
   theme(panel.border = element_rect(color = "gray"))
 
 # ggsave("figs/map_posterior_pca.png", dpi = 600, height = 5, width = 8)
@@ -1079,15 +1201,15 @@ g1_pc_sd = ggplot(test_df %>%
        y = "Latitude",
        fill = "")+
   north( location = "topleft", scale = 0.08, symbol = 10,
-      x.min=-51, x.max=-43.5, y.min=-23, y.max=-18)+
+      x.min=-51.5, x.max=-43.5, y.min=-23, y.max=-18)+
   
-  scalebar(location = "bottomleft", dist = 50,
+  scalebar(location = "bottomleft", dist = 100,
            dist_unit = "km", transform = TRUE, 
            x.min=-51, x.max=-44, y.min=-23, y.max=-18,
-           st.bottom = FALSE,
-           st.dist = 0.03, st.size = 2)+
+           st.bottom = FALSE, height = 0.04,
+           st.dist = 0.05, st.size = 3)+
   ylim(-23, -18)+
-  xlim(-51, -43.5)+
+  xlim(-51.5, -43.5)+
   theme(panel.border = element_rect(color = "gray"))
 
 # ggsave("figs/map_posterior_sd_pca.png", dpi = 600, height = 4, width = 6)
@@ -1102,11 +1224,109 @@ plot_grid(g_spt_pc,
           g1_pc_sd,
           labels = "auto",
           scale = 0.95)
-ggsave("figs/combo_pca.png", dpi = 300, height = 6, width = 10)
+# ggsave("figs/combo_pca.png", dpi = 300, height = 6, width = 10)
+```
+
+### Prediction
+```{r}
+data %>% 
+  mutate(prev = positives/samples) %>% 
+  mutate(prob = mod_pca$summary.fitted.values$mean) %>% 
+  summarise(r = cor(prev, prob),
+            r2 = cor(prev, prob)^2,
+            ccc =  DescTools::CCC(prev, prob)$rho[,1])
+```
+
+```{r}
+prediction_pca = data %>% 
+  mutate(prev = positives/samples) %>% 
+  mutate(prob = mod_pca$summary.fitted.values$mean,
+         min = mod_pca$summary.fitted.values$`0.025quant`,
+          max = mod_pca$summary.fitted.values$`0.975quant`)  %>% 
+  ggplot(aes(prev, prob))+
+  geom_point(color ="gray", size =2.5)+
+  geom_errorbar(aes(ymin= min, ymax = max), width = 0, color ="gray", alpha = 0.5)+
+  geom_smooth(method = "lm", color = "darkred", size =1.2) +
+  # theme_minimal_grid()+
+  coord_equal(xlim=c(0,1), ylim = c(0,1))+
+  theme(axis.line = element_line(color = "gray"),
+        panel.grid = element_blank(),
+        panel.background = element_blank())+
+  labs(subtitle = "Model with principal components",
+       y = "Predicted risk",
+       x = "Actual prevalence")
+prediction_pca
+# ggsave("figs/pred_actual_pca.png", dpi = 300, height = 3, width = 3)
+```
+
+```{r}
+# prediction_var + prediction_pca+
+  # plot_annotation(tag_levels = "a")
+# ggsave("figs/pred_actual.png", dpi = 300, height = 3.5, width = 7)
 ```
 
 
-## Supplemental graphs 
+### Correlate predictions
+
+```{r}
+cor(mod_pca$summary.fitted.values$mean, mod$summary.fitted.values$mean)
+```
+
+
+```{r}
+data.frame(pca_pred = mod_pca$summary.fitted.values$mean,
+           var_pred = mod$summary.fitted.values$mean) %>% 
+
+ggplot(aes(pca_pred,var_pred))+
+  geom_point(color ="gray", size=3)+
+  geom_abline(linetype = 2)+
+  geom_smooth(method = "lm", se = F, color = "red")+
+  coord_fixed()+
+  theme_minimal_grid()+
+  labs(x = "Predicted with principal components",
+       y = "Predicted with climate variables")+
+  
+  theme(panel.border = element_rect(color = "gray"))
+# ggsave("figs/correl_pred.png", dpi = 600, width = 3.94, height = 3.94)
+```
+
+
+
+# Supplemental graphs 
+
+### summary of covariate
+```{r}
+data %>%
+  dplyr::select(prec_rainy, temp_dry, wind_ann, orange, mandarin, area)%>%
+  pivot_longer(1:6,
+               names_to = "var",
+               values_to = "value") %>% 
+  group_by(var) %>% 
+  summarise(mean(value),
+            median(value),
+            min(value)*3.6,
+            max(value)*3.6
+            )
+```
+
+
+```{r}
+data %>%
+  dplyr::select(prec_rainy, temp_dry, wind_ann, orange, mandarin, area)%>%
+  pivot_longer(1:6,
+               names_to = "var",
+               values_to = "value") %>% 
+  ggplot(aes(value))+
+  geom_histogram(bins = 8,
+                 color = "white",
+                 fill = "steelblue")+
+  facet_wrap(~var, scales = "free")+
+  theme_minimal_hgrid()+
+  labs(x = "Value",
+       y = "Frequency")
+# ggsave("figs/hist_var.png", dpi =600, height = 5, width = 8)
+```
+
 
 ```{r}
 Clime_map = function(data, var){
@@ -1136,7 +1356,7 @@ ggplot()+
        y = "Latitude",
        color = "", fill = "")+
   north( location = "topleft", scale = 0.08, symbol = 10,
-      x.min=-51, x.max=-43.5, y.min=-23, y.max=-18)+
+      x.min=-51.5, x.max=-43.5, y.min=-23, y.max=-18)+
   
   scalebar(location = "bottomleft", dist = 50,
            dist_unit = "km", transform = TRUE, 
@@ -1144,7 +1364,7 @@ ggplot()+
            st.bottom = FALSE,
            st.dist = 0.03, st.size = 2)+
   ylim(-23, -18)+
-  xlim(-51, -43.5)+
+  xlim(-51.5, -43.5)+
   facet_wrap(~presenca)+
   theme(panel.border = element_rect(color = "gray"))
   return(g)
@@ -1163,7 +1383,7 @@ ncol = 1,
 labels = c("P_rainy", "T_dry","W_ann")
 )
 
-ggsave("figs/clim_var_mapas.png", dpi=300, height = 10,width = 8)
+# ggsave("figs/clim_var_mapas.png", dpi=300, height = 10,width = 8)
 ```
 
 
@@ -1178,7 +1398,166 @@ ncol = 1,
 labels = c("Orange","Mandarin","Area")
 )
 
-ggsave("figs/orchard_var_mapas.png", dpi=300, height = 8,width = 6)
+# ggsave("figs/orchard_var_mapas.png", dpi=300, height = 10,width = 8)
 ```
 
+```{r}
+data %>% 
+  dplyr::select(prec_rainy,temp_dry,wind_ann,orange,mandarin,area) %>% 
+  gather() %>% 
+  group_by(key) %>% 
+  summarise(mean(value),
+            min(value),
+            max(value))
+```
+
+
+```{r}
+data %>% 
+  dplyr::select(prec_rainy,temp_dry,wind_ann,orange,mandarin,area) %>% 
+  gather() %>% 
+  ggplot(aes(value))+
+  geom_histogram(aes(y = ..density..),
+                 bins = 10,
+                 color = "black",
+                 fill = "gray75")+
+  geom_density(color = "darkred",
+               size =1,
+               fill = NA)+
+  facet_wrap(~key, scales = "free")+
+  theme_minimal_hgrid()+
+  theme(panel.border = element_rect(color = "gray"))+
+  labs(x = "Variable value",
+       y = "Density")
+```
+
+### principal components
+
+```{r}
+plot_grid(
+
+Clime_map(data=data_pca, var="PC1"),
+Clime_map(data=data_pca, var="PC2"),
+Clime_map(data=data_pca, var="PC3"),
+ncol = 1,
+labels = c("PC1","PC2","PC3")
+)
+
+# ggsave("figs/pca_mapas.png", dpi=300,  height = 10,width = 8)
+```
+
+
+
+## Alternative plots
+
+
+```{r}
+Clime_map2 = function(data, var, titl){
+
+z = as.numeric(data[[var]])
+data2 = data.frame(data[,c("x","y")],z)  
+
+
+g =data2 %>% 
+  # gather(c(4,5,7,8,10,11), key = "var", value = "value") %>% 
+ggplot()+
+  geom_sf( data = BRA, fill = "white", color = "gray60")+
+  geom_sf(data = MG, fill = "gray99", color = "black") +
+  geom_tile(aes(x,y, fill = z    ),
+            # fill ="gray60",
+            size = .2,
+            color = "gray65")+
+  geom_point(data = hh_hlb,
+             aes(lon, lat, color = presenca),
+             size = 0.1)+
+  scale_color_manual(values  =c("black", 'orange'))+
+  # scale_fill_viridis_c(option = "B")+
+  scale_fill_distiller(direction = 1)+
+  coord_sf() +
+  guides(color = guide_legend(override.aes = list(size=2.5)))+
+  theme_minimal_grid(font_size = 8)+
+  labs(x = "Longitude",
+       y = "Latitude",
+       color = "",
+       fill = "",
+       title = titl)+
+  north( location = "topleft", scale = 0.08, symbol = 10,
+      x.min=-51.5, x.max=-43.5, y.min=-23, y.max=-18)+
+  
+  scalebar(location = "bottomleft", dist = 100,
+           dist_unit = "km", transform = TRUE, 
+           x.min=-51, x.max=-44, y.min=-23, y.max=-18,
+           st.bottom = FALSE, height = 0.05,
+           st.dist = 0.05, st.size = 1.5)+
+  ylim(-23, -18)+
+  xlim(-51.5, -43.5)+
+  # facet_wrap(~presenca)+
+  theme(panel.border = element_rect(color = "gray"))
+  return(g)
+}
+```
+
+
+## correlation and distribution
+
+
+
+## Candidate vars
+```{r}
+Clime_map2(data=data, var="prec_rainy", titl = "Preciptation in the rainy season")+
+Clime_map2(data=data, var="temp_dry", titl = "Temperature in the dry season")+
+Clime_map2(data=data, var="wind_ann", titl = "Wind speed")+
+Clime_map2(data=data, var="orange", titl = "Orange")+
+Clime_map2(data=data, var="mandarin", titl = "Mandarin")+
+Clime_map2(data=data, var="area", titl = "Area")+
+  Clime_map2(data=data_pca, var="PC1", titl = "PC1")+
+Clime_map2(data=data_pca, var="PC2", titl = "PC2")+
+Clime_map2(data=data_pca, var="PC3", titl = "PC3")+
+  plot_layout(ncol = 3)+
+  plot_annotation(tag_levels = "A")
+
+ggsave("figs/candidate_var_map.png", dpi=600,  height = 6.5,width =10)
+```
+
+
+### new results graphs
+```{r}
+g_spt_v2 = g_spt_v+labs(title = "Spatial effect")
+g1_v2 = g1_v+labs(title = "HLB risk")
+prediction_var2 = prediction_var+labs(subtitle = "")
+```
+
+
+```{r}
+layout <- "
+ACE
+BDE
+"
+  g_spt_v2+g_spt_v_sd+g1_v2+g1_v_sd+prediction_var2 +
+  plot_layout(design = layout)+
+  plot_annotation(tag_levels = "A")
+
+
+ggsave("figs/result_var.png", dpi=300,  height = 5.5,width =12)
+```
+
+```{r}
+g_spt_pc2 = g_spt_pc+labs(title = "Spatial effect")
+g1_pc2 = g1_pc+labs(title = "HLB risk")
+prediction_pca2 = prediction_pca+labs(subtitle = "")
+```
+
+
+```{r}
+layout <- "
+ACE
+BDE
+"
+  g_spt_pc2+g_spt_pc_sd+g1_pc2+g1_pc_sd+prediction_pca2 +
+  plot_layout(design = layout)+
+  plot_annotation(tag_levels = "A")
+
+
+ggsave("figs/result_pca.png", dpi=300,  height = 5.5,width =12)
+```
 
